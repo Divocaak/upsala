@@ -1,18 +1,18 @@
 <nav>
-	<h1>upsala</h1>
-    <div>
-        <a href="/">Work</a>
-        <a href="/">Studio</a>
-        <a href="/">Contact</a>
-    </div>
+	<a class="home" href="/">upsala</a>
+	<div>
+		<a href="/work">Work</a>
+		<a href="/studio">Studio</a>
+		<a href="/contact">Contact</a>
+	</div>
 </nav>
-
 <slot></slot>
-
 <footer>
-    <p>UPSALA grafické studio, Jakubská 1, 602 00 Brno</p>
-    <p>2024</p>
+	<p>UPSALA grafické studio, Jakubská 1, 602 00 Brno</p>
+	<p>2024</p>
 </footer>
+
+<!-- TODO white to transparent gradient on footer and nav on all layouts except homepage -->
 
 <style>
 	/* SuisseIntl Black */
@@ -162,10 +162,9 @@
 	:global(:root) {
 		--pink: #ff67c2;
 		--corner-radius: 5;
-        --link-transition: .35s;
-		
-        /* TODO */
-		--reference-color: #1d1d1b;
+		--link-transition: 0.35s;
+		--thick-text: #1d1d1b;
+		/* TODO */
 		--strike-color: #6a6a6a;
 	}
 
@@ -176,12 +175,17 @@
 
 	:global(a) {
 		text-decoration: none;
-        transition: all var(--link-transition);
+		transition: all var(--link-transition);
 	}
 
-    /* TODO pohrát si, tohle umí každej */
+	/* TODO pohrát si, tohle umí každej */
 	:global(a:hover) {
 		color: var(--pink);
+	}
+
+	:global(html, body, div){
+		padding: 0;
+		margin: 0;
 	}
 
 	nav {
@@ -190,52 +194,55 @@
 		left: 0;
 		width: 100%;
 		padding: 0;
-		background-color: transparent;
+		margin:0;
 	}
 
-    nav div{
-        position: absolute;
-        right:0;
-        top:24px;
-    }
+	nav div {
+		position: relative;
+		float: right;
+		top: 24px;
+		right: 35px;
+	}
 
-    nav div a{
-        padding-right: 40px;
-        font-size: 36px;
-        line-height: 138%;
-    }
-    
-    nav h1{
-        position: relative;
-        padding:0;
-        margin:0;
-        left: 35px;
-        font-size: 64px;
-        line-height: 138%;
-        font-weight: normal;
-    }
+	nav div a {
+		font-size: 36px;
+		line-height: 138%;
+	}
+	
+	nav div a:nth-of-type(2){
+		padding: 0 40px;
+	}
 
-    nav > *{
-        display: inline-flex;
-    }
+	.home {
+		position: relative;
+		padding: 0;
+		margin: 0;
+		font-size: 64px;
+		line-height: 138%;
+		font-weight: normal;
+		padding-left: 35px;
+	}
 
-    footer{
-        position: fixed;
+	nav > * {
+		display: inline-flex;
+	}
+
+	footer {
+		position: fixed;
 		bottom: 0;
 		left: 0;
 		width: 100%;
 		padding: 0;
-		background-color: transparent;
-    }
-    
-    footer p{
-        display: inline-block;
-        font-size: 16px;
-        line-height: 138%;
-        padding: 0px 35px;
-    }
+	}
 
-    footer p:last-of-type{
-        float:right;
-    }
+	footer p {
+		display: inline-block;
+		font-size: 16px;
+		line-height: 138%;
+		padding: 0px 35px;
+	}
+
+	footer p:last-of-type {
+		float: right;
+	}
 </style>
