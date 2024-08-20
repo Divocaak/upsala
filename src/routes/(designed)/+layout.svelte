@@ -6,7 +6,9 @@
 		<a href="/contact">Contact</a>
 	</div>
 </nav>
-<slot></slot>
+<div class="content">
+	<slot></slot>
+</div>
 <footer>
 	<p>UPSALA grafické studio, Jakubská 1, 602 00 Brno</p>
 	<p>2024</p>
@@ -227,8 +229,14 @@
 		display: inline-flex;
 	}
 
+	.content{
+		position: relative;
+		min-height: 100vh;
+		background-color: rgba(255,0,0,.5);
+	}
+
 	footer {
-		position: fixed;
+		position:relative;
 		bottom: 0;
 		left: 0;
 		width: 100%;
