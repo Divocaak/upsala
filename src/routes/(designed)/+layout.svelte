@@ -161,7 +161,7 @@
 
 	:global(:root) {
 		--pink: #ff67c2;
-		--corner-radius: 5;
+		--border-radius: 5px;
 		--link-transition: 0.35s;
 		--thick-text: #1d1d1b;
 		/* TODO */
@@ -246,3 +246,5 @@
 		float: right;
 	}
 </style>
+
+<!-- TODO dot cursor -->

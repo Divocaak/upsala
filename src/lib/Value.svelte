@@ -6,7 +6,7 @@
 <div class:borderRight={borderRight}>
 	<p>{heading}</p>
 	<p>{text}</p>
-	<!-- <img src="{mediaPath}" alt={mediaAlt}> -->
+	<img src="{mediaPath}" alt={mediaAlt}>
 </div>
 
 <style>
@@ -32,5 +32,15 @@
 
 	.borderRight {
 		border-right: 1px solid black;
+	}
+
+	img{
+		position: absolute;
+		bottom: 52px;
+		left: 20%;
+		width: 203px;
+		height: 203px;
+		border-radius: 70px;
+		background: red;
 	}
 </style>
