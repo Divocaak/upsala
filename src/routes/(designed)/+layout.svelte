@@ -14,6 +14,8 @@
 	<p>2024</p>
 </footer>
 
+<!-- TODO dot cursor -->
+
 <!-- TODO white to transparent gradient on footer and nav on all layouts except homepage -->
 
 <style>
@@ -185,18 +187,19 @@
 		color: var(--pink);
 	}
 
-	:global(html, body, div){
+	:global(html, body, div) {
 		padding: 0;
 		margin: 0;
 	}
 
 	nav {
-		position: fixed;
+		position: sticky;
 		top: 0;
 		left: 0;
 		width: 100%;
 		padding: 0;
-		margin:0;
+		margin: 0;
+		z-index: 100;
 	}
 
 	nav div {
@@ -210,8 +213,8 @@
 		font-size: 36px;
 		line-height: 138%;
 	}
-	
-	nav div a:nth-of-type(2){
+
+	nav div a:nth-of-type(2) {
 		padding: 0 40px;
 	}
 
@@ -229,14 +232,13 @@
 		display: inline-flex;
 	}
 
-	.content{
+	.content {
 		position: relative;
 		min-height: 100vh;
-		background-color: rgba(255,0,0,.5);
 	}
 
 	footer {
-		position:relative;
+		position: relative;
 		bottom: 0;
 		left: 0;
 		width: 100%;
@@ -254,5 +256,3 @@
 		float: right;
 	}
 </style>
-
-<!-- TODO dot cursor -->

@@ -18,7 +18,7 @@
 	.lead {
 		position: relative;
 		width: 100%;
-		top: 20vh;
+		padding: 20vh 0;
 
 		font-size: 96px;
 		line-height: 145%;
@@ -29,10 +29,9 @@
     .contact-container{
         display: flex;
         justify-content: center;
-        position: absolute;
+        position: relative;
         width: 100%;
 		left: 0;
-        top: 90vh;
         padding-bottom: 40vh;
     }
 </style>
