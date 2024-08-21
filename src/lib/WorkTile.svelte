@@ -1,16 +1,17 @@
 <script>
-	export let label, media;
+	export let label, media, path;
 	export let arch = false;
 </script>
 
-<div class:arch>
+<a href="{path}" class:arch>
 	<div class="thumbnail" style="background-image: url('{media}');"></div>
 	<p>{label}</p>
-</div>
+</a>
 
 <style>
 	/* TODO cursor */
-	div {
+	a {
+		all:unset;
 		position: relative;
 	}
 
@@ -18,7 +19,7 @@
 		grid-column-start: span 2;
 	}
 
-	div:hover p {
+	a:hover p {
 		top: 95%;
 		opacity: 1;
 	}

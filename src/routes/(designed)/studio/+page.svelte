@@ -3,24 +3,20 @@
 	import StrikeThroughText from '$lib/StrikeThroughText.svelte';
 	import WorkflowBox from '$lib/WorkflowBox.svelte';
 	import ReferenceRow from '$lib/ReferenceRow.svelte';
+	import LeadContainer from '$lib/LeadContainer.svelte';
 </script>
 
-<div class="lead-container">
-	<h1>grafické<br />studio</h1>
-	<div class="lead-text">
-		<p>
-			Studio Upsala jsme založili v roce 2003 a pracujeme pro českou i zahraniční klientelu.
+<LeadContainer
+	title="grafické
+	studio"
+	text="Studio Upsala jsme založili v roce 2003 a pracujeme pro českou i zahraniční klientelu.
 			Zakládáme si na osobním vztahu s našimi zákazníky a věříme, že rovnocenný dialog je zárukou
-			úspěšné spolupráce.
-		</p>
-		<p>
-			Všechna zadání jsou pro nás výzvou a ke každému projektu přistupujeme individuálně. Úzce
+			úspěšné spolupráce."
+	textSmall="Všechna zadání jsou pro nás výzvou a ke každému projektu přistupujeme individuálně. Úzce
 			spolupracujeme s marketingovými specialisty, copywritery, fotografy, architekty, kodéry a
 			další. Profesionálním přístupem pomáháme našim klientům vynakládat prostředky jen na to, co
-			skutečně potřebují. Naší doménou je osobitý, funkční a nadčasový design.
-		</p>
-	</div>
-</div>
+			skutečně potřebují. Naší doménou je osobitý, funkční a nadčasový design."
+/>
 <div class="values-container">
 	<Value
 		heading="Styl"
@@ -87,60 +83,22 @@
 </div>
 
 <style>
-	.lead-container {
-		position: relative;
-		top: 20vh;
-
-		width: 100%;
-		height: 100vh;
-	}
-
-	.lead-container h1 {
-		position: absolute;
-		left: 38px;
-
-		font-weight: 600;
-		font-size: 96px;
-		line-height: 93%;
-		text-transform: uppercase;
-
-		color: var(--thick-text);
-	}
-
-	.lead-text {
-		position: absolute;
-		width: 735px;
-		right: 38px;
-		top: 40px;
-	}
-
-	.lead-text p:first-of-type {
-		font-weight: 400;
-		font-size: 32px;
-		line-height: 170%;
-	}
-
-	.lead-text p:last-of-type {
-		font-weight: 400;
-		font-size: 20px;
-		line-height: 138%;
-	}
-
 	.values-container,
 	.workflow-container,
 	.reference-container {
+		position: relative;
+		width: 100%;
+		height: auto;
 		padding-bottom: 300px;
 	}
 
 	.values-container {
 		display: flex;
 		justify-content: center;
-		position: relative;
-		width: 100%;
 	}
 
 	.reference-container {
-        padding-top: 50px;
+		padding-top: 50px;
 		padding-left: 65px;
 	}
 </style>
