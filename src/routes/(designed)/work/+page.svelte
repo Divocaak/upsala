@@ -22,9 +22,4 @@
 		grid-auto-rows: minmax(300px, auto);
 		gap: 100px 40px;
 	}
-
-    .arch{
-        grid-column-start: span 2;
-        background: green;
-    }
 </style>
