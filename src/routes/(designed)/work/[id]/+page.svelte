@@ -1,5 +1,9 @@
 <script>
 	import LeadContainer from '$lib/LeadContainer.svelte';
+	import StrikeThroughText from '$lib/StrikeThroughText.svelte';
+    import WorkTile from '$lib/WorkTile.svelte';
+	import WorkWrapper from '$lib/WorkWrapper.svelte';
+
 	let title = `Kalina
     Gallery &
     Apartments`;
@@ -10,7 +14,7 @@
     Úzká spolupráce s umělci a důkladné porozumění formám uměleckého vyjádření jsou ústředním bodem její identity. Inspirativní jsou také četná setkání s umělci v samotné galerii. Kalina Gallery úzce spolupracuje se všemi svými umělci tak, aby dokázala zajistit nejvyšší možnou úroveň prezentace, a to v prostoru, který je pro tento účel přímo stvořený. 
 
     Díky jedinečnému výběru vysoce hodnotných sběratelských uměleckých děl a svou nekompromisní věrností inovacím světového umění, se galerie zavázala plnit poslání leadera ve svém oboru. Vstupuje na trh s uměním a má široký rozsah pro různé typy sběratelů i sbírek`;
-    let mainImgPath = "/_placeholders/5.jpg";
+	let mainImgPath = '/_placeholders/5.jpg';
 </script>
 
 <LeadContainer {title} {textSmall}>
@@ -19,21 +23,31 @@
 </LeadContainer>
 
 <div class="images-container">
-    <img class="main-image" src="{mainImgPath}" alt="landing graphics"/>
-    <div class="gallery">
-        <img src="/_placeholders/0.jpg" alt=""/>
-        <img src="/_placeholders/1.jpg" alt=""/>
-        <img src="/_placeholders/2.jpg" alt=""/>
-        <img src="/_placeholders/7.jpg" alt=""/>
-        <img src="/_placeholders/3.jpg" alt=""/>
-        <img src="/_placeholders/4.jpg" alt=""/>
-        <img src="/_placeholders/8.jpg" alt=""/>
-        <img src="/_placeholders/5.jpg" alt=""/>
-        <img src="/_placeholders/6.jpg" alt=""/>
-
-    </div>
+	<img class="main-image" src={mainImgPath} alt="landing graphics" />
+	<div class="gallery">
+		<div class="gallery-column">
+			<img src="/_placeholders/0.jpg" alt="" />
+			<img src="/_placeholders/1.jpg" alt="" />
+			<img src="/_placeholders/3.jpg" alt="" />
+			<img src="/_placeholders/8.jpg" alt="" />
+			<img src="/_placeholders/6.jpg" alt="" />
+		</div>
+		<div class="gallery-column">
+			<img src="/_placeholders/2.jpg" alt="" />
+			<img src="/_placeholders/7.jpg" alt="" />
+			<img src="/_placeholders/4.jpg" alt="" />
+			<img src="/_placeholders/5.jpg" alt="" />
+		</div>
+	</div>
 </div>
-    
+
+<StrikeThroughText label="reference" />
+<WorkWrapper>
+	<WorkTile path="work/0" label="Kalina Gallery & Apartments" media="/_placeholders/2.jpg" />
+	<WorkTile path="work/0" label="Kalina Gallery & Apartments" media="/_placeholders/2.jpg" />
+	<WorkTile path="work/0" label="Kalina Gallery & Apartments" media="/_placeholders/2.jpg" />
+</WorkWrapper>
+
 <style>
 	.subtext {
 		font-family: 'Outfit';
@@ -42,25 +56,46 @@
 		line-height: 138%;
 	}
 
-    .images-container{
-        position: relative;
-        padding: 0 35px;
-    }
+	.images-container {
+		position: relative;
+		padding: 0 35px;
+	}
 
-    .main-image{
-        position: relative;
-        width: 100%;
-        border-radius: var(--border-radius);
-    }
+	.main-image {
+		position: relative;
+		width: 100%;
+		border-radius: var(--border-radius);
+	}
 
-    .gallery{
-        background-color: green;
-    }
+	* {
+		box-sizing: border-box;
+	}
 
-    .gallery img{
-        display: inline-flexbox;
-        align-self:flex-start;
+	.gallery {
+		display: flex;
+		flex-wrap: wrap;
 
-        width: 40%;
-    }
+		padding: 100px 200px;
+	}
+
+	.gallery-column {
+		flex: 50%;
+		max-width: 50%;
+	}
+
+	.gallery-column:first-of-type {
+		padding-right: 15px;
+	}
+
+	.gallery-column:last-of-type {
+		padding-left: 15px;
+	}
+
+	/* TODO hover fx */
+	.gallery-column img {
+		width: 100%;
+		margin-bottom: 30px;
+		vertical-align: middle;
+		border-radius: var(--border-radius);
+	}
 </style>
