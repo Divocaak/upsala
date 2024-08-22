@@ -1,0 +1,34 @@
+{
+    "homepage": [
+        {
+            "imgPath": "",
+            "text": "",
+            "description": "",
+            "textColor": "",
+            "selectedColor": "",
+            "availableColor": ""
+        }
+    ],
+    "work": {
+        "filters": [
+            ""
+        ],
+        "projects": {
+            "0": {
+                "label": "",
+                "description": "",
+                "category": "",
+                "year": "",
+                "filters": [
+                    ""
+                ]
+            }
+        }
+    },
+    "studio": [
+        {
+            "label": "",
+            "imgPath": ""
+        }
+    ]
+}
