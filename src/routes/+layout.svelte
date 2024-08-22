@@ -146,6 +146,14 @@
 		font-style: italic;
 	}
 
+	/* Outfit variable */
+	@font-face {
+		font-family: 'Outfit';
+		src: url('/f_Outfit/Outfit-VariableFont_wght.ttf') format('truetype');
+		font-weight: 100 900;
+		font-style: normal;
+	}
+
 	:global(:root) {
 		--pink: #ff67c2;
 		--border-radius: 5px;

@@ -3,7 +3,6 @@
 	import Navbar from '$lib/Navbar.svelte';
 </script>
 
-<!-- TODO white to transparent gradient on footer and nav on all layouts except homepage -->
 <Navbar />
 <div class="content-wrapper">
 	<slot></slot>
