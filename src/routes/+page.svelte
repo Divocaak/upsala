@@ -1,31 +1,28 @@
 <script>
 	import Navbar from '$lib/Navbar.svelte';
 	import Footer from '$lib/Footer.svelte';
+	import { homepage } from '/dynamic/content.json';
 
-	export let text, description;
-	export let txtColor = '#000000';
-	export let selectedColor = '#ffffff';
-	export let availableColor = '#404040';
+	let activeIndex = 0;
+	let selectedItem = homepage[activeIndex];
 
-    let activeIndex = 0;
-	function changeColor(newColor) {
-		txtColor = newColor;
-	}
+	const changeItem = (newIndex) => selectedItem = homepage[newIndex];
 </script>
 
-<div class="background-wrapper" style="background-image: url('/_placeholders/3.jpg')">
-	<Navbar textColor={txtColor} />
+<div class="background-wrapper" style="background-image: url('/dynamic/imgs/homepage/{selectedItem.imgPath}')">
+	<Navbar textColor={selectedItem.textColor} transparent={true}/>
 	<div class="content-wrapper">
-		<h1 style="color: {txtColor}">
-			{text}<br />{description}
+		<h1 style="color: {selectedItem.textColor}">
+			{selectedItem.text}<br />{selectedItem.description}
 		</h1>
-		<div class="dots-wrapper" style="--available-color:{availableColor}">
-			<button on:click={() => changeColor('#ff0000')} class="dot"></button>
-			<button on:click={() => changeColor('#ffff00')} class="dot"></button>
-			<button on:click={() => changeColor('#ff00ff')} class="dot"></button>
+		<div class="dots-wrapper" style="--available-color:{selectedItem.availableColor}">
+			<!-- TODO selectedColor -->
+			<button on:click={() => changeItem(0)} class="dot"></button>
+			<button on:click={() => changeItem(1)} class="dot"></button>
+			<button on:click={() => changeItem(2)} class="dot"></button>
 		</div>
 	</div>
-	<Footer textColor={txtColor} />
+	<Footer textColor={selectedItem.textColor} />
 </div>
 
 <style>
@@ -35,6 +32,7 @@
 		left: 0;
 		width: 100vw;
 		height: 100vh;
+		transition: all .35s;
 	}
 
 	.content-wrapper {

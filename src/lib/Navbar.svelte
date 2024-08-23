@@ -1,8 +1,9 @@
 <script>
-    export let textColor = "#000000";
+	export let textColor = '#000000';
+	export let transparent = false;
 </script>
 
-<nav style="--nav-color: {textColor};">
+<nav style="--nav-color: {textColor};" class:transparent>
 	<a class="home" href="/">upsala</a>
 	<div>
 		<a href="/work">Work</a>
@@ -12,11 +13,11 @@
 </nav>
 
 <style>
-	a{
+	a {
 		color: var(--nav-color);
 	}
 
-	a:hover{
+	a:hover {
 		color: var(--pink);
 	}
 
@@ -28,7 +29,11 @@
 		padding: 0;
 		margin: 0;
 		z-index: 100;
-		background: white
+		background: white;
+	}
+
+	.transparent {
+		background: transparent;
 	}
 
 	nav div {

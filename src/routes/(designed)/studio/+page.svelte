@@ -4,6 +4,7 @@
 	import WorkflowBox from '$lib/WorkflowBox.svelte';
 	import ReferenceRow from '$lib/ReferenceRow.svelte';
 	import LeadContainer from '$lib/LeadContainer.svelte';
+	import { studio } from '/dynamic/content.json';
 </script>
 
 <LeadContainer
@@ -62,24 +63,9 @@
 </div>
 <StrikeThroughText label="reference" />
 <div class="reference-container">
-	<ReferenceRow label="FTV Prima" media="/_placeholders/1.jpg" alt="" />
-	<ReferenceRow label="E.ON" media="/_placeholders/1.jpg" alt="" />
-	<ReferenceRow label="Seznam.cz" media="/_placeholders/1.jpg" alt="" />
-	<ReferenceRow
-		label="Státní zemědělská a potravinářská inspekce Česká spořitelna"
-		media="/_placeholders/1.jpg"
-		alt=""
-	/>
-	<ReferenceRow label="KBC (ČSOB)" media="/_placeholders/1.jpg" alt="" />
-	<ReferenceRow label="Alca plast" media="/_placeholders/1.jpg" alt="" />
-	<ReferenceRow label="ČAD Blansko" media="/_placeholders/1.jpg" alt="" />
-	<ReferenceRow label="OKAY" media="/_placeholders/1.jpg" alt="" />
-	<ReferenceRow label="Vermont" media="/_placeholders/1.jpg" alt="" />
-	<ReferenceRow label="Gant" media="/_placeholders/1.jpg" alt="" />
-	<ReferenceRow label="Galerie Moritz, Olomouc" media="/_placeholders/1.jpg" alt="" />
-	<ReferenceRow label="Holiday Inn Prague Airport" media="/_placeholders/1.jpg" alt="" />
-	<ReferenceRow label="Hotel KOCOUR, Třebíč" media="/_placeholders/1.jpg" alt="" />
-	<ReferenceRow label="FAIRHOTEL, Brno" media="/_placeholders/1.jpg" alt="" />
+	{#each studio as ref}
+		<ReferenceRow label={ref.label} media={ref.imgPath} alt={ref.label} />
+	{/each}
 </div>
 
 <style>

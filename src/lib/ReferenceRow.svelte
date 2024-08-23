@@ -2,7 +2,7 @@
 	export let label, media, mediaAlt;
 </script>
 
-<p>{label}<img src={media} alt={mediaAlt} /></p>
+<p>{label}<img src="/dynamic/imgs/{media}" alt={mediaAlt} /></p>
 
 <style>
 	p {

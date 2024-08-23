@@ -1,34 +1,103 @@
 {
     "homepage": [
         {
-            "imgPath": "",
-            "text": "",
-            "description": "",
-            "textColor": "",
-            "selectedColor": "",
-            "availableColor": ""
+            "imgPath": "a.jpg",
+            "text": "work proj 1",
+            "description": "tady neco bude",
+            "textColor": "#10f8df",
+            "selectedColor": "#52f8c2",
+            "availableColor": "#7df5a5"
+        },
+        {
+            "imgPath": "b.jpg",
+            "text": "taky tohle delame",
+            "description": "hele nejakej textik",
+            "textColor": "#60000a",
+            "selectedColor": "#5e0026",
+            "availableColor": "#58043b"
+        },
+        {
+            "imgPath": "c.jpg",
+            "text": "lorem ipsum",
+            "description": "sem neco dame",
+            "textColor": "#50e52d",
+            "selectedColor": "#8bdc00",
+            "availableColor": "#aad405"
         }
     ],
     "work": {
         "filters": [
-            ""
+            "test",
+            "web",
+            "design",
+            "product"
         ],
         "projects": {
             "0": {
-                "label": "",
-                "description": "",
-                "category": "",
-                "year": "",
+                "label": "work proj a",
+                "description": "Galerie se zaměřuje na prezentaci současného umění etablovaných i začínajících výtvarných umělců.\nJe charakteristická výběrem výjimečných talentů, svou rozmanitostí i snahou o širší kulturní dopad.\nÚzká spolupráce s umělci a důkladné porozumění formám uměleckého vyjádření jsou ústředním bodem její identity. Inspirativní jsou také četná setkání s umělci v samotné galerii. Kalina Gallery úzce spolupracuje se všemi svými umělci tak, aby dokázala zajistit nejvyšší možnou úroveň prezentace, a to v prostoru, který je pro tento účel přímo stvořený.\nDíky jedinečnému výběru vysoce hodnotných sběratelských uměleckých děl a svou nekompromisní věrností inovacím světového umění, se galerie zavázala plnit poslání leadera ve svém oboru. Vstupuje na trh s uměním a má široký rozsah pro různé typy sběratelů i sbírek",
+                "category": "test proj",
+                "year": "2024",
                 "filters": [
-                    ""
+                    "test"
+                ]
+            },
+            "1": {
+                "label": "another test work",
+                "description": "Galerie se zaměřuje na prezentaci současného umění etablovaných i začínajících výtvarných umělců.\nJe charakteristická výběrem výjimečných talentů, svou rozmanitostí i snahou o širší kulturní dopad.\nÚzká spolupráce s umělci a důkladné porozumění formám uměleckého vyjádření jsou ústředním bodem její identity. Inspirativní jsou také četná setkání s umělci v samotné galerii. Kalina Gallery úzce spolupracuje se všemi svými umělci tak, aby dokázala zajistit nejvyšší možnou úroveň prezentace, a to v prostoru, který je pro tento účel přímo stvořený.\nDíky jedinečnému výběru vysoce hodnotných sběratelských uměleckých děl a svou nekompromisní věrností inovacím světového umění, se galerie zavázala plnit poslání leadera ve svém oboru. Vstupuje na trh s uměním a má široký rozsah pro různé typy sběratelů i sbírek",
+                "category": "project for testing",
+                "year": "2022",
+                "filters": [
+                    "test",
+                    "web"
+                ]
+            },
+            "2": {
+                "label": "first brand design",
+                "description": "Galerie se zaměřuje na prezentaci současného umění etablovaných i začínajících výtvarných umělců.\nJe charakteristická výběrem výjimečných talentů, svou rozmanitostí i snahou o širší kulturní dopad.\nÚzká spolupráce s umělci a důkladné porozumění formám uměleckého vyjádření jsou ústředním bodem její identity. Inspirativní jsou také četná setkání s umělci v samotné galerii. Kalina Gallery úzce spolupracuje se všemi svými umělci tak, aby dokázala zajistit nejvyšší možnou úroveň prezentace, a to v prostoru, který je pro tento účel přímo stvořený.\nDíky jedinečnému výběru vysoce hodnotných sběratelských uměleckých děl a svou nekompromisní věrností inovacím světového umění, se galerie zavázala plnit poslání leadera ve svém oboru. Vstupuje na trh s uměním a má široký rozsah pro různé typy sběratelů i sbírek",
+                "category": "rebrand redesign thing",
+                "year": "12512",
+                "filters": [
+                    "test",
+                    "design"
+                ]
+            },
+            "3": {
+                "label": "product des",
+                "description": "Galerie se zaměřuje na prezentaci současného umění etablovaných i začínajících výtvarných umělců.\nJe charakteristická výběrem výjimečných talentů, svou rozmanitostí i snahou o širší kulturní dopad.\nÚzká spolupráce s umělci a důkladné porozumění formám uměleckého vyjádření jsou ústředním bodem její identity. Inspirativní jsou také četná setkání s umělci v samotné galerii. Kalina Gallery úzce spolupracuje se všemi svými umělci tak, aby dokázala zajistit nejvyšší možnou úroveň prezentace, a to v prostoru, který je pro tento účel přímo stvořený.\nDíky jedinečnému výběru vysoce hodnotných sběratelských uměleckých děl a svou nekompromisní věrností inovacím světového umění, se galerie zavázala plnit poslání leadera ve svém oboru. Vstupuje na trh s uměním a má široký rozsah pro různé typy sběratelů i sbírek",
+                "category": "product design smthng",
+                "year": "1212",
+                "filters": [
+                    "design",
+                    "product"
                 ]
             }
         }
     },
     "studio": [
         {
-            "label": "",
-            "imgPath": ""
+            "label": "reference 0",
+            "imgPath": "studio/0.jpg"
+        },
+        {
+            "label": "reference ref 1",
+            "imgPath": "studio/1.jpg"
+        },
+        {
+            "label": "ref reference r 2",
+            "imgPath": "studio/2.jpg"
+        },
+        {
+            "label": "reference 3 ref refere",
+            "imgPath": "studio/3.jpg"
+        },
+        {
+            "label": "4 reference r ref",
+            "imgPath": "studio/4.jpg"
+        },
+        {
+            "label": "refe 5 reference r re",
+            "imgPath": "studio/5.jpg"
         }
     ]
 }
