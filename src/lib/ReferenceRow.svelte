@@ -2,17 +2,27 @@
 	export let label, media, mediaAlt;
 </script>
 
-<p>{label}<img src="/dynamic/imgs/{media}" alt={mediaAlt} /></p>
+<div>
+	<p>{label}<img src="/dynamic/imgs/{media}" alt={mediaAlt} /></p>
+</div>
 
 <style>
+
+	div{
+		margin-left: 65px;
+	}
+
 	p {
-		font-weight: 400;
-		font-size: 32px;
-		line-height: 170%;
         width: 50%;
-        padding-left: 20px;
+		
+		font-weight: 400;
+		font-size: var(--text-32);
+		line-height: 170%;
+        
+		padding-left: 20px;
         margin:0;
-        transition: all .35s;
+        
+		transition: all .35s;
 	}
 
 	p:hover {
@@ -26,10 +36,10 @@
 
 	img {
         position: absolute;
-        left: 30%;
+        right: 10%;
         margin-top:2.5%;
         
-        max-width: 30%;
+        max-width: 50%;
         height: auto;
 
 		opacity: 0;

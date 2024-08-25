@@ -73,18 +73,23 @@
 	.workflow-container,
 	.reference-container {
 		position: relative;
+		
 		width: 100%;
 		height: auto;
+		
 		padding-bottom: 300px;
 	}
 
 	.values-container {
+		width: 100%;
+		
 		display: flex;
 		justify-content: center;
+		flex-direction: row;
+		flex-wrap: wrap;
 	}
 
 	.reference-container {
 		padding-top: 50px;
-		padding-left: 65px;
 	}
 </style>

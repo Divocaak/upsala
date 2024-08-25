@@ -28,9 +28,11 @@
 		position: relative;
 		width: 100%;
 		height: 100%;
+
 		background-position: center;
 		background-repeat: no-repeat;
 		background-size: cover;
+		
 		border-radius: var(--border-radius);
 		z-index: 10;
 	}

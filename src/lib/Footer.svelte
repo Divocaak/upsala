@@ -3,7 +3,7 @@
 </script>
 
 <footer style="--text-color: {textColor};">
-	<p>UPSALA grafické studio, Jakubská 1, 602 00 Brno</p>
+	<p>UPSALA grafické studio, Jakubská&nbsp;1, 602&nbsp;00&nbsp;Brno</p>
 	<p>2024</p>
 </footer>
 

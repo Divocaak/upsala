@@ -7,7 +7,7 @@
 <style>
 	h2 {
 		font-weight: 500;
-		font-size: 20px;
+		font-size: var(--text-20);
 		line-height: 138%;
 		text-transform: uppercase;
 		color: var(--thick-text);

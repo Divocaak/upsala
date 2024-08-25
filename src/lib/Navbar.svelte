@@ -25,11 +25,18 @@
 		position: sticky;
 		top: 0;
 		left: 0;
+
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
 		width: 100%;
 		padding: 0;
 		margin: 0;
+
 		z-index: 100;
-		background: white;
+
+		background-color: white;
 	}
 
 	.transparent {
@@ -37,14 +44,11 @@
 	}
 
 	nav div {
-		position: relative;
-		float: right;
-		top: 24px;
-		right: 35px;
+		padding-right: 35px;
 	}
 
 	nav div a {
-		font-size: 36px;
+		font-size: var(--text-36);
 		line-height: 138%;
 	}
 
@@ -53,16 +57,30 @@
 	}
 
 	.home {
-		position: relative;
-		padding: 0;
-		margin: 0;
-		font-size: 64px;
+		font-size: var(--text-64);
 		line-height: 138%;
 		font-weight: normal;
+
 		padding-left: 35px;
 	}
 
-	nav > * {
-		display: inline-flex;
+	@media screen and (max-width: 600px) {
+		nav {
+			flex-direction: column;
+			align-items: flex-start
+		}
+
+		.home{
+			width: 100%;
+			text-align: center;
+			padding: 0;
+		}
+
+		nav div {
+			width: 100%;
+			padding:0;
+			text-align: center;
+			margin-top: 10px;
+		}
 	}
 </style>

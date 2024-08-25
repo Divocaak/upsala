@@ -159,6 +159,12 @@
 		--border-radius: 5px;
 		--link-transition: 0.35s;
 		--thick-text: #1d1d1b;
+		--text-20: calc(12px + 1.157vw);
+		--text-24: calc(12px + 1.389vw);
+		--text-32: calc(18px + 1.852vw);
+		--text-36: calc(10px + 2.083vw);
+		--text-64: calc(16px + 3.704vw);
+		--text-96: calc(24px + 5.556vw);
 	}
 
 	:global(h1, h2, h3, h4, h5, h6, p, a) {

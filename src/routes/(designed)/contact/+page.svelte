@@ -20,7 +20,7 @@
 		width: 100%;
 		padding: 20vh 0;
 
-		font-size: 96px;
+		font-size: 5.556vw;
 		line-height: 145%;
 
 		text-align: center;
@@ -28,6 +28,8 @@
 
     .contact-container{
         display: flex;
+		flex-wrap: wrap;
+
         justify-content: center;
         position: relative;
         width: 100%;

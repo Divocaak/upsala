@@ -3,10 +3,10 @@
 </script>
 
 <div class="wrapper">
-    <div class="title">
-        <h1>{title}</h1>
-        <slot></slot>
-    </div>
+	<div class="title">
+		<h1>{title}</h1>
+		<slot></slot>
+	</div>
 	<div class="text">
 		{#if text != null}
 			<p>{text}</p>
@@ -26,50 +26,65 @@
 
 		align-items: start;
 		display: flex;
+		flex-direction: row;
 
 		/* TODO make block padding variable, reuse at studio page as well */
 		padding-bottom: 300px;
 	}
 
-	.title{
+	.title {
 		display: inline-block;
-		position: relative;
-		left: 38px;
 		width: 70%;
+
+		padding-left: 38px;
 	}
 
-    .title h1{
-        font-weight: 600;
-		font-size: 96px;
+	.title h1 {
+		font-weight: 600;
+		font-size: var(--text-96);
 		line-height: 93%;
 		text-transform: uppercase;
 
 		color: var(--thick-text);
 
 		white-space: pre-line;
-    }
+	}
 
 	.text {
-		position: relative;
 		display: inline-block;
+		width: 30%;
 
+		padding-right: 38px;
 		margin-top: 40px;
-
-		width: 35%;
-		right: 38px;
 
 		white-space: pre-line;
 	}
 
 	.text p:first-of-type {
 		font-weight: 400;
-		font-size: 32px;
+		font-size: var(--text-32);
 		line-height: 170%;
 	}
 
 	.text p:last-of-type {
 		font-weight: 400;
-		font-size: 20px;
+		font-size: var(--text-20);
 		line-height: 138%;
+	}
+
+	@media screen and (max-width: 1200px) {
+		.wrapper {
+			flex-direction: column;
+		}
+
+		.title,
+		.text {
+			padding: 0;
+			width: 100%;
+		}
+
+		.title h1, .text p{
+			margin: 0 38px;
+		}
 	}
 </style>
