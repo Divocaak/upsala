@@ -28,7 +28,6 @@
 		display: flex;
 		flex-direction: row;
 
-		/* TODO make block padding variable, reuse at studio page as well */
 		padding-bottom: 300px;
 	}
 

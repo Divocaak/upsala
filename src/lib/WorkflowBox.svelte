@@ -12,30 +12,48 @@
 <style>
 	div {
 		position: relative;
+		align-items: start;
+		display: flex;
+		flex-direction: row;
+
 		margin: 0 38px;
-        align-items: center;
-        display: flex;
 	}
 
 	p:first-of-type {
+		display: inline-block;
+		width: 40%;
+
 		font-weight: 600;
-		font-size: 96px;
+		font-size: var(--text-96);
 		line-height: 93%;
+
 		color: var(--thick-text);
 		text-transform: uppercase;
-        width: 40%;
-        display: inline-block;
 	}
-    
+
 	p:last-of-type {
-        font-weight: 400;
-		font-size: 32px;
+		width: 60%;
+		display: inline-block;
+
+		font-weight: 400;
+		font-size: var(--text-32);
 		line-height: 138%;
-        width: 60%;
-        display: inline-block;
 	}
 
 	.top-border {
 		border-top: 1px solid #000000;
+	}
+
+	@media screen and (max-width: 1200px) {
+		div {
+			flex-direction: column;
+			margin: 0 38px;
+		}
+
+		p {
+			padding: 0;
+			width: 100%;
+			padding: 0 38px;
+		}
 	}
 </style>

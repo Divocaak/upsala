@@ -3,7 +3,7 @@
 	export let arch = false;
 </script>
 
-<a href="{path}" class:arch>
+<a href={path} class:arch>
 	<div class="thumbnail" style="background-image: url('{media}');"></div>
 	<p>{label}</p>
 </a>
@@ -11,7 +11,7 @@
 <style>
 	/* TODO cursor */
 	a {
-		all:unset;
+		all: unset;
 		position: relative;
 	}
 
@@ -32,7 +32,7 @@
 		background-position: center;
 		background-repeat: no-repeat;
 		background-size: cover;
-		
+
 		border-radius: var(--border-radius);
 		z-index: 10;
 	}
@@ -50,5 +50,11 @@
 		color: var(--pink);
 
 		transition: all 0.45s;
+	}
+
+	@media screen and (max-width: 900px) {
+		.arch {
+			grid-column-start: span 1;
+		}
 	}
 </style>

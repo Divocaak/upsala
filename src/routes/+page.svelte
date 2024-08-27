@@ -30,8 +30,14 @@
 		position: relative;
 		top: 0;
 		left: 0;
+		
 		width: 100vw;
 		height: 100vh;
+		
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+
 		transition: all .35s;
 	}
 
@@ -39,31 +45,37 @@
 		position: relative;
 		width: 100%;
 		height: 80%;
+		background-color: red;
+
+		align-items: center;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
 	}
 
 	.content-wrapper h1 {
-		position: absolute;
-		bottom: 0;
-		left: 35px;
 		font-weight: 400;
 		font-size: 40px;
 		line-height: 138%;
+
+		padding-left: 35px;
 	}
 
 	.dots-wrapper {
-		position: absolute;
-		bottom: 50px;
-		right: 35px;
+		padding-right: 35px;
 	}
 
 	/* TODO cursor */
 	.dot {
 		all: unset;
+		
+		display: inline-block;
 		height: 25px;
 		width: 25px;
+		
 		background-color: var(--available-color);
 		border-radius: 50%;
-		display: inline-block;
+		
 		transition: all 0.35s;
 	}
 

@@ -1,7 +1,7 @@
 <script>
 	import LeadContainer from '$lib/LeadContainer.svelte';
 	import StrikeThroughText from '$lib/StrikeThroughText.svelte';
-    import WorkTile from '$lib/WorkTile.svelte';
+	import WorkTile from '$lib/WorkTile.svelte';
 	import WorkWrapper from '$lib/WorkWrapper.svelte';
 
 	let title = `Kalina
@@ -52,7 +52,7 @@
 	.subtext {
 		font-family: 'Outfit';
 		font-weight: 400;
-		font-size: 20px;
+		font-size: var(--text-20);
 		line-height: 138%;
 	}
 
@@ -75,7 +75,7 @@
 		display: flex;
 		flex-wrap: wrap;
 
-		padding: 100px 200px;
+		padding: 5.787vw 5.787vw;
 	}
 
 	.gallery-column {
@@ -97,5 +97,26 @@
 		margin-bottom: 30px;
 		vertical-align: middle;
 		border-radius: var(--border-radius);
+	}
+
+	@media screen /* and (min-width: 901px) */ and (max-width: 1200px) {
+		.subtext {
+			margin: 38px;
+		}
+	}
+
+	@media screen and (max-width: 900px) {
+		.gallery-column {
+			flex: 100%;
+			max-width: 100%;
+		}
+
+		.gallery-column:first-of-type {
+			padding-right: 0;
+		}
+
+		.gallery-column:last-of-type {
+			padding-left: 0;
+		}
 	}
 </style>

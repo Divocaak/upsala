@@ -9,22 +9,21 @@
 
 <style>
 	footer {
+		align-items: center;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+
 		position: relative;
 		bottom: 0;
-		left: 0;
 		width: 100%;
-		padding: 0;
 	}
 
 	footer p {
 		color: var(--text-color);
-		display: inline-block;
-		font-size: 16px;
+
+		font-size: var(--text-16);
 		line-height: 138%;
 		padding: 0px 35px;
-	}
-
-	footer p:last-of-type {
-		float: right;
 	}
 </style>
