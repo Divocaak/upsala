@@ -33,7 +33,7 @@
 
 	.title {
 		display: inline-block;
-		width: 70%;
+		width: 55%;
 
 		padding-left: 38px;
 	}
@@ -51,7 +51,7 @@
 
 	.text {
 		display: inline-block;
-		width: 30%;
+		width: 45%;
 
 		padding-right: 38px;
 		margin-top: 40px;

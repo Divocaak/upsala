@@ -18,16 +18,15 @@
 	.arch {
 		grid-column-start: span 2;
 	}
-
-	a:hover p {
-		top: 95%;
-		opacity: 1;
+	
+	.arch > .thumbnail{
+		aspect-ratio: 10/3;
+		padding: 0;
 	}
 
 	.thumbnail {
 		position: relative;
-		width: 100%;
-		height: 100%;
+		aspect-ratio: 5/3;
 
 		background-position: center;
 		background-repeat: no-repeat;
@@ -38,18 +37,20 @@
 	}
 
 	p {
-		position: absolute;
-		top: 80%;
-		left: 5.73%;
+		position: relative;
+		margin: 0;
 
-		font-weight: 400;
+		font-weight: 300;
 		font-size: 24px;
 		line-height: 138%;
 
-		opacity: 0;
-		color: var(--pink);
-
 		transition: all 0.45s;
+
+		text-transform: uppercase;
+	}
+
+	a:hover p {
+		color: var(--pink);
 	}
 
 	@media screen and (max-width: 900px) {

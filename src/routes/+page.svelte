@@ -29,7 +29,6 @@
 				<button on:click={() => changeItem(2)} class="dot"></button>
 			</div>
 		</div>
-		<Footer textColor={selectedItem.textColor} />
 	</div>
 </div>
 
