@@ -3,7 +3,6 @@
 	export let topBorder = true;
 </script>
 
-<!-- TODO ask plus btns -->
 <div class:top-border={topBorder}>
 	<p>{label}</p>
 	<p>{text}</p>
@@ -12,11 +11,12 @@
 <style>
 	div {
 		position: relative;
-		align-items: start;
+		align-items: center;
 		display: flex;
 		flex-direction: row;
 
 		margin: 0 38px;
+		padding: 50px 0 ;
 	}
 
 	p:first-of-type {
@@ -38,6 +38,8 @@
 		font-weight: 400;
 		font-size: var(--text-32);
 		line-height: 138%;
+
+		white-space: pre-line;
 	}
 
 	.top-border {

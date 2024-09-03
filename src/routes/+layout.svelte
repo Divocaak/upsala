@@ -1,4 +1,8 @@
-<!-- TODO dot cursor -->
+<script>
+	import { Cursor } from 'curseur';
+</script>
+
+<Cursor color="var(--pink)" mixBlendMode="hard-light" />
 <slot />
 
 <style>
@@ -159,13 +163,13 @@
 		--border-radius: 5px;
 		--link-transition: 0.35s;
 		--thick-text: #1d1d1b;
-		--text-16: calc(8px + (0.926vw * .5));
-		--text-20: calc(10px + (1.157vw * .5));
-		--text-24: calc(12px + (1.389vw * .5));
-		--text-32: calc(16px + (1.852vw * .5));
-		--text-36: calc(18px + (2.083vw * .5));
-		--text-64: calc(32px + (3.704vw * .5));
-		--text-96: calc(48px + (5.556vw * .5));
+		--text-16: calc(8px + (0.926vw * 0.5));
+		--text-20: calc(10px + (1.157vw * 0.5));
+		--text-24: calc(12px + (1.389vw * 0.5));
+		--text-32: calc(16px + (1.852vw * 0.5));
+		--text-36: calc(18px + (2.083vw * 0.5));
+		--text-64: calc(32px + (3.704vw * 0.5));
+		--text-96: calc(48px + (5.556vw * 0.5));
 	}
 
 	:global(h1, h2, h3, h4, h5, h6, p, a) {
@@ -176,15 +180,10 @@
 	:global(a) {
 		text-decoration: none;
 		transition: all var(--link-transition);
+		cursor: none;
 	}
 
-	/* TODO pohrát si, tohle umí každej */
 	:global(a:hover) {
 		color: var(--pink);
-	}
-
-	:global(html, body, div) {
-		padding: 0;
-		margin: 0;
 	}
 </style>

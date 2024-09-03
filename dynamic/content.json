@@ -27,77 +27,161 @@
     ],
     "work": {
         "filters": [
-            "test",
-            "web",
-            "design",
-            "product"
+            "logo",
+            "vizuální identita",
+            "orientační systém",
+            "tiskoviny"
         ],
-        "projects": {
-            "0": {
-                "label": "work proj a",
-                "description": "Galerie se zaměřuje na prezentaci současného umění etablovaných i začínajících výtvarných umělců.\nJe charakteristická výběrem výjimečných talentů, svou rozmanitostí i snahou o širší kulturní dopad.\nÚzká spolupráce s umělci a důkladné porozumění formám uměleckého vyjádření jsou ústředním bodem její identity. Inspirativní jsou také četná setkání s umělci v samotné galerii. Kalina Gallery úzce spolupracuje se všemi svými umělci tak, aby dokázala zajistit nejvyšší možnou úroveň prezentace, a to v prostoru, který je pro tento účel přímo stvořený.\nDíky jedinečnému výběru vysoce hodnotných sběratelských uměleckých děl a svou nekompromisní věrností inovacím světového umění, se galerie zavázala plnit poslání leadera ve svém oboru. Vstupuje na trh s uměním a má široký rozsah pro různé typy sběratelů i sbírek",
-                "category": "test proj",
-                "year": "2024",
+        "projects": [
+            {
+                "label": "maxi dental",
+                "description": "Břeclavská zubní klinika Maxi DENTAL má po více než deseti letech nové logo a firemní identitu. Zubní klinika z Břeclavi prošla razantní proměnou, a čerstvý vizuální styl byl její neodmyslitelnou součástí.\n\nTvorbu vizuální identity pro Maxi DENTAL inspirovalo zaměření klienta. Chtěli jsme vytvořit svěží logo s nenápadným odkazem na zubní odvětví, ve kterém klinika působí. Nejprve jsme si pohrávali se základními motivy zubů a úsměvu až do doby, kdy z nich vyšly jednoduché linie. Na ně jsme navázali při tvorbě custom fontu, na kterém stojí logo i celá firemní identita.\n\nFont jsme spárovali se tlumenou modrou a doplnili sadou hravých piktogramů na míru. Výsledkem je minimalistický vizuál, který se dá kreativně aplikovat na nejrůznější materiály.",
+                "category": "logo / vizuální identita / tiskoviny / orientační systém",
+                "year": "2023 - 2024",
+                "thumbnail": "a.jpg",
+                "galleryFolderName": "a",
+                "images": [
+                    "a.jpg",
+                    "b.jpg",
+                    "c.jpg",
+                    [
+                        "d.jpg",
+                        "a.jpg"
+                    ]
+                ],
                 "filters": [
-                    "test"
+                    "logo",
+                    "vizuální identita",
+                    "tiskoviny",
+                    "orientační systém"
                 ]
             },
-            "1": {
+            {
                 "label": "another test work",
                 "description": "Galerie se zaměřuje na prezentaci současného umění etablovaných i začínajících výtvarných umělců.\nJe charakteristická výběrem výjimečných talentů, svou rozmanitostí i snahou o širší kulturní dopad.\nÚzká spolupráce s umělci a důkladné porozumění formám uměleckého vyjádření jsou ústředním bodem její identity. Inspirativní jsou také četná setkání s umělci v samotné galerii. Kalina Gallery úzce spolupracuje se všemi svými umělci tak, aby dokázala zajistit nejvyšší možnou úroveň prezentace, a to v prostoru, který je pro tento účel přímo stvořený.\nDíky jedinečnému výběru vysoce hodnotných sběratelských uměleckých děl a svou nekompromisní věrností inovacím světového umění, se galerie zavázala plnit poslání leadera ve svém oboru. Vstupuje na trh s uměním a má široký rozsah pro různé typy sběratelů i sbírek",
                 "category": "project for testing",
                 "year": "2022",
+                "thumbnail": "b.jpg",
+                "galleryFolderName": "b",
+                "images": [
+                    "a.jpg",
+                    [
+                        "b.jpg",
+                        "c.jpg"
+                    ],
+                    [
+                        "d.jpg",
+                        "a.jpg"
+                    ]
+                ],
                 "filters": [
                     "test",
                     "web"
                 ]
             },
-            "2": {
+            {
                 "label": "first brand design",
                 "description": "Galerie se zaměřuje na prezentaci současného umění etablovaných i začínajících výtvarných umělců.\nJe charakteristická výběrem výjimečných talentů, svou rozmanitostí i snahou o širší kulturní dopad.\nÚzká spolupráce s umělci a důkladné porozumění formám uměleckého vyjádření jsou ústředním bodem její identity. Inspirativní jsou také četná setkání s umělci v samotné galerii. Kalina Gallery úzce spolupracuje se všemi svými umělci tak, aby dokázala zajistit nejvyšší možnou úroveň prezentace, a to v prostoru, který je pro tento účel přímo stvořený.\nDíky jedinečnému výběru vysoce hodnotných sběratelských uměleckých děl a svou nekompromisní věrností inovacím světového umění, se galerie zavázala plnit poslání leadera ve svém oboru. Vstupuje na trh s uměním a má široký rozsah pro různé typy sběratelů i sbírek",
                 "category": "rebrand redesign thing",
                 "year": "12512",
+                "thumbnail": "c.jpg",
+                "galleryFolderName": "c",
+                "images": [
+                    "a.jpg",
+                    [
+                        "d.jpg",
+                        "a.jpg"
+                    ],
+                    "b.jpg",
+                    [
+                        "a.jpg",
+                        "d.jpg"
+                    ]
+                ],
                 "filters": [
                     "test",
                     "design"
                 ]
             },
-            "3": {
+            {
                 "label": "product des",
                 "description": "Galerie se zaměřuje na prezentaci současného umění etablovaných i začínajících výtvarných umělců.\nJe charakteristická výběrem výjimečných talentů, svou rozmanitostí i snahou o širší kulturní dopad.\nÚzká spolupráce s umělci a důkladné porozumění formám uměleckého vyjádření jsou ústředním bodem její identity. Inspirativní jsou také četná setkání s umělci v samotné galerii. Kalina Gallery úzce spolupracuje se všemi svými umělci tak, aby dokázala zajistit nejvyšší možnou úroveň prezentace, a to v prostoru, který je pro tento účel přímo stvořený.\nDíky jedinečnému výběru vysoce hodnotných sběratelských uměleckých děl a svou nekompromisní věrností inovacím světového umění, se galerie zavázala plnit poslání leadera ve svém oboru. Vstupuje na trh s uměním a má široký rozsah pro různé typy sběratelů i sbírek",
                 "category": "product design smthng",
                 "year": "1212",
+                "thumbnail": "d.jpg",
+                "galleryFolderName": "d",
+                "images": [
+                    "a.jpg",
+                    "b.jpg",
+                    "c.jpg"
+                ],
                 "filters": [
                     "design",
                     "product"
                 ]
             }
-        }
+        ]
     },
     "studio": [
         {
-            "label": "reference 0",
-            "imgPath": "studio/0.jpg"
+            "label": "FTV Prima",
+            "imgPath": "reference/0.jpg"
         },
         {
-            "label": "reference ref 1",
-            "imgPath": "studio/1.jpg"
+            "label": "E.ON",
+            "imgPath": "reference/1.jpg"
         },
         {
-            "label": "ref reference r 2",
-            "imgPath": "studio/2.jpg"
+            "label": "Seznam.cz",
+            "imgPath": "reference/2.jpg"
         },
         {
-            "label": "reference 3 ref refere",
-            "imgPath": "studio/3.jpg"
+            "label": "Státní zemědělská a potravinářská inspekce",
+            "imgPath": "reference/3.jpg"
         },
         {
-            "label": "4 reference r ref",
-            "imgPath": "studio/4.jpg"
+            "label": "Česká spořitelna",
+            "imgPath": "reference/4.jpg"
         },
         {
-            "label": "refe 5 reference r re",
-            "imgPath": "studio/5.jpg"
+            "label": "KBC (ČSOB)",
+            "imgPath": "reference/5.jpg"
+        },
+        {
+            "label": "Alca plast",
+            "imgPath": "reference/0.jpg"
+        },
+        {
+            "label": "ČAD Blansko",
+            "imgPath": "reference/1.jpg"
+        },
+        {
+            "label": "OKAY",
+            "imgPath": "reference/2.jpg"
+        },
+        {
+            "label": "Vermont",
+            "imgPath": "reference/3.jpg"
+        },
+        {
+            "label": "Gant",
+            "imgPath": "reference/4.jpg"
+        },
+        {
+            "label": "Galerie Moritz, Olomouc",
+            "imgPath": "reference/5.jpg"
+        },
+        {
+            "label": "Holiday Inn Prague Airport",
+            "imgPath": "reference/0.jpg"
+        },
+        {
+            "label": "Hotel KOCOUR, Třebíč",
+            "imgPath": "reference/1.jpg"
+        },
+        {
+            "label": "FAIRHOTEL, Brno",
+            "imgPath": "reference/2.jpg"
         }
     ]
 }

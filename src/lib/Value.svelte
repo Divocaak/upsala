@@ -40,6 +40,7 @@
 		font-weight: 400;
 		font-size: var(--text-20);
 		line-height: 138%;
+		white-space: pre-line;
 	}
 
 	.borderRight {

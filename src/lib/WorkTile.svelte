@@ -1,15 +1,15 @@
 <script>
-	export let label, media, path;
+	export let id = null;
+	export let project = null;
 	export let arch = false;
 </script>
 
-<a href={path} class:arch>
-	<div class="thumbnail" style="background-image: url('{media}');"></div>
-	<p>{label}</p>
+<a href="/work/{arch ? "arch" : id}" class:arch>
+	<div class="thumbnail" style="background-image: url('/dynamic/imgs/work/thumbnails/{arch ? "arch.jpg" : project.thumbnail}');"></div>
+	<p>{arch ? "projekt arch" : project.label}</p>
 </a>
 
 <style>
-	/* TODO cursor */
 	a {
 		all: unset;
 		position: relative;
@@ -18,8 +18,8 @@
 	.arch {
 		grid-column-start: span 2;
 	}
-	
-	.arch > .thumbnail{
+
+	.arch > .thumbnail {
 		aspect-ratio: 10/3;
 		padding: 0;
 	}
@@ -34,6 +34,26 @@
 
 		border-radius: var(--border-radius);
 		z-index: 10;
+	}
+	
+	.thumbnail::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		
+		border-radius: var(--border-radius);
+		background-color: #ff67c2;
+		opacity: 0;
+
+		transition: all 0.45s;
+	}
+
+	a:hover .thumbnail::before {
+		opacity: 0.35;
+		/* mix-blend-mode: color; */
 	}
 
 	p {

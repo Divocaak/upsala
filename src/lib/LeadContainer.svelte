@@ -1,5 +1,7 @@
 <script>
-	export let title, text, textSmall;
+	export let title = null;
+	export let text = null;
+	export let textSmall = null;
 </script>
 
 <div class="wrapper">
