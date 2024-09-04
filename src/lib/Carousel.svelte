@@ -127,12 +127,8 @@
 		</button>
 	{/if}
 	{#if dots}
-		<div
-			class="dots-wrapper"
-			style="--available-color:{homepage[currentIndex].availableColor}; --selected-color:{homepage[
-				currentIndex
-			].selectedColor};"
-		>
+		<!-- TODO move to center -->
+		<div class="dots-wrapper" style="--available-color:{homepage[currentIndex].textColor};">
 			{#each { length: totalDots } as _, i}
 				<button
 					on:click={() => go(i * currentPerPage)}
@@ -197,13 +193,15 @@
 		width: 25px;
 
 		background-color: var(--available-color);
+		opacity: .6;
 		border-radius: 50%;
 
 		transition: all 0.35s;
 	}
 
 	.dot.active {
-		background-color: var(--selected-color);
+		background-color: #ffffff;
+		opacity: 1;
 	}
 
 	.dot:nth-of-type(2) {

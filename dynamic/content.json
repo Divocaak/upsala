@@ -2,27 +2,21 @@
     "homepage": [
         {
             "imgPath": "a.jpg",
-            "text": "work proj 1",
-            "description": "tady neco bude",
-            "textColor": "#10f8df",
-            "selectedColor": "#52f8c2",
-            "availableColor": "#7df5a5"
+            "text": "kalina",
+            "description": "gallery | apartments",
+            "textColor": "#000000"
         },
         {
             "imgPath": "b.jpg",
-            "text": "taky tohle delame",
-            "description": "hele nejakej textik",
-            "textColor": "#60000a",
-            "selectedColor": "#5e0026",
-            "availableColor": "#58043b"
+            "text": "městská knihovna",
+            "description": "velké meziříčí",
+            "textColor": "#F5E8C6"
         },
         {
             "imgPath": "c.jpg",
-            "text": "lorem ipsum",
-            "description": "sem neco dame",
-            "textColor": "#50e52d",
-            "selectedColor": "#8bdc00",
-            "availableColor": "#aad405"
+            "text": "maxi dental",
+            "description": "",
+            "textColor": "#ffffff"
         }
     ],
     "work": {
@@ -38,15 +32,27 @@
                 "description": "Břeclavská zubní klinika Maxi DENTAL má po více než deseti letech nové logo a firemní identitu. Zubní klinika z Břeclavi prošla razantní proměnou, a čerstvý vizuální styl byl její neodmyslitelnou součástí.\n\nTvorbu vizuální identity pro Maxi DENTAL inspirovalo zaměření klienta. Chtěli jsme vytvořit svěží logo s nenápadným odkazem na zubní odvětví, ve kterém klinika působí. Nejprve jsme si pohrávali se základními motivy zubů a úsměvu až do doby, kdy z nich vyšly jednoduché linie. Na ně jsme navázali při tvorbě custom fontu, na kterém stojí logo i celá firemní identita.\n\nFont jsme spárovali se tlumenou modrou a doplnili sadou hravých piktogramů na míru. Výsledkem je minimalistický vizuál, který se dá kreativně aplikovat na nejrůznější materiály.",
                 "category": "logo / vizuální identita / tiskoviny / orientační systém",
                 "year": "2023 - 2024",
-                "thumbnail": "a.jpg",
-                "galleryFolderName": "a",
+                "galleryFolderName": "dental",
+                "thumbnail": "dental.jpg",
+                "landingMedia": "Comp 2.mp4",
                 "images": [
-                    "a.jpg",
-                    "b.jpg",
-                    "c.jpg",
+                    "02.jpg",
+                    "03.jpg",
+                    "09.jpg",
                     [
-                        "d.jpg",
-                        "a.jpg"
+                        "05.jpg",
+                        "04.jpg"
+                    ],
+                    [
+                        "08.jpg",
+                        "07.jpg"
+                    ],
+                    "06.jpg",
+                    "10.jpg",
+                    "11.jpg",
+                    [
+                        "12.jpg",
+                        "13.jpg"
                     ]
                 ],
                 "filters": [
@@ -57,59 +63,69 @@
                 ]
             },
             {
-                "label": "another test work",
-                "description": "Galerie se zaměřuje na prezentaci současného umění etablovaných i začínajících výtvarných umělců.\nJe charakteristická výběrem výjimečných talentů, svou rozmanitostí i snahou o širší kulturní dopad.\nÚzká spolupráce s umělci a důkladné porozumění formám uměleckého vyjádření jsou ústředním bodem její identity. Inspirativní jsou také četná setkání s umělci v samotné galerii. Kalina Gallery úzce spolupracuje se všemi svými umělci tak, aby dokázala zajistit nejvyšší možnou úroveň prezentace, a to v prostoru, který je pro tento účel přímo stvořený.\nDíky jedinečnému výběru vysoce hodnotných sběratelských uměleckých děl a svou nekompromisní věrností inovacím světového umění, se galerie zavázala plnit poslání leadera ve svém oboru. Vstupuje na trh s uměním a má široký rozsah pro různé typy sběratelů i sbírek",
-                "category": "project for testing",
-                "year": "2022",
-                "thumbnail": "b.jpg",
-                "galleryFolderName": "b",
+                "label": "MĚSTSKÁ KNIHOVNA VELKÉ MEZIŘÍČÍ",
+                "description": "Navrhování identity pro Městskou knihovnu Velké Meziříčí pro nás bylo příjemnou a inspirativní zkušeností. Zástupci města a knihovny chtěli hravý vizuál, který by reprezentoval knihovnu na úrovni profesionální/oficiální instituce, a zároveň nepůsobil dětinsky.\n\nLogo jsme proto postavili na jednoduchých blocích, které dávají prostor fantazii každého k vlastnímu výkladu. Jsou to knihy? Sloupy? Nebo jen geometrické tvary? Kdoví\n\nS vizuálem si člověk vyhraje na jakémkoli materiálu. Bloky jsou totiž variabilní a jde je jednoduše skládat, rozkládat a nebo rozházet dle libosti.\n\nHravé prvky mají své místo v samotném logu, najdou ale uplatnění na jakémkoli materiálu. Plakáty? Čtenářské kartičky? Ukazatele v prostoru?\n\nDěkujeme UYO architekti a zástupcům města i knihovny za příležitost podílet se na tomto úžasném ráji na Zemi pro všechny knihomily.",
+                "category": "logo / vizuální identita / orientační systém",
+                "year": "2023",
+                "galleryFolderName": "mkvm",
+                "thumbnail": "mkvm.jpg",
+                "landingMedia": null,
                 "images": [
-                    "a.jpg",
+                    "01-2.jpg",
+                    "sklo_text.jpg",
+                    "05-2.jpg",
+                    "03-2.jpg",
                     [
-                        "b.jpg",
-                        "c.jpg"
+                        "02-2.jpg",
+                        "stickers.jpg"
                     ],
+                    "08-2.jpg",
                     [
-                        "d.jpg",
-                        "a.jpg"
-                    ]
+                        "07-2.jpg",
+                        "Id Card.jpg"
+                    ],
+                    "04-2.jpg",
+                    "06-2.jpg"
                 ],
                 "filters": [
-                    "test",
-                    "web"
+                    "logo",
+                    "vizuální identita",
+                    "orientační systém"
                 ]
             },
             {
-                "label": "first brand design",
-                "description": "Galerie se zaměřuje na prezentaci současného umění etablovaných i začínajících výtvarných umělců.\nJe charakteristická výběrem výjimečných talentů, svou rozmanitostí i snahou o širší kulturní dopad.\nÚzká spolupráce s umělci a důkladné porozumění formám uměleckého vyjádření jsou ústředním bodem její identity. Inspirativní jsou také četná setkání s umělci v samotné galerii. Kalina Gallery úzce spolupracuje se všemi svými umělci tak, aby dokázala zajistit nejvyšší možnou úroveň prezentace, a to v prostoru, který je pro tento účel přímo stvořený.\nDíky jedinečnému výběru vysoce hodnotných sběratelských uměleckých děl a svou nekompromisní věrností inovacím světového umění, se galerie zavázala plnit poslání leadera ve svém oboru. Vstupuje na trh s uměním a má široký rozsah pro různé typy sběratelů i sbírek",
-                "category": "rebrand redesign thing",
-                "year": "12512",
-                "thumbnail": "c.jpg",
-                "galleryFolderName": "c",
+                "label": "Kalina Gallery & Apartments",
+                "description": "Galerie se zaměřuje na prezentaci současného umění etablovaných i začínajících výtvarných umělců.\n\nJe charakteristická výběrem výjimečných talentů, svou rozmanitostí i snahou o širší kulturní dopad.\n\nÚzká spolupráce s umělci a důkladné porozumění formám uměleckého vyjádření jsou ústředním bodem její identity. Inspirativní jsou také četná setkání s umělci v samotné galerii. Kalina Gallery úzce spolupracuje se všemi svými umělci tak, aby dokázala zajistit nejvyšší možnou úroveň prezentace, a to v prostoru, který je pro tento účel přímo stvořený.\n\nDíky jedinečnému výběru vysoce hodnotných sběratelských uměleckých děl a svou nekompromisní věrností inovacím světového umění, se galerie zavázala plnit poslání leadera ve svém oboru. Vstupuje na trh s uměním a má široký rozsah pro různé typy sběratelů i sbírek",
+                "category": "logo / vizuální identita / orientační systém",
+                "year": "2022",
+                "galleryFolderName": "kalina",
+                "thumbnail": "02-3.jpg",
+                "landingMedia": "01.jpg",
                 "images": [
-                    "a.jpg",
                     [
-                        "d.jpg",
-                        "a.jpg"
+                        "01-4.jpg",
+                        "11-2.jpg"
                     ],
-                    "b.jpg",
                     [
-                        "a.jpg",
-                        "d.jpg"
-                    ]
+                        "03-3.jpg",
+                        "05-3.jpg"
+                    ],
+                    "09-2.jpg"
                 ],
                 "filters": [
-                    "test",
-                    "design"
+                    "logo",
+                    "vizuální identita",
+                    "orientační systém"
                 ]
             },
             {
                 "label": "product des",
-                "description": "Galerie se zaměřuje na prezentaci současného umění etablovaných i začínajících výtvarných umělců.\nJe charakteristická výběrem výjimečných talentů, svou rozmanitostí i snahou o širší kulturní dopad.\nÚzká spolupráce s umělci a důkladné porozumění formám uměleckého vyjádření jsou ústředním bodem její identity. Inspirativní jsou také četná setkání s umělci v samotné galerii. Kalina Gallery úzce spolupracuje se všemi svými umělci tak, aby dokázala zajistit nejvyšší možnou úroveň prezentace, a to v prostoru, který je pro tento účel přímo stvořený.\nDíky jedinečnému výběru vysoce hodnotných sběratelských uměleckých děl a svou nekompromisní věrností inovacím světového umění, se galerie zavázala plnit poslání leadera ve svém oboru. Vstupuje na trh s uměním a má široký rozsah pro různé typy sběratelů i sbírek",
-                "category": "product design smthng",
-                "year": "1212",
-                "thumbnail": "d.jpg",
+                "description": "lorem",
+                "category": "ipsum",
+                "year": "1234",
                 "galleryFolderName": "d",
+                "thumbnail": "d.jpg",
+                "landingMedia": null,
                 "images": [
                     "a.jpg",
                     "b.jpg",

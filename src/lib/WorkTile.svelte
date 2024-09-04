@@ -2,10 +2,12 @@
 	export let id = null;
 	export let project = null;
 	export let arch = false;
+
+	const thumbnail = `/dynamic/imgs/work/${arch ? "arch/thumbnail.jpg" : `${project.galleryFolderName}/${project.thumbnail}`}`;
 </script>
 
 <a href="/work/{arch ? "arch" : id}" class:arch>
-	<div class="thumbnail" style="background-image: url('/dynamic/imgs/work/thumbnails/{arch ? "arch.jpg" : project.thumbnail}');"></div>
+	<div class="thumbnail" style="background-image: url('{thumbnail}');"></div>
 	<p>{arch ? "projekt arch" : project.label}</p>
 </a>
 

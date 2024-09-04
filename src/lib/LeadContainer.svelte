@@ -34,10 +34,9 @@
 	}
 
 	.title {
-		display: inline-block;
-		width: 55%;
+		width: 60%;
 
-		padding-left: 38px;
+		padding: 0 38px;
 	}
 
 	.title h1 {
@@ -52,8 +51,7 @@
 	}
 
 	.text {
-		display: inline-block;
-		width: 45%;
+		width: 40%;
 
 		padding-right: 38px;
 		margin-top: 40px;

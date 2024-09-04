@@ -24,6 +24,8 @@
 		background-size: cover;
 
 		transition: all 0.35s;
+
+		cursor: none;
 	}
 
 	.content {
@@ -39,6 +41,7 @@
 		font-weight: 400;
 		font-size: 40px;
 		line-height: 138%;
+		text-transform: uppercase;
 	}
 
 	@media screen and (max-width: 600px) {
