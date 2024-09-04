@@ -22,14 +22,19 @@ export async function load({ params, fetch }) {
 
 function getThreeRandomNumbersExcludingX(min, max, x) {
   const randomNumbers = new Set();
-  
+
   while (randomNumbers.size < 3) {
     const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+
+    if (max < 3) {
+      randomNumbers.add(randomNumber);
+      continue;
+    }
     
     if (randomNumber !== parseInt(x)) {
       randomNumbers.add(randomNumber);
     }
   }
-  
+
   return Array.from(randomNumbers);
 }

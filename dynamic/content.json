@@ -117,24 +117,6 @@
                     "vizuální identita",
                     "orientační systém"
                 ]
-            },
-            {
-                "label": "product des",
-                "description": "lorem",
-                "category": "ipsum",
-                "year": "1234",
-                "galleryFolderName": "d",
-                "thumbnail": "d.jpg",
-                "landingMedia": null,
-                "images": [
-                    "a.jpg",
-                    "b.jpg",
-                    "c.jpg"
-                ],
-                "filters": [
-                    "design",
-                    "product"
-                ]
             }
         ]
     },

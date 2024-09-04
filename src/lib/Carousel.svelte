@@ -127,7 +127,6 @@
 		</button>
 	{/if}
 	{#if dots}
-		<!-- TODO move to center -->
 		<div class="dots-wrapper" style="--available-color:{homepage[currentIndex].textColor};">
 			{#each { length: totalDots } as _, i}
 				<button
@@ -171,15 +170,16 @@
 
 	.dots-wrapper {
 		position: absolute;
-		right: 0;
 		bottom: 0;
+		
+		width:100%;
 
 		display: flex;
 		align-items: center;
 		flex-direction: row;
-		justify-content: end;
+		justify-content: center;
 
-		margin: 35px 0;
+		margin: 10px 0;
 		padding: 0 35px;
 
 		box-sizing: border-box;
