@@ -4,7 +4,7 @@
 	import WorkflowBox from '$lib/WorkflowBox.svelte';
 	import ReferenceRow from '$lib/ReferenceRow.svelte';
 	import LeadContainer from '$lib/LeadContainer.svelte';
-	import { studio } from '/dynamic/content.json';
+	import { reference } from '/dynamic/content.json';
 </script>
 
 <LeadContainer
@@ -82,8 +82,8 @@
 </div>
 <StrikeThroughText label="reference" />
 <div class="reference-container">
-	{#each studio as ref}
-		<ReferenceRow label={ref.label} media={ref.imgPath} alt={ref.label} />
+	{#each reference as ref}
+		<ReferenceRow label={ref.label} media={ref.imgPath} mediaAlt={ref.label} />
 	{/each}
 </div>
 

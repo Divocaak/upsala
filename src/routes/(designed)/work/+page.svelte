@@ -1,7 +1,9 @@
 <script>
 	import WorkTile from '$lib/WorkTile.svelte';
 	import WorkWrapper from '$lib/WorkWrapper.svelte';
-	import { work } from '/dynamic/content.json';
+	import { filters, projects } from '/dynamic/content.json';
+
+	const projectsEntries = Object.entries(projects);
 
 	let currentFilter = null;
 	function changeFilter(newFilter = null) {
@@ -17,17 +19,17 @@
 	</svg>
 	<button class="hoverable" on:click={() => changeFilter()}>bez filtru</button>
 	<span>v</span>
-	{#each work.filters as filter}
+	{#each filters as filter}
 		<button class="hoverable"  on:click={() => changeFilter(filter)}>{filter}</button>
 	{/each}
 </div>
 <WorkWrapper>
-	{#each work.projects as project, i}
+	{#each projectsEntries as [id, project], i}
 		{#if currentFilter === null || project.filters.includes(currentFilter)}
 			{#if i == 3}
 				<WorkTile arch={true} />
 			{/if}
-			<WorkTile {project} id={i} />
+			<WorkTile {project} {id} />
 		{/if}
 	{/each}
 </WorkWrapper>

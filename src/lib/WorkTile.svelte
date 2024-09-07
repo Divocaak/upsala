@@ -3,7 +3,7 @@
 	export let project = null;
 	export let arch = false;
 
-	const thumbnail = `/dynamic/imgs/work/${arch ? "arch/thumbnail.jpg" : `${project.galleryFolderName}/${project.thumbnail}`}`;
+	const thumbnail = `/dynamic/imgs/work/${arch ? "arch/thumbnail.jpg" : `${id}/${project.thumbnail}`}`;
 </script>
 
 <a href="/work/{arch ? "arch" : id}" class:arch>

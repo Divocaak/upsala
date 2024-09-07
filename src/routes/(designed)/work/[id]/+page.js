@@ -4,37 +4,22 @@ export async function load({ params, fetch }) {
   const response = await fetch('/dynamic/content.json');
   const data = await response.json();
 
-  const object = data.work.projects[id];
+  const object = data.projects[id];
 
-  const projectsTotal = data.work.projects.length - 1;
-  const referenceIds = getThreeRandomNumbersExcludingX(0, projectsTotal, id);
+  const randomObjects = getRandomObjects(data.projects, 3);
 
   return {
+    id: id,
     project: object,
-    references: [
-      data.work.projects[referenceIds[0]],
-      data.work.projects[referenceIds[1]],
-      data.work.projects[referenceIds[2]]
-    ],
-    referenceIds: referenceIds
+    references: randomObjects
   };
 }
 
-function getThreeRandomNumbersExcludingX(min, max, x) {
-  const randomNumbers = new Set();
-
-  while (randomNumbers.size < 3) {
-    const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
-
-    if (max < 3) {
-      randomNumbers.add(randomNumber);
-      continue;
-    }
-    
-    if (randomNumber !== parseInt(x)) {
-      randomNumbers.add(randomNumber);
-    }
-  }
-
-  return Array.from(randomNumbers);
+function getRandomObjects(data, numObjects) {
+  const keys = Object.keys(data);
+  const shuffledKeys = keys.sort(() => 0.5 - Math.random());
+  const selectedKeys = shuffledKeys.slice(0, numObjects);
+  const resultArray = selectedKeys.map(key => ({ id: key, ...data[key] }));
+  const shuffledResult = resultArray.sort(() => 0.5 - Math.random());
+  return shuffledResult;
 }

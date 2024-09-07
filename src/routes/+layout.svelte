@@ -1,4 +1,14 @@
 <script>
+	/* 
+		TODO
+		- lazyload images
+		- arch
+			- po kliku na první okno
+			- po kliku na okno pod (subkategorie), carousel
+				- bez šipky
+				- admin
+			- formulář je ve figmě
+	*/
 	let cursor;
 
 	function handleMouseMove(e) {
@@ -175,12 +185,11 @@
 		
 		pointer-events: none;
 		
-		mix-blend-mode: difference;
-		
 		background-color: var(--pink);
+		opacity: .75;
 		z-index: 10000;
 
-		transition: all 250ms ease-out;
+		transition: all 100ms ease-out;
 	}
 
 	:global(html){
@@ -192,8 +201,8 @@
 		--border-radius: 5px;
 		--link-transition: 0.35s;
 		--thick-text: #1d1d1b;
-		--text-16: calc(8px + (0.926vw * 0.15));
-		--text-20: calc(10px + (1.157vw * 0.15));
+		--text-16: calc(8px + (0.926vw * 0.35));
+		--text-20: calc(10px + (1.157vw * 0.25));
 		--text-24: calc(12px + (1.389vw * 0.15));
 		--text-32: calc(16px + (1.852vw * 0.15));
 		--text-36: calc(18px + (2.083vw * 0.15));

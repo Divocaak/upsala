@@ -2,8 +2,9 @@
 	import Siema from 'siema';
 	import { onMount, createEventDispatcher } from 'svelte';
 
-	import { homepage } from '/dynamic/content.json';
 	import CarouselItem from '$lib/CarouselItem.svelte';
+
+	export let objects;
 
 	export let perPage = 1;
 	export let loop = true;
@@ -44,7 +45,7 @@
 			onChange: handleChange
 		});
 
-		dispatch('change', { data: homepage[currentIndex] });
+		dispatch('change', { data: objects[currentIndex].homepage });
 
 		if (autoplay) {
 			timer = setInterval(right, autoplay);
@@ -86,11 +87,12 @@
 	}
 
 	function handleChange(event) {
+		resetInterval();
 		currentIndex = controller.currentSlide;
 		dispatch('change', {
 			currentSlide: controller.currentSlide,
 			slideCount: controller.innerElements.length,
-			data: homepage[currentIndex]
+			data: objects[currentIndex].homepage
 		});
 	}
 
@@ -114,9 +116,14 @@
 
 <div class="carousel">
 	<div class="slides" bind:this={siema}>
-		{#each homepage as homepageItem, i}
-			<CarouselItem {homepageItem} />
+		{#each objects as object}
+			<CarouselItem {object}/>
 		{/each}
+	</div>
+	<div class="content">
+		<h1 style="color: {objects[currentIndex].homepage.textColor}">
+			{objects[currentIndex].homepage.text}<br />{objects[currentIndex].homepage.description}
+		</h1>
 	</div>
 	{#if controls}
 		<button class="left" on:click={left} use:resetInterval={autoplay} aria-label="left">
@@ -127,7 +134,7 @@
 		</button>
 	{/if}
 	{#if dots}
-		<div class="dots-wrapper" style="--available-color:{homepage[currentIndex].textColor};">
+		<div class="dots-wrapper" style="--available-color:{objects[currentIndex].homepage.textColor};">
 			{#each { length: totalDots } as _, i}
 				<button
 					on:click={() => go(i * currentPerPage)}
@@ -171,8 +178,8 @@
 	.dots-wrapper {
 		position: absolute;
 		bottom: 0;
-		
-		width:100%;
+
+		width: 100%;
 
 		display: flex;
 		align-items: center;
@@ -193,7 +200,7 @@
 		width: 25px;
 
 		background-color: var(--available-color);
-		opacity: .6;
+		opacity: 0.6;
 		border-radius: 50%;
 
 		transition: all 0.35s;
@@ -210,5 +217,27 @@
 
 	.dot:hover {
 		background-color: var(--pink);
+	}
+
+	.content {
+		position: absolute;
+		bottom: 0;
+
+		padding: 0 35px;
+
+		box-sizing: border-box;
+	}
+
+	h1 {
+		font-weight: 400;
+		font-size: 40px;
+		line-height: 138%;
+		text-transform: uppercase;
+	}
+
+	@media screen and (max-width: 600px) {
+		.content {
+			bottom: 5%;
+		}
 	}
 </style>

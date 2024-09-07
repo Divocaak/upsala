@@ -6,7 +6,9 @@
 
 	export let data;
 
-	const landing = `/dynamic/imgs/work/${data.project.galleryFolderName}/${data.project.landingMedia ?? data.project.thumbnail}`;
+	const referenceEntries = Object.entries(data.references);
+
+	const landing = `/dynamic/imgs/work/${data.id}/${data.project.landingMedia ?? data.project.thumbnail}`;
 </script>
 
 <LeadContainer title={data.project.label} textSmall={data.project.description}>
@@ -28,11 +30,11 @@
 			{#if Array.isArray(image)}
 				<div class="image-group">
 					{#each image as actualImage}
-						<img src="/dynamic/imgs/work/{data.project.galleryFolderName}/{actualImage}" alt="" />
+						<img src="/dynamic/imgs/work/{data.id}/{actualImage}" alt="" />
 					{/each}
 				</div>
 			{:else}
-				<img src="/dynamic/imgs/work/{data.project.galleryFolderName}/{image}" alt="" />
+				<img src="/dynamic/imgs/work/{data.id}/{image}" alt="" />
 			{/if}
 		{/each}
 	</div>
@@ -40,8 +42,8 @@
 
 <StrikeThroughText label="reference" />
 <WorkWrapper>
-	{#each data.references as project, i}
-		<WorkTile {project} id={data.referenceIds[i]} />
+	{#each referenceEntries as [id, project]}
+		<WorkTile {project} id={project.id} />
 	{/each}
 </WorkWrapper>
 

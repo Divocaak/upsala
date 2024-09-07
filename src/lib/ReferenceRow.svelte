@@ -3,7 +3,7 @@
 </script>
 
 <div>
-	<p>{label}<img src="/dynamic/imgs/{media}" alt={mediaAlt} /></p>
+	<p>{label}<img src="/dynamic/imgs/reference/{media}" alt={mediaAlt} /></p>
 </div>
 
 <style>
