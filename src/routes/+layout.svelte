@@ -1,6 +1,7 @@
 <script>
 	/* 
 		TODO
+		https://github.com/json-editor/json-editor?tab=readme-ov-file
 		- lazyload images
 		- arch
 			- po kliku na první okno
