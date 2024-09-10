@@ -28,8 +28,9 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"siema": "^1.5.1",
+		"@json-editor/json-editor": "^2.15.1",
 		"darwin": "^0.0.1",
+		"siema": "^1.5.1",
 		"x64": "^1.0.0"
 	}
 }

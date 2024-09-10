@@ -1,241 +1,58 @@
 {
-    "filters": [
+  "filters": [
+    "logo",
+    "vizuální identita",
+    "orientační systém",
+    "tiskoviny"
+  ],
+  "projects": [
+    {
+      "homepage": {
+        "index": 2,
+        "image": "homepage.jpg",
+        "text": "maxi dental",
+        "description": "",
+        "textColor": "#ffffff"
+      },
+      "id": 0,
+      "label": "maxi dental",
+      "description": "Břeclavská zubní klinika Maxi DENTAL má po více než deseti letech nové logo a firemní identitu. Zubní klinika z Břeclavi prošla razantní proměnou, a čerstvý vizuální styl byl její neodmyslitelnou součástí.\n\nTvorbu vizuální identity pro Maxi DENTAL inspirovalo zaměření klienta. Chtěli jsme vytvořit svěží logo s nenápadným odkazem na zubní odvětví, ve kterém klinika působí. Nejprve jsme si pohrávali se základními motivy zubů a úsměvu až do doby, kdy z nich vyšly jednoduché linie. Na ně jsme navázali při tvorbě custom fontu, na kterém stojí logo i celá firemní identita.\n\nFont jsme spárovali se tlumenou modrou a doplnili sadou hravých piktogramů na míru. Výsledkem je minimalistický vizuál, který se dá kreativně aplikovat na nejrůznější materiály.",
+      "category": "logo / vizuální identita / tiskoviny / orientační systém",
+      "year": "2023 - 2024",
+      "imgsPath": "work/0000",
+      "thumbnail": "ccea313d6d178469276de8798f64ea4f.jpeg",
+      "landingMedia": "468f2554b930e3947e3111a0dffa07df.mp4",
+      "images": [
+        "988fb411590074c9510b2675579c528f.jpeg",
+        [
+          "0a2db84bd9decc6c1df725956083ca4a.jpeg",
+          "1213b4de39cfeb379ff2b83526060940.jpeg"
+        ]
+      ],
+      "filters": [
         "logo",
         "vizuální identita",
-        "orientační systém",
-        "tiskoviny"
-    ],
-    "projects": {
-        "0": {
-            "homepage": {
-                "index": 2,
-                "imgPath": "homepage.jpg",
-                "text": "maxi dental",
-                "description": "",
-                "textColor": "#ffffff"
-            },
-            "label": "maxi dental",
-            "description": "Břeclavská zubní klinika Maxi DENTAL má po více než deseti letech nové logo a firemní identitu. Zubní klinika z Břeclavi prošla razantní proměnou, a čerstvý vizuální styl byl její neodmyslitelnou součástí.\n\nTvorbu vizuální identity pro Maxi DENTAL inspirovalo zaměření klienta. Chtěli jsme vytvořit svěží logo s nenápadným odkazem na zubní odvětví, ve kterém klinika působí. Nejprve jsme si pohrávali se základními motivy zubů a úsměvu až do doby, kdy z nich vyšly jednoduché linie. Na ně jsme navázali při tvorbě custom fontu, na kterém stojí logo i celá firemní identita.\n\nFont jsme spárovali se tlumenou modrou a doplnili sadou hravých piktogramů na míru. Výsledkem je minimalistický vizuál, který se dá kreativně aplikovat na nejrůznější materiály.",
-            "category": "logo / vizuální identita / tiskoviny / orientační systém",
-            "year": "2023 - 2024",
-            "thumbnail": "dental.jpg",
-            "landingMedia": "Comp 2.mp4",
-            "images": [
-                "02.jpg",
-                "03.jpg",
-                "09.jpg",
-                [
-                    "05.jpg",
-                    "04.jpg"
-                ],
-                [
-                    "08.jpg",
-                    "07.jpg"
-                ],
-                "06.jpg",
-                "10.jpg",
-                "11.jpg",
-                [
-                    "12.jpg",
-                    "13.jpg"
-                ]
-            ],
-            "filters": [
-                "logo",
-                "vizuální identita",
-                "tiskoviny",
-                "orientační systém"
-            ]
-        },
-        "1": {
-            "homepage": {
-                "index": 1,
-                "imgPath": "homepage.jpg",
-                "text": "městská knihovna",
-                "description": "velké meziříčí",
-                "textColor": "#F5E8C6"
-            },
-            "label": "MĚSTSKÁ KNIHOVNA VELKÉ MEZIŘÍČÍ",
-            "description": "Navrhování identity pro Městskou knihovnu Velké Meziříčí pro nás bylo příjemnou a inspirativní zkušeností. Zástupci města a knihovny chtěli hravý vizuál, který by reprezentoval knihovnu na úrovni profesionální/oficiální instituce, a zároveň nepůsobil dětinsky.\n\nLogo jsme proto postavili na jednoduchých blocích, které dávají prostor fantazii každého k vlastnímu výkladu. Jsou to knihy? Sloupy? Nebo jen geometrické tvary? Kdoví\n\nS vizuálem si člověk vyhraje na jakémkoli materiálu. Bloky jsou totiž variabilní a jde je jednoduše skládat, rozkládat a nebo rozházet dle libosti.\n\nHravé prvky mají své místo v samotném logu, najdou ale uplatnění na jakémkoli materiálu. Plakáty? Čtenářské kartičky? Ukazatele v prostoru?\n\nDěkujeme UYO architekti a zástupcům města i knihovny za příležitost podílet se na tomto úžasném ráji na Zemi pro všechny knihomily.",
-            "category": "logo / vizuální identita / orientační systém",
-            "year": "2023",
-            "thumbnail": "mkvm.jpg",
-            "landingMedia": null,
-            "images": [
-                "01-2.jpg",
-                "sklo_text.jpg",
-                "05-2.jpg",
-                "03-2.jpg",
-                [
-                    "02-2.jpg",
-                    "stickers.jpg"
-                ],
-                "08-2.jpg",
-                [
-                    "07-2.jpg",
-                    "Id Card.jpg"
-                ],
-                "04-2.jpg",
-                "06-2.jpg"
-            ],
-            "filters": [
-                "logo",
-                "vizuální identita",
-                "orientační systém"
-            ]
-        },
-        "2": {
-            "homepage": {
-                "index": 0,
-                "imgPath": "homepage.jpg",
-                "text": "kalina",
-                "description": "gallery | apartments",
-                "textColor": "#000000"
-            },
-            "label": "Kalina Gallery & Apartments",
-            "description": "Galerie se zaměřuje na prezentaci současného umění etablovaných i začínajících výtvarných umělců.\n\nJe charakteristická výběrem výjimečných talentů, svou rozmanitostí i snahou o širší kulturní dopad.\n\nÚzká spolupráce s umělci a důkladné porozumění formám uměleckého vyjádření jsou ústředním bodem její identity. Inspirativní jsou také četná setkání s umělci v samotné galerii. Kalina Gallery úzce spolupracuje se všemi svými umělci tak, aby dokázala zajistit nejvyšší možnou úroveň prezentace, a to v prostoru, který je pro tento účel přímo stvořený.\n\nDíky jedinečnému výběru vysoce hodnotných sběratelských uměleckých děl a svou nekompromisní věrností inovacím světového umění, se galerie zavázala plnit poslání leadera ve svém oboru. Vstupuje na trh s uměním a má široký rozsah pro různé typy sběratelů i sbírek",
-            "category": "logo / vizuální identita / orientační systém",
-            "year": "2022",
-            "thumbnail": "02-3.jpg",
-            "landingMedia": "01.jpg",
-            "images": [
-                [
-                    "01-4.jpg",
-                    "11-2.jpg"
-                ],
-                [
-                    "03-3.jpg",
-                    "05-3.jpg"
-                ],
-                "09-2.jpg"
-            ],
-            "filters": [
-                "logo",
-                "vizuální identita",
-                "orientační systém"
-            ]
-        }
-    },
-    "reference": [
-        {
-            "label": "FTV Prima",
-            "imgPath": "0.jpg"
-        },
-        {
-            "label": "E.ON",
-            "imgPath": "1.jpg"
-        },
-        {
-            "label": "Seznam.cz",
-            "imgPath": "2.jpg"
-        },
-        {
-            "label": "Státní zemědělská a potravinářská inspekce",
-            "imgPath": "3.jpg"
-        },
-        {
-            "label": "Česká spořitelna",
-            "imgPath": "4.jpg"
-        },
-        {
-            "label": "KBC (ČSOB)",
-            "imgPath": "5.jpg"
-        },
-        {
-            "label": "Alca plast",
-            "imgPath": "0.jpg"
-        },
-        {
-            "label": "ČAD Blansko",
-            "imgPath": "1.jpg"
-        },
-        {
-            "label": "OKAY",
-            "imgPath": "2.jpg"
-        },
-        {
-            "label": "Vermont",
-            "imgPath": "3.jpg"
-        },
-        {
-            "label": "Gant",
-            "imgPath": "4.jpg"
-        },
-        {
-            "label": "Galerie Moritz, Olomouc",
-            "imgPath": "5.jpg"
-        },
-        {
-            "label": "Holiday Inn Prague Airport",
-            "imgPath": "0.jpg"
-        },
-        {
-            "label": "Hotel KOCOUR, Třebíč",
-            "imgPath": "1.jpg"
-        },
-        {
-            "label": "FAIRHOTEL, Brno",
-            "imgPath": "2.jpg"
-        }
-    ],
-    "arch": {
-        "archival": {
-            "0": {
-                "label": "šanony",
-                "text": "šanony A4 s kroužkovým zakladačem",
-                "imgs": [
-                    "0.jpg",
-                    "1.jpg"
-                ],
-                "icon": "icon.png"
-            },
-            "1": {
-                "label": "slohy",
-                "text": "klopová sloha a4",
-                "imgs": [
-                    "0.jpg"
-                ],
-                "icon": "icon.png"
-            },
-            "2": {
-                "label": "Vazačky",
-                "text": "šanony A4 s kroužkovým zakladačem",
-                "imgs": [
-                    "0.jpg"
-                ],
-                "icon": "icon.png"
-            }
-        },
-        "presentational": {
-            "0": {
-                "label": "test",
-                "text": "dadsa",
-                "imgs": [
-                    "0.jpg",
-                    "1.jpg",
-                    "2.jpg"
-                ],
-                "icon": "icon.png"
-            }
-        },
-        "boxes": {
-            "0": {
-                "label": "asd",
-                "text": "dsn",
-                "imgs": [
-                    "0.jpg"
-                ],
-                "icon": "icon.png"
-            },
-            "1": {
-                "label": "slohy",
-                "text": "sndfn",
-                "imgs": [
-                    "0.jpg",
-                    "1.jpg"
-                ],
-                "icon": "icon.png"
-            }
-        }
+        "tiskoviny",
+        "orientační systém"
+      ]
     }
+  ],
+  "reference": {
+    "imgsPath": "reference/",
+    "references": [
+      {
+        "label": "FTV Prima",
+        "image": "b83c5222a29ff4bc2326431a991b53a9.jpeg"
+      },
+      {
+        "label": "E.ON",
+        "image": "627e94394fe57da929d278af87ea50da.jpeg"
+      }
+    ]
+  },
+  "arch": {
+    "archival": [],
+    "presentational": [],
+    "boxes": []
+  }
 }

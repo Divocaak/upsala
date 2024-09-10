@@ -1,14 +1,6 @@
 <script>
 	/* 
-		TODO
-		https://github.com/json-editor/json-editor?tab=readme-ov-file
-		- lazyload images
-		- arch
-			- po kliku na první okno
-			- po kliku na okno pod (subkategorie), carousel
-				- bez šipky
-				- admin
-			- formulář je ve figmě
+		TODO lazyload images
 	*/
 	let cursor;
 
