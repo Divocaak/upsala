@@ -1,6 +1,7 @@
 <script>
 	import { onMount } from 'svelte';
 	import { JSONEditor } from '@json-editor/json-editor';
+	import { Base64ImageEditor } from '$lib/Base64ImageEditor';
 
 	import schema from '/dynamic/schema';
 	import data from '/dynamic/content';
@@ -22,10 +23,17 @@
 			startval: jsonData
 		});
 
+		JSONEditor.defaults.editors.base64image = Base64ImageEditor;
 		JSONEditor.defaults.resolvers.unshift((schema) => {
-			if (schema.type === 'data-url') {
-				console.log('asdasd');
-				return 'location';
+			if (schema.type === 'string' && schema.media && schema.media.binaryEncoding === 'base64') {
+				if (
+					schema.media.type === 'img/png' ||
+					schema.media.type === 'img/jpeg' ||
+					schema.media.type === 'video/mp4' ||
+					schema.media.type === 'video/quicktime'
+				) {
+					return 'base64image';
+				}
 			}
 		});
 
@@ -70,3 +78,21 @@
 
 <div bind:this={editorContainer} class="editor-container"></div>
 <button on:click={saveJSON}>Get JSON Data</button>
+
+<style>
+	.form-group {
+		margin-bottom: 1rem;
+	}
+
+	label {
+		font-weight: bold;
+		margin-bottom: 0.5rem;
+		display: block;
+	}
+
+	input[type='text'] {
+		padding: 0.5rem;
+		font-size: 1rem;
+		width: 100%;
+	}
+</style>

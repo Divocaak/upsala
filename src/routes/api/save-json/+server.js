@@ -10,24 +10,24 @@ export async function POST({ request }) {
 
         await processImages(data.projects, project => project.imgsPath);
 
-        /* if (data.reference && data.reference.references) {
+        if (data.reference && data.reference.references) {
             await processReferences(data.reference.references, data.reference.imgsPath);
-        } */
+        }
 
-        /* await processImages(data.arch.archival, subarch => subarch.imgsPath);
+        await processImages(data.arch.archival, subarch => subarch.imgsPath);
         await processImages(data.arch.presentational, subarch => subarch.imgsPath);
-        await processImages(data.arch.boxes, subarch => subarch.imgsPath); */
+        await processImages(data.arch.boxes, subarch => subarch.imgsPath);
 
         // save json
-        const path = './dynamic/content.json';
-        fs.writeFileSync(path, JSON.stringify(data, null, 2));
+        const jsonPath = './dynamic/content.json';
+        fs.writeFileSync(jsonPath, JSON.stringify(data, null, 2));
 
         return new Response(JSON.stringify({
             status: 200,
             body: { message: 'File saved successfully' }
         }));
     } catch (error) {
-        console.error('Error saving file:', error.message);
+        console.error('Error saving file:', error.stack);
         return new Response(JSON.stringify({
             status: 500,
             body: { message: 'Error saving file' }
@@ -61,6 +61,10 @@ const processImages = async (items, pathGetter) => {
             }
         }
 
+        if (item.homepage && checkForBase64(item.homepage.image)) {
+            item.homepage.image = await saveImage(item.homepage.image, pathGetter(item));
+        }
+
         if (checkForBase64(item.thumbnail)) {
             item.thumbnail = await saveImage(item.thumbnail, pathGetter(item));
         }
@@ -79,7 +83,7 @@ const updatePaths = (projects, archival, presentational, boxes) => {
     const addIdToPath = (items) => {
         items.forEach(item => {
             if (!item.imgsPath.endsWith(item.id)) {
-                item.imgsPath = path.join(item.imgsPath, item.id);
+                item.imgsPath = path.join(item.imgsPath, item.id.toString());
             }
         });
     };
@@ -106,7 +110,7 @@ const saveImage = async (base64Data, directory) => {
     const buffer = Buffer.from(base64String, 'base64');
 
     const filename = crypto.randomBytes(16).toString('hex') + `.${extension}`;
-    const dir = path.join('./dynamic/imgs', directory);
+    const dir = path.join('./dynamic/imgs/', directory);
 
     if (!fs.existsSync(dir)) {
         fs.mkdirSync(dir, { recursive: true });
@@ -114,5 +118,5 @@ const saveImage = async (base64Data, directory) => {
     const filePath = path.join(dir, filename);
     fs.writeFileSync(filePath, buffer);
 
-    return filename;
+    return filePath;
 };
