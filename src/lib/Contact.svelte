@@ -10,7 +10,7 @@
 
 <style>
 	div {
-        margin: 0 5.208vw;
+		margin: 0 5.208vw;
 	}
 
 	p,
@@ -23,7 +23,7 @@
 
 	a {
 		color: var(--pink);
-        transition: all var(--link-transition);
+		transition: all var(--link-transition);
 	}
 
 	a:hover {

@@ -1,10 +1,9 @@
 <div>
-    <a href="/work/arch/form">Nezávazná kalkulace</a>
+	<a href="/work/arch/form">Nezávazná kalkulace</a>
 </div>
 
 <style>
 	a {
-
 		width: 500px;
 		font-weight: 400;
 		font-size: var(--text-32);
@@ -21,8 +20,8 @@
 		color: white;
 	}
 
-    div{
-        margin-top: 200px;
-        text-align: center;
-    }
+	div {
+		margin-top: 200px;
+		text-align: center;
+	}
 </style>

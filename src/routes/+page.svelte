@@ -27,11 +27,10 @@
 		height: 100vh;
 
 		padding: 0;
-		margin:0;
+		margin: 0;
 	}
 
 	.content-wrapper {
-
 		position: absolute;
 		top: 0;
 		width: 100%;

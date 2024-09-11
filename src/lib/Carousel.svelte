@@ -117,7 +117,7 @@
 <div class="carousel">
 	<div class="slides" bind:this={siema}>
 		{#each objects as object}
-			<CarouselItem {object}/>
+			<CarouselItem {object} />
 		{/each}
 	</div>
 	<div class="content">

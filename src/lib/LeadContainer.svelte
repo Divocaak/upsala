@@ -82,7 +82,8 @@
 			width: 100%;
 		}
 
-		.title h1, .text p{
+		.title h1,
+		.text p {
 			margin: 0 38px;
 		}
 	}

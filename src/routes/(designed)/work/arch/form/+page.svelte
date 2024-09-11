@@ -1,11 +1,11 @@
 <script>
-    import { onMount } from 'svelte';
+	import { onMount } from 'svelte';
 
-let href;
+	let href;
 
-onMount(() => {
-  href = window.location.href;
-});
+	onMount(() => {
+		href = window.location.href;
+	});
 </script>
 
 <p class="label">Poptávkový formulář</p>

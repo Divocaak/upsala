@@ -2,7 +2,7 @@
 	import Siema from 'siema';
 	import { onMount, createEventDispatcher } from 'svelte';
 
-	export let subName, id, object;
+	export let object;
 
 	const perPage = 1;
 	const autoplay = 0;

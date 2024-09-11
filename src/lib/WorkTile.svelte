@@ -2,12 +2,12 @@
 	export let project = null;
 	export let arch = false;
 
-	const thumbnail = arch ? "/arch_thumbnail.jpg" : project.thumbnail;
+	const thumbnail = arch ? '/arch_thumbnail.jpg' : project.thumbnail;
 </script>
 
-<a href="/work/{arch ? "arch" : project.id}" class:arch>
+<a href="/work/{arch ? 'arch' : project.id}" class:arch>
 	<div class="thumbnail" style="background-image: url('{thumbnail}');"></div>
-	<p>{arch ? "projekt arch" : project.label}</p>
+	<p>{arch ? 'projekt arch' : project.label}</p>
 </a>
 
 <style>
@@ -36,7 +36,7 @@
 		border-radius: var(--border-radius);
 		z-index: 10;
 	}
-	
+
 	.thumbnail::before {
 		content: '';
 		position: absolute;
@@ -44,7 +44,7 @@
 		left: 0;
 		width: 100%;
 		height: 100%;
-		
+
 		border-radius: var(--border-radius);
 		background-color: #ff67c2;
 		opacity: 0;

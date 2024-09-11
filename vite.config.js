@@ -5,13 +5,13 @@ import path from 'path';
 export default defineConfig({
 	server: {
 		fs: {
-			allow: [path.resolve(__dirname, 'dynamic')],
-		},
+			allow: [path.resolve(__dirname, 'dynamic')]
+		}
 	},
 	resolve: {
 		alias: {
-			$dynamic: path.resolve(__dirname, 'dynamic'),
-		},
+			$dynamic: path.resolve(__dirname, 'dynamic')
+		}
 	},
 	plugins: [sveltekit()]
 });

@@ -26,14 +26,14 @@
 		text-align: center;
 	}
 
-    .contact-container{
-        display: flex;
+	.contact-container {
+		display: flex;
 		flex-wrap: wrap;
 
-        justify-content: center;
-        position: relative;
-        width: 100%;
+		justify-content: center;
+		position: relative;
+		width: 100%;
 		left: 0;
-        padding-bottom: 40vh;
-    }
+		padding-bottom: 40vh;
+	}
 </style>

@@ -169,23 +169,23 @@
 
 	.cursor {
 		position: absolute;
-		
+
 		height: 30px;
 		width: 30px;
-		
+
 		border-radius: 50%;
 		transform: translateX(-50%) translateY(-50%);
-		
+
 		pointer-events: none;
-		
+
 		background-color: var(--pink);
-		opacity: .75;
+		opacity: 0.75;
 		z-index: 10000;
 
 		/* transition: all 100ms ease-out; */
 	}
 
-	:global(html){
+	:global(html) {
 		cursor: none !important;
 	}
 

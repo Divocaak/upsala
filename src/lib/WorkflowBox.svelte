@@ -16,7 +16,7 @@
 		flex-direction: row;
 
 		margin: 0 38px;
-		padding: 50px 0 ;
+		padding: 50px 0;
 	}
 
 	p:first-of-type {

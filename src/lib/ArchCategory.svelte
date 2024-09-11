@@ -1,19 +1,21 @@
 <script>
-    import { goto } from '$app/navigation';
+	import { goto } from '$app/navigation';
 
 	export let heading, text, mediaPath, sub;
 </script>
 
-<div class="container" on:click={goto(`/work/arch/${sub}`)}>
-    <div class="image" style="background-image: url('{mediaPath}');"></div>
+<button type="button" class="container" on:click={goto(`/work/arch/${sub}`)}>
+	<div class="image" style="background-image: url('{mediaPath}');"></div>
 	<div class="texts-wrapper">
 		<p>{heading}</p>
 		<p>{text}</p>
 	</div>
-</div>
+</button>
 
 <style>
 	.container {
+		all: unset;
+
 		position: relative;
 		width: 100%;
 
@@ -32,9 +34,9 @@
 	}
 
 	.image {
-        position: relative;
+		position: relative;
 		width: 100%;
-        height: 40vh;
+		height: 40vh;
 
 		background-position: center;
 		background-repeat: no-repeat;
@@ -42,7 +44,7 @@
 		border-radius: var(--border-radius);
 	}
 
-    .image::before{
+	.image::before {
 		content: '';
 		position: absolute;
 		top: 0;
@@ -50,8 +52,8 @@
 		width: 100%;
 		height: 100%;
 
-        z-index: 10;
-		
+		z-index: 10;
+
 		border-radius: var(--border-radius);
 		background-color: #ff67c2;
 		opacity: 0;
@@ -75,7 +77,7 @@
 		font-size: var(--text-36);
 		line-height: 138%;
 
-        transition: all .45s;
+		transition: all 0.45s;
 	}
 
 	p:last-of-type {
@@ -83,14 +85,14 @@
 		font-size: var(--text-20);
 		line-height: 138%;
 
-        padding-top: 10%;
+		padding-top: 10%;
 		padding-right: 30%;
 	}
 
-	@media (max-width: 991px){
+	@media (max-width: 991px) {
 		.container {
-            flex: 1 1 calc(100% - 32px);
-            padding-bottom: 150px;
+			flex: 1 1 calc(100% - 32px);
+			padding-bottom: 150px;
 		}
 	}
 </style>

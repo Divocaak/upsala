@@ -1,5 +1,5 @@
 <script>
-    export let textColor = "#000000";
+	export let textColor = '#000000';
 </script>
 
 <footer style="--text-color: {textColor};">

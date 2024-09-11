@@ -12,7 +12,7 @@
 </div>
 
 {#each data.objects as object}
-	<ArchSub subName={data.subName} id={object.id} object={object} />
+	<ArchSub {object} />
 {/each}
 
 <ArchButton />

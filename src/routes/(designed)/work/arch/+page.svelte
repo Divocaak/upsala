@@ -13,19 +13,19 @@
 		heading="Archivační"
 		text="Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat."
 		mediaPath="/_placeholders/4.jpg"
-        sub="archival"
+		sub="archival"
 	/>
 	<ArchCategory
 		heading="Prezentační"
 		text="Navrhneme design, který bude ladit s vaší firemní identitou a konkrétními potřebami. Po schválení návrhu zahájíme výrobu a obaly na míru vám doručíme až ke dveřím."
 		mediaPath="/_placeholders/4.jpg"
-        sub="presentational"
+		sub="presentational"
 	/>
 	<ArchCategory
 		heading="Obaly a Boxy"
 		text="Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat."
 		mediaPath="/_placeholders/4.jpg"
-        sub="boxes"
+		sub="boxes"
 	/>
 </div>
 <ArchButton />

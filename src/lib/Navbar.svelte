@@ -67,10 +67,10 @@
 	@media screen and (max-width: 600px) {
 		nav {
 			flex-direction: column;
-			align-items: flex-start
+			align-items: flex-start;
 		}
 
-		.home{
+		.home {
 			width: 100%;
 			text-align: center;
 			padding: 0;
@@ -78,7 +78,7 @@
 
 		nav div {
 			width: 100%;
-			padding:0;
+			padding: 0;
 			text-align: center;
 			margin-top: 10px;
 		}

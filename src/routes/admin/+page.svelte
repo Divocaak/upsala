@@ -4,10 +4,10 @@
 	import { Base64ImageEditor } from '$lib/Base64ImageEditor';
 
 	import schema from '/dynamic/schema';
-	
+
 	let editor;
 	let editorContainer;
-	
+
 	let data;
 	onMount(async () => {
 		const res = await fetch('/dynamic/content.json');
