@@ -6,9 +6,7 @@
 
 	export let data;
 
-	const referenceEntries = Object.entries(data.references);
-
-	const landing = `/dynamic/imgs/work/${data.id}/${data.project.landingMedia ?? data.project.thumbnail}`;
+	const landing = data.project.landingMedia ?? data.project.thumbnail;
 </script>
 
 <LeadContainer title={data.project.label} textSmall={data.project.description}>
@@ -19,7 +17,7 @@
 <div class="images-container">
 	{#if landing.endsWith('.mp4')}
 		<video class="main-image" autoplay muted loop preload>
-			<source src="{landing}" type="video/mp4" />
+			<source src={landing} type="video/mp4" />
 			Your browser does not support the video tag.
 		</video>
 	{:else}
@@ -30,11 +28,11 @@
 			{#if Array.isArray(image)}
 				<div class="image-group">
 					{#each image as actualImage}
-						<img src="/dynamic/imgs/work/{data.id}/{actualImage}" alt="" />
+						<img src={actualImage} alt="" />
 					{/each}
 				</div>
 			{:else}
-				<img src="/dynamic/imgs/work/{data.id}/{image}" alt="" />
+				<img src={image} alt="" />
 			{/if}
 		{/each}
 	</div>
@@ -42,8 +40,8 @@
 
 <StrikeThroughText label="reference" />
 <WorkWrapper>
-	{#each referenceEntries as [id, project]}
-		<WorkTile {project} id={project.id} />
+	{#each data.references as project}
+		<WorkTile {project} />
 	{/each}
 </WorkWrapper>
 

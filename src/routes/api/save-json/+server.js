@@ -118,5 +118,5 @@ const saveImage = async (base64Data, directory) => {
     const filePath = path.join(dir, filename);
     fs.writeFileSync(filePath, buffer);
 
-    return filePath;
+    return `/${filePath}`;
 };

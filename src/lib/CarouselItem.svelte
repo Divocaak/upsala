@@ -31,7 +31,7 @@
 
 <div
 	class="background-wrapper"
-	style="background-image: url('/dynamic/imgs/work/{object.id}/{object.homepage.imgPath}')"
+	style="background-image: url('{object.homepage.image}')"
 	on:pointerdown={handlePointerDown}
 	on:pointermove={handlePointerMove}
 	on:pointerup={handlePointerUp}

@@ -68,17 +68,14 @@
 		<div class="content-holder">
 			<p>{object.label}</p>
 			<p>{object.text}</p>
-			<img src="/dynamic/imgs/work/arch/{subName}/{id}/{object.icon}" alt="icon" />
+			<img src={object.icon} alt="icon" />
 		</div>
 	</div>
 	<div class="carousel-wrapper">
 		<div class="carousel">
 			<div class="slides" bind:this={siema}>
-				{#each object.imgs as imgPath}
-					<div
-						class="carousel-img"
-						style="background-image: url('/dynamic/imgs/work/arch/{subName}/{id}/{imgPath}');"
-					></div>
+				{#each object.images as imgPath}
+					<div class="carousel-img" style="background-image: url('{imgPath}');"></div>
 				{/each}
 			</div>
 		</div>

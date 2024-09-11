@@ -3,7 +3,7 @@
 	import WorkWrapper from '$lib/WorkWrapper.svelte';
 	import { filters, projects } from '/dynamic/content.json';
 
-	const projectsEntries = Object.entries(projects);
+	let arch = null;
 
 	let currentFilter = null;
 	function changeFilter(newFilter = null) {
@@ -20,18 +20,21 @@
 	<button class="hoverable" on:click={() => changeFilter()}>bez filtru</button>
 	<span>v</span>
 	{#each filters as filter}
-		<button class="hoverable"  on:click={() => changeFilter(filter)}>{filter}</button>
+		<button class="hoverable" on:click={() => changeFilter(filter)}>{filter}</button>
 	{/each}
 </div>
 <WorkWrapper>
-	{#each projectsEntries as [id, project], i}
+	{#each projects as project, i}
 		{#if currentFilter === null || project.filters.includes(currentFilter)}
 			{#if i == 3}
 				<WorkTile arch={true} />
 			{/if}
-			<WorkTile {project} {id} />
+			<WorkTile {project} />
 		{/if}
 	{/each}
+	{#if projects.length < 4}
+		<WorkTile arch={true} />
+	{/if}
 </WorkWrapper>
 
 <style>
@@ -54,7 +57,7 @@
 
 	.filters button {
 		text-decoration: underline;
-		transition: all .35s;
+		transition: all 0.35s;
 	}
 
 	.filters svg,

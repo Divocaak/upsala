@@ -3,7 +3,6 @@
 	import ArchSub from '$lib/ArchSub.svelte';
 
 	export let data;
-	const subs = Object.entries(data.objects);
 </script>
 
 <div class="tabs-holder">
@@ -12,8 +11,8 @@
 	<a href="/work/arch/boxes">Obaly a Boxy</a>
 </div>
 
-{#each subs as [id, object]}
-	<ArchSub subName={data.subName} {id} {object} />
+{#each data.objects as object}
+	<ArchSub subName={data.subName} id={object.id} object={object} />
 {/each}
 
 <ArchButton />

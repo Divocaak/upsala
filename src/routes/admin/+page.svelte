@@ -69,6 +69,7 @@
 	}
 
 	/* BUG validate IDs! */
+	/* BUG password protected! */
 </script>
 
 <svelte:head>
@@ -77,7 +78,7 @@
 </svelte:head>
 
 <div bind:this={editorContainer} class="editor-container"></div>
-<button on:click={saveJSON}>Get JSON Data</button>
+<button on:click={saveJSON}>Uložit</button>
 
 <style>
 	.form-group {

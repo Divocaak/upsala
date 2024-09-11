@@ -1,9 +1,9 @@
 <script>
-	export let label, media, mediaAlt;
+	export let label, image;
 </script>
 
 <div>
-	<p>{label}<img src="/dynamic/imgs/reference/{media}" alt={mediaAlt} /></p>
+	<p>{label}<img src="{image}" alt="" /></p>
 </div>
 
 <style>

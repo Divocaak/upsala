@@ -82,8 +82,8 @@
 </div>
 <StrikeThroughText label="reference" />
 <div class="reference-container">
-	{#each reference as ref}
-		<ReferenceRow label={ref.label} media={ref.imgPath} mediaAlt={ref.label} />
+	{#each reference.references as ref}
+		<ReferenceRow label={ref.label} image={ref.image}/>
 	{/each}
 </div>
 
