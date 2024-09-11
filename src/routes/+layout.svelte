@@ -182,7 +182,7 @@
 		opacity: .75;
 		z-index: 10000;
 
-		transition: all 100ms ease-out;
+		/* transition: all 100ms ease-out; */
 	}
 
 	:global(html){

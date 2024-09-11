@@ -1,7 +1,13 @@
 <script>
 	import WorkTile from '$lib/WorkTile.svelte';
 	import WorkWrapper from '$lib/WorkWrapper.svelte';
-	import { filters, projects } from '/dynamic/content.json';
+	import { onMount } from 'svelte';
+
+	let data = {};
+	onMount(async () => {
+		const res = await fetch('/dynamic/content.json');
+		data = await res.json();
+	});
 
 	let arch = null;
 
@@ -19,21 +25,25 @@
 	</svg>
 	<button class="hoverable" on:click={() => changeFilter()}>bez filtru</button>
 	<span>v</span>
-	{#each filters as filter}
-		<button class="hoverable" on:click={() => changeFilter(filter)}>{filter}</button>
-	{/each}
+	{#if data.filters}
+		{#each data.filters as filter}
+			<button class="hoverable" on:click={() => changeFilter(filter)}>{filter}</button>
+		{/each}
+	{/if}
 </div>
 <WorkWrapper>
-	{#each projects as project, i}
-		{#if currentFilter === null || project.filters.includes(currentFilter)}
-			{#if i == 3}
-				<WorkTile arch={true} />
+	{#if data.projects}
+		{#each data.projects as project, i}
+			{#if currentFilter === null || project.filters.includes(currentFilter)}
+				{#if i == 3}
+					<WorkTile arch={true} />
+				{/if}
+				<WorkTile {project} />
 			{/if}
-			<WorkTile {project} />
+		{/each}
+		{#if data.projects.length < 4}
+			<WorkTile arch={true} />
 		{/if}
-	{/each}
-	{#if projects.length < 4}
-		<WorkTile arch={true} />
 	{/if}
 </WorkWrapper>
 

@@ -4,13 +4,16 @@
 	import { Base64ImageEditor } from '$lib/Base64ImageEditor';
 
 	import schema from '/dynamic/schema';
-	import data from '/dynamic/content';
-
+	
 	let editor;
 	let editorContainer;
-	let jsonData = data;
+	
+	let data;
+	onMount(async () => {
+		const res = await fetch('/dynamic/content.json');
+		data = await res.json();
+		let jsonData = data;
 
-	onMount(() => {
 		editor = new JSONEditor(editorContainer, {
 			disable_edit_json: true,
 			disable_properties: true,
@@ -79,21 +82,3 @@
 
 <div bind:this={editorContainer} class="editor-container"></div>
 <button on:click={saveJSON}>Uložit</button>
-
-<style>
-	.form-group {
-		margin-bottom: 1rem;
-	}
-
-	label {
-		font-weight: bold;
-		margin-bottom: 0.5rem;
-		display: block;
-	}
-
-	input[type='text'] {
-		padding: 0.5rem;
-		font-size: 1rem;
-		width: 100%;
-	}
-</style>

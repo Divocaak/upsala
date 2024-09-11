@@ -4,7 +4,13 @@
 	import WorkflowBox from '$lib/WorkflowBox.svelte';
 	import ReferenceRow from '$lib/ReferenceRow.svelte';
 	import LeadContainer from '$lib/LeadContainer.svelte';
-	import { reference } from '/dynamic/content.json';
+	import { onMount } from 'svelte';
+
+	let data = {};
+	onMount(async () => {
+		const res = await fetch('/dynamic/content.json');
+		data = await res.json();
+	});
 </script>
 
 <LeadContainer
@@ -82,9 +88,11 @@
 </div>
 <StrikeThroughText label="reference" />
 <div class="reference-container">
-	{#each reference.references as ref}
-		<ReferenceRow label={ref.label} image={ref.image}/>
-	{/each}
+	{#if data.reference}
+		{#each data.reference.references as ref}
+			<ReferenceRow label={ref.label} image={ref.image} />
+		{/each}
+	{/if}
 </div>
 
 <style>
