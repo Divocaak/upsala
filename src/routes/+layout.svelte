@@ -28,7 +28,7 @@
     });
 </script>
 
-<div class="cursor" style="transform: translate({cursorX}px, {cursorY}px);"></div>
+<div class="cursor" style="transform: translate(calc(-50% + {cursorX}px), calc(-50% + {cursorY}px));"></div>
 <slot />
 
 <style>
@@ -191,7 +191,6 @@
 		width: 30px;
 
 		border-radius: 50%;
-		transform: translateX(-50%) translateY(-50%);
 
 		pointer-events: none;
 
