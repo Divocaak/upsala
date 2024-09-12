@@ -1,34 +1,35 @@
 <script>
-	/* 
-		TODO lazyload images
-	*/
+	/*  TODO lazyload images */
 	import { onMount } from 'svelte';
 
-    let cursorX = 0;
-    let cursorY = 0;
-    let isMoving = false;
+	let cursorX = 0;
+	let cursorY = 0;
+	let isMoving = false;
 
-    function handleMouseMove(e) {
-        if (!isMoving) {
-            isMoving = true;
-            requestAnimationFrame(() => {
-                cursorX = e.pageX;
-                cursorY = e.pageY;
-                isMoving = false;
-            });
-        }
-    }
+	function handleMouseMove(e) {
+		if (!isMoving) {
+			isMoving = true;
+			requestAnimationFrame(() => {
+				cursorX = e.pageX;
+				cursorY = e.pageY;
+				isMoving = false;
+			});
+		}
+	}
 
-    onMount(() => {
-        window.addEventListener('mousemove', handleMouseMove);
+	onMount(() => {
+		window.addEventListener('mousemove', handleMouseMove);
 
-        return () => {
-            window.removeEventListener('mousemove', handleMouseMove);
-        };
-    });
+		return () => {
+			window.removeEventListener('mousemove', handleMouseMove);
+		};
+	});
 </script>
 
-<div class="cursor" style="transform: translate(calc(-50% + {cursorX}px), calc(-50% + {cursorY}px));"></div>
+<div
+	class="cursor"
+	style="transform: translate(calc(-50% + {cursorX}px), calc(-50% + {cursorY}px));"
+></div>
 <slot />
 
 <style>
@@ -199,7 +200,6 @@
 		z-index: 10000;
 
 		will-change: transform;
-		transition: all 50ms ease-out;
 	}
 
 	:global(html) {
