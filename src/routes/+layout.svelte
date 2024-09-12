@@ -2,16 +2,33 @@
 	/* 
 		TODO lazyload images
 	*/
-	let cursor;
+	import { onMount } from 'svelte';
 
-	function handleMouseMove(e) {
-		cursor.style.left = `${e.pageX}px`;
-		cursor.style.top = `${e.pageY}px`;
-	}
+    let cursorX = 0;
+    let cursorY = 0;
+    let isMoving = false;
+
+    function handleMouseMove(e) {
+        if (!isMoving) {
+            isMoving = true;
+            requestAnimationFrame(() => {
+                cursorX = e.pageX;
+                cursorY = e.pageY;
+                isMoving = false;
+            });
+        }
+    }
+
+    onMount(() => {
+        window.addEventListener('mousemove', handleMouseMove);
+
+        return () => {
+            window.removeEventListener('mousemove', handleMouseMove);
+        };
+    });
 </script>
 
-<svelte:window on:mousemove={handleMouseMove} />
-<div class="cursor" bind:this={cursor}></div>
+<div class="cursor" style="transform: translate({cursorX}px, {cursorY}px);"></div>
 <slot />
 
 <style>
@@ -182,7 +199,8 @@
 		opacity: 0.75;
 		z-index: 10000;
 
-		/* transition: all 100ms ease-out; */
+		will-change: transform;
+		transition: all 50ms ease-out;
 	}
 
 	:global(html) {
