@@ -1,0 +1,84 @@
+{
+	"filters": ["logo", "vizuální identita", "orientační systém", "tiskoviny"],
+	"projects": [
+		{
+			"homepage": {
+				"index": 2,
+				"image": "/dynamic/imgs/work/0/b9447b3305bc8c507edf8690bb90c00d.jpeg",
+				"text": "maxi dental",
+				"description": "",
+				"textColor": "#ffffff"
+			},
+			"id": 0,
+			"label": "maxi dental",
+			"description": "Břeclavská zubní klinika Maxi DENTAL má po více než deseti letech nové logo a firemní identitu. Zubní klinika z Břeclavi prošla razantní proměnou, a čerstvý vizuální styl byl její neodmyslitelnou součástí.\n\nTvorbu vizuální identity pro Maxi DENTAL inspirovalo zaměření klienta. Chtěli jsme vytvořit svěží logo s nenápadným odkazem na zubní odvětví, ve kterém klinika působí. Nejprve jsme si pohrávali se základními motivy zubů a úsměvu až do doby, kdy z nich vyšly jednoduché linie. Na ně jsme navázali při tvorbě custom fontu, na kterém stojí logo i celá firemní identita.\n\nFont jsme spárovali se tlumenou modrou a doplnili sadou hravých piktogramů na míru. Výsledkem je minimalistický vizuál, který se dá kreativně aplikovat na nejrůznější materiály.",
+			"category": "logo / vizuální identita / tiskoviny / orientační systém",
+			"year": "2023 - 2024",
+			"imgsPath": "work/0",
+			"thumbnail": "/dynamic/imgs/work/0/5683966857801884c0cdfdbacf223a12.jpeg",
+			"landingMedia": "/dynamic/imgs/work/0/7cf21602499daf8798d0ab1891a1e711.mp4",
+			"images": [
+				"/dynamic/imgs/work/0/9dfe593429c3ab094a58baa9f8d32689.jpeg",
+				[
+					"/dynamic/imgs/work/0/2926e16d2ed553b9522a769925282d38.jpeg",
+					"/dynamic/imgs/work/0/4fc1f3b8bc4f57b10043175f848fedba.jpeg"
+				]
+			],
+			"filters": ["logo", "vizuální identita", "tiskoviny", "orientační systém"]
+		},
+		{
+			"homepage": {
+				"index": 1,
+				"image": "/dynamic/imgs/work/1/087feec936192a2aba12adaf3efa07ff.jpeg",
+				"text": "abstract",
+				"description": "test",
+				"textColor": "#eadcdc"
+			},
+			"id": 1,
+			"label": "prosim test",
+			"description": "je 3:16 a chci spat",
+			"category": "test / takhle sem / jo",
+			"year": "2002",
+			"imgsPath": "work/1",
+			"thumbnail": "/dynamic/imgs/work/1/c9e49260d484180c8af2adab0fb53206.jpeg",
+			"landingMedia": null,
+			"images": [
+				[
+					"/dynamic/imgs/work/1/1fd393c5db507a0fb8d530d30a855aa1.jpeg",
+					"/dynamic/imgs/work/1/90020d1754816bba361b708e9344b828.jpeg"
+				]
+			],
+			"filters": ["logo"]
+		}
+	],
+	"reference": {
+		"imgsPath": "reference/",
+		"references": [
+			{
+				"label": "FTV Prima",
+				"image": "/dynamic/imgs/reference/6a51768f922af9c4aea5b93e11f23686.jpeg"
+			},
+			{
+				"label": "E.ON",
+				"image": "/dynamic/imgs/reference/c9d6504c3b2cf8c720bcf54bbdec4bee.jpeg"
+			}
+		]
+	},
+	"arch": {
+		"archival": [
+			{
+				"id": 0,
+				"label": "asdasdasd",
+				"text": "das",
+				"imgsPath": "work/arch/archival/0",
+				"icon": "/dynamic/imgs/work/arch/archival/0/f112fd2bc1395a8f77d1eb43e2b1bb8e.png",
+				"images": [
+					"/dynamic/imgs/work/arch/archival/0/c4a708726c520ebf522291cf56500311.jpeg",
+					"/dynamic/imgs/work/arch/archival/0/14a7ac11f032ef32dd09827615f09bc3.jpeg"
+				]
+			}
+		],
+		"presentational": [],
+		"boxes": []
+	}
+}

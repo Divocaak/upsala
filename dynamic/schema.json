@@ -1,0 +1,412 @@
+{
+	"type": "object",
+	"properties": {
+		"filters": {
+			"options": {
+				"collapsed": true
+			},
+			"type": "array",
+			"description": "Seznam dostupných filtrů (filtrovací 'řádek' na stránce Work)",
+			"items": {
+				"type": "string",
+				"description": "Název filtru",
+				"title": "Filtr"
+			}
+		},
+		"projects": {
+			"type": "array",
+			"description": "Seznam projektů",
+			"options": {
+				"collapsed": true
+			},
+			"items": {
+				"type": "object",
+				"description": "Nastavení projektu",
+				"title": "Projekt",
+				"options": {
+					"collapsed": true
+				},
+				"properties": {
+					"homepage": {
+						"options": {
+							"collapsed": true
+						},
+						"type": ["object", "null"],
+						"description": "Nastavení zobrazení na domovské stránce. Vyberte 'Object' pro zobrazení na domovské stránce",
+						"properties": {
+							"index": {
+								"type": "integer",
+								"description": "Pořadí v carouselu"
+							},
+							"image": {
+								"type": "string",
+								"title": "obrázek v carouselu na homepage",
+								"media": {
+									"binaryEncoding": "base64",
+									"type": "img/png"
+								}
+							},
+							"text": {
+								"type": "string",
+								"description": "První řádek textu"
+							},
+							"description": {
+								"type": "string",
+								"description": "Druhý řádek textu"
+							},
+							"textColor": {
+								"type": "string",
+								"format": "color",
+								"description": "Barva textů na domovské stránce při tomto projektu"
+							}
+						},
+						"required": ["index", "image", "text", "textColor"]
+					},
+					"id": {
+						"type": "integer",
+						"format": "number",
+						"description": "ID projektu, unikátní"
+					},
+					"label": {
+						"type": "string",
+						"description": "Nadpis v detailu projektu"
+					},
+					"description": {
+						"type": "string",
+						"format": "textarea",
+						"description": "popis projektu v detailu projektu",
+						"options": {
+							"expand_height": true
+						}
+					},
+					"category": {
+						"type": "string",
+						"description": "psané kategorie v detailu projektu"
+					},
+					"year": {
+						"type": "string",
+						"description": "rok v detailu projektu"
+					},
+					"imgsPath": {
+						"type": "string",
+						"title": "cesta",
+						"description": "cesta k obrázkům, readonly",
+						"readonly": true,
+						"default": "work/"
+					},
+					"thumbnail": {
+						"type": "string",
+						"title": "thumbnail na kartě projektu",
+						"media": {
+							"binaryEncoding": "base64",
+							"type": "img/png"
+						}
+					},
+					"landingMedia": {
+						"type": ["string", "null"],
+						"title": "hlavní médium v detailu projektu, v případě 'null' se použije stejná fotka, jako na thumbnail",
+						"media": {
+							"binaryEncoding": "base64",
+							"type": "img/png"
+						}
+					},
+					"images": {
+						"type": "array",
+						"title": "galerie v datilu projektu, 'array' pro vybrání dvou obrázků na řádek",
+						"options": {
+							"collapsed": true
+						},
+						"items": {
+							"title": "Obrázek/Obrázky",
+							"anyOf": [
+								{
+									"type": "string",
+									"title": "obrázek",
+									"media": {
+										"binaryEncoding": "base64",
+										"type": "img/png"
+									}
+								},
+								{
+									"type": "array",
+									"options": {
+										"collapsed": true
+									},
+									"minItems": 2,
+									"maxItems": 2,
+									"description": "Dva obrázky na řádek",
+									"items": {
+										"type": "string",
+										"title": "obrázek",
+										"media": {
+											"binaryEncoding": "base64",
+											"type": "img/png"
+										}
+									}
+								}
+							]
+						}
+					},
+					"filters": {
+						"type": "array",
+						"description": "Filtry pro filtrování na stránce Work",
+						"options": {
+							"collapsed": true
+						},
+						"items": {
+							"type": "string",
+							"title": "filtr",
+							"description": "název filtru"
+						}
+					}
+				},
+				"required": [
+					"id",
+					"label",
+					"description",
+					"category",
+					"year",
+					"thumbnail",
+					"filters",
+					"imgsPath"
+				]
+			}
+		},
+		"reference": {
+			"options": {
+				"collapsed": true
+			},
+			"type": "object",
+			"description": "Reference na stránce Studio",
+			"properties": {
+				"imgsPath": {
+					"type": "string",
+					"title": "cesta",
+					"description": "cesta k obrázkům, readonly",
+					"readonly": true,
+					"default": "reference/"
+				},
+				"references": {
+					"type": "array",
+					"description": "Jednotlivé reference",
+					"options": {
+						"collapsed": true
+					},
+					"items": {
+						"type": "object",
+						"title": "reference",
+						"options": {
+							"collapsed": true
+						},
+						"properties": {
+							"label": {
+								"type": "string",
+								"description": "Název reference"
+							},
+							"image": {
+								"type": "string",
+								"title": "obrázek",
+								"media": {
+									"binaryEncoding": "base64",
+									"type": "img/png"
+								}
+							}
+						},
+						"required": ["label", "image"]
+					}
+				}
+			},
+			"required": ["imgsPath", "references"]
+		},
+		"arch": {
+			"type": "object",
+			"description": "projekt ARCH",
+			"options": {
+				"collapsed": true
+			},
+			"properties": {
+				"archival": {
+					"type": "array",
+					"description": "Arhivační",
+					"options": {
+						"collapsed": true
+					},
+					"items": {
+						"type": "object",
+						"title": "subkategorie",
+						"options": {
+							"collapsed": true
+						},
+						"properties": {
+							"id": {
+								"type": "integer",
+								"format": "number",
+								"description": "ID subkategorie, unikátní"
+							},
+							"label": {
+								"type": "string",
+								"description": "název"
+							},
+							"text": {
+								"type": "string",
+								"description": "popis"
+							},
+							"imgsPath": {
+								"type": "string",
+								"title": "cesta",
+								"description": "cesta k obrázkům, readonly",
+								"readonly": true,
+								"default": "work/arch/archival/"
+							},
+							"icon": {
+								"type": "string",
+								"title": "ikonka",
+								"media": {
+									"binaryEncoding": "base64",
+									"type": "img/png"
+								}
+							},
+							"images": {
+								"type": "array",
+								"description": "obrázky",
+								"options": {
+									"collapsed": true
+								},
+								"items": {
+									"type": "string",
+									"title": "obrázek",
+									"media": {
+										"binaryEncoding": "base64",
+										"type": "img/png"
+									}
+								}
+							}
+						},
+						"required": ["id", "label", "text", "images", "icon", "imgsPath"]
+					}
+				},
+				"presentational": {
+					"type": "array",
+					"description": "Prezentační",
+					"options": {
+						"collapsed": true
+					},
+					"items": {
+						"type": "object",
+						"title": "subkategorie",
+						"options": {
+							"collapsed": true
+						},
+						"properties": {
+							"id": {
+								"type": "integer",
+								"format": "number",
+								"description": "ID subkategorie, unikátní"
+							},
+							"label": {
+								"type": "string",
+								"description": "název"
+							},
+							"text": {
+								"type": "string",
+								"description": "popis"
+							},
+							"imgsPath": {
+								"type": "string",
+								"title": "cesta",
+								"description": "cesta k obrázkům, readonly",
+								"readonly": true,
+								"default": "work/arch/presentational/"
+							},
+							"icon": {
+								"type": "string",
+								"title": "ikonka",
+								"media": {
+									"binaryEncoding": "base64",
+									"type": "img/png"
+								}
+							},
+							"images": {
+								"type": "array",
+								"description": "obrázky",
+								"options": {
+									"collapsed": true
+								},
+								"items": {
+									"type": "string",
+									"title": "obrázek",
+									"media": {
+										"binaryEncoding": "base64",
+										"type": "img/png"
+									}
+								}
+							}
+						},
+						"required": ["id", "label", "text", "images", "icon", "imgsPath"]
+					}
+				},
+				"boxes": {
+					"type": "array",
+					"description": "Obaly a boxy",
+					"options": {
+						"collapsed": true
+					},
+					"items": {
+						"type": "object",
+						"title": "subkategorie",
+						"options": {
+							"collapsed": true
+						},
+						"properties": {
+							"id": {
+								"type": "integer",
+								"format": "number",
+								"description": "ID subkategorie, unikátní"
+							},
+							"label": {
+								"type": "string",
+								"description": "název"
+							},
+							"text": {
+								"type": "string",
+								"description": "popis"
+							},
+							"imgsPath": {
+								"type": "string",
+								"title": "cesta",
+								"description": "cesta k obrázkům, readonly",
+								"readonly": true,
+								"default": "work/arch/boxes/"
+							},
+							"icon": {
+								"type": "string",
+								"title": "ikonka",
+								"media": {
+									"binaryEncoding": "base64",
+									"type": "img/png"
+								}
+							},
+							"images": {
+								"type": "array",
+								"description": "obrázky",
+								"options": {
+									"collapsed": true
+								},
+								"items": {
+									"type": "string",
+									"title": "obrázek",
+									"media": {
+										"binaryEncoding": "base64",
+										"type": "img/png"
+									}
+								}
+							}
+						},
+						"required": ["id", "label", "text", "images", "icon", "imgsPath"]
+					}
+				}
+			}
+		}
+	},
+	"required": ["filters", "projects", "reference", "arch"]
+}
