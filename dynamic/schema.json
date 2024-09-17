@@ -350,7 +350,7 @@
 								"title": "ikonka",
 								"media": {
 									"binaryEncoding": "base64",
-									"type": "img/png"
+									"type": "img/svg"
 								}
 							},
 							"images": {
@@ -418,7 +418,7 @@
 								"title": "ikonka",
 								"media": {
 									"binaryEncoding": "base64",
-									"type": "img/png"
+									"type": "img/svg"
 								}
 							},
 							"images": {
