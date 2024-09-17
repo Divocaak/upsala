@@ -3,32 +3,32 @@ import path from 'path';
 import crypto from 'crypto';
 
 export async function POST({ request }) {
-	/* try { */
-	const data = await request.json();
+	try {
+		const data = await request.json();
 
-	updatePaths(data.projects, data.arch.archival, data.arch.presentational, data.arch.boxes);
+		updatePaths(data.projects, data.arch.archival, data.arch.presentational, data.arch.boxes);
 
-	await processImages(data.projects, (project) => project.imgsPath);
+		await processImages(data.projects, (project) => project.imgsPath);
 
-	if (data.reference && data.reference.references) {
-		await processReferences(data.reference.references, data.reference.imgsPath);
-	}
+		if (data.reference && data.reference.references) {
+			await processReferences(data.reference.references, data.reference.imgsPath);
+		}
 
-	await processImages(data.arch.archival, (subarch) => subarch.imgsPath);
-	await processImages(data.arch.presentational, (subarch) => subarch.imgsPath);
-	await processImages(data.arch.boxes, (subarch) => subarch.imgsPath);
+		await processImages(data.arch.archival, (subarch) => subarch.imgsPath);
+		await processImages(data.arch.presentational, (subarch) => subarch.imgsPath);
+		await processImages(data.arch.boxes, (subarch) => subarch.imgsPath);
 
-	// save json
-	const jsonPath = './dynamic/content.json';
-	fs.writeFileSync(jsonPath, JSON.stringify(data, null, 2));
+		// save json
+		const jsonPath = './dynamic/content.json';
+		fs.writeFileSync(jsonPath, JSON.stringify(data, null, 2));
 
-	return new Response(
-		JSON.stringify({
-			status: 200,
-			body: { message: 'File saved successfully' }
-		})
-	);
-	/* } catch (error) {
+		return new Response(
+			JSON.stringify({
+				status: 200,
+				body: { message: 'File saved successfully' }
+			})
+		);
+	} catch (error) {
 		console.error('Error saving file:', error.stack);
 		return new Response(
 			JSON.stringify({
@@ -36,7 +36,7 @@ export async function POST({ request }) {
 				body: { message: 'Error saving file' }
 			})
 		);
-	} */
+	}
 }
 
 const processReferences = async (references, imgsPath) => {
@@ -53,7 +53,10 @@ const processImages = async (items, pathGetter) => {
 			item.images = await processImageArray(item.images, pathGetter, item, 'item images');
 		}
 
-		item.homepage?.image = await processImage(item.homepage?.image, pathGetter, item, 'homepage image');
+		if (item.homepage) {
+			item.homepage.image = await processImage(item.homepage?.image, pathGetter, item, 'homepage image');
+		}
+
 		item.thumbnail = await processImage(item.thumbnail, pathGetter, item, 'thumbnail');
 		item.landingMedia = await processImage(item.landingMedia, pathGetter, item, 'landing media');
 		item.icon = await processImage(item.icon, pathGetter, item, 'icon');

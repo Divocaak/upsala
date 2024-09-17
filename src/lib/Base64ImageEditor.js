@@ -9,7 +9,7 @@ export class Base64ImageEditor extends JSONEditor.AbstractEditor {
 
 		// Create the file input
 		this.input = this.theme.getFormInputField('file');
-		this.input.setAttribute('accept', 'image/png, image/jpeg, video/mp4, video/quicktime');
+		this.input.setAttribute('accept', 'image/png, image/jpeg, video/mp4, video/quicktime, image/svg+xml');
 
 		// Preview element (for image/video preview)
 		this.preview = document.createElement('div');
@@ -67,22 +67,16 @@ export class Base64ImageEditor extends JSONEditor.AbstractEditor {
 
 		if (this.value) {
 			// Determine if it's an image or a video by checking the data URL prefix
-			if (this.value.startsWith('data:image/')) {
+			if (this.value.endsWith('.jpeg') || this.value.endsWith('.png') || this.value.startsWith('data:image/')) {
 				this.preview.innerHTML = `<img src="${this.value}" style="max-width: 200px"/>`;
-			} else if (this.value.startsWith('data:video/')) {
+			} else if (this.value.endsWith('.mp4') || this.value.endsWith('.mov') || this.value.startsWith('data:video/')) {
 				this.preview.innerHTML = `
                 <video controls style="max-width: 200px">
                     <source src="${this.value}" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>`;
-			} else if (this.value.endsWith('.jpeg') || this.value.endsWith('.png')) {
-				this.preview.innerHTML = `<img src="${this.value}" style="max-width: 200px"/>`;
-			} else if (this.value.endsWith('.mp4') || this.value.endsWith('.mov')) {
-				this.preview.innerHTML = `
-                <video controls style="max-width: 200px">
-                    <source src="${this.value}" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>`;
+			} else if (this.value.endsWith('.svg+xml')) {
+				this.preview.innerHTML = `<object data="${this.value}" width="800" height="800"></object>`;
 			}
 
 			this.preview.style.display = 'block'; // Show preview

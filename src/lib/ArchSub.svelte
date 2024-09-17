@@ -4,6 +4,8 @@
 
 	export let object;
 
+	let svgIcon = loadSVG(object.icon);
+
 	const perPage = 1;
 	const autoplay = 0;
 	const startIndex = 0;
@@ -61,6 +63,12 @@
 			slideCount: controller.innerElements.length
 		});
 	}
+
+	async function loadSVG(url) {
+		const response = await fetch(url);
+		const svgText = await response.text();
+		return svgText;
+	}
 </script>
 
 <div class="wrapper">
@@ -68,7 +76,9 @@
 		<div class="content-holder">
 			<p>{object.label}</p>
 			<p>{object.text}</p>
-			<img src={object.icon} alt="icon" />
+			{#await svgIcon then icon}
+				{@html icon}
+			{/await}
 		</div>
 	</div>
 	<div class="carousel-wrapper">
@@ -134,9 +144,9 @@
 		font-size: var(--text-20);
 		line-height: 138%;
 	}
-	.content-holder img {
+	:global(.content-holder svg) {
 		position: relative;
-		width: 50%;
+		width: 100%;
 		height: auto;
 	}
 

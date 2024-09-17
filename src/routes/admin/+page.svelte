@@ -40,8 +40,9 @@
 				if (
 					schema.media.type === 'img/png' ||
 					schema.media.type === 'img/jpeg' ||
+					schema.media.type === 'img/svg' ||
 					schema.media.type === 'video/mp4' ||
-					schema.media.type === 'video/quicktime'
+					schema.media.type === 'video/quicktime' 
 				) {
 					return 'base64image';
 				}
