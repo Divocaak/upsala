@@ -29,11 +29,15 @@ export async function POST({ request }) {
 			})
 		);
 	} catch (error) {
-		console.error('Error saving file:', error.stack);
 		return new Response(
 			JSON.stringify({
 				status: 500,
-				body: { message: 'Error saving file' }
+				body: {
+					message: 'Error saving file',
+					name: error.name,
+					message: error.message,
+					trace: error.stack
+				}
 			})
 		);
 	}

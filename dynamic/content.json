@@ -9,10 +9,10 @@
     {
       "homepage": {
         "index": 2,
-        "image": "/dynamic/imgs/work/0/b9447b3305bc8c507edf8690bb90c00d.jpeg",
+        "image": "/dynamic/imgs/work/0/71781e97161efca5ce785e068817b63b.jpeg",
         "text": "maxi dental",
         "description": "",
-        "textColor": "#ffffff"
+        "textColor": "#006d8f"
       },
       "id": 0,
       "label": "maxi dental",
@@ -39,28 +39,61 @@
     {
       "homepage": {
         "index": 1,
-        "image": "/dynamic/imgs/work/1/087feec936192a2aba12adaf3efa07ff.jpeg",
-        "text": "abstract",
-        "description": "test",
-        "textColor": "#eadcdc"
+        "image": "/dynamic/imgs/work/1726593601263/89f7addf3e769e0dbed0dc790733273d.jpeg",
+        "text": "Kalina Gallery & Apartments",
+        "description": "",
+        "textColor": "#000000"
       },
-      "id": 1,
-      "label": "prosim test",
-      "description": "je 3:16 a chci spat",
-      "category": "test / takhle sem / jo",
-      "year": "2002",
-      "imgsPath": "work/1",
-      "thumbnail": "/dynamic/imgs/work/1/c9e49260d484180c8af2adab0fb53206.jpeg",
+      "id": 1726593601263,
+      "label": "Kalina Gallery & Apartments",
+      "description": "Galerie se zaměřuje na prezentaci současného umění etablovaných i začínajících výtvarných umělců.\n\nJe charakteristická výběrem výjimečných talentů, svou rozmanitostí i snahou o širší kulturní dopad.\n\nÚzká spolupráce s umělci a důkladné porozumění formám uměleckého vyjádření jsou ústředním bodem její identity. Inspirativní jsou také četná setkání s umělci v samotné galerii. Kalina Gallery úzce spolupracuje se všemi svými umělci tak, aby dokázala zajistit nejvyšší možnou úroveň prezentace, a to v prostoru, který je pro tento účel přímo stvořený.\n\nDíky jedinečnému výběru vysoce hodnotných sběratelských uměleckých děl a svou nekompromisní věrností inovacím světového umění, se galerie zavázala plnit poslání leadera ve svém oboru. Vstupuje na trh s uměním a má široký rozsah pro různé typy sběratelů i sbírek",
+      "category": "logo / vizuální identita / orientační systém",
+      "year": "2022",
+      "imgsPath": "work/1726593601263",
+      "thumbnail": "",
+      "landingMedia": null,
+      "images": [],
+      "filters": [
+        "logo",
+        "vizuální identita",
+        "orientační systém"
+      ]
+    },
+    {
+      "homepage": null,
+      "id": 1726602381766,
+      "label": "ATEH LIGHTING",
+      "description": "ahhhh",
+      "category": "logo",
+      "year": "2022",
+      "imgsPath": "work/1726602381766",
+      "thumbnail": "/dynamic/imgs/work/1726602381766/48cf51ffe8fc235b860e279d2bc75c4a.jpeg",
       "landingMedia": null,
       "images": [
-        [
-          "/dynamic/imgs/work/1/1fd393c5db507a0fb8d530d30a855aa1.jpeg",
-          "/dynamic/imgs/work/1/90020d1754816bba361b708e9344b828.jpeg"
-        ]
+        "/dynamic/imgs/work/1726602381766/f95dd669f2ea5981bd46047c0f84cdb1.jpeg"
       ],
-      "filters": [
-        "logo"
-      ]
+      "filters": []
+    },
+    {
+      "homepage": {
+        "index": 3,
+        "image": "/dynamic/imgs/work/1726603827881/1ff9a925abc43dacae496a6fd3a59fd3.jpeg",
+        "text": "HANS ARCHITEKTI",
+        "description": "",
+        "textColor": "#ffffff"
+      },
+      "id": 1726603827881,
+      "label": "HANS ARCHITEKTI",
+      "description": "...",
+      "category": "logo",
+      "year": "2023",
+      "imgsPath": "work/1726603827881",
+      "thumbnail": "/dynamic/imgs/work/1726603827881/6d3d49964d616e44a1158d2850bdf16a.jpeg",
+      "landingMedia": null,
+      "images": [
+        "/dynamic/imgs/work/1726603827881/bfd2c0720d4de5ef82c5513350abde7f.jpeg"
+      ],
+      "filters": []
     }
   ],
   "reference": {
@@ -72,7 +105,15 @@
       },
       {
         "label": "E.ON",
-        "image": "/dynamic/imgs/reference/c9d6504c3b2cf8c720bcf54bbdec4bee.jpeg"
+        "image": "/dynamic/imgs/reference/5f192f6af04aa890843ae3835968119a.jpeg"
+      },
+      {
+        "label": "test ref",
+        "image": "/dynamic/imgs/reference/5acd5975f0685e77a6c822ebddcbd176.jpeg"
+      },
+      {
+        "label": "cache test",
+        "image": "/dynamic/imgs/reference/5057fed7b9650927816144eaaacb79a3.jpeg"
       }
     ]
   },
@@ -80,10 +121,10 @@
     "archival": [
       {
         "id": 0,
-        "label": "asdasdasd",
-        "text": "das",
+        "label": "Šanony",
+        "text": "šanony A4 s kroužkovým zakladačem",
         "imgsPath": "work/arch/archival/0",
-        "icon": "/dynamic/imgs/work/arch/archival/0/7e245adfa3999557a110bf4fff2aa6c9.svg+xml",
+        "icon": "/dynamic/imgs/work/arch/archival/0/97bdf0eb7dc98445a0d212d649b03265.png",
         "images": [
           "/dynamic/imgs/work/arch/archival/0/c4a708726c520ebf522291cf56500311.jpeg",
           "/dynamic/imgs/work/arch/archival/0/14a7ac11f032ef32dd09827615f09bc3.jpeg"
