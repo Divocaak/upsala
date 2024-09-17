@@ -26,6 +26,14 @@
 			startval: jsonData
 		});
 
+		editor.on('ready', () => {
+			editor.on('addRow', (property) => {
+				if (property.editors.id) {
+					property.editors.id.setValue(Date.now());
+				}
+			});
+		});
+
 		JSONEditor.defaults.editors.base64image = Base64ImageEditor;
 		JSONEditor.defaults.resolvers.unshift((schema) => {
 			if (schema.type === 'string' && schema.media && schema.media.binaryEncoding === 'base64') {

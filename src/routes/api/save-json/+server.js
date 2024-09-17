@@ -3,32 +3,32 @@ import path from 'path';
 import crypto from 'crypto';
 
 export async function POST({ request }) {
-	try {
-		const data = await request.json();
+	/* try { */
+	const data = await request.json();
 
-		updatePaths(data.projects, data.arch.archival, data.arch.presentational, data.arch.boxes);
+	updatePaths(data.projects, data.arch.archival, data.arch.presentational, data.arch.boxes);
 
-		await processImages(data.projects, (project) => project.imgsPath);
+	await processImages(data.projects, (project) => project.imgsPath);
 
-		if (data.reference && data.reference.references) {
-			await processReferences(data.reference.references, data.reference.imgsPath);
-		}
+	if (data.reference && data.reference.references) {
+		await processReferences(data.reference.references, data.reference.imgsPath);
+	}
 
-		await processImages(data.arch.archival, (subarch) => subarch.imgsPath);
-		await processImages(data.arch.presentational, (subarch) => subarch.imgsPath);
-		await processImages(data.arch.boxes, (subarch) => subarch.imgsPath);
+	await processImages(data.arch.archival, (subarch) => subarch.imgsPath);
+	await processImages(data.arch.presentational, (subarch) => subarch.imgsPath);
+	await processImages(data.arch.boxes, (subarch) => subarch.imgsPath);
 
-		// save json
-		const jsonPath = './dynamic/content.json';
-		fs.writeFileSync(jsonPath, JSON.stringify(data, null, 2));
+	// save json
+	const jsonPath = './dynamic/content.json';
+	fs.writeFileSync(jsonPath, JSON.stringify(data, null, 2));
 
-		return new Response(
-			JSON.stringify({
-				status: 200,
-				body: { message: 'File saved successfully' }
-			})
-		);
-	} catch (error) {
+	return new Response(
+		JSON.stringify({
+			status: 200,
+			body: { message: 'File saved successfully' }
+		})
+	);
+	/* } catch (error) {
 		console.error('Error saving file:', error.stack);
 		return new Response(
 			JSON.stringify({
@@ -36,7 +36,7 @@ export async function POST({ request }) {
 				body: { message: 'Error saving file' }
 			})
 		);
-	}
+	} */
 }
 
 const processReferences = async (references, imgsPath) => {
@@ -50,37 +50,35 @@ const processReferences = async (references, imgsPath) => {
 const processImages = async (items, pathGetter) => {
 	for (const item of items) {
 		if (item.images) {
-			for (let i = 0; i < item.images.length; i++) {
-				const image = item.images[i];
-				if (Array.isArray(image)) {
-					for (let j = 0; j < image.length; j++) {
-						const img = image[j];
-						if (checkForBase64(img)) {
-							image[j] = await saveImage(img, pathGetter(item));
-						}
-					}
-				} else if (checkForBase64(image)) {
-					item.images[i] = await saveImage(image, pathGetter(item));
-				}
-			}
+			item.images = await processImageArray(item.images, pathGetter, item, 'item images');
 		}
 
-		if (item.homepage && checkForBase64(item.homepage.image)) {
-			item.homepage.image = await saveImage(item.homepage.image, pathGetter(item));
-		}
+		item.homepage?.image = await processImage(item.homepage?.image, pathGetter, item, 'homepage image');
+		item.thumbnail = await processImage(item.thumbnail, pathGetter, item, 'thumbnail');
+		item.landingMedia = await processImage(item.landingMedia, pathGetter, item, 'landing media');
+		item.icon = await processImage(item.icon, pathGetter, item, 'icon');
+	}
+};
 
-		if (checkForBase64(item.thumbnail)) {
-			item.thumbnail = await saveImage(item.thumbnail, pathGetter(item));
-		}
-
-		if (checkForBase64(item.landingMedia)) {
-			item.landingMedia = await saveImage(item.landingMedia, pathGetter(item));
-		}
-
-		if (item.icon && checkForBase64(item.icon)) {
-			item.icon = await saveImage(item.icon, pathGetter(item));
+const processImage = async (image, pathGetter, item, context) => {
+	if (checkForBase64(image)) {
+		try {
+			return await saveImage(image, pathGetter(item));
+		} catch (error) {
+			console.error(`Error processing ${context}:`, error);
 		}
 	}
+	return image;
+};
+
+const processImageArray = async (images, pathGetter, item, context) => {
+	return Promise.all(images.map(async (img, index) => {
+		if (Array.isArray(img)) {
+			return await processImageArray(img, pathGetter, item, `${context} sub-image ${index}`);
+		} else {
+			return await processImage(img, pathGetter, item, `${context} image ${index}`);
+		}
+	}));
 };
 
 const updatePaths = (projects, archival, presentational, boxes) => {
