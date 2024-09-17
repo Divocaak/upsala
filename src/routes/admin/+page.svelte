@@ -78,9 +78,6 @@
 			}
 		}
 	}
-
-	/* BUG validate IDs! */
-	/* BUG password protected! */
 </script>
 
 <svelte:head>
