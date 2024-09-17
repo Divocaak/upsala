@@ -10,7 +10,7 @@
 
 <p class="label">Poptávkový formulář</p>
 <form action="https://api.staticforms.xyz/submit" method="post">
-	<input type="hidden" name="accessKey" value="c09c4a1e-6fde-4dbc-8e47-b48142f6c8ba" />
+	<input type="hidden" name="accessKey" value="29c36e4e-7864-49e3-853e-8cca897dc0bf" />
 	<input type="hidden" name="subject" value="Poptávka projekt ARCH" />
 	<input type="hidden" name="redirectTo" value="{href}/success" />
 	<div class="form-row">

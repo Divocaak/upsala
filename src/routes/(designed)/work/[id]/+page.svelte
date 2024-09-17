@@ -3,6 +3,7 @@
 	import StrikeThroughText from '$lib/StrikeThroughText.svelte';
 	import WorkTile from '$lib/WorkTile.svelte';
 	import WorkWrapper from '$lib/WorkWrapper.svelte';
+	import LazyImage from '$lib/LazyImage.svelte';
 
 	export let data;
 
@@ -21,18 +22,20 @@
 			Your browser does not support the video tag.
 		</video>
 	{:else}
-		<img class="main-image" src={landing} alt="landing graphics" />
+		<LazyImage path={landing} alt="landing graphics" additionalClasses="main-image " />
 	{/if}
 	<div class="gallery">
 		{#each data.project.images as image}
 			{#if Array.isArray(image)}
 				<div class="image-group">
 					{#each image as actualImage}
-						<img src={actualImage} alt="" />
+						<div class="image-group-image">
+							<LazyImage path={actualImage} alt="" additionalClasses="gallery-image" />
+						</div>
 					{/each}
 				</div>
 			{:else}
-				<img src={image} alt="" />
+				<LazyImage path={image} alt="" additionalClasses="gallery-image" />
 			{/if}
 		{/each}
 	</div>
@@ -72,8 +75,9 @@
 		padding: 5.787vw 5.787vw;
 	}
 
-	.gallery img {
+	:global(.gallery-image) {
 		width: 100%;
+		height: auto;
 		margin-bottom: 30px;
 		border-radius: var(--border-radius);
 	}
@@ -81,22 +85,22 @@
 	.image-group {
 		width: 100%;
 
-		display: flex;
+		display: flex !important;
 		flex-wrap: wrap;
 		align-items: center;
 		justify-content: center;
 	}
 
-	.image-group img {
+	.image-group-image {
 		flex: 50%;
 		max-width: calc(50% - 15px);
 	}
 
-	.image-group img:first-of-type {
+	.image-group-image:first-of-type {
 		margin-right: 15px;
 	}
 
-	.image-group img:last-of-type {
+	.image-group-image:last-of-type {
 		margin-left: 15px;
 	}
 
@@ -107,16 +111,16 @@
 	}
 
 	@media screen and (max-width: 900px) {
-		.image-group img {
+		.image-group-image {
 			flex: 100%;
 			max-width: 100%;
 		}
 
-		.image-group img:first-of-type {
+		.image-group-image:first-of-type {
 			margin-right: 0;
 		}
 
-		.image-group img:last-of-type {
+		.image-group-image:last-of-type {
 			margin-left: 0;
 		}
 	}

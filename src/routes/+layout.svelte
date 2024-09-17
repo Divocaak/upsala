@@ -1,5 +1,4 @@
 <script>
-	/*  TODO lazyload images */
 	import { onMount } from 'svelte';
 
 	let cursorX = 0;

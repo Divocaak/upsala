@@ -1,5 +1,6 @@
 import { sveltekit } from '@sveltejs/kit/vite';
 import { defineConfig } from 'vite';
+import { imagetools } from '@zerodevx/svelte-img/vite'
 import path from 'path';
 
 export default defineConfig({
@@ -13,5 +14,5 @@ export default defineConfig({
 			$dynamic: path.resolve(__dirname, 'dynamic')
 		}
 	},
-	plugins: [sveltekit()]
+	plugins: [sveltekit(), imagetools()]
 });

@@ -26,14 +26,23 @@
 			startval: jsonData
 		});
 
+		editor.on('ready', () => {
+			editor.on('addRow', (property) => {
+				if (property.editors.id) {
+					property.editors.id.setValue(Date.now());
+				}
+			});
+		});
+
 		JSONEditor.defaults.editors.base64image = Base64ImageEditor;
 		JSONEditor.defaults.resolvers.unshift((schema) => {
 			if (schema.type === 'string' && schema.media && schema.media.binaryEncoding === 'base64') {
 				if (
 					schema.media.type === 'img/png' ||
 					schema.media.type === 'img/jpeg' ||
+					schema.media.type === 'img/svg' ||
 					schema.media.type === 'video/mp4' ||
-					schema.media.type === 'video/quicktime'
+					schema.media.type === 'video/quicktime' 
 				) {
 					return 'base64image';
 				}
@@ -70,9 +79,6 @@
 			}
 		}
 	}
-
-	/* BUG validate IDs! */
-	/* BUG password protected! */
 </script>
 
 <svelte:head>

@@ -1,4 +1,6 @@
 <script>
+	import LazyImage from '$lib/LazyImage.svelte';
+
 	export let heading, text, mediaPath, mediaAlt;
 	export let borderRight = true;
 </script>
@@ -9,7 +11,7 @@
 		<p>{text}</p>
 	</div>
 	<div class="img-wrapper">
-		<img src={mediaPath} alt={mediaAlt} />
+		<LazyImage path={mediaPath} alt={mediaAlt} additionalClasses="value-image"/>
 	</div>
 </div>
 
@@ -51,7 +53,7 @@
 		margin-top: auto;
 	}
 
-	img {
+	:global(.value-image) {
 		margin: auto;
 
 		width: 203px;

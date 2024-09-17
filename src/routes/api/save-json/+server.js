@@ -50,37 +50,38 @@ const processReferences = async (references, imgsPath) => {
 const processImages = async (items, pathGetter) => {
 	for (const item of items) {
 		if (item.images) {
-			for (let i = 0; i < item.images.length; i++) {
-				const image = item.images[i];
-				if (Array.isArray(image)) {
-					for (let j = 0; j < image.length; j++) {
-						const img = image[j];
-						if (checkForBase64(img)) {
-							image[j] = await saveImage(img, pathGetter(item));
-						}
-					}
-				} else if (checkForBase64(image)) {
-					item.images[i] = await saveImage(image, pathGetter(item));
-				}
-			}
+			item.images = await processImageArray(item.images, pathGetter, item, 'item images');
 		}
 
-		if (item.homepage && checkForBase64(item.homepage.image)) {
-			item.homepage.image = await saveImage(item.homepage.image, pathGetter(item));
+		if (item.homepage) {
+			item.homepage.image = await processImage(item.homepage?.image, pathGetter, item, 'homepage image');
 		}
 
-		if (checkForBase64(item.thumbnail)) {
-			item.thumbnail = await saveImage(item.thumbnail, pathGetter(item));
-		}
+		item.thumbnail = await processImage(item.thumbnail, pathGetter, item, 'thumbnail');
+		item.landingMedia = await processImage(item.landingMedia, pathGetter, item, 'landing media');
+		item.icon = await processImage(item.icon, pathGetter, item, 'icon');
+	}
+};
 
-		if (checkForBase64(item.landingMedia)) {
-			item.landingMedia = await saveImage(item.landingMedia, pathGetter(item));
-		}
-
-		if (item.icon && checkForBase64(item.icon)) {
-			item.icon = await saveImage(item.icon, pathGetter(item));
+const processImage = async (image, pathGetter, item, context) => {
+	if (checkForBase64(image)) {
+		try {
+			return await saveImage(image, pathGetter(item));
+		} catch (error) {
+			console.error(`Error processing ${context}:`, error);
 		}
 	}
+	return image;
+};
+
+const processImageArray = async (images, pathGetter, item, context) => {
+	return Promise.all(images.map(async (img, index) => {
+		if (Array.isArray(img)) {
+			return await processImageArray(img, pathGetter, item, `${context} sub-image ${index}`);
+		} else {
+			return await processImage(img, pathGetter, item, `${context} image ${index}`);
+		}
+	}));
 };
 
 const updatePaths = (projects, archival, presentational, boxes) => {
