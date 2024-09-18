@@ -30,6 +30,7 @@
 		const dataRes = await fetch(dataPath);
 		const dataData = await dataRes.json();
 
+		/* BUG track if changed image input. currently it removes the already saved image path from the content json when saved without a change */
 		editor = new JSONEditor(container, {
 			disable_edit_json: true,
 			disable_properties: true,
@@ -62,10 +63,12 @@
 					body: JSON.stringify(editedData)
 				});
 
-				if (response.ok) {
+				const responseData = await response.json();
+				if (responseData.status === 200) {
 					alert('File saved successfully!');
 				} else {
-					alert('Failed to save file.');
+					console.log(responseData);
+					alert('Failed to save file. Check console for more information');
 				}
 			} catch (error) {
 				console.error('Error:', error);
@@ -81,13 +84,13 @@
 </svelte:head>
 
 <div class="wrapper">
-    <div bind:this={container} class="editor-container"></div>
-    <button on:click={saveJSON}>Uložit {saveButton}</button>
+	<div bind:this={container} class="editor-container"></div>
+	<button on:click={saveJSON}>Uložit {saveButton}</button>
 </div>
 
 <style>
-    .wrapper{
-        padding: 25px;
-        border: 1px solid black;
-    }
+	.wrapper {
+		padding: 25px;
+		border: 1px solid black;
+	}
 </style>
