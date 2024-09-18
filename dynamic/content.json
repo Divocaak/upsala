@@ -100,6 +100,27 @@
         "/dynamic/imgs/work/1726603827881/bfd2c0720d4de5ef82c5513350abde7f.jpeg"
       ],
       "filters": []
+    },
+    {
+      "homepage": {
+        "index": 3,
+        "image": "/dynamic/imgs/work/1726603827881/1ff9a925abc43dacae496a6fd3a59fd3.jpeg",
+        "text": "HANS ARCHITEKTI",
+        "description": "",
+        "textColor": "#ffffff"
+      },
+      "id": 1726603827881,
+      "label": "HANS ARCHITEKTI",
+      "description": "...",
+      "category": "logo",
+      "year": "2023",
+      "imgsPath": "work/1726603827881",
+      "thumbnail": "/dynamic/imgs/work/1726603827881/6d3d49964d616e44a1158d2850bdf16a.jpeg",
+      "landingMedia": null,
+      "images": [
+        "/dynamic/imgs/work/1726603827881/bfd2c0720d4de5ef82c5513350abde7f.jpeg"
+      ],
+      "filters": []
     }
   ],
   "reference": {

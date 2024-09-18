@@ -103,11 +103,13 @@
 <style>
 	.wrapper {
 		position: relative;
+		/* TODO scale down */
 		width: calc(100% - 70px);
 		height: 610px;
 
-		padding: 0 35px;
-		margin-top: 100px;
+		padding-top:100px;
+		margin: 0 35px;
+		/* margin-top: 100px; */
 
 		overflow: hidden;
 	}
@@ -125,7 +127,7 @@
 		width: 40%;
 		height: 100%;
 
-		margin: 0 auto;
+		/* margin: 0 auto; */
 		padding-top: 10%;
 
 		display: flex;

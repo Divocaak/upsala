@@ -21,13 +21,15 @@
 	}
 
 	.arch > .thumbnail {
-		aspect-ratio: 10/3;
+		/* BUG allow col-span to 2 (2 tiles next to arch) */
+		/* BUG when 2 tiles at row and 4 projects + arch */
+		aspect-ratio: 6/4;
 		padding: 0;
 	}
 
 	.thumbnail {
 		position: relative;
-		aspect-ratio: 5/3;
+		aspect-ratio: 3/2;
 
 		background-position: center;
 		background-repeat: no-repeat;
@@ -60,10 +62,13 @@
 	p {
 		position: relative;
 		margin: 0;
+		padding-top:5px;
 
-		font-weight: 300;
-		font-size: 24px;
+		/* NOTE */
+		font-weight: 400;
+		font-size: var(--text-20);
 		line-height: 138%;
+		letter-spacing: .5px;
 
 		transition: all 0.45s;
 

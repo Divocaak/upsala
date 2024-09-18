@@ -33,6 +33,7 @@
 		color: var(--pink);
 	}
 
+	/* TODO reuse worktike (2/3, text) */
 	.image {
 		position: relative;
 		width: 100%;
@@ -83,7 +84,7 @@
 	p:last-of-type {
 		font-weight: 400;
 		font-size: var(--text-20);
-		line-height: 138%;
+		line-height: 170%;
 
 		padding-top: 10%;
 		padding-right: 30%;

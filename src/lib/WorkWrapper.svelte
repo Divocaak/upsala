@@ -4,7 +4,7 @@
 
 <style>
 	.container {
-		padding: 100px;
+		padding: 100px 35px;
 
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);

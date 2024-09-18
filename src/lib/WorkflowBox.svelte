@@ -40,6 +40,8 @@
 		line-height: 138%;
 
 		white-space: pre-line;
+
+		margin-right: 10%;
 	}
 
 	.top-border {

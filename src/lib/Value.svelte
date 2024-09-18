@@ -1,6 +1,4 @@
 <script>
-	import LazyImage from '$lib/LazyImage.svelte';
-
 	export let heading, text, mediaPath, mediaAlt;
 	export let borderRight = true;
 </script>
@@ -11,37 +9,49 @@
 		<p>{text}</p>
 	</div>
 	<div class="img-wrapper">
-		<LazyImage path={mediaPath} alt={mediaAlt} additionalClasses="value-image"/>
+		<video class="value-image" autoplay muted loop preload>
+			<source src={mediaPath} type="video/mp4" />
+			Your browser does not support the video tag.
+		</video>
 	</div>
 </div>
 
 <style>
-	div {
+	.item {
 		position: relative;
-		width: 100%;
-		padding: 35px 52px;
-
+		
 		display: flex;
-		flex-direction: column;
+		flex-direction:column;
 		align-items: center;
+		justify-content: space-between;
+		
+		flex: 1 1 calc(25% - 32px);
+		box-sizing: border-box;
 	}
 
 	.texts-wrapper {
 		position: relative;
-		width: 100%;
+		width: calc(100% - 104px);
+
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		padding: 35px 52px;
 	}
 
 	p:first-of-type {
 		width: 100%;
 		font-weight: 400;
-		font-size: var(--text-32);
+		font-size: var(--text-36);
 		line-height: 138%;
 	}
 
 	p:last-of-type {
+		width: 100%;
 		font-weight: 400;
 		font-size: var(--text-20);
-		line-height: 138%;
+		line-height: 170%;
 		white-space: pre-line;
 	}
 
@@ -49,22 +59,13 @@
 		border-right: 1px solid black;
 	}
 
-	.img-wrapper {
-		margin-top: auto;
+	.img-wrapper{
+		width: 50%;
 	}
 
-	:global(.value-image) {
-		margin: auto;
-
-		width: 203px;
-		height: 203px;
-
-		border-radius: 70px;
-	}
-
-	.item {
-		box-sizing: border-box;
-		flex: 1 1 calc(25% - 32px);
+	.value-image {
+		width: 100%;
+		height: 100%;
 	}
 
 	@media (max-width: 991px) and (min-width: 600px) {

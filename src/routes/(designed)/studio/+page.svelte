@@ -16,54 +16,32 @@
 <LeadContainer
 	title="grafické
 	studio"
-	text="Studio Upsala jsme založili v roce 2003
-	a pracujeme pro českou i zahraniční klientelu.
-	Zakládáme si na osobním vztahu s našimi
-	zákazníky a věříme, že rovnocenný dialog je
-	zárukou úspěšné spolupráce."
-	textSmall="Všechna zadání jsou pro nás výzvou a ke každému projektu přistupujeme
-	individuálně. Úzce spolupracujeme s marketingovými specialisty, copywritery,
-	fotografy, architekty, kodéry a další. Profesionálním přístupem pomáháme našim
-	klientům vynakládat prostředky jen na to, co skutečně potřebují. Naší doménou
-	je osobitý, funkční a nadčasový design."
+	text="Studio Upsala jsme založili v roce 2003 a pracujeme pro českou i zahraniční klientelu. Zakládáme si na osobním vztahu s našimi zákazníky a věříme, že rovnocenný dialog je zárukou úspěšné spolupráce."
+	textSmall="Všechna zadání jsou pro nás výzvou a ke každému projektu přistupujeme individuálně. Úzce spolupracujeme s marketingovými specialisty, copywritery, fotografy, architekty, kodéry a další. Profesionálním přístupem pomáháme našim klientům vynakládat prostředky jen na to, co skutečně potřebují. Naší doménou je osobitý, funkční a nadčasový design."
 />
 <div class="values-container">
 	<Value
 		heading="Styl"
-		text="Snažíme se maximálně vystihnout
-		hodnoty klienta a charakter značky.
-		Dostanete stylový a promyšlený
-		design, za kterým si 100% stojíme."
-		mediaPath="/_placeholders/0.jpg"
+		text="Snažíme se maximálně vystihnout hodnoty klienta a charakter značky. Dostanete stylový a promyšlený design, za kterým si 100% stojíme."
+		mediaPath="/anims/0.mp4"
 		mediaAlt=""
 	/>
 	<Value
 		heading="Zkušenosti"
-		text="Grafickému designu
-		se věnujeme už dvacet let
-		a máme klienty po celé České
-		republice i na Slovensku.
-		V oboru jsme jako ryby ve vodě."
-		mediaPath="/_placeholders/0.jpg"
+		text="Grafickému designu se věnujeme už dvacet let a máme klienty po celé České republice i na Slovensku. V oboru jsme jako ryby ve vodě."
+		mediaPath="/anims/1.mp4"
 		mediaAlt=""
 	/>
 	<Value
 		heading="Přístup"
-		text="Ať už jde o nadnárodní společnost
-		nebo lokálního podnikatele,
-		ke každému z klientů přistupujeme
-		individuálně. Spolu tvoříme designy
-		s tou pravou hodnotou."
-		mediaPath="/_placeholders/0.jpg"
+		text="Ať už jde o nadnárodní společnost nebo lokálního podnikatele, ke každému z klientů přistupujeme individuálně. Spolu tvoříme designy s tou pravou hodnotou."
+		mediaPath="/anims/2.mp4"
 		mediaAlt=""
 	/>
 	<Value
 		heading="Nadšení"
-		text="Žijeme designem. Naše studio je
-		plné kreativců, co do návrhů dávají
-		kus srdce.
-		A (na naší práci) je to znát."
-		mediaPath="/_placeholders/0.jpg"
+		text="Žijeme designem. Naše studio je plné kreativců, co do návrhů dávají kus srdce. A (na naší práci) je to znát."
+		mediaPath="/anims/3.mp4"
 		mediaAlt=""
 		borderRight={false}
 	/>
