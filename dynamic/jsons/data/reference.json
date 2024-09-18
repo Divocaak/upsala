@@ -1,0 +1,23 @@
+{
+  "reference": {
+    "imgsPath": "reference/",
+    "references": [
+      {
+        "label": "FTV Prima",
+        "image": "/dynamic/imgs/reference/6a51768f922af9c4aea5b93e11f23686.jpeg"
+      },
+      {
+        "label": "E.ON",
+        "image": "/dynamic/imgs/reference/5f192f6af04aa890843ae3835968119a.jpeg"
+      },
+      {
+        "label": "test ref",
+        "image": "/dynamic/imgs/reference/5acd5975f0685e77a6c822ebddcbd176.jpeg"
+      },
+      {
+        "label": "cache test",
+        "image": "/dynamic/imgs/reference/5057fed7b9650927816144eaaacb79a3.jpeg"
+      }
+    ]
+  }
+}
