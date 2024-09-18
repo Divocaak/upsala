@@ -1,0 +1,19 @@
+{
+  "arch": {
+    "archival": [
+      {
+        "id": 0,
+        "label": "Šanony",
+        "text": "šanony A4 s kroužkovým zakladačem",
+        "imgsPath": "work/arch/archival/0",
+        "icon": "/dynamic/imgs/work/arch/archival/0/97bdf0eb7dc98445a0d212d649b03265.png",
+        "images": [
+          "/dynamic/imgs/work/arch/archival/0/c4a708726c520ebf522291cf56500311.jpeg",
+          "/dynamic/imgs/work/arch/archival/0/14a7ac11f032ef32dd09827615f09bc3.jpeg"
+        ]
+      }
+    ],
+    "presentational": [],
+    "boxes": []
+  }
+}

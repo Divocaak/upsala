@@ -199,6 +199,8 @@
 		height: 25px;
 		width: 25px;
 
+		margin: 0 5px;
+
 		background-color: var(--available-color);
 		opacity: 0.6;
 		border-radius: 50%;
@@ -209,10 +211,6 @@
 	.dot.active {
 		background-color: #ffffff;
 		opacity: 1;
-	}
-
-	.dot:nth-of-type(2) {
-		margin: 0 10px;
 	}
 
 	.dot:hover {

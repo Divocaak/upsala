@@ -1,0 +1,63 @@
+
+{
+    "type": "object",
+	"title": "Reference",
+	"description": "na stránce Studio",
+	"options":{
+		"collapsed": true
+	},
+    "properties": {
+        "reference": {
+			"options": {
+				"titleHidden": true,
+                "disable_collapse": true
+			},
+			"type": "object",
+			"properties": {
+				"imgsPath": {
+					"type": "string",
+					"title": "cesta",
+					"description": "cesta k obrázkům, readonly",
+					"readonly": true,
+					"default": "reference/"
+				},
+				"references": {
+					"type": "array",
+					"description": "Jednotlivé reference",
+					"options": {
+						"collapsed": true
+					},
+					"items": {
+						"type": "object",
+						"title": "reference",
+						"options": {
+							"collapsed": true
+						},
+						"properties": {
+							"label": {
+								"type": "string",
+								"description": "Název reference"
+							},
+							"image": {
+								"type": "string",
+								"title": "obrázek",
+								"media": {
+									"binaryEncoding": "base64",
+									"type": "img/png"
+								}
+							}
+						},
+						"required": [
+							"label",
+							"image"
+						]
+					}
+				}
+			},
+			"required": [
+				"imgsPath",
+				"references"
+			]
+		}
+    }
+}

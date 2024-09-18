@@ -2,41 +2,20 @@ import fs from 'fs';
 import path from 'path';
 import crypto from 'crypto';
 
+/* URGENT projects */
 export async function POST({ request }) {
-	try {
-		const data = await request.json();
+	const data = await request.json();
 
-		updatePaths(data.projects, data.arch.archival, data.arch.presentational, data.arch.boxes);
+	let errs = [];
 
-		await processImages(data.projects, (project) => project.imgsPath);
+	await processImages(data.projects, (project) => project.imgsPath);
 
-		if (data.reference && data.reference.references) {
-			await processReferences(data.reference.references, data.reference.imgsPath);
-		}
-
-		await processImages(data.arch.archival, (subarch) => subarch.imgsPath);
-		await processImages(data.arch.presentational, (subarch) => subarch.imgsPath);
-		await processImages(data.arch.boxes, (subarch) => subarch.imgsPath);
-
-		// save json
-		const jsonPath = './dynamic/content.json';
-		fs.writeFileSync(jsonPath, JSON.stringify(data, null, 2));
-
-		return new Response(
-			JSON.stringify({
-				status: 200,
-				body: { message: 'File saved successfully' }
-			})
-		);
-	} catch (error) {
-		console.error('Error saving file:', error.stack);
-		return new Response(
-			JSON.stringify({
-				status: 500,
-				body: { message: 'Error saving file' }
-			})
-		);
-	}
+	// error handling outside of for loop
+	// code does not crash under first error but continues with the rest
+	const jsonResponse = await saveJson(data, './dynamic/jsons/data/projects.json');
+	let toRet = errs.find(e => e && e.status === 500);
+	if (!toRet) toRet = jsonResponse;
+	return new Response(JSON.stringify(toRet));
 }
 
 const processReferences = async (references, imgsPath) => {

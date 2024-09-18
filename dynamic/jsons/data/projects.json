@@ -1,10 +1,4 @@
 {
-  "filters": [
-    "logo",
-    "vizuální identita",
-    "orientační systém",
-    "tiskoviny"
-  ],
   "projects": [
     {
       "homepage": {
@@ -60,13 +54,7 @@
       ]
     },
     {
-      "homepage": {
-        "index": 1,
-        "image": "/dynamic/imgs/work/0/71781e97161efca5ce785e068817b63b.jpeg",
-        "text": "maxi dental",
-        "description": "",
-        "textColor": "#006d8f"
-      },
+      "homepage": null,
       "id": 1726602381766,
       "label": "ATEH LIGHTING",
       "description": "ahhhh",
@@ -101,51 +89,5 @@
       ],
       "filters": []
     }
-  ],
-  "reference": {
-    "imgsPath": "reference/",
-    "references": [
-      {
-        "label": "FTV Prima",
-        "image": "/dynamic/imgs/reference/6a51768f922af9c4aea5b93e11f23686.jpeg"
-      },
-      {
-        "label": "E.ON",
-        "image": "/dynamic/imgs/reference/5f192f6af04aa890843ae3835968119a.jpeg"
-      },
-      {
-        "label": "test ref",
-        "image": "/dynamic/imgs/reference/5acd5975f0685e77a6c822ebddcbd176.jpeg"
-      },
-      {
-        "label": "cache test",
-        "image": "/dynamic/imgs/reference/5057fed7b9650927816144eaaacb79a3.jpeg"
-      }
-    ]
-  },
-  "arch": {
-    "archival": [
-      {
-        "id": 0,
-        "label": "Šanony",
-        "text": "šanony A4 s kroužkovým zakladačem",
-        "imgsPath": "work/arch/archival/0",
-        "icon": "/dynamic/imgs/work/arch/archival/0/97bdf0eb7dc98445a0d212d649b03265.png",
-        "images": [
-          "/dynamic/imgs/work/arch/archival/0/c4a708726c520ebf522291cf56500311.jpeg",
-          "/dynamic/imgs/work/arch/archival/0/14a7ac11f032ef32dd09827615f09bc3.jpeg"
-        ]
-      },
-      {
-        "id": 0,
-        "label": "Slohy",
-        "text": "klopová sloha A4",
-        "imgsPath": "work/arch/archival/0",
-        "icon": "/dynamic/imgs/work/arch/archival/0/331daaf223171fe18c03304f511a8de2.png",
-        "images": []
-      }
-    ],
-    "presentational": [],
-    "boxes": []
-  }
+  ]
 }
