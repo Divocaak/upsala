@@ -1,16 +1,3 @@
 {
-  "reference": [
-    {
-      "label": "first reference",
-      "image": "/dynamic/imgs/reference/52df513293661794e1fbfbc9454f46a7.jpeg"
-    },
-    {
-      "label": "second re",
-      "image": "/dynamic/imgs/reference/8a1a419e5023d61bdd738b79ace366d6.jpeg"
-    },
-    {
-      "label": "nova refe",
-      "image": "/dynamic/imgs/reference/559252c04ac72ffa31d8de8af54be476.jpeg"
-    }
-  ]
+  "reference": []
 }
