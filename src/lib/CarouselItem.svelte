@@ -49,6 +49,6 @@
 
 		transition: all 0.35s;
 
-		cursor: none;
+		/* cursor: none; */
 	}
 </style>
