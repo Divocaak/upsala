@@ -1,16 +1,14 @@
 <script>
-	import { goto } from '$app/navigation';
-
 	export let heading, text, mediaPath, sub;
 </script>
 
-<button type="button" class="container" on:click={goto(`/work/arch/${sub}`)}>
+<a href="/work/arch/{sub}" class="container" >
 	<div class="image" style="background-image: url('{mediaPath}');"></div>
 	<div class="texts-wrapper">
 		<p>{heading}</p>
 		<p>{text}</p>
 	</div>
-</button>
+</a>
 
 <style>
 	.container {
@@ -18,10 +16,6 @@
 
 		position: relative;
 		width: 100%;
-
-		display: flex;
-		flex-direction: column;
-		align-items: center;
 
 		box-sizing: border-box;
 		flex: 1 1 calc(25% - 32px);
@@ -33,15 +27,14 @@
 		color: var(--pink);
 	}
 
-	/* TODO reuse worktike (2/3, text) */
 	.image {
 		position: relative;
-		width: 100%;
-		height: 40vh;
+		aspect-ratio: 3/2;
 
 		background-position: center;
 		background-repeat: no-repeat;
 		background-size: cover;
+
 		border-radius: var(--border-radius);
 	}
 
@@ -74,11 +67,16 @@
 	p:first-of-type {
 		width: 100%;
 
+		padding-top: 5px;
+
 		font-weight: 400;
-		font-size: var(--text-36);
+		font-size: var(--text-20);
 		line-height: 138%;
+		letter-spacing: 0.5px;
 
 		transition: all 0.45s;
+
+		text-transform: uppercase;
 	}
 
 	p:last-of-type {

@@ -9,8 +9,8 @@
 		font-weight: 500;
 		font-size: var(--text-20);
 		line-height: 138%;
-		letter-spacing: .5px;
-		
+		letter-spacing: 0.5px;
+
 		text-transform: uppercase;
 		color: var(--thick-text);
 	}

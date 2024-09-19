@@ -46,7 +46,7 @@
 		padding: 0 38px;
 	}
 
-	.title h1{
+	.title h1 {
 		font-weight: 600;
 		font-size: var(--text-96);
 		line-height: 93%;
@@ -57,7 +57,7 @@
 		white-space: pre-line;
 	}
 
-	.title .contact{
+	.title .contact {
 		padding-top: 100px;
 		font-size: var(--text-64);
 		font-weight: normal;
@@ -97,9 +97,9 @@
 			width: 100%;
 		}
 
-		.title h1,
+		.title h1, .title .contact,
 		.text p {
-			margin: 0 38px;
+			padding: 0 38px;
 		}
 	}
 

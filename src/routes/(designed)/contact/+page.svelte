@@ -12,17 +12,6 @@
 </LeadContainer>
 
 <style>
-	.lead {
-		position: relative;
-		width: 100%;
-		padding: 20vh 0;
-
-		font-size: var(--text-96);
-		line-height: 93%;
-
-		text-align: center;
-	}
-
 	.contact-container {
 		display: flex;
 		flex-wrap: wrap;
@@ -30,6 +19,5 @@
 		justify-content: center;
 		position: relative;
 		width: 100%;
-		left: 0;
 	}
 </style>

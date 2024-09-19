@@ -24,10 +24,7 @@
 						"options": {
 							"collapsed": true
 						},
-						"type": [
-							"object",
-							"null"
-						],
+						"type": ["object", "null"],
 						"description": "Nastavení zobrazení na domovské stránce. Vyberte 'Object' pro zobrazení na domovské stránce",
 						"properties": {
 							"index": {
@@ -56,12 +53,7 @@
 								"description": "Barva textů na domovské stránce při tomto projektu"
 							}
 						},
-						"required": [
-							"index",
-							"image",
-							"text",
-							"textColor"
-						]
+						"required": ["index", "image", "text", "textColor"]
 					},
 					"id": {
 						"type": "integer",
@@ -98,10 +90,7 @@
 						}
 					},
 					"landingMedia": {
-						"type": [
-							"string",
-							"null"
-						],
+						"type": ["string", "null"],
 						"title": "hlavní médium v detailu projektu, v případě 'null' se použije stejná fotka, jako na thumbnail",
 						"media": {
 							"binaryEncoding": "base64",
@@ -158,15 +147,7 @@
 						}
 					}
 				},
-				"required": [
-					"id",
-					"label",
-					"description",
-					"category",
-					"year",
-					"thumbnail",
-					"filters"
-				]
+				"required": ["id", "label", "description", "category", "year", "thumbnail", "filters"]
 			}
 		}
 	}

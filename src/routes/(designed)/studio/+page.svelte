@@ -20,31 +20,34 @@
 	textSmall="Všechna zadání jsou pro nás výzvou a ke každému projektu přistupujeme individuálně. Úzce spolupracujeme s marketingovými specialisty, copywritery, fotografy, architekty, kodéry a další. Profesionálním přístupem pomáháme našim klientům vynakládat prostředky jen na to, co skutečně potřebují. Naší doménou je osobitý, funkční a nadčasový design."
 />
 <div class="values-container">
-	<Value
-		heading="Styl"
-		text="Snažíme se maximálně vystihnout hodnoty klienta a charakter značky. Dostanete stylový a promyšlený design, za kterým si 100% stojíme."
-		mediaPath="/anims/0.mp4"
-		mediaAlt=""
-	/>
-	<Value
-		heading="Zkušenosti"
-		text="Grafickému designu se věnujeme už dvacet let a máme klienty po celé České republice i na Slovensku. V oboru jsme jako ryby ve vodě."
-		mediaPath="/anims/1.mp4"
-		mediaAlt=""
-	/>
-	<Value
-		heading="Přístup"
-		text="Ať už jde o nadnárodní společnost nebo lokálního podnikatele, ke každému z klientů přistupujeme individuálně. Spolu tvoříme designy s tou pravou hodnotou."
-		mediaPath="/anims/2.mp4"
-		mediaAlt=""
-	/>
-	<Value
-		heading="Nadšení"
-		text="Žijeme designem. Naše studio je plné kreativců, co do návrhů dávají kus srdce. A (na naší práci) je to znát."
-		mediaPath="/anims/3.mp4"
-		mediaAlt=""
-		borderRight={false}
-	/>
+	<div class="value-wrapper">
+		<Value
+			heading="Styl"
+			text="Snažíme se maximálně vystihnout hodnoty klienta a charakter značky. Dostanete stylový a promyšlený design, za kterým si 100% stojíme."
+			mediaPath="/anims/0.mp4"
+		/>
+	</div>
+	<div class="value-wrapper">
+		<Value
+			heading="Zkušenosti"
+			text="Grafickému designu se věnujeme už dvacet let a máme klienty po celé České republice i na Slovensku. V oboru jsme jako ryby ve vodě."
+			mediaPath="/anims/1.mp4"
+		/>
+	</div>
+	<div class="value-wrapper">
+		<Value
+			heading="Přístup"
+			text="Ať už jde o nadnárodní společnost nebo lokálního podnikatele, ke každému z klientů přistupujeme individuálně. Spolu tvoříme designy s tou pravou hodnotou."
+			mediaPath="/anims/2.mp4"
+		/>
+	</div>
+	<div class="value-wrapper">
+		<Value
+			heading="Nadšení"
+			text="Žijeme designem. Naše studio je plné kreativců, co do návrhů dávají kus srdce. A (na naší práci) je to znát."
+			mediaPath="/anims/3.mp4"
+		/>
+	</div>
 </div>
 <StrikeThroughText label="naše služby" />
 <div class="workflow-container">
@@ -92,6 +95,41 @@
 		justify-content: center;
 		flex-direction: row;
 		flex-wrap: wrap;
+	}
+
+	.value-wrapper {
+		position: relative;
+
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-between;
+
+		flex: 1 1 calc(25% - 32px);
+		box-sizing: border-box;
+
+		border-right: 1px solid black;
+	}
+
+	.value-wrapper:last-child{
+		border-right: none;
+	}
+
+	@media (max-width: 991px) and (min-width: 600px) {
+		.value-wrapper {
+			flex: 1 1 calc(50% - 32px);
+		}
+
+		.value-wrapper:nth-child(2n) {
+			border-right: none;
+		}
+	}
+
+	@media (max-width: 599px) {
+		.value-wrapper {
+			flex: 1 1 calc(100% - 32px);
+			border-right: none;
+		}
 	}
 
 	.reference-container {

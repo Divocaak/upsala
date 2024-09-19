@@ -7,5 +7,5 @@ export async function load({ params, fetch }) {
 		.map(([id]) => ({ id: data.projects[id].id, homepage: data.projects[id].homepage }))
 		.sort((a, b) => a.homepage.index - b.homepage.index);
 
-	return {resultArray};
+	return { resultArray };
 }

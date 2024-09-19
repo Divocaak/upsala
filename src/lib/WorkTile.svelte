@@ -61,12 +61,12 @@
 	p {
 		position: relative;
 		margin: 0;
-		padding-top:5px;
+		padding-top: 5px;
 
 		font-weight: 400;
 		font-size: var(--text-20);
 		line-height: 138%;
-		letter-spacing: .5px;
+		letter-spacing: 0.5px;
 
 		transition: all 0.45s;
 
