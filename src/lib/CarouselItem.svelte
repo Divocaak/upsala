@@ -48,7 +48,5 @@
 		background-size: cover;
 
 		transition: all 0.35s;
-
-		/* cursor: none; */
 	}
 </style>

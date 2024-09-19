@@ -56,7 +56,6 @@
 
 	a:hover .thumbnail::before {
 		opacity: 0.35;
-		/* mix-blend-mode: color; */
 	}
 
 	p {

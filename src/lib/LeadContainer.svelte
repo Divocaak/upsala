@@ -60,7 +60,6 @@
 	.title .contact{
 		padding-top: 100px;
 		font-size: var(--text-64);
-		/* line-height: 138%; */
 		font-weight: normal;
 	}
 
@@ -74,20 +73,12 @@
 	}
 
 	.prim-text {
-		/* font-weight: 400;
-		font-size: var(--text-32);
-		line-height: 170%; */
-
 		font-weight: 400;
 		font-size: var(--text-32);
 		line-height: 138%;
 	}
 
 	.sec-text {
-		/* font-weight: 400;
-		font-size: var(--text-20);
-		line-height: 170%; */
-
 		font-weight: 400;
 		font-size: var(--text-32);
 		line-height: 138%;

@@ -8,18 +8,7 @@
 
 	const src = {
 		img: { src: path, w: 1920, h: 1080 },
-		sources: {
-			webp: path /* [
-				{ src: path, w: 1920 },
-				{ src: path, w: 1024 },
-				{ src: path, w: 480 }
-			], */,
-			jpeg: path /* [
-				{ src: path, w: 1920 },
-				{ src: path, w: 1024 },
-				{ src: path, w: 480 }
-			] */
-		}
+		sources: { webp: path, jpeg: path }
 	};
 
 	let ref, loaded;
