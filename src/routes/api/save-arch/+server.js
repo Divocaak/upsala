@@ -6,23 +6,22 @@ export async function POST({ request }) {
 
 	let errs = []
 	for (const item of data.arch.archival) {
-		const path = `work/arch/archival/${item.id}`;
-		await processImage(item.icon, path, errs);
-		await processImageArray(item.images, path, errs);
+		const path = `arch/archival/${item.id}`;
+		item.icon = await processImage(item.icon, path, errs) ?? item.icon;
+		item.images = await processImageArray(item.images, path, errs) ?? item.images;
 	}
 
 	for (const item of data.arch.presentational) {
-		const path = `work/arch/presentational/${item.id}`;
-		await processImage(item.icon, path, errs);
-		await processImageArray(item.images, path, errs);
+		const path = `arch/presentational/${item.id}`;
+		item.icon = await processImage(item.icon, path, errs) ?? item.icon;
+		item.images = await processImageArray(item.images, path, errs) ?? item.images;
 	}
 
 	for (const item of data.arch.boxes) {
-		const path = `work/arch/boxes/${item.id}`;
-		await processImage(item.icon, path, errs);
-		await processImageArray(item.images, path, errs);
+		const path = `arch/boxes/${item.id}`;
+		item.icon = await processImage(item.icon, path, errs) ?? item.icon;
+		item.images = await processImageArray(item.images, path, errs) ?? item.images;
 	}
-
 
 	// error handling outside of for loop
 	// code does not crash under first error but continues with the rest

@@ -8,7 +8,7 @@
 
 	let data = {};
 	onMount(async () => {
-		const res = await fetch('/dynamic/content.json');
+		const res = await fetch('/dynamic/jsons/data/reference.json');
 		data = await res.json();
 	});
 </script>

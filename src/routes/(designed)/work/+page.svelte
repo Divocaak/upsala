@@ -4,9 +4,12 @@
 	import { onMount } from 'svelte';
 
 	let data = {};
+	let filters = {};
 	onMount(async () => {
-		const res = await fetch('/dynamic/content.json');
+		const res = await fetch('/dynamic/jsons/data/projects.json');
 		data = await res.json();
+		const responseFilters = await fetch('/dynamic/jsons/data/filters.json');
+		filters = await responseFilters.json();
 	});
 
 	let arch = null;
@@ -25,8 +28,8 @@
 	</svg>
 	<button class="hoverable" on:click={() => changeFilter()}>bez filtru</button>
 	<span>v</span>
-	{#if data.filters}
-		{#each data.filters as filter}
+	{#if filters.filters}
+		{#each filters.filters as filter}
 			<button class="hoverable" on:click={() => changeFilter(filter)}>{filter}</button>
 		{/each}
 	{/if}

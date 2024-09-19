@@ -8,14 +8,14 @@ export async function POST({ request }) {
 	for (const item of data.projects) {
 		const path = `work/${item.id}`;
 		if (item.homepage) {
-			await processImage(item.homepage.image, path, errs);
+			item.homepage.image = await processImage(item.homepage.image, path, errs) ?? item.homepage.image;
 		}
 
-		await processImage(item.thumbnail, path, errs);
-		await processImage(item.landingMedia, path, errs);
+		item.thumbnail = await processImage(item.thumbnail, path, errs) ?? item.thumbnail;
+		item.landingMedia = await processImage(item.landingMedia, path, errs) ?? item.landingMedia;
 
 		if (item.images) {
-			await processImageArray(item.images, path, errs);
+			item.images = await processImageArray(item.images, path, errs) ?? item.images;
 		}
 	}
 

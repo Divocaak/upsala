@@ -11,10 +11,10 @@ export async function processImage(image, path, errs) {
 
             if (typeof response === 'object' && response.status === 500) {
                 errs.push(response);
-                return;
+                return image;
             }
 
-            image = response;
+            return response;
         }
     } catch (error) {
         errs.push({
@@ -25,18 +25,19 @@ export async function processImage(image, path, errs) {
                 trace: error.stack
             }
         });
+        return image;
     }
 }
 
 export async function processImageArray(images, path, errs) {
-    return Promise.all(images.map(async img => {
+    return await Promise.all(images.map(async img => {
         if (Array.isArray(img)) {
-            return await processImageArray(img, path, errs);
+            return await processImageArray(img, path, errs) ?? img;
         } else {
-            return await processImage(img, path, errs);
+            return await processImage(img, path, errs) ?? img;
         }
     }));
-};
+}
 
 const checkForBase64 = (image) => image.match(/^data:(.*?);base64,(.*)$/);
 

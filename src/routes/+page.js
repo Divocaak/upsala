@@ -1,5 +1,5 @@
 export async function load({ params, fetch }) {
-	const response = await fetch('/dynamic/content.json');
+	const response = await fetch('/dynamic/jsons/data/projects.json');
 	const data = await response.json();
 
 	const resultArray = Object.entries(data.projects)

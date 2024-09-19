@@ -65,7 +65,7 @@ export class Base64ImageEditor extends JSONEditor.AbstractEditor {
 	setValue(value, initial) {
 		this.value = value || '';
 
-		if (this.value) {
+		if (this.value && typeof this.value === String) {
 			// Determine if it's an image or a video by checking the data URL prefix
 			if (this.value.endsWith('.jpeg') || this.value.endsWith('.png') || this.value.startsWith('data:image/')) {
 				this.preview.innerHTML = `<img src="${this.value}" style="max-width: 200px"/>`;

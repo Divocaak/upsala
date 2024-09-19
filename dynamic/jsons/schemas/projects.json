@@ -118,14 +118,6 @@
 							"title": "Obrázek/Obrázky",
 							"anyOf": [
 								{
-									"type": "string",
-									"title": "obrázek",
-									"media": {
-										"binaryEncoding": "base64",
-										"type": "img/png"
-									}
-								},
-								{
 									"type": "array",
 									"options": {
 										"collapsed": true
@@ -140,6 +132,14 @@
 											"binaryEncoding": "base64",
 											"type": "img/png"
 										}
+									}
+								},
+								{
+									"type": "string",
+									"title": "fotka",
+									"media": {
+										"binaryEncoding": "base64",
+										"type": "img/png"
 									}
 								}
 							]

@@ -6,44 +6,41 @@
 		"collapsed": true
 	},
 	"properties": {
-		"type": "object",
-		"properties": {
-			"reference": {
-				"type": "array",
-				"description": "Jednotlivé reference",
+		"reference": {
+			"type": "array",
+			"description": "Jednotlivé reference",
+			"options": {
+				"titleHidden": true,
+				"disable_collapse": true
+			},
+			"items": {
+				"type": "object",
+				"title": "reference",
 				"options": {
-					"titleHidden": true,
-					"disable_collapse": true
+					"collapsed": true
 				},
-				"items": {
-					"type": "object",
-					"title": "reference",
-					"options": {
-						"collapsed": true
+				"properties": {
+					"label": {
+						"type": "string",
+						"description": "Název reference"
 					},
-					"properties": {
-						"label": {
-							"type": "string",
-							"description": "Název reference"
-						},
-						"image": {
-							"type": "string",
-							"title": "obrázek",
-							"media": {
-								"binaryEncoding": "base64",
-								"type": "img/png"
-							}
+					"image": {
+						"type": "string",
+						"title": "obrázek",
+						"media": {
+							"binaryEncoding": "base64",
+							"type": "img/png"
 						}
-					},
-					"required": [
-						"label",
-						"image"
-					]
-				}
+					}
+				},
+				"required": [
+					"label",
+					"image"
+				]
 			}
-		},
-		"required": [
-			"references"
-		]
-	}
+		}
+	},
+	"required": [
+		"reference"
+	]
 }
