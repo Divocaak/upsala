@@ -9,7 +9,7 @@
 		<p>{text}</p>
 	</div>
 	<div class="img-wrapper">
-		<video class="value-image" autoplay muted loop preload>
+		<video class="value-image" autoplay muted loop preload playsinline disablepictureinpicture disableremoteplayback>
 			<source src={mediaPath} type="video/mp4" />
 			Your browser does not support the video tag.
 		</video>

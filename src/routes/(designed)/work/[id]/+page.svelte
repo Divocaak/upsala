@@ -17,7 +17,7 @@
 
 <div class="images-container">
 	{#if landing.endsWith('.mp4')}
-		<video class="main-image" autoplay muted loop preload>
+		<video class="main-image" autoplay muted loop preload playsinline disablepictureinpicture disableremoteplayback>
 			<source src={landing} type="video/mp4" />
 			Your browser does not support the video tag.
 		</video>
