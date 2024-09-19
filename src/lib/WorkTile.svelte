@@ -64,7 +64,6 @@
 		margin: 0;
 		padding-top:5px;
 
-		/* NOTE */
 		font-weight: 400;
 		font-size: var(--text-20);
 		line-height: 138%;

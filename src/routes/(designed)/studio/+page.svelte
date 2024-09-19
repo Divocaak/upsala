@@ -67,7 +67,7 @@
 <StrikeThroughText label="reference" />
 <div class="reference-container">
 	{#if data.reference}
-		{#each data.reference.references as ref}
+		{#each data.reference as ref}
 			<ReferenceRow label={ref.label} image={ref.image} />
 		{/each}
 	{/if}

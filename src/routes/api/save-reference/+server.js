@@ -5,16 +5,8 @@ export async function POST({ request }) {
 	const data = await request.json();
 
 	let errs = [];
-	for (const reference of data.reference.references) {
-		const response = await processImage(reference.image, data.reference.imgsPath);
-		console.log(response);
-
-		if (typeof response === 'object' && response.status === 500) {
-			errs.push(response);
-			continue;
-		}
-
-		reference.image = response;
+	for (const reference of data.reference) {
+		await processImage(reference.image, "reference/", errs);
 	}
 
 	// error handling outside of for loop

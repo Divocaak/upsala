@@ -40,13 +40,6 @@
                                 "type": "string",
                                 "description": "popis"
                             },
-                            "imgsPath": {
-                                "type": "string",
-                                "title": "cesta",
-                                "description": "cesta k obrázkům, readonly",
-                                "readonly": true,
-                                "default": "work/arch/archival/"
-                            },
                             "icon": {
                                 "type": "string",
                                 "title": "ikonka",
@@ -76,8 +69,7 @@
                             "label",
                             "text",
                             "images",
-                            "icon",
-                            "imgsPath"
+                            "icon"
                         ]
                     }
                 },
@@ -108,13 +100,6 @@
                                 "type": "string",
                                 "description": "popis"
                             },
-                            "imgsPath": {
-                                "type": "string",
-                                "title": "cesta",
-                                "description": "cesta k obrázkům, readonly",
-                                "readonly": true,
-                                "default": "work/arch/presentational/"
-                            },
                             "icon": {
                                 "type": "string",
                                 "title": "ikonka",
@@ -144,8 +129,7 @@
                             "label",
                             "text",
                             "images",
-                            "icon",
-                            "imgsPath"
+                            "icon"
                         ]
                     }
                 },
@@ -176,13 +160,6 @@
                                 "type": "string",
                                 "description": "popis"
                             },
-                            "imgsPath": {
-                                "type": "string",
-                                "title": "cesta",
-                                "description": "cesta k obrázkům, readonly",
-                                "readonly": true,
-                                "default": "work/arch/boxes/"
-                            },
                             "icon": {
                                 "type": "string",
                                 "title": "ikonka",
@@ -212,8 +189,7 @@
                             "label",
                             "text",
                             "images",
-                            "icon",
-                            "imgsPath"
+                            "icon"
                         ]
                     }
                 }

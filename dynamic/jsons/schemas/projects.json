@@ -89,13 +89,6 @@
 						"type": "string",
 						"description": "rok v detailu projektu"
 					},
-					"imgsPath": {
-						"type": "string",
-						"title": "cesta",
-						"description": "cesta k obrázkům, readonly",
-						"readonly": true,
-						"default": "work/"
-					},
 					"thumbnail": {
 						"type": "string",
 						"title": "thumbnail na kartě projektu",
@@ -172,8 +165,7 @@
 					"category",
 					"year",
 					"thumbnail",
-					"filters",
-					"imgsPath"
+					"filters"
 				]
 			}
 		}
