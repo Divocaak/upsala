@@ -1,7 +1,7 @@
 export async function load({ params, fetch }) {
 	const { sub } = params;
 
-	const response = await fetch('/dynamic/content.json');
+	const response = await fetch('/dynamic/jsons/data/arch.json');
 	const data = await response.json();
 
 	const objects = data.arch[sub];

@@ -10,14 +10,18 @@
 
 <style>
 	div {
+		width: 100%;
+
 		margin: 0 5.208vw;
+		padding-bottom: 60px;
 	}
 
 	p,
 	a {
 		margin: 0;
+
 		font-weight: 400;
-		font-size: var(--text-24);
+		font-size: var(--text-32);
 		line-height: 138%;
 	}
 

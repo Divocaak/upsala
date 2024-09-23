@@ -20,7 +20,6 @@
 	}
 
 	p:first-of-type {
-		display: inline-block;
 		width: 40%;
 
 		font-weight: 600;
@@ -33,13 +32,14 @@
 
 	p:last-of-type {
 		width: 60%;
-		display: inline-block;
 
 		font-weight: 400;
 		font-size: var(--text-32);
 		line-height: 138%;
 
 		white-space: pre-line;
+
+		margin-right: 10%;
 	}
 
 	.top-border {
@@ -52,10 +52,15 @@
 			margin: 0 38px;
 		}
 
-		p {
-			padding: 0;
-			width: 100%;
-			padding: 0 38px;
+		p:first-of-type {
+			width: 100% !important;
+
+			text-align: center;
+		}
+
+		p:last-of-type {
+			position: relative;
+			left: 5% !important;
 		}
 	}
 </style>

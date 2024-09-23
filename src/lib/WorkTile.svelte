@@ -21,13 +21,13 @@
 	}
 
 	.arch > .thumbnail {
-		aspect-ratio: 10/3;
+		aspect-ratio: 6/1.925;
 		padding: 0;
 	}
 
 	.thumbnail {
 		position: relative;
-		aspect-ratio: 5/3;
+		aspect-ratio: 3/2;
 
 		background-position: center;
 		background-repeat: no-repeat;
@@ -54,16 +54,17 @@
 
 	a:hover .thumbnail::before {
 		opacity: 0.35;
-		/* mix-blend-mode: color; */
 	}
 
 	p {
 		position: relative;
 		margin: 0;
+		padding-top: 5px;
 
-		font-weight: 300;
-		font-size: 24px;
+		font-weight: 400;
+		font-size: var(--text-20);
 		line-height: 138%;
+		letter-spacing: 0.5px;
 
 		transition: all 0.45s;
 

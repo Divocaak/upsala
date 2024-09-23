@@ -2,20 +2,27 @@
 	export let title = null;
 	export let text = null;
 	export let textSmall = null;
+	export let contact = false;
 </script>
 
 <div class="wrapper">
 	<div class="title">
 		<h1>{title}</h1>
-		<slot></slot>
+		{#if contact}
+			<p class="contact">
+				UPSALA, s.r.o. <br />
+				Jakubská 1, 602 00 Brno
+			</p>
+		{/if}
 	</div>
 	<div class="text">
 		{#if text != null}
-			<p>{text}</p>
+			<p class="prim-text">{text}</p>
 		{/if}
 		{#if textSmall != null}
-			<p>{textSmall}</p>
+			<p class="sec-text">{textSmall}</p>
 		{/if}
+		<slot></slot>
 	</div>
 </div>
 
@@ -50,6 +57,12 @@
 		white-space: pre-line;
 	}
 
+	.title .contact {
+		padding-top: 100px;
+		font-size: var(--text-64);
+		font-weight: normal;
+	}
+
 	.text {
 		width: 40%;
 
@@ -59,16 +72,18 @@
 		white-space: pre-line;
 	}
 
-	.text p:first-of-type {
+	.prim-text {
 		font-weight: 400;
 		font-size: var(--text-32);
-		line-height: 170%;
+		line-height: 138%;
 	}
 
-	.text p:last-of-type {
+	.sec-text {
 		font-weight: 400;
-		font-size: var(--text-20);
+		font-size: var(--text-32);
 		line-height: 138%;
+
+		padding-bottom: 100px;
 	}
 
 	@media screen and (max-width: 1200px) {
@@ -82,9 +97,15 @@
 			width: 100%;
 		}
 
-		.title h1,
+		.title h1, .title .contact,
 		.text p {
-			margin: 0 38px;
+			padding: 0 38px;
+		}
+	}
+
+	@media screen and (min-width: 800px) and (max-width: 1200px) {
+		.text {
+			width: 70%;
 		}
 	}
 </style>

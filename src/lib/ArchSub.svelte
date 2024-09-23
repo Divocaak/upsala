@@ -101,15 +101,17 @@
 </div>
 
 <style>
+	:root {
+		--height: 510px;
+	}
+
 	.wrapper {
 		position: relative;
 		width: calc(100% - 70px);
-		height: 610px;
+		height: var(--height);
 
-		padding: 0 35px;
-		margin-top: 100px;
-
-		overflow: hidden;
+		padding-top: 100px;
+		margin: 0 35px;
 	}
 
 	.content-wrapper {
@@ -125,7 +127,6 @@
 		width: 40%;
 		height: 100%;
 
-		margin: 0 auto;
 		padding-top: 10%;
 
 		display: flex;
@@ -150,6 +151,27 @@
 		height: auto;
 	}
 
+	.carousel {
+		position: relative;
+		width: 100%;
+		
+		justify-content: center;
+		align-items: center;
+
+		border-radius: var(--border-radius);
+		overflow: hidden;
+	}
+
+	.carousel-wrapper .carousel-img {
+		position: relative;
+		width: 100%;
+		height: var(--height);
+
+		background-position: center;
+		background-repeat: none;
+		background-size: cover;
+	}
+
 	.carousel-wrapper {
 		position: absolute;
 		width: 65%;
@@ -158,14 +180,23 @@
 		right: 0;
 	}
 
-	.carousel {
-		position: relative;
-		width: 100%;
-		justify-content: center;
-		align-items: center;
+	@media screen and (max-width: 1000px) {
+		.content-holder {
+			width: 30%;
 
-		border-radius: var(--border-radius);
-		overflow: hidden;
+			padding: 0;
+			margin: auto;
+		}
+
+		.wrapper {
+			height: auto;
+		}
+
+		.content-wrapper,
+		.carousel-wrapper {
+			position: relative;
+			width: 100%;
+		}
 	}
 
 	.dots-wrapper {
@@ -208,15 +239,5 @@
 	.dot:hover {
 		background-color: var(--pink);
 		opacity: 0.6;
-	}
-
-	.carousel-wrapper .carousel-img {
-		position: relative;
-		width: 100%;
-		height: 610px;
-
-		background-position: center;
-		background-repeat: none;
-		background-size: cover;
 	}
 </style>

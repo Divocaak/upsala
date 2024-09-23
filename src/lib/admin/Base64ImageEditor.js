@@ -9,7 +9,10 @@ export class Base64ImageEditor extends JSONEditor.AbstractEditor {
 
 		// Create the file input
 		this.input = this.theme.getFormInputField('file');
-		this.input.setAttribute('accept', 'image/png, image/jpeg, video/mp4, video/quicktime, image/svg+xml');
+		this.input.setAttribute(
+			'accept',
+			'image/png, image/jpeg, video/mp4, video/quicktime, image/svg+xml'
+		);
 
 		// Preview element (for image/video preview)
 		this.preview = document.createElement('div');
@@ -65,11 +68,19 @@ export class Base64ImageEditor extends JSONEditor.AbstractEditor {
 	setValue(value, initial) {
 		this.value = value || '';
 
-		if (this.value) {
+		if (this.value && typeof this.value === "string") {
 			// Determine if it's an image or a video by checking the data URL prefix
-			if (this.value.endsWith('.jpeg') || this.value.endsWith('.png') || this.value.startsWith('data:image/')) {
+			if (
+				this.value.endsWith('.jpeg') ||
+				this.value.endsWith('.png') ||
+				this.value.startsWith('data:image/')
+			) {
 				this.preview.innerHTML = `<img src="${this.value}" style="max-width: 200px"/>`;
-			} else if (this.value.endsWith('.mp4') || this.value.endsWith('.mov') || this.value.startsWith('data:video/')) {
+			} else if (
+				this.value.endsWith('.mp4') ||
+				this.value.endsWith('.mov') ||
+				this.value.startsWith('data:video/')
+			) {
 				this.preview.innerHTML = `
                 <video controls style="max-width: 200px">
                     <source src="${this.value}" type="video/mp4">

@@ -1,63 +1,41 @@
-
 {
-    "type": "object",
+	"type": "object",
 	"title": "Reference",
 	"description": "na stránce Studio",
-	"options":{
+	"options": {
 		"collapsed": true
 	},
-    "properties": {
-        "reference": {
+	"properties": {
+		"reference": {
+			"type": "array",
+			"description": "Jednotlivé reference",
 			"options": {
 				"titleHidden": true,
-                "disable_collapse": true
+				"disable_collapse": true
 			},
-			"type": "object",
-			"properties": {
-				"imgsPath": {
-					"type": "string",
-					"title": "cesta",
-					"description": "cesta k obrázkům, readonly",
-					"readonly": true,
-					"default": "reference/"
+			"items": {
+				"type": "object",
+				"title": "reference",
+				"options": {
+					"collapsed": true
 				},
-				"references": {
-					"type": "array",
-					"description": "Jednotlivé reference",
-					"options": {
-						"collapsed": true
+				"properties": {
+					"label": {
+						"type": "string",
+						"description": "Název reference"
 					},
-					"items": {
-						"type": "object",
-						"title": "reference",
-						"options": {
-							"collapsed": true
-						},
-						"properties": {
-							"label": {
-								"type": "string",
-								"description": "Název reference"
-							},
-							"image": {
-								"type": "string",
-								"title": "obrázek",
-								"media": {
-									"binaryEncoding": "base64",
-									"type": "img/png"
-								}
-							}
-						},
-						"required": [
-							"label",
-							"image"
-						]
+					"image": {
+						"type": "string",
+						"title": "obrázek",
+						"media": {
+							"binaryEncoding": "base64",
+							"type": "img/png"
+						}
 					}
-				}
-			},
-			"required": [
-				"imgsPath",
-				"references"
-			]
+				},
+				"required": ["label", "image"]
+			}
 		}
-    }
+	},
+	"required": ["reference"]
 }

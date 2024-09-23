@@ -1,9 +1,3 @@
 {
-  "filters": [
-    "logo",
-    "vizuální identita",
-    "orientační systém",
-    "tiskoviny",
-    "test"
-  ]
+	"filters": ["logo", "vizuální identita", "orientační systém", "test add and move", "tiskoviny"]
 }

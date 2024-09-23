@@ -1,11 +1,3 @@
 {
-  "reference": {
-    "imgsPath": "reference/",
-    "references": [
-      {
-        "label": "test",
-        "image": "/dynamic/imgs/reference/e297abbec813c6e107c0b0175904acde.jpeg"
-      }
-    ]
-  }
+	"reference": []
 }

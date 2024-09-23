@@ -30,7 +30,6 @@
 		const dataRes = await fetch(dataPath);
 		const dataData = await dataRes.json();
 
-		/* BUG track if changed image input. currently it removes the already saved image path from the content json when saved without a change */
 		editor = new JSONEditor(container, {
 			disable_edit_json: true,
 			disable_properties: true,
@@ -44,7 +43,7 @@
 
 		editor.on('ready', () => {
 			editor.on('addRow', (property) => {
-				if (property.editors.id) property.editors.id.setValue(Date.now());
+				if (property.editors && property.editors.id) property.editors.id.setValue(Date.now());
 			});
 		});
 
@@ -67,7 +66,7 @@
 				if (responseData.status === 200) {
 					alert('File saved successfully!');
 				} else {
-					console.log(responseData);
+					console.error(responseData);
 					alert('Failed to save file. Check console for more information');
 				}
 			} catch (error) {

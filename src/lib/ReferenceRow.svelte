@@ -8,7 +8,7 @@
 
 <style>
 	div {
-		margin-left: 65px;
+		margin-left: 38px;
 	}
 
 	p {
@@ -18,7 +18,7 @@
 		font-size: var(--text-32);
 		line-height: 170%;
 
-		padding-left: 20px;
+		padding-left: 5px;
 		margin: 0;
 
 		transition: all 0.35s;

@@ -1,223 +1,181 @@
 {
-    "type": "object",
-    "title": "ARCH",
-    "description": "stránka Projekt ARCH a podstránky",
-    "options": {
-        "collapsed": true
-    },
-    "properties": {
-        "arch": {
-            "type": "object",
-            "options": {
-                "titleHidden": true,
-                "disable_collapse": true
-            },
-            "properties": {
-                "archival": {
-                    "type": "array",
-                    "description": "Arhivační",
-                    "options": {
-                        "collapsed": true
-                    },
-                    "items": {
-                        "type": "object",
-                        "title": "subkategorie",
-                        "options": {
-                            "collapsed": true
-                        },
-                        "properties": {
-                            "id": {
-                                "type": "integer",
-                                "format": "number",
-                                "description": "ID subkategorie, unikátní",
-                                "readonly": true
-                            },
-                            "label": {
-                                "type": "string",
-                                "description": "název"
-                            },
-                            "text": {
-                                "type": "string",
-                                "description": "popis"
-                            },
-                            "imgsPath": {
-                                "type": "string",
-                                "title": "cesta",
-                                "description": "cesta k obrázkům, readonly",
-                                "readonly": true,
-                                "default": "work/arch/archival/"
-                            },
-                            "icon": {
-                                "type": "string",
-                                "title": "ikonka",
-                                "media": {
-                                    "binaryEncoding": "base64",
-                                    "type": "img/svg"
-                                }
-                            },
-                            "images": {
-                                "type": "array",
-                                "description": "obrázky",
-                                "options": {
-                                    "collapsed": true
-                                },
-                                "items": {
-                                    "type": "string",
-                                    "title": "obrázek",
-                                    "media": {
-                                        "binaryEncoding": "base64",
-                                        "type": "img/png"
-                                    }
-                                }
-                            }
-                        },
-                        "required": [
-                            "id",
-                            "label",
-                            "text",
-                            "images",
-                            "icon",
-                            "imgsPath"
-                        ]
-                    }
-                },
-                "presentational": {
-                    "type": "array",
-                    "description": "Prezentační",
-                    "options": {
-                        "collapsed": true
-                    },
-                    "items": {
-                        "type": "object",
-                        "title": "subkategorie",
-                        "options": {
-                            "collapsed": true
-                        },
-                        "properties": {
-                            "id": {
-                                "type": "integer",
-                                "format": "number",
-                                "description": "ID subkategorie, unikátní",
-                                "readonly": true
-                            },
-                            "label": {
-                                "type": "string",
-                                "description": "název"
-                            },
-                            "text": {
-                                "type": "string",
-                                "description": "popis"
-                            },
-                            "imgsPath": {
-                                "type": "string",
-                                "title": "cesta",
-                                "description": "cesta k obrázkům, readonly",
-                                "readonly": true,
-                                "default": "work/arch/presentational/"
-                            },
-                            "icon": {
-                                "type": "string",
-                                "title": "ikonka",
-                                "media": {
-                                    "binaryEncoding": "base64",
-                                    "type": "img/svg"
-                                }
-                            },
-                            "images": {
-                                "type": "array",
-                                "description": "obrázky",
-                                "options": {
-                                    "collapsed": true
-                                },
-                                "items": {
-                                    "type": "string",
-                                    "title": "obrázek",
-                                    "media": {
-                                        "binaryEncoding": "base64",
-                                        "type": "img/png"
-                                    }
-                                }
-                            }
-                        },
-                        "required": [
-                            "id",
-                            "label",
-                            "text",
-                            "images",
-                            "icon",
-                            "imgsPath"
-                        ]
-                    }
-                },
-                "boxes": {
-                    "type": "array",
-                    "description": "Obaly a boxy",
-                    "options": {
-                        "collapsed": true
-                    },
-                    "items": {
-                        "type": "object",
-                        "title": "subkategorie",
-                        "options": {
-                            "collapsed": true
-                        },
-                        "properties": {
-                            "id": {
-                                "type": "integer",
-                                "format": "number",
-                                "description": "ID subkategorie, unikátní",
-                                "readonly": true
-                            },
-                            "label": {
-                                "type": "string",
-                                "description": "název"
-                            },
-                            "text": {
-                                "type": "string",
-                                "description": "popis"
-                            },
-                            "imgsPath": {
-                                "type": "string",
-                                "title": "cesta",
-                                "description": "cesta k obrázkům, readonly",
-                                "readonly": true,
-                                "default": "work/arch/boxes/"
-                            },
-                            "icon": {
-                                "type": "string",
-                                "title": "ikonka",
-                                "media": {
-                                    "binaryEncoding": "base64",
-                                    "type": "img/svg"
-                                }
-                            },
-                            "images": {
-                                "type": "array",
-                                "description": "obrázky",
-                                "options": {
-                                    "collapsed": true
-                                },
-                                "items": {
-                                    "type": "string",
-                                    "title": "obrázek",
-                                    "media": {
-                                        "binaryEncoding": "base64",
-                                        "type": "img/png"
-                                    }
-                                }
-                            }
-                        },
-                        "required": [
-                            "id",
-                            "label",
-                            "text",
-                            "images",
-                            "icon",
-                            "imgsPath"
-                        ]
-                    }
-                }
-            }
-        }
-    }
+	"type": "object",
+	"title": "ARCH",
+	"description": "stránka Projekt ARCH a podstránky",
+	"options": {
+		"collapsed": true
+	},
+	"properties": {
+		"arch": {
+			"type": "object",
+			"options": {
+				"titleHidden": true,
+				"disable_collapse": true
+			},
+			"properties": {
+				"archival": {
+					"type": "array",
+					"description": "Arhivační",
+					"options": {
+						"collapsed": true
+					},
+					"items": {
+						"type": "object",
+						"title": "subkategorie",
+						"options": {
+							"collapsed": true
+						},
+						"properties": {
+							"id": {
+								"type": "integer",
+								"format": "number",
+								"description": "ID subkategorie, unikátní",
+								"readonly": true
+							},
+							"label": {
+								"type": "string",
+								"description": "název"
+							},
+							"text": {
+								"type": "string",
+								"description": "popis"
+							},
+							"icon": {
+								"type": "string",
+								"title": "ikonka",
+								"media": {
+									"binaryEncoding": "base64",
+									"type": "img/svg"
+								}
+							},
+							"images": {
+								"type": "array",
+								"description": "obrázky",
+								"options": {
+									"collapsed": true
+								},
+								"items": {
+									"type": "string",
+									"title": "obrázek",
+									"media": {
+										"binaryEncoding": "base64",
+										"type": "img/png"
+									}
+								}
+							}
+						},
+						"required": ["id", "label", "text", "images", "icon"]
+					}
+				},
+				"presentational": {
+					"type": "array",
+					"description": "Prezentační",
+					"options": {
+						"collapsed": true
+					},
+					"items": {
+						"type": "object",
+						"title": "subkategorie",
+						"options": {
+							"collapsed": true
+						},
+						"properties": {
+							"id": {
+								"type": "integer",
+								"format": "number",
+								"description": "ID subkategorie, unikátní",
+								"readonly": true
+							},
+							"label": {
+								"type": "string",
+								"description": "název"
+							},
+							"text": {
+								"type": "string",
+								"description": "popis"
+							},
+							"icon": {
+								"type": "string",
+								"title": "ikonka",
+								"media": {
+									"binaryEncoding": "base64",
+									"type": "img/svg"
+								}
+							},
+							"images": {
+								"type": "array",
+								"description": "obrázky",
+								"options": {
+									"collapsed": true
+								},
+								"items": {
+									"type": "string",
+									"title": "obrázek",
+									"media": {
+										"binaryEncoding": "base64",
+										"type": "img/png"
+									}
+								}
+							}
+						},
+						"required": ["id", "label", "text", "images", "icon"]
+					}
+				},
+				"boxes": {
+					"type": "array",
+					"description": "Obaly a boxy",
+					"options": {
+						"collapsed": true
+					},
+					"items": {
+						"type": "object",
+						"title": "subkategorie",
+						"options": {
+							"collapsed": true
+						},
+						"properties": {
+							"id": {
+								"type": "integer",
+								"format": "number",
+								"description": "ID subkategorie, unikátní",
+								"readonly": true
+							},
+							"label": {
+								"type": "string",
+								"description": "název"
+							},
+							"text": {
+								"type": "string",
+								"description": "popis"
+							},
+							"icon": {
+								"type": "string",
+								"title": "ikonka",
+								"media": {
+									"binaryEncoding": "base64",
+									"type": "img/svg"
+								}
+							},
+							"images": {
+								"type": "array",
+								"description": "obrázky",
+								"options": {
+									"collapsed": true
+								},
+								"items": {
+									"type": "string",
+									"title": "obrázek",
+									"media": {
+										"binaryEncoding": "base64",
+										"type": "img/png"
+									}
+								}
+							}
+						},
+						"required": ["id", "label", "text", "images", "icon"]
+					}
+				}
+			}
+		}
+	}
 }
