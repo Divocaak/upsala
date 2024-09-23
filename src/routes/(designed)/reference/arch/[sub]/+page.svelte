@@ -6,9 +6,9 @@
 </script>
 
 <div class="tabs-holder">
-	<a href="/work/arch/archival">Archivační</a>
-	<a href="/work/arch/presentational">Prezentační</a>
-	<a href="/work/arch/boxes">Obaly a Boxy</a>
+	<a href="/reference/arch/archival">Archivační</a>
+	<a href="/reference/arch/presentational">Prezentační</a>
+	<a href="/reference/arch/boxes">Obaly a Boxy</a>
 </div>
 
 {#each data.objects as object}

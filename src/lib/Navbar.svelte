@@ -6,9 +6,9 @@
 <nav style="--nav-color: {textColor};" class:transparent>
 	<a class="home" href="/">upsala</a>
 	<div>
-		<a href="/work">Work</a>
+		<a href="/reference">Reference</a>
 		<a href="/studio">Studio</a>
-		<a href="/contact">Contact</a>
+		<a href="/contact">Kontakt</a>
 	</div>
 </nav>
 

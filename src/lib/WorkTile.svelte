@@ -5,7 +5,7 @@
 	const thumbnail = arch ? '/arch_thumbnail.jpg' : project.thumbnail;
 </script>
 
-<a href="/work/{arch ? 'arch' : project.id}" class:arch>
+<a href="/reference/{arch ? 'arch' : project.id}">
 	<div class="thumbnail" style="background-image: url('{thumbnail}');"></div>
 	<p>{arch ? 'projekt arch' : project.label}</p>
 </a>
@@ -14,15 +14,6 @@
 	a {
 		all: unset;
 		position: relative;
-	}
-
-	.arch {
-		grid-column-start: span 2;
-	}
-
-	.arch > .thumbnail {
-		aspect-ratio: 6/1.925;
-		padding: 0;
 	}
 
 	.thumbnail {

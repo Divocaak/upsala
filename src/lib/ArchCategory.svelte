@@ -2,7 +2,7 @@
 	export let heading, text, mediaPath, sub;
 </script>
 
-<a href="/work/arch/{sub}" class="container" >
+<a href="/reference/arch/{sub}" class="container" >
 	<div class="image" style="background-image: url('{mediaPath}');"></div>
 	<div class="texts-wrapper">
 		<p>{heading}</p>

@@ -70,9 +70,10 @@
 		padding: 0 35px;
 	}
 
-	.main-image {
+	:global(.main-image) {
 		position: relative;
 		width: 100%;
+		height: auto;
 		border-radius: var(--border-radius);
 	}
 

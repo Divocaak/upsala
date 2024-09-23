@@ -24,7 +24,7 @@
 
 	function handlePointerUp() {
 		if (!isDragging) {
-			goto(`/work/${object.id}`);
+			goto(`/reference/${object.id}`);
 		}
 	}
 </script>

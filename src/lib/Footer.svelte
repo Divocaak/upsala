@@ -1,10 +1,9 @@
-<script>
-	export let textColor = '#000000';
-</script>
-
-<footer style="--text-color: {textColor};">
-	<p>UPSALA grafické studio, Jakubská&nbsp;1, 602&nbsp;00&nbsp;Brno</p>
-	<p>2024</p>
+<footer>
+	<p>studio<span></span>upsala 2024</p>
+	<div>
+		<a href="https://facebook.com/upsalagraphicdesign/" target="_blank">Facebook</a>
+		<a href="https://instagram.com/upsala.cz/" target="_blank">Instagram</a>
+	</div>
 </footer>
 
 <style>
@@ -14,16 +13,34 @@
 		flex-direction: row;
 		justify-content: space-between;
 
+		border-top: 1px solid #000000;
+		margin: 0 38px;
+
 		position: relative;
 		bottom: 0;
-		width: 100%;
+		width: calc(100% - 2 * 38px);
 	}
 
-	footer p {
-		color: var(--text-color);
+	footer p span {
+		display: inline-block;
+		position: relative;
+		top: 2px;
 
-		font-size: var(--text-16);
-		line-height: 138%;
-		padding: 0px 35px;
+		height: 15px;
+		width: 15px;
+		background-color: black;
+		border-radius: 50%;
+
+		margin: 0 5px;
+	}
+
+	footer div a:first-of-type {
+		padding-right: 20px;
+	}
+
+	@media screen and (max-width: 600px){
+		footer{
+			flex-direction: column;
+		}
 	}
 </style>

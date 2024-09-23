@@ -1,5 +1,5 @@
 <div>
-	<a href="/work/arch/form">Nezávazná kalkulace</a>
+	<a href="/reference/arch/form">Nezávazná kalkulace</a>
 </div>
 
 <style>
