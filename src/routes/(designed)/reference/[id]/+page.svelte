@@ -4,6 +4,7 @@
 	import WorkTile from '$lib/WorkTile.svelte';
 	import WorkWrapper from '$lib/WorkWrapper.svelte';
 	import LazyImage from '$lib/LazyImage.svelte';
+	import Filter from '$lib/Filter.svelte';
 
 	export let data;
 
@@ -11,7 +12,11 @@
 </script>
 
 <LeadContainer title={data.project.label} textSmall={data.project.description}>
-	<p class="subtext">{data.project.category}</p>
+	{#if data.project.filters}
+		{#each data.project.filters as filter}
+			<Filter label={filter}/>
+		{/each}
+	{/if}
 	<p class="subtext">{data.project.year}</p>
 </LeadContainer>
 

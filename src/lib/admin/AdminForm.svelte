@@ -35,6 +35,7 @@
 			disable_properties: true,
 			disable_array_delete_last_row: true,
 			compact: true,
+			ajax:true,
 			theme: 'spectre',
 			iconlib: 'spectre',
 			schema: schemaData,

@@ -1,0 +1,15 @@
+{
+	"definitions": {
+		"filterEnums": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"enum": [
+					"value1",
+					"value2",
+					"value3"
+				]
+			}
+		}
+	}
+}

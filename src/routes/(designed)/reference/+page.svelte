@@ -3,7 +3,7 @@
 	import WorkWrapper from '$lib/WorkWrapper.svelte';
 	import { onMount } from 'svelte';
 	import Filter from '$lib/Filter.svelte';
-	import { fade, slide } from 'svelte/transition';
+	import { fade } from 'svelte/transition';
 
 	let data = {};
 	let filters = {};
