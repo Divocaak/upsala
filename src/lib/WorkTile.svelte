@@ -21,9 +21,7 @@
 	}
 
 	.arch > .thumbnail {
-		/* BUG allow col-span to 2 (2 tiles next to arch) */
-		/* BUG when 2 tiles at row and 4 projects + arch */
-		aspect-ratio: 6/4;
+		aspect-ratio: 6/1.925;
 		padding: 0;
 	}
 

@@ -68,7 +68,7 @@ export class Base64ImageEditor extends JSONEditor.AbstractEditor {
 	setValue(value, initial) {
 		this.value = value || '';
 
-		if (this.value && typeof this.value === String) {
+		if (this.value && typeof this.value === "string") {
 			// Determine if it's an image or a video by checking the data URL prefix
 			if (
 				this.value.endsWith('.jpeg') ||
