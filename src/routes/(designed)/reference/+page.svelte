@@ -11,7 +11,8 @@
 		const res = await fetch('/dynamic/jsons/data/projects.json');
 		data = await res.json();
 		const responseFilters = await fetch('/dynamic/jsons/data/filters.json');
-		filters = await responseFilters.json();
+		const filtersData = await responseFilters.json();
+		filters = filtersData.definitions.filterEnums.items.enum;
 	});
 
 	let showFilters = false;
@@ -22,23 +23,18 @@
 </script>
 
 <div class="filters">
-	<svg
-		on:click={() => switchFilters()}
-		width="31"
-		height="23"
-		viewBox="0 0 31 23"
-		fill="none"
-		xmlns="http://www.w3.org/2000/svg"
-	>
-		<path d="M31 0H0V4.32428H31V0Z" />
-		<path d="M5.26429 8.6485H25.736V13.5905H5.26429V8.6485Z" />
-		<path d="M8.1888 17.9148H22.8114V22.2391H8.1888V17.9148Z" />
-	</svg>
+	<button on:click={() => switchFilters()}>
+		<svg width="31" height="23" viewBox="0 0 31 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<path d="M31 0H0V4.32428H31V0Z" />
+			<path d="M5.26429 8.6485H25.736V13.5905H5.26429V8.6485Z" />
+			<path d="M8.1888 17.9148H22.8114V22.2391H8.1888V17.9148Z" />
+		</svg>
+	</button>
 	{#if showFilters}
 		<div transition:fade>
 			<Filter label="bez filtru" clickable={true} on:click={() => changeFilter()} />
-			{#if filters.filters}
-				{#each filters.filters as filter}
+			{#if filters}
+				{#each filters as filter}
 					<Filter label={filter} clickable={true} on:click={() => changeFilter(filter)} />
 				{/each}
 			{/if}
@@ -70,6 +66,10 @@
 		padding-left: 35px;
 		padding-top: 35px;
 		padding-bottom: 10px;
+	}
+
+	.filters button{
+		all:unset;
 	}
 
 	.filters svg {

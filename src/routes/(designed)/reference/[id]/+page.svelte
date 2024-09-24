@@ -111,12 +111,6 @@
 		margin-left: 15px;
 	}
 
-	@media screen and (max-width: 1200px) {
-		.subtext {
-			margin: 38px;
-		}
-	}
-
 	@media screen and (max-width: 900px) {
 		.image-group-image {
 			flex: 100%;

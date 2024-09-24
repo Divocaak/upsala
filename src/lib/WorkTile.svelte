@@ -65,10 +65,4 @@
 	a:hover p {
 		color: var(--pink);
 	}
-
-	@media screen and (max-width: 900px) {
-		.arch {
-			grid-column-start: span 1;
-		}
-	}
 </style>

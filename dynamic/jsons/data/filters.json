@@ -5,9 +5,10 @@
       "items": {
         "type": "string",
         "enum": [
-          "logo test t",
+          "logo",
           "vizuální identita",
           "orientační systém",
+          "test add and move",
           "tiskoviny"
         ]
       }
