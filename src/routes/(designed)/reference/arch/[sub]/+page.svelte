@@ -1,5 +1,5 @@
 <script>
-	import ArchButton from '$lib/ArchButton.svelte';
+	import StyledForm from '$lib/StyledForm.svelte';
 	import ArchSub from '$lib/ArchSub.svelte';
 
 	export let data;
@@ -15,7 +15,7 @@
 	<ArchSub {object} />
 {/each}
 
-<ArchButton />
+<StyledForm removeFromSuccessPath="/{data.subName}"/>
 
 <style>
 	.tabs-holder {

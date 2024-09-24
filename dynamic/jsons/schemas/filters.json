@@ -1,12 +1,12 @@
 {
-	"type": "object",
 	"title": "Filtry",
 	"description": "Seznam dostupných filtrů (filtrovací 'řádek' na stránce Work)",
 	"options": {
 		"collapsed": true
 	},
-	"properties": {
-		"filters": {
+	"filters": {
+		"type": "object",
+		"properties": {
 			"options": {
 				"titleHidden": true,
 				"disable_collapse": true

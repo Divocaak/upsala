@@ -1,3 +1,16 @@
 {
-	"filters": ["logo", "vizuální identita", "orientační systém", "test add and move", "tiskoviny"]
+  "definitions": {
+    "filterEnums": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "logo test t",
+          "vizuální identita",
+          "orientační systém",
+          "tiskoviny"
+        ]
+      }
+    }
+  }
 }

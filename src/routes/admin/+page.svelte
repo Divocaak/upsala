@@ -7,6 +7,7 @@
 	dataPath="/dynamic/jsons/data/filters.json"
 	apiPath="/api/save-filters"
 	saveButton="filtry"
+	filters={true}
 />
 <AdminForm
 	schemaPath="/dynamic/jsons/schemas/reference.json"

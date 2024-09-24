@@ -205,6 +205,10 @@
 		cursor: none !important;
 	} */
 
+	:global(body){
+		margin: 0;
+	}
+
 	:global(:root) {
 		--pink: #ff67c2;
 		--border-radius: 5px;

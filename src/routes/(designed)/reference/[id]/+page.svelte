@@ -17,7 +17,6 @@
 			<Filter label={filter}/>
 		{/each}
 	{/if}
-	<p class="subtext">{data.project.year}</p>
 </LeadContainer>
 
 <div class="images-container">
@@ -63,13 +62,6 @@
 </WorkWrapper>
 
 <style>
-	.subtext {
-		font-family: 'Outfit';
-		font-weight: 400;
-		font-size: var(--text-20);
-		line-height: 138%;
-	}
-
 	.images-container {
 		position: relative;
 		padding: 0 35px;

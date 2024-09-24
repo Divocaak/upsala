@@ -81,10 +81,6 @@
 							"expand_height": true
 						}
 					},
-					"year": {
-						"type": "string",
-						"description": "rok v detailu projektu"
-					},
 					"thumbnail": {
 						"type": "string",
 						"title": "thumbnail na kartě projektu",
@@ -146,7 +142,7 @@
 						"format": "select",
 						"description": "Filtry pro filtrování na stránce Work",
 						"items": {
-							"$ref": "./dynamic/jsons/schemas/test.json#/definitions/filterEnums/items"
+							"$ref": "./dynamic/jsons/data/filters.json#/definitions/filterEnums/items"
 						}
 					}
 				},
@@ -154,7 +150,6 @@
 					"id",
 					"label",
 					"description",
-					"year",
 					"thumbnail",
 					"filters"
 				]

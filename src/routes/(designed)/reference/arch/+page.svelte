@@ -1,7 +1,7 @@
 <script>
 	import LeadContainer from '$lib/LeadContainer.svelte';
 	import ArchCategory from '$lib/ArchCategory.svelte';
-	import ArchButton from '$lib/ArchButton.svelte';
+	import StyledForm from '$lib/StyledForm.svelte';
 </script>
 
 <LeadContainer
@@ -28,7 +28,7 @@
 		sub="boxes"
 	/>
 </div>
-<ArchButton />
+<StyledForm />
 
 <style>
 	.categories-container {
