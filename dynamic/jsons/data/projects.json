@@ -1,76 +1,116 @@
 {
-	"projects": [
-		{
-			"homepage": {
-				"index": 2,
-				"image": "/dynamic/imgs/work/0/71781e97161efca5ce785e068817b63b.jpeg",
-				"text": "maxi dental",
-				"description": "",
-				"textColor": "#006d8f"
-			},
-			"id": 0,
-			"label": "maxi dental",
-			"description": "Břeclavská zubní klinika Maxi DENTAL má po více než deseti letech nové logo a firemní identitu. Zubní klinika z Břeclavi prošla razantní proměnou, a čerstvý vizuální styl byl její neodmyslitelnou součástí.\n\nTvorbu vizuální identity pro Maxi DENTAL inspirovalo zaměření klienta. Chtěli jsme vytvořit svěží logo s nenápadným odkazem na zubní odvětví, ve kterém klinika působí. Nejprve jsme si pohrávali se základními motivy zubů a úsměvu až do doby, kdy z nich vyšly jednoduché linie. Na ně jsme navázali při tvorbě custom fontu, na kterém stojí logo i celá firemní identita.\n\nFont jsme spárovali se tlumenou modrou a doplnili sadou hravých piktogramů na míru. Výsledkem je minimalistický vizuál, který se dá kreativně aplikovat na nejrůznější materiály.",
-			"category": "logo / vizuální identita / tiskoviny / orientační systém",
-			"year": "2023 - 2024",
-			"thumbnail": "/dynamic/imgs/work/0/5683966857801884c0cdfdbacf223a12.jpeg",
-			"landingMedia": "/dynamic/imgs/work/0/7cf21602499daf8798d0ab1891a1e711.mp4",
-			"images": [
-				"/dynamic/imgs/work/0/9dfe593429c3ab094a58baa9f8d32689.jpeg",
-				[
-					"/dynamic/imgs/work/0/2926e16d2ed553b9522a769925282d38.jpeg",
-					"/dynamic/imgs/work/0/4fc1f3b8bc4f57b10043175f848fedba.jpeg"
-				]
-			],
-			"filters": ["logo", "vizuální identita", "tiskoviny", "orientační systém"]
-		},
-		{
-			"homepage": {
-				"index": 1,
-				"image": "/dynamic/imgs/work/1726593601263/89f7addf3e769e0dbed0dc790733273d.jpeg",
-				"text": "Kalina Gallery & Apartments",
-				"description": "",
-				"textColor": "#000000"
-			},
-			"id": 1726593601263,
-			"label": "Kalina Gallery & Apartments",
-			"description": "Galerie se zaměřuje na prezentaci současného umění etablovaných i začínajících výtvarných umělců.\n\nJe charakteristická výběrem výjimečných talentů, svou rozmanitostí i snahou o širší kulturní dopad.\n\nÚzká spolupráce s umělci a důkladné porozumění formám uměleckého vyjádření jsou ústředním bodem její identity. Inspirativní jsou také četná setkání s umělci v samotné galerii. Kalina Gallery úzce spolupracuje se všemi svými umělci tak, aby dokázala zajistit nejvyšší možnou úroveň prezentace, a to v prostoru, který je pro tento účel přímo stvořený.\n\nDíky jedinečnému výběru vysoce hodnotných sběratelských uměleckých děl a svou nekompromisní věrností inovacím světového umění, se galerie zavázala plnit poslání leadera ve svém oboru. Vstupuje na trh s uměním a má široký rozsah pro různé typy sběratelů i sbírek",
-			"category": "logo / vizuální identita / orientační systém",
-			"year": "2022",
-			"thumbnail": "",
-			"landingMedia": null,
-			"images": [],
-			"filters": ["logo", "vizuální identita", "orientační systém"]
-		},
-		{
-			"homepage": null,
-			"id": 1726602381766,
-			"label": "ATEH LIGHTING",
-			"description": "ahhhh",
-			"category": "logo",
-			"year": "2022",
-			"thumbnail": "/dynamic/imgs/work/1726602381766/48cf51ffe8fc235b860e279d2bc75c4a.jpeg",
-			"landingMedia": null,
-			"images": ["/dynamic/imgs/work/1726602381766/f95dd669f2ea5981bd46047c0f84cdb1.jpeg"],
-			"filters": []
-		},
-		{
-			"homepage": {
-				"index": 3,
-				"image": "/dynamic/imgs/work/1726603827881/1ff9a925abc43dacae496a6fd3a59fd3.jpeg",
-				"text": "HANS ARCHITEKTI",
-				"description": "",
-				"textColor": "#ffffff"
-			},
-			"id": 1726603827881,
-			"label": "HANS ARCHITEKTI",
-			"description": "...",
-			"category": "logo",
-			"year": "2023",
-			"thumbnail": "/dynamic/imgs/work/1726603827881/6d3d49964d616e44a1158d2850bdf16a.jpeg",
-			"landingMedia": null,
-			"images": ["/dynamic/imgs/work/1726603827881/bfd2c0720d4de5ef82c5513350abde7f.jpeg"],
-			"filters": []
-		}
-	]
+  "projects": [
+    {
+      "homepage": {
+        "index": 2,
+        "image": "/dynamic/imgs/work/0/71781e97161efca5ce785e068817b63b.jpeg",
+        "text": "maxi dental",
+        "description": "",
+        "textColor": "#006d8f"
+      },
+      "id": 0,
+      "label": "maxi dental",
+      "description": "Břeclavská zubní klinika Maxi DENTAL má po více než deseti letech nové logo a firemní identitu. Zubní klinika z Břeclavi prošla razantní proměnou, a čerstvý vizuální styl byl její neodmyslitelnou součástí.\n\nTvorbu vizuální identity pro Maxi DENTAL inspirovalo zaměření klienta. Chtěli jsme vytvořit svěží logo s nenápadným odkazem na zubní odvětví, ve kterém klinika působí. Nejprve jsme si pohrávali se základními motivy zubů a úsměvu až do doby, kdy z nich vyšly jednoduché linie. Na ně jsme navázali při tvorbě custom fontu, na kterém stojí logo i celá firemní identita.\n\nFont jsme spárovali se tlumenou modrou a doplnili sadou hravých piktogramů na míru. Výsledkem je minimalistický vizuál, který se dá kreativně aplikovat na nejrůznější materiály.",
+      "category": "logo / vizuální identita / tiskoviny / orientační systém",
+      "year": "2023 - 2024",
+      "thumbnail": "/dynamic/imgs/work/0/5683966857801884c0cdfdbacf223a12.jpeg",
+      "landingMedia": "/dynamic/imgs/work/0/7cf21602499daf8798d0ab1891a1e711.mp4",
+      "images": [
+        "/dynamic/imgs/work/0/9dfe593429c3ab094a58baa9f8d32689.jpeg",
+        [
+          "/dynamic/imgs/work/0/2926e16d2ed553b9522a769925282d38.jpeg",
+          "/dynamic/imgs/work/0/4fc1f3b8bc4f57b10043175f848fedba.jpeg"
+        ]
+      ],
+      "filters": [
+        "logo",
+        "vizuální identita",
+        "tiskoviny",
+        "orientační systém"
+      ]
+    },
+    {
+      "homepage": {
+        "index": 1,
+        "image": "/dynamic/imgs/work/1726593601263/89f7addf3e769e0dbed0dc790733273d.jpeg",
+        "text": "Kalina Gallery & Apartments",
+        "description": "",
+        "textColor": "#000000"
+      },
+      "id": 1726593601263,
+      "label": "Kalina Gallery & Apartments",
+      "description": "Galerie se zaměřuje na prezentaci současného umění etablovaných i začínajících výtvarných umělců.\n\nJe charakteristická výběrem výjimečných talentů, svou rozmanitostí i snahou o širší kulturní dopad.\n\nÚzká spolupráce s umělci a důkladné porozumění formám uměleckého vyjádření jsou ústředním bodem její identity. Inspirativní jsou také četná setkání s umělci v samotné galerii. Kalina Gallery úzce spolupracuje se všemi svými umělci tak, aby dokázala zajistit nejvyšší možnou úroveň prezentace, a to v prostoru, který je pro tento účel přímo stvořený.\n\nDíky jedinečnému výběru vysoce hodnotných sběratelských uměleckých děl a svou nekompromisní věrností inovacím světového umění, se galerie zavázala plnit poslání leadera ve svém oboru. Vstupuje na trh s uměním a má široký rozsah pro různé typy sběratelů i sbírek",
+      "category": "logo / vizuální identita / orientační systém",
+      "year": "2022",
+      "thumbnail": "/dynamic/imgs/work/1726593601263/95c7640ea0908c3e51d3d48f95ece1f6.jpeg",
+      "landingMedia": null,
+      "images": [
+        [
+          "/dynamic/imgs/work/1726593601263/45ba0fe44c4cb5a5612f25c6e81cb420.jpeg",
+          ""
+        ]
+      ],
+      "filters": [
+        "logo",
+        "vizuální identita",
+        "orientační systém"
+      ]
+    },
+    {
+      "homepage": null,
+      "id": 1726602381766,
+      "label": "ATEH LIGHTING",
+      "description": "ahhhh",
+      "category": "logo",
+      "year": "2022",
+      "thumbnail": "/dynamic/imgs/work/1726602381766/48cf51ffe8fc235b860e279d2bc75c4a.jpeg",
+      "landingMedia": null,
+      "images": [
+        "/dynamic/imgs/work/1726602381766/f95dd669f2ea5981bd46047c0f84cdb1.jpeg"
+      ],
+      "filters": []
+    },
+    {
+      "homepage": {
+        "index": 3,
+        "image": "/dynamic/imgs/work/1726603827881/1ff9a925abc43dacae496a6fd3a59fd3.jpeg",
+        "text": "HANS ARCHITEKTI",
+        "description": "",
+        "textColor": "#ffffff"
+      },
+      "id": 1726603827881,
+      "label": "HANS ARCHITEKTI",
+      "description": "...",
+      "category": "logo",
+      "year": "2023",
+      "thumbnail": "/dynamic/imgs/work/1726603827881/6d3d49964d616e44a1158d2850bdf16a.jpeg",
+      "landingMedia": null,
+      "images": [
+        "/dynamic/imgs/work/1726603827881/bfd2c0720d4de5ef82c5513350abde7f.jpeg",
+        [
+          "/dynamic/imgs/work/1726603827881/fe814ff99062faaeb44412f9f5cfbf68.jpeg",
+          "/dynamic/imgs/work/1726603827881/a9cf4c373be7fd2eb3607e46f424c0ad.jpeg"
+        ],
+        "/dynamic/imgs/work/1726603827881/5ab5e19f177c8adc2a7d175a8dfbf1c6.jpeg"
+      ],
+      "filters": []
+    },
+    {
+      "homepage": null,
+      "id": 1727035527666,
+      "label": "Maxi Dental",
+      "description": "AFUGLU LGUFG ",
+      "category": "logo / vizuální identita / tiskoviny / orientační systém",
+      "year": "2022",
+      "thumbnail": "/dynamic/imgs/work/1727035527666/5395b24d6ad3f217a0d623d7ebe06736.jpeg",
+      "landingMedia": "/dynamic/imgs/work/1727035527666/163a34849268869d6d88413683509725.jpeg",
+      "images": [
+        [
+          "/dynamic/imgs/work/1727035527666/d1f9161e3d0c489fda6daf96bd3850f2.jpeg",
+          "/dynamic/imgs/work/1727035527666/c26a3f900a768fdf3f2a055264216b44.jpeg"
+        ]
+      ],
+      "filters": []
+    }
+  ]
 }

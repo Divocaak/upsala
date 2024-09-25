@@ -4,6 +4,7 @@
 	import { Base64ImageEditor } from '$lib/admin/Base64ImageEditor';
 
 	export let schemaPath, dataPath, apiPath, saveButton;
+	export let filters = false;
 
 	let editor;
 	let container;
@@ -28,13 +29,15 @@
 		const schemaData = await schemaRes.json();
 
 		const dataRes = await fetch(dataPath);
-		const dataData = await dataRes.json();
+		let dataData = await dataRes.json();
+		if (filters) dataData = dataData.definitions.filterEnums.items.enum;
 
 		editor = new JSONEditor(container, {
 			disable_edit_json: true,
 			disable_properties: true,
 			disable_array_delete_last_row: true,
 			compact: true,
+			ajax: true,
 			theme: 'spectre',
 			iconlib: 'spectre',
 			schema: schemaData,

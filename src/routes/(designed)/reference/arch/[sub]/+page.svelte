@@ -1,21 +1,21 @@
 <script>
-	import ArchButton from '$lib/ArchButton.svelte';
+	import StyledForm from '$lib/StyledForm.svelte';
 	import ArchSub from '$lib/ArchSub.svelte';
 
 	export let data;
 </script>
 
 <div class="tabs-holder">
-	<a href="/work/arch/archival">Archivační</a>
-	<a href="/work/arch/presentational">Prezentační</a>
-	<a href="/work/arch/boxes">Obaly a Boxy</a>
+	<a href="/reference/arch/archival">Archivační</a>
+	<a href="/reference/arch/presentational">Prezentační</a>
+	<a href="/reference/arch/boxes">Obaly a Boxy</a>
 </div>
 
 {#each data.objects as object}
 	<ArchSub {object} />
 {/each}
 
-<ArchButton />
+<StyledForm removeFromSuccessPath="/{data.subName}"/>
 
 <style>
 	.tabs-holder {

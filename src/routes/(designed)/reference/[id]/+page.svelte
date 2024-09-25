@@ -4,6 +4,7 @@
 	import WorkTile from '$lib/WorkTile.svelte';
 	import WorkWrapper from '$lib/WorkWrapper.svelte';
 	import LazyImage from '$lib/LazyImage.svelte';
+	import Filter from '$lib/Filter.svelte';
 
 	export let data;
 
@@ -11,8 +12,11 @@
 </script>
 
 <LeadContainer title={data.project.label} textSmall={data.project.description}>
-	<p class="subtext">{data.project.category}</p>
-	<p class="subtext">{data.project.year}</p>
+	{#if data.project.filters}
+		{#each data.project.filters as filter}
+			<Filter label={filter}/>
+		{/each}
+	{/if}
 </LeadContainer>
 
 <div class="images-container">
@@ -58,21 +62,15 @@
 </WorkWrapper>
 
 <style>
-	.subtext {
-		font-family: 'Outfit';
-		font-weight: 400;
-		font-size: var(--text-20);
-		line-height: 138%;
-	}
-
 	.images-container {
 		position: relative;
 		padding: 0 35px;
 	}
 
-	.main-image {
+	:global(.main-image) {
 		position: relative;
 		width: 100%;
+		height: auto;
 		border-radius: var(--border-radius);
 	}
 
@@ -111,12 +109,6 @@
 
 	.image-group-image:last-of-type {
 		margin-left: 15px;
-	}
-
-	@media screen and (max-width: 1200px) {
-		.subtext {
-			margin: 38px;
-		}
 	}
 
 	@media screen and (max-width: 900px) {
