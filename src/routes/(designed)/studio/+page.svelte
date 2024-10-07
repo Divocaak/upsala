@@ -13,6 +13,10 @@
 	});
 </script>
 
+<svelte:head>
+	<title>studio</title>
+</svelte:head>
+
 <LeadContainer
 	title="grafické
 	studio"

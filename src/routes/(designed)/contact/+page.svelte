@@ -4,6 +4,10 @@
 	import StyledForm from '$lib/StyledForm.svelte';
 </script>
 
+<svelte:head>
+	<title>kontakt</title>
+</svelte:head>
+
 <LeadContainer title="Contact" contact={true}>
 	<div class="contact-container">
 		<Contact name="Tomáš Zahradníček" tel="604 924 084" mail="upsala@upsala.cz" />

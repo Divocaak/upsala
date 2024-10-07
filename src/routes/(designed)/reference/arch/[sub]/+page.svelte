@@ -5,6 +5,10 @@
 	export let data;
 </script>
 
+<svelte:head>
+	<title>projekt arch</title>
+</svelte:head>
+
 <div class="tabs-holder">
 	<a href="/reference/arch/archival">Archivační</a>
 	<a href="/reference/arch/presentational">Prezentační</a>

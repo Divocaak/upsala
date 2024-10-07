@@ -11,6 +11,10 @@
 	const landing = data.project.landingMedia ?? data.project.thumbnail;
 </script>
 
+<svelte:head>
+	<title>{data.project.label}</title>
+</svelte:head>
+
 <LeadContainer title={data.project.label} textSmall={data.project.description}>
 	{#if data.project.filters}
 		{#each data.project.filters as filter}
