@@ -36,16 +36,12 @@
 
 	p:first-of-type {
 		width: 100%;
-		font-weight: 400;
 		font-size: var(--text-36);
-		line-height: 138%;
 	}
 
 	p:last-of-type {
 		width: 100%;
-		font-weight: 400;
 		font-size: var(--text-20);
-		line-height: 170%;
 		white-space: pre-line;
 	}
 

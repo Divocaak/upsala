@@ -32,9 +32,7 @@
 	}
 
 	.tabs-holder a {
-		font-weight: 400;
 		font-size: var(--text-36);
-		line-height: 138%;
 
 		margin: 0 10vw;
 	}

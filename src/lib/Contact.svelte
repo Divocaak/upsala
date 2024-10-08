@@ -20,9 +20,7 @@
 	a {
 		margin: 0;
 
-		font-weight: 400;
 		font-size: var(--text-32);
-		line-height: 138%;
 	}
 
 	a {

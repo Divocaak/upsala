@@ -138,7 +138,7 @@
 
 	.dots-wrapper {
 		position: absolute;
-		bottom: 0;
+		bottom: 3.5%;
 
 		width: 100%;
 
@@ -185,18 +185,19 @@
 		padding: 0 35px;
 
 		box-sizing: border-box;
+
+		width: 45%;
 	}
 
 	h1 {
-		font-weight: 400;
 		font-size: 40px;
-		line-height: 138%;
 		text-transform: uppercase;
 	}
 
 	@media screen and (max-width: 600px) {
 		.content {
-			bottom: 5%;
+			bottom: 7.5%;
+			width: 100%;
 		}
 	}
 </style>

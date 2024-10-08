@@ -12,14 +12,13 @@
 		all: unset;
 
 		margin: 5px 10px 5px 0px;
-		padding: 5px 10px;
+		padding: 7.5px 15px;
 
-		border: 1px solid black;
+		border: 1px solid var(--black);
 
 		font-family: "SuisseIntl";
-		font-weight: 400;
 		font-size: var(--text-16);
-		line-height: 16px;
+		letter-spacing: .45px;
 
 		display: inline-block;
 		

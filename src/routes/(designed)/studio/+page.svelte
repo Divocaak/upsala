@@ -112,7 +112,7 @@
 		flex: 1 1 calc(25% - 32px);
 		box-sizing: border-box;
 
-		border-right: 1px solid black;
+		border-right: 1px solid var(--black);
 	}
 
 	.value-wrapper:last-child{

@@ -28,7 +28,7 @@
 
 		height: 15px;
 		width: 15px;
-		background-color: black;
+		background-color: var(--black);
 		border-radius: 50%;
 
 		margin: 0 5px;

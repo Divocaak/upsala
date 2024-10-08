@@ -64,22 +64,6 @@
 		font-style: italic;
 	}
 
-	/* SuisseIntl Book */
-	@font-face {
-		font-family: 'SuisseIntl';
-		src: url('/f_SuisseIntl/SuisseIntl-Book.otf') format('opentype');
-		font-weight: 400; /* Book (Regular) */
-		font-style: normal;
-	}
-
-	/* SuisseIntl Book Italic */
-	@font-face {
-		font-family: 'SuisseIntl';
-		src: url('/f_SuisseIntl/SuisseIntl-BookItalic.otf') format('opentype');
-		font-weight: 400; /* Book (Regular) */
-		font-style: italic;
-	}
-
 	/* SuisseIntl Light */
 	@font-face {
 		font-family: 'SuisseIntl';
@@ -211,9 +195,9 @@
 
 	:global(:root) {
 		--pink: #ff67c2;
+		--black: #1d1d1b;
 		--border-radius: 5px;
 		--link-transition: 0.35s;
-		--thick-text: #1d1d1b;
 		--text-16: calc(8px + (0.926vw * 0.35));
 		--text-20: calc(10px + (1.157vw * 0.25));
 		--text-24: calc(12px + (1.389vw * 0.15));
@@ -223,9 +207,12 @@
 		--text-96: calc(48px + (5.556vw * 0.15));
 	}
 
-	:global(h1, h2, h3, h4, h5, h6, p, a) {
-		color: black;
+	:global(h1, h2, h3, h4, h5, h6, p, a, button) {
+		color: var(--black);
 		font-family: 'SuisseIntl', sans-serif;
+		font-weight: 400;
+		letter-spacing: 0.5px;
+		line-height: 145%;
 	}
 
 	:global(a) {

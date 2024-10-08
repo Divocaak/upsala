@@ -22,20 +22,16 @@
 	p:first-of-type {
 		width: 40%;
 
-		font-weight: 600;
 		font-size: var(--text-96);
-		line-height: 93%;
 
-		color: var(--thick-text);
+		color: var(--black);
 		text-transform: uppercase;
 	}
 
 	p:last-of-type {
 		width: 60%;
 
-		font-weight: 400;
 		font-size: var(--text-32);
-		line-height: 138%;
 
 		white-space: pre-line;
 

@@ -1,7 +1,7 @@
 <script>
 	import { fade, slide } from 'svelte/transition';
 
-	export let textColor = '#000000';
+	export let textColor = '#1d1d1b';
 	export let transparent = false;
 
 	let menuShown = false;
@@ -79,7 +79,6 @@
 
 	nav .wide-nav a {
 		font-size: var(--text-36);
-		line-height: 138%;
 	}
 
 	nav .wide-nav a:nth-of-type(2) {
@@ -88,8 +87,6 @@
 
 	.home {
 		font-size: var(--text-64);
-		line-height: 138%;
-		font-weight: normal;
 
 		padding-left: 35px;
 	}
@@ -127,9 +124,7 @@
 	}
 
 	.small-nav div a {
-		font-weight: 400;
 		font-size: var(--text-36);
-		line-height: 138%;
 	}
 
 	@media screen and (max-width: 600px) {

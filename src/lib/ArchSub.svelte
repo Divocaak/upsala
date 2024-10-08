@@ -135,15 +135,11 @@
 	}
 
 	.content-holder p:first-of-type {
-		font-weight: 600;
 		font-size: var(--text-36);
-		line-height: 138%;
 		text-transform: uppercase;
 	}
 	.content-holder p:last-of-type {
-		font-weight: 400;
 		font-size: var(--text-20);
-		line-height: 138%;
 	}
 	:global(.content-holder svg) {
 		position: relative;

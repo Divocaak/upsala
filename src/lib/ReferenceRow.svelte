@@ -58,9 +58,7 @@
 	p {
 		width: 50%;
 
-		font-weight: 400;
 		font-size: var(--text-32);
-		line-height: 170%;
 
 		padding-left: 5px;
 		margin: 0;
@@ -75,13 +73,15 @@
 
 	.hover-image {
 		position: fixed;
-		pointer-events: none;
-		transition: opacity 0.2s ease;
-		opacity: 0;
-
-		border-radius: var(--border-radius);
 		width: 50%;
 		height: auto;
+		
+		opacity: 0;
+		pointer-events: none;
+		
+		border-radius: var(--border-radius);
+
+		transition: opacity 0.65s ease;
 	}
 
 	.hover-image.visible {

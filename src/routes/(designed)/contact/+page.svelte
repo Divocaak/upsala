@@ -8,7 +8,7 @@
 	<title>kontakt</title>
 </svelte:head>
 
-<LeadContainer title="Contact" contact={true}>
+<LeadContainer title="Kontakt" contact={true}>
 	<div class="contact-container">
 		<Contact name="Tomáš Zahradníček" tel="604 924 084" mail="upsala@upsala.cz" />
 		<Contact name="Vendula Evjáková" tel="734 570 385" mail="vendula@upsala.cz" />

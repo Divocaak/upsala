@@ -69,10 +69,7 @@
 
 		padding-top: 5px;
 
-		font-weight: 400;
 		font-size: var(--text-20);
-		line-height: 138%;
-		letter-spacing: 0.5px;
 
 		transition: all 0.45s;
 
@@ -80,9 +77,7 @@
 	}
 
 	p:last-of-type {
-		font-weight: 400;
 		font-size: var(--text-20);
-		line-height: 170%;
 
 		padding-top: 10%;
 		padding-right: 30%;

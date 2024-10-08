@@ -47,12 +47,13 @@
 	}
 
 	.title h1 {
-		font-weight: 600;
 		font-size: var(--text-96);
-		line-height: 93%;
 		text-transform: uppercase;
+		font-weight: 600;
+		line-height: 93%;
+		letter-spacing: 1px;
 
-		color: var(--thick-text);
+		color: var(--black);
 
 		white-space: pre-line;
 	}
@@ -60,7 +61,6 @@
 	.title .contact {
 		padding-top: 100px;
 		font-size: var(--text-64);
-		font-weight: normal;
 	}
 
 	.text {
@@ -73,15 +73,11 @@
 	}
 
 	.prim-text {
-		font-weight: 400;
 		font-size: var(--text-32);
-		line-height: 138%;
 	}
 
 	.sec-text {
-		font-weight: 400;
 		font-size: var(--text-32);
-		line-height: 138%;
 
 		padding-bottom: 100px;
 	}

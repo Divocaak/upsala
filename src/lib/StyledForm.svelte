@@ -13,6 +13,7 @@
 	});
 </script>
 
+<!-- TODO labels into placeholders -->
 <p class="label" class:arch={isArch}>{label}</p>
 <form action="https://api.staticforms.xyz/submit" method="post">
 	<input type="hidden" name="accessKey" value="29c36e4e-7864-49e3-853e-8cca897dc0bf" />
@@ -64,9 +65,7 @@
 
 	.label {
 		font-family: 'SuisseIntl';
-		font-weight: 400;
 		font-size: var(--text-36);
-		line-height: 138%;
 
 		text-align: center;
 
@@ -82,13 +81,11 @@
 		position: relative;
 
 		font-family: 'SuisseIntl', sans-serif;
-		font-weight: 400;
 		font-size: var(--text-32);
-		line-height: 130%;
 
 		color: grey;
 
-		border-bottom: 1px solid black;
+		border-bottom: 1px solid var(--black);
 		padding-bottom: 10px;
 
 		margin: 30px 0;
@@ -104,17 +101,27 @@
 		color: var(--pink);
 	}
 
+	select {
+		all: unset;
+		color: var(--black);
+	}
+
 	input,
 	select,
 	textarea {
 		font-family: 'SuisseIntl', sans-serif;
-		font-weight: 400;
 		font-size: var(--text-32);
-		line-height: 130%;
+		color: var(--black);
 
 		border: none;
 
 		padding: 0;
+	}
+
+	input:focus,
+	select:focus,
+	textarea:focus {
+		outline: none;
 	}
 
 	input,
@@ -142,11 +149,9 @@
 		width: unset;
 		height: unset;
 
-		font-weight: 400;
 		font-size: var(--text-32);
-		line-height: 130%;
 
-		color: black;
+		color: var(--black);
 		background-color: transparent;
 
 		cursor: pointer;
