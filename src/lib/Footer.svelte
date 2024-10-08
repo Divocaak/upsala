@@ -21,10 +21,13 @@
 		width: calc(100% - 2 * 38px);
 	}
 
+	footer p, footer div a{
+		font-size: var(--text-36);
+	}
+
 	footer p span {
 		display: inline-block;
 		position: relative;
-		top: 2px;
 
 		height: 15px;
 		width: 15px;

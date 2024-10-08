@@ -2,6 +2,7 @@
 	import LeadContainer from '$lib/LeadContainer.svelte';
 	import ArchCategory from '$lib/ArchCategory.svelte';
 	import StyledForm from '$lib/StyledForm.svelte';
+	import WorkWrapper from '$lib/WorkWrapper.svelte';
 </script>
 
 <svelte:head>
@@ -12,7 +13,7 @@
 	title="Projekt arch"
 	text="Chcete, aby vaše práce zaujala na první pohled? Klíčem je profesionální prezentace, a my víme, jak na ni. V naší nabídce najdete osvědčená řešení z kvalitních materiálů, na které se můžete spolehnout. Stačí si vybrat typ přebalu, formát a odhad počtu kusů - o zbytek se postaráme."
 />
-<div class="categories-container">
+<WorkWrapper>
 	<ArchCategory
 		heading="Archivační"
 		text="Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat."
@@ -31,20 +32,5 @@
 		mediaPath="/arch_thumbnail.jpg"
 		sub="boxes"
 	/>
-</div>
+</WorkWrapper>
 <StyledForm />
-
-<style>
-	.categories-container {
-		position: relative;
-		width: calc(100% - 70px);
-		height: auto;
-
-		display: flex;
-		justify-content: center;
-		flex-direction: row;
-		flex-wrap: wrap;
-
-		padding: 0 35px;
-	}
-</style>

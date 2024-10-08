@@ -25,10 +25,6 @@
 		transition: all 0.35s;
 	}
 
-	.clickable {
-		cursor: pointer;
-	}
-
 	button.clickable:hover {
 		color: var(--pink);
 		border: 1px solid var(--pink);

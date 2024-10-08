@@ -3,18 +3,19 @@
 	export let text = null;
 	export let textSmall = null;
 	export let contact = false;
+	export let paddedTitle = false;
 </script>
 
 <div class="wrapper">
-	<div class="title">
+	<div class="title" class:padded-title={paddedTitle}>
 		<h1>{title}</h1>
-		{#if contact}
-			<p class="contact">
-				UPSALA, s.r.o. <br />
-				Jakubská 1, 602 00 Brno
-			</p>
-		{/if}
 	</div>
+	{#if contact}
+		<p class="contact">
+			UPSALA, s.r.o. <br />
+			Jakubská 1, 602 00 Brno
+		</p>
+	{/if}
 	<div class="text">
 		{#if text != null}
 			<p class="prim-text">{text}</p>
@@ -46,6 +47,11 @@
 		padding: 0 38px;
 	}
 
+	.title.padded-title{
+		width: 100%;
+		background-color: red;
+	}
+
 	.title h1 {
 		font-size: var(--text-96);
 		text-transform: uppercase;
@@ -60,7 +66,7 @@
 
 	.title .contact {
 		padding-top: 100px;
-		font-size: var(--text-64);
+		font-size: var(--text-36);
 	}
 
 	.text {
@@ -93,7 +99,8 @@
 			width: 100%;
 		}
 
-		.title h1, .title .contact,
+		.title h1,
+		.title .contact,
 		.text p {
 			padding: 0 38px;
 		}

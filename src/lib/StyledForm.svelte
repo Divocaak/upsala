@@ -13,7 +13,6 @@
 	});
 </script>
 
-<!-- TODO labels into placeholders -->
 <p class="label" class:arch={isArch}>{label}</p>
 <form action="https://api.staticforms.xyz/submit" method="post">
 	<input type="hidden" name="accessKey" value="29c36e4e-7864-49e3-853e-8cca897dc0bf" />

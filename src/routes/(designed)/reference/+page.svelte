@@ -78,7 +78,6 @@
 
 	.filters svg {
 		padding-right: 25px;
-		cursor: pointer;
 
 		fill: #d9d9d9;
 

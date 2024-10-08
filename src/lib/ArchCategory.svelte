@@ -3,7 +3,9 @@
 </script>
 
 <a href="/reference/arch/{sub}" class="container" >
-	<div class="image" style="background-image: url('{mediaPath}');"></div>
+	<div class="thumbnail-wrapper">
+		<div class="thumbnail" style="background-image: url('{mediaPath}');"></div>
+	</div>
 	<div class="texts-wrapper">
 		<p>{heading}</p>
 		<p>{text}</p>
@@ -27,36 +29,30 @@
 		color: var(--pink);
 	}
 
-	.image {
+	.thumbnail-wrapper {
 		position: relative;
 		aspect-ratio: 3/2;
+
+		border-radius: var(--border-radius);
+		z-index: 10;
+
+		overflow: hidden;
+	}
+
+	.thumbnail {
+		position: relative;
+		width: 100%;
+		height: 100%;
 
 		background-position: center;
 		background-repeat: no-repeat;
 		background-size: cover;
 
-		border-radius: var(--border-radius);
+		transition: all 0.45s ease-in-out;
 	}
 
-	.image::before {
-		content: '';
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-
-		z-index: 10;
-
-		border-radius: var(--border-radius);
-		background-color: #ff67c2;
-		opacity: 0;
-
-		transition: all 0.45s;
-	}
-
-	.container:hover .image::before {
-		opacity: 0.35;
+	a:hover .thumbnail {
+		transform: scale(1.05);
 	}
 
 	.texts-wrapper {

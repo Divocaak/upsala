@@ -44,30 +44,6 @@
 		transform: scale(1.05);
 	}
 
-	.thumbnail::before {
-		content: '';
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-
-		border-radius: var(--border-radius);
-		background: linear-gradient(
-			0deg,
-			rgba(255, 103, 194, 1) 0%,
-			rgba(255, 255, 255, 0) 50%,
-			rgba(255, 255, 255, 0) 100%
-		);
-		opacity: 0;
-
-		transition: all 0.45s;
-	}
-
-	a:hover .thumbnail::before {
-		opacity: 0.35;
-	}
-
 	p {
 		position: relative;
 		margin: 0;
