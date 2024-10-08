@@ -5,12 +5,12 @@
 	export let transparent = false;
 
 	let menuShown = false;
-	const showMenu = () => (menuShown = !menuShown);
+	const showMenu = (newVal) => (menuShown = newVal);
 </script>
 
 <nav style="--nav-color: {textColor};" class:transparent>
 	<a class="home" href="/">upsala</a>
-	<button on:click={() => showMenu()}>
+	<button on:click={() => showMenu(!menuShown)}>
 		<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="black" viewBox="0 0 16 16">
 			{#if !menuShown}
 				<path
@@ -35,9 +35,9 @@
 {#if menuShown}
 	<div class="small-nav" transition:slide>
 		<div>
-			<a href="/reference">Reference</a>
-			<a href="/studio">Studio</a>
-			<a href="/contact">Kontakt</a>
+			<a on:click={() => showMenu(false)} href="/reference">Reference</a>
+			<a on:click={() => showMenu(false)} href="/studio">Studio</a>
+			<a on:click={() => showMenu(false)} href="/contact">Kontakt</a>
 		</div>
 	</div>
 {/if}
