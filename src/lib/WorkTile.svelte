@@ -2,14 +2,28 @@
 	export let project = null;
 	export let arch = false;
 
-	const thumbnail = arch ? '/arch_thumbnail.jpg' : project.thumbnail;
+	export let heading = null;
+	export let text = null;
+	export let subPath = null;
+	export let subThumbnail = null;
+
+	const archCategory = heading && text && subPath && subThumbnail;
+
+	const headingText = archCategory ? heading : arch ? 'projekt arch' : project.label;
+	const path = archCategory ? subPath : arch ? 'arch' : project.id;
+	const thumbnail = archCategory ? subThumbnail : arch ? '/arch_thumbnail.jpg' : project.thumbnail;
 </script>
 
-<a href="/reference/{arch ? 'arch' : project.id}">
+<a href="/reference/{path}">
 	<div class="thumbnail-wrapper">
 		<div class="thumbnail" style="background-image: url('{thumbnail}');"></div>
 	</div>
-	<p>{arch ? 'projekt arch' : project.label}</p>
+	<div class="texts-wrapper">
+		<p>{headingText}</p>
+		{#if text}
+			<p>{text}</p>
+		{/if}
+	</div>
 </a>
 
 <style>
@@ -44,9 +58,14 @@
 		transform: scale(1.05);
 	}
 
-	p {
+	.texts-wrapper {
 		position: relative;
-		margin: 0;
+		width: 100%;
+	}
+
+	.texts-wrapper p:first-of-type {
+		width: 100%;
+
 		padding-top: 5px;
 
 		font-size: var(--text-20);
@@ -56,7 +75,14 @@
 		text-transform: uppercase;
 	}
 
-	a:hover p {
+	.texts-wrapper p:nth-of-type(2) {
+		font-size: var(--text-20);
+
+		padding-top: 10%;
+		padding-right: 30%;
+	}
+
+	a:hover p:first-of-type {
 		color: var(--pink);
 	}
 </style>
