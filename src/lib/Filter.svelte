@@ -16,12 +16,12 @@
 
 		border: 1px solid var(--black);
 
-		font-family: "SuisseIntl";
+		font-family: 'SuisseIntl';
 		font-size: var(--text-16);
-		letter-spacing: .45px;
+		letter-spacing: 0.45px;
 
 		display: inline-block;
-		
+
 		transition: all 0.35s;
 	}
 

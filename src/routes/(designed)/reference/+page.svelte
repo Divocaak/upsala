@@ -1,8 +1,8 @@
 <script>
-	import WorkTile from '$lib/WorkTile.svelte';
-	import WorkWrapper from '$lib/WorkWrapper.svelte';
-	import { onMount } from 'svelte';
+	import WorkTile from '$lib/workTiles/WorkTile.svelte';
+	import WorkWrapper from '$lib/workTiles/WorkWrapper.svelte';
 	import Filter from '$lib/Filter.svelte';
+	import { onMount } from 'svelte';
 	import { fade } from 'svelte/transition';
 
 	let data = {};
@@ -72,8 +72,8 @@
 		padding-bottom: 10px;
 	}
 
-	.filters button{
-		all:unset;
+	.filters button {
+		all: unset;
 	}
 
 	.filters svg {

@@ -14,9 +14,9 @@
 		font-size: var(--text-36);
 	}
 
-    a.active{
-        color: var(--pink);
-    }
+	a.active {
+		color: var(--pink);
+	}
 
 	span {
 		display: inline-block;

@@ -8,6 +8,7 @@
 	let cursorY = 0;
 	let imageOffsetY = 20;
 	let imageHeight = 0;
+	let imageWidth = 0;
 
 	function handleMouseMove(event) {
 		cursorX = event.clientX;
@@ -17,23 +18,27 @@
 	}
 
 	const switchImageVisibility = (newVal) => (showImage = newVal);
-	const handleImageLoad = (event) => (imageHeight = event.target.offsetHeight);
+	const handleImageLoad = (event) => {
+		imageHeight = event.target.offsetHeight;
+		imageWidth = event.target.offsetWidth;
+	};
 </script>
 
 <div class="fx-text">
-	<div
+	<p
 		on:mouseenter={() => switchImageVisibility(true)}
 		on:mouseleave={() => switchImageVisibility(false)}
 		on:mousemove={handleMouseMove}
 	>
-		<p>{label}</p>
-	</div>
+		{label}
+	</p>
 	{#if showImage}
 		<img
 			src={image}
 			alt="reference Image"
 			class="hover-image {showImage ? 'visible' : ''}"
-			style="top: calc({cursorY}px + {imageOffsetY}px); left: {cursorX}px;"
+			style="top: calc({cursorY}px + {imageOffsetY}px); left: calc({cursorX}px - {imageWidth +
+				10}px);"
 			on:load={(event) => handleImageLoad(event)}
 			transition:blur
 		/>
@@ -46,19 +51,15 @@
 </div>
 
 <style>
-	div {
-		margin-left: 38px;
-	}
-
 	.fx-text,
 	.col-text {
 		all: unset;
 	}
 
 	p {
-		width: 50%;
-
-		font-size: var(--text-32);
+		font-size: var(--text-24);
+		line-height: 150%;
+		letter-spacing: 0.02em;
 
 		padding-left: 5px;
 		margin: 0;
@@ -66,19 +67,18 @@
 		transition: all 0.35s;
 	}
 
-	div:hover p {
-		color: #ffffff;
-		background-color: var(--pink);
+	p:hover {
+		color: var(--pink);
 	}
 
 	.hover-image {
 		position: fixed;
 		width: 50%;
 		height: auto;
-		
+
 		opacity: 0;
 		pointer-events: none;
-		
+
 		border-radius: var(--border-radius);
 
 		transition: opacity 0.65s ease;
@@ -92,16 +92,16 @@
 		display: none;
 	}
 
-	.col-text p{
+	.col-text p {
 		width: 100%;
-		
+
 		padding-left: 0;
 		margin-top: 50px;
-		
+
 		text-align: center;
 	}
 
-	.col-text img{
+	.col-text img {
 		width: 100%;
 		height: auto;
 	}

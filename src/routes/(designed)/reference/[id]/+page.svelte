@@ -1,8 +1,8 @@
 <script>
-	import LeadContainer from '$lib/LeadContainer.svelte';
+	import LeadContainer from '$lib/containers/LeadContainer.svelte';
 	import StrikeThroughText from '$lib/StrikeThroughText.svelte';
-	import WorkTile from '$lib/WorkTile.svelte';
-	import WorkWrapper from '$lib/WorkWrapper.svelte';
+	import WorkTile from '$lib/workTiles/WorkTile.svelte';
+	import WorkWrapper from '$lib/workTiles/WorkWrapper.svelte';
 	import LazyImage from '$lib/LazyImage.svelte';
 	import Filter from '$lib/Filter.svelte';
 
@@ -18,7 +18,7 @@
 <LeadContainer title={data.project.label} textSmall={data.project.description}>
 	{#if data.project.filters}
 		{#each data.project.filters as filter}
-			<Filter label={filter}/>
+			<Filter label={filter} />
 		{/each}
 	{/if}
 </LeadContainer>

@@ -21,7 +21,8 @@
 		width: calc(100% - 2 * 38px);
 	}
 
-	footer p, footer div a{
+	footer p,
+	footer div a {
 		font-size: var(--text-36);
 	}
 
@@ -41,8 +42,8 @@
 		padding-right: 20px;
 	}
 
-	@media screen and (max-width: 600px){
-		footer{
+	@media screen and (max-width: 600px) {
+		footer {
 			flex-direction: column;
 		}
 	}

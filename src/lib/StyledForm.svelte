@@ -15,7 +15,7 @@
 </script>
 
 {#if isArch}
-<StrikeThroughText />
+	<StrikeThroughText />
 {/if}
 <p class="label" class:arch={isArch}>{label}</p>
 <form action="https://api.staticforms.xyz/submit" method="post">
