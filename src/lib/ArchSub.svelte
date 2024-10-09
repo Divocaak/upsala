@@ -1,8 +1,10 @@
 <script>
 	import Siema from 'siema';
 	import { onMount, createEventDispatcher } from 'svelte';
+	import StrikeThroughText from '$lib/StrikeThroughText.svelte';
 
 	export let object;
+	export let topStrike = false;
 
 	let svgIcon = loadSVG(object.icon);
 
@@ -71,14 +73,19 @@
 	}
 </script>
 
+{#if topStrike}
+	<StrikeThroughText />
+{/if}
 <div class="wrapper">
 	<div class="content-wrapper">
-		<div class="content-holder">
-			<p>{object.label}</p>
-			<p>{object.text}</p>
+		<div class="icon-wrapper">
 			{#await svgIcon then icon}
 				{@html icon}
 			{/await}
+		</div>
+		<div class="texts-wrapper">
+			<p>{object.label}</p>
+			<p>{object.text}</p>
 		</div>
 	</div>
 	<div class="carousel-wrapper">
@@ -88,69 +95,84 @@
 					<div class="carousel-img" style="background-image: url('{imgPath}');"></div>
 				{/each}
 			</div>
+			<div class="dots-wrapper">
+				{#each { length: totalDots } as _, i}
+					<button
+						on:click={() => go(i * currentPerPage)}
+						class="hoverable dot {isDotActive(currentIndex, i) ? 'active' : ''}"
+					></button>
+				{/each}
+			</div>
 		</div>
 	</div>
 </div>
-<div class="dots-wrapper">
-	{#each { length: totalDots } as _, i}
-		<button
-			on:click={() => go(i * currentPerPage)}
-			class="hoverable dot {isDotActive(currentIndex, i) ? 'active' : ''}"
-		></button>
-	{/each}
-</div>
 
 <style>
-	:root {
-		--height: 510px;
-	}
-
 	.wrapper {
 		position: relative;
 		width: calc(100% - 70px);
-		height: var(--height);
 
-		padding-top: 100px;
+		padding: 100px 0px 50px 0px;
 		margin: 0 35px;
+
+		display: flex;
+		flex-direction: row;
+		justify-content: start;
+		align-items: end;
 	}
 
 	.content-wrapper {
-		position: absolute;
-		width: 35%;
-		height: 100%;
-
-		left: 0;
-	}
-
-	.content-holder {
-		position: relative;
-		width: 40%;
-		height: 100%;
-
-		padding-top: 10%;
+		width: 50%;
+		height: 50%;
 
 		display: flex;
-		flex-direction: column;
+		flex-direction: row;
 		justify-content: start;
+		align-items: end;
 	}
 
-	.content-holder p:first-of-type {
+	.icon-wrapper {
+		width: 33%;
+		height: 100%;
+
+		display: flex;
+		flex-direction: row;
+		justify-content: start;
+		align-items: end;
+	}
+
+	:global(.icon-wrapper svg) {
+		width: 65%;
+		height: auto;
+	}
+
+	.content-wrapper p:first-of-type {
 		font-size: var(--text-36);
 		text-transform: uppercase;
 	}
-	.content-holder p:last-of-type {
+
+	.content-wrapper p:last-of-type {
 		font-size: var(--text-20);
 	}
-	:global(.content-holder svg) {
-		position: relative;
-		width: 100%;
-		height: auto;
+
+	.texts-wrapper {
+		width: 77%;
+		height: 100%;
+
+		display: flex;
+		flex-direction: column;
+		justify-content: end;
+	}
+
+	.carousel-wrapper {
+		width: 50%;
+		height: 100%;
 	}
 
 	.carousel {
 		position: relative;
 		width: 100%;
-		
+
 		justify-content: center;
 		align-items: center;
 
@@ -161,43 +183,27 @@
 	.carousel-wrapper .carousel-img {
 		position: relative;
 		width: 100%;
-		height: var(--height);
+		height: 482px;
 
 		background-position: center;
 		background-repeat: none;
 		background-size: cover;
 	}
 
-	.carousel-wrapper {
-		position: absolute;
-		width: 65%;
-		height: 100%;
-
-		right: 0;
-	}
-
-	@media screen and (max-width: 1000px) {
-		.content-holder {
-			width: 30%;
-
-			padding: 0;
-			margin: auto;
-		}
-
+	@media screen and (max-width: 1200px) {
 		.wrapper {
-			height: auto;
+			flex-direction: column;
 		}
 
 		.content-wrapper,
 		.carousel-wrapper {
-			position: relative;
 			width: 100%;
 		}
 	}
 
 	.dots-wrapper {
-		position: relative;
-		margin-top: 10px;
+		position: absolute;
+		bottom: 10px;
 
 		width: 100%;
 

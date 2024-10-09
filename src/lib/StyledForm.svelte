@@ -1,5 +1,6 @@
 <script>
 	import { onMount } from 'svelte';
+	import StrikeThroughText from '$lib/StrikeThroughText.svelte';
 
 	export let label = 'nezávazná kalkulace';
 	export let subject = 'Poptávka projekt ARCH';
@@ -13,6 +14,9 @@
 	});
 </script>
 
+{#if isArch}
+<StrikeThroughText />
+{/if}
 <p class="label" class:arch={isArch}>{label}</p>
 <form action="https://api.staticforms.xyz/submit" method="post">
 	<input type="hidden" name="accessKey" value="29c36e4e-7864-49e3-853e-8cca897dc0bf" />

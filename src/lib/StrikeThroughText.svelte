@@ -1,8 +1,10 @@
 <script>
-	export let label;
+	export let label = null;
 </script>
 
-<div><h2>{label}</h2></div>
+<div>
+	{#if label}<h2>{label}</h2>{/if}
+</div>
 
 <style>
 	h2 {

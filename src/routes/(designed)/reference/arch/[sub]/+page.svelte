@@ -1,6 +1,7 @@
 <script>
 	import StyledForm from '$lib/StyledForm.svelte';
 	import ArchSub from '$lib/ArchSub.svelte';
+	import ArchSubTabButton from '$lib/ArchSubTabButton.svelte';
 
 	export let data;
 </script>
@@ -10,16 +11,16 @@
 </svelte:head>
 
 <div class="tabs-holder">
-	<a href="/reference/arch/archival">Archivační</a>
-	<a href="/reference/arch/presentational">Prezentační</a>
-	<a href="/reference/arch/boxes">Obaly a Boxy</a>
+	<ArchSubTabButton path="archival" label="Archivační" />
+	<ArchSubTabButton path="presentational" label="Prezentační" />
+	<ArchSubTabButton path="boxes" label="Obaly a Boxy" />
 </div>
 
-{#each data.objects as object}
-	<ArchSub {object} />
+{#each data.objects as object, i}
+	<ArchSub {object} topStrike={i !== 0} />
 {/each}
 
-<StyledForm removeFromSuccessPath="/{data.subName}"/>
+<StyledForm removeFromSuccessPath="/{data.subName}" />
 
 <style>
 	.tabs-holder {
@@ -27,25 +28,10 @@
 		width: 100%;
 
 		display: flex;
+		flex-direction: column;
 		justify-content: center;
-		align-items: center;
-	}
+		align-items: start;
 
-	.tabs-holder a {
-		font-size: var(--text-36);
-
-		margin: 0 10vw;
-	}
-
-	@media screen and (max-width: 600px) {
-		.tabs-holder {
-			flex-direction: column;
-		}
-
-		.tabs-holder a {
-			margin: auto;
-
-			margin-top: 2vh;
-		}
+		padding: 50px 38px;
 	}
 </style>

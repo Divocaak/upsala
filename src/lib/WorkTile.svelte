@@ -10,7 +10,7 @@
 	const archCategory = heading && text && subPath && subThumbnail;
 
 	const headingText = archCategory ? heading : arch ? 'projekt arch' : project.label;
-	const path = archCategory ? subPath : arch ? 'arch' : project.id;
+	const path = archCategory ? `arch/${subPath}` : arch ? 'arch' : project.id;
 	const thumbnail = archCategory ? subThumbnail : arch ? '/arch_thumbnail.jpg' : project.thumbnail;
 </script>
 

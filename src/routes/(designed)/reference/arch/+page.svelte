@@ -1,9 +1,8 @@
 <script>
 	import LeadContainer from '$lib/LeadContainer.svelte';
-	import ArchCategory from '$lib/ArchCategory.svelte';
 	import StyledForm from '$lib/StyledForm.svelte';
 	import WorkWrapper from '$lib/WorkWrapper.svelte';
-	import WorkTile from '../../../../lib/WorkTile.svelte';
+	import WorkTile from '$lib/WorkTile.svelte';
 </script>
 
 <svelte:head>
