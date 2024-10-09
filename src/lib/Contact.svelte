@@ -31,4 +31,10 @@
 	a:hover {
 		color: var(--black);
 	}
+
+	@media screen and (max-width: 1200px) {
+		div {
+			margin: 0;
+		}
+	}
 </style>
