@@ -7,9 +7,10 @@
 	export let contact = false;
 	export let paddedTitle = false;
 	export let imgPath = null;
+	export let bottomPadding = 200;
 </script>
 
-<div class="container">
+<div class="container" style="padding-bottom: {bottomPadding}px">
 	{#if paddedTitle}
 		<div class="padded-title">
 			<h1>{title}</h1>
@@ -66,6 +67,8 @@
 		color: var(--black);
 
 		white-space: pre-line;
+
+		margin-top: 0 !important;
 	}
 
 	.media-wrapper {
@@ -90,6 +93,10 @@
 		white-space: pre-line;
 	}
 
+	.text *:first-child{
+		margin-top: 0 !important;
+	}
+
 	.prim-text {
 		font-size: var(--text-32);
 	}
@@ -97,6 +104,6 @@
 	.sec-text {
 		font-size: var(--text-32);
 
-		padding-bottom: 100px;
+		padding-bottom: 30px;
 	}
 </style>

@@ -52,9 +52,13 @@
 		text-transform: uppercase;
 	}
 
-	img,
-	video {
+	img{
 		width: 60%;
+		height: auto;
+	}
+
+	video {
+		width: 40%;
 		height: auto;
 	}
 </style>

@@ -1,4 +1,6 @@
 <script>
+	import { fade } from "svelte/transition";
+
 	export let project = null;
 	export let arch = false;
 
@@ -14,7 +16,7 @@
 	const thumbnail = archCategory ? subThumbnail : arch ? '/arch_thumbnail.jpg' : project.thumbnail;
 </script>
 
-<a href="/reference/{path}">
+<a href="/reference/{path}" transition:fade>
 	<div class="thumbnail-wrapper">
 		<div class="thumbnail" style="background-image: url('{thumbnail}');"></div>
 	</div>
@@ -68,11 +70,12 @@
 
 		padding-top: 5px;
 
-		font-size: var(--text-20);
+		font-size: var(--text-32);
+		font-weight: 300;
 
 		transition: all 0.45s;
 
-		text-transform: uppercase;
+		/* text-transform: uppercase; */
 	}
 
 	.texts-wrapper p:nth-of-type(2) {

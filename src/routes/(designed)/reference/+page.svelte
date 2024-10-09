@@ -49,7 +49,7 @@
 	{#if data.projects}
 		{#each data.projects as project, i}
 			{#if currentFilter === null || project.filters.includes(currentFilter)}
-				{#if i == 3}
+				{#if i === 3}
 					<WorkTile arch={true} />
 				{/if}
 				<WorkTile {project} />

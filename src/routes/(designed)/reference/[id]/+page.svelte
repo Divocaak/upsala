@@ -15,7 +15,7 @@
 	<title>{data.project.label}</title>
 </svelte:head>
 
-<LeadContainer title={data.project.label} textSmall={data.project.description}>
+<LeadContainer title={data.project.label} textSmall={data.project.description} bottomPadding={50}>
 	{#if data.project.filters}
 		{#each data.project.filters as filter}
 			<Filter label={filter} />

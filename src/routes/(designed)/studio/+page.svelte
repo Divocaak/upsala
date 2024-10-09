@@ -28,12 +28,12 @@
 	text="Studio Upsala jsme založili v roce 2003 a pracujeme pro českou i zahraniční klientelu. Zakládáme si na osobním vztahu s našimi zákazníky a věříme, že rovnocenný dialog je zárukou úspěšné spolupráce."
 	textSmall="Všechna zadání jsou pro nás výzvou a ke každému projektu přistupujeme individuálně. Úzce spolupracujeme s marketingovými specialisty, copywritery, fotografy, architekty, kodéry a další. Profesionálním přístupem pomáháme našim klientům vynakládat prostředky jen na to, co skutečně potřebují. Naší doménou je osobitý, funkční a nadčasový design."
 	paddedTitle={true}
-	imgPath="/arch_thumbnail.jpg"
+	imgPath="/studio.jpg"
 />
-<StudioContainer title="naše služby" imgPath="/arch_thumbnail.jpg">
+<StudioContainer title="naše služby" imgPath="/studio2.jpg">
 	<HalfsLayout>
 		<div slot="l">
-			<p>
+			<p class="service">
 				Logo design<br />
 				Vizuální identita<br />
 				Branding a rebranding<br />
@@ -43,7 +43,7 @@
 			</p>
 		</div>
 		<div slot="r">
-			<p>
+			<p class="service">
 				Web design<br />
 				SoMe grafika<br />
 				Obalový design<br />
@@ -54,7 +54,7 @@
 	</HalfsLayout>
 </StudioContainer>
 
-<StudioContainer title="postup" vidPath="/anims/0.mp4">
+<StudioContainer title="postup" vidPath="/studioAnim.mp4">
 	<div class="process-wrapper">
 		<Process
 			label="První rande"
@@ -97,5 +97,15 @@
 
 		display: flex;
 		flex-direction: column;
+	}
+
+
+	.service{
+		font-size: var(--text-32);
+		line-height: 1.6em;
+	}
+
+	.service:first-of-type {
+		margin-top: 0 !important;
 	}
 </style>
