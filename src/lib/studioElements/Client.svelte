@@ -35,7 +35,7 @@
 	{#if showImage}
 		<img
 			src={image}
-			alt="reference Image"
+			alt="client graphics"
 			class="hover-image {showImage ? 'visible' : ''}"
 			style="top: calc({cursorY}px + {imageOffsetY}px); left: calc({cursorX}px - {imageWidth +
 				10}px);"
@@ -47,7 +47,7 @@
 
 <div class="col-text">
 	<p>{label}</p>
-	<img src={image} alt="reference Image" />
+	<img src={image} alt="client gpx" />
 </div>
 
 <style>

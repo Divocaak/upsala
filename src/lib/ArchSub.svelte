@@ -58,7 +58,7 @@
 		controller.goTo(index);
 	}
 
-	function handleChange(event) {
+	function handleChange() {
 		currentIndex = controller.currentSlide;
 		dispatch('change', {
 			currentSlide: controller.currentSlide,

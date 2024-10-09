@@ -30,7 +30,7 @@
 			{/if}
 			{#if imgPath}
 				<div class="media-wrapper">
-					<img src={imgPath} />
+					<img src={imgPath} alt="container gpx" />
 				</div>
 			{/if}
 		</div>

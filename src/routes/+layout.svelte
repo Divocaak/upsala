@@ -210,10 +210,10 @@
 		font-family: 'SuisseIntl', sans-serif;
 		font-style: normal;
 		font-weight: 400;
-		
+
 		letter-spacing: 0.5px;
 		line-height: 145%;
-		
+
 		color: var(--black);
 	}
 

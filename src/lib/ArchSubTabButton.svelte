@@ -29,12 +29,4 @@
 
 		margin: 0 5px;
 	}
-
-	@media screen and (max-width: 600px) {
-		.tabs-holder a {
-			margin: auto;
-
-			margin-top: 2vh;
-		}
-	}
 </style>

@@ -13,7 +13,7 @@
 		font-size: var(--text-32);
 		line-height: 150%;
 
-        border-bottom: 1px solid var(--black);
+		border-bottom: 1px solid var(--black);
 	}
 
 	.wrapper p:last-of-type {

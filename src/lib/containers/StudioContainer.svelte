@@ -11,7 +11,7 @@
 	<HalfsLayout>
 		<div slot="l" class="media">
 			{#if imgPath}
-				<img src={imgPath} />
+				<img src={imgPath} alt="container gpx" />
 			{/if}
 			{#if vidPath}
 				<video
