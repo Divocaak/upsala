@@ -10,6 +10,10 @@
 	}
 </script>
 
+<svelte:head>
+	<title>upsala</title>
+</svelte:head>
+
 <div class="carousel-wrapper">
 	<Navbar textColor={currentObject.textColor} transparent={true} />
 	<div class="content-wrapper">

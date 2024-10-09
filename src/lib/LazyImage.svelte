@@ -4,6 +4,7 @@
 
 	export let path;
 	export let alt = '';
+	export let wrapperClasses = '';
 	export let additionalClasses = '';
 
 	const src = {
@@ -17,7 +18,7 @@
 	});
 </script>
 
-<div class="wrap">
+<div class="wrap {wrapperClasses}">
 	<Img {src} class="my-img {additionalClasses}" {alt} bind:ref on:load={() => (loaded = true)} />
 	<div class="blur" class:loaded />
 </div>

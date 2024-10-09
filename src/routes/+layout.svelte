@@ -1,5 +1,5 @@
 <script>
-	/* import { onMount } from 'svelte';
+	import { onMount } from 'svelte';
 
 	let cursorX = 0;
 	let cursorY = 0;
@@ -22,13 +22,13 @@
 		return () => {
 			window.removeEventListener('mousemove', handleMouseMove);
 		};
-	}); */
+	});
 </script>
 
-<!-- <div
+<div
 	class="cursor"
 	style="transform: translate(calc(-50% + {cursorX}px), calc(-50% + {cursorY}px));"
-></div> -->
+></div>
 <slot />
 
 <style>
@@ -61,22 +61,6 @@
 		font-family: 'SuisseIntl';
 		src: url('/f_SuisseIntl/SuisseIntl-BoldItalic.otf') format('opentype');
 		font-weight: 700; /* Bold */
-		font-style: italic;
-	}
-
-	/* SuisseIntl Book */
-	@font-face {
-		font-family: 'SuisseIntl';
-		src: url('/f_SuisseIntl/SuisseIntl-Book.otf') format('opentype');
-		font-weight: 400; /* Book (Regular) */
-		font-style: normal;
-	}
-
-	/* SuisseIntl Book Italic */
-	@font-face {
-		font-family: 'SuisseIntl';
-		src: url('/f_SuisseIntl/SuisseIntl-BookItalic.otf') format('opentype');
-		font-weight: 400; /* Book (Regular) */
 		font-style: italic;
 	}
 
@@ -184,18 +168,17 @@
 		font-style: normal;
 	}
 
-	/* .cursor {
+	.cursor {
 		position: absolute;
 
-		height: 30px;
-		width: 30px;
+		height: 15px;
+		width: 15px;
 
 		border-radius: 50%;
 
 		pointer-events: none;
 
-		background-color: var(--pink);
-		opacity: 0.75;
+		background-color: var(--black);
 		z-index: 10000;
 
 		will-change: transform;
@@ -203,17 +186,17 @@
 
 	:global(html) {
 		cursor: none !important;
-	} */
+	}
 
-	:global(body){
+	:global(body) {
 		margin: 0;
 	}
 
 	:global(:root) {
 		--pink: #ff67c2;
+		--black: #1d1d1b;
 		--border-radius: 5px;
 		--link-transition: 0.35s;
-		--thick-text: #1d1d1b;
 		--text-16: calc(8px + (0.926vw * 0.35));
 		--text-20: calc(10px + (1.157vw * 0.25));
 		--text-24: calc(12px + (1.389vw * 0.15));
@@ -223,15 +206,21 @@
 		--text-96: calc(48px + (5.556vw * 0.15));
 	}
 
-	:global(h1, h2, h3, h4, h5, h6, p, a) {
-		color: black;
+	:global(h1, h2, h3, h4, h5, h6, p, a, button) {
 		font-family: 'SuisseIntl', sans-serif;
+		font-style: normal;
+		font-weight: 400;
+
+		letter-spacing: 0.5px;
+		line-height: 145%;
+
+		color: var(--black);
 	}
 
 	:global(a) {
 		text-decoration: none;
 		transition: all var(--link-transition);
-		/* cursor: none; */
+		cursor: none;
 	}
 
 	:global(a:hover) {

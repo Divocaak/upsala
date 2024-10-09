@@ -1,183 +1,144 @@
 <script>
-	import Siema from 'siema';
 	import { onMount, createEventDispatcher } from 'svelte';
-
-	import CarouselItem from '$lib/CarouselItem.svelte';
+	import { goto } from '$app/navigation';
 
 	export let objects;
 
-	export let perPage = 1;
-	export let loop = true;
-	export let autoplay = 6000;
-	export let duration = 1000;
-	export let easing = 'ease-out';
-	export let startIndex = 0;
-	export let draggable = true;
-	export let multipleDrag = true;
-	export let dots = true;
-	export let controls = false;
-	export let threshold = 20;
-	export let rtl = false;
-
-	let currentIndex = startIndex;
-
-	let siema;
-	let controller;
-	let timer;
 	const dispatch = createEventDispatcher();
+	const dragThreshold = 5;
+	let startX, startY;
 
-	$: pips = controller ? controller.innerElements : [];
-	$: currentPerPage = controller ? controller.perPage : perPage;
-	$: totalDots = controller ? Math.ceil(controller.innerElements.length / currentPerPage) : [];
+	let activeIndex = 0;
+	let nextIndex = (activeIndex + 1) % objects.length;
+	const currentPerPage = 1;
+
+	let autoplayInterval;
+	const delay = 6000;
 
 	onMount(() => {
-		controller = new Siema({
-			selector: siema,
-			perPage: typeof perPage === 'object' ? perPage : Number(perPage),
-			loop,
-			duration,
-			easing,
-			startIndex,
-			draggable,
-			multipleDrag,
-			threshold,
-			rtl,
-			onChange: handleChange
-		});
+		dispatch('change', { data: objects[activeIndex].homepage });
 
-		dispatch('change', { data: objects[currentIndex].homepage });
-
-		if (autoplay) {
-			timer = setInterval(right, autoplay);
-		}
+		startAutoplay();
 		return () => {
-			autoplay && clearInterval(timer);
-			controller.destroy();
+			stopAutoplay();
 		};
 	});
 
-	export function isDotActive(currentIndex, dotIndex) {
-		if (currentIndex < 0) currentIndex = pips.length + currentIndex;
+	function handlePointerDown(event) {
+		stopAutoplay();
+		startX = event.clientX;
+		startY = event.clientY;
+	}
+
+	function handlePointerUp(event) {
+		if (
+			Math.abs(event.clientX - startX) < dragThreshold &&
+			Math.abs(event.clientY - startY) < dragThreshold
+		) {
+			goto(`/reference/${objects[activeIndex].id}`);
+		} else {
+			const nextIndex =
+				event.clientX < startX
+					? nextSlideIndex()
+					: (activeIndex - 1 + objects.length) % objects.length;
+			go(nextIndex);
+		}
+	}
+
+	function go(index) {
+		userInteracted();
+		activeIndex = index;
+		nextIndex = (activeIndex + 1) % objects.length;
+		dispatch('change', { data: objects[activeIndex].homepage });
+	}
+
+	const startAutoplay = () => {
+		autoplayInterval = setInterval(() => {
+			go(nextSlideIndex());
+		}, delay);
+	};
+
+	const stopAutoplay = () => {
+		clearInterval(autoplayInterval);
+	};
+
+	const userInteracted = () => {
+		stopAutoplay();
+		startAutoplay();
+	};
+
+	function isDotActive(activeIndex, dotIndex) {
+		if (activeIndex < 0) activeIndex = objects.length + activeIndex;
 		return (
-			currentIndex >= dotIndex * currentPerPage &&
-			currentIndex < dotIndex * currentPerPage + currentPerPage
+			activeIndex >= dotIndex * currentPerPage &&
+			activeIndex < dotIndex * currentPerPage + currentPerPage
 		);
 	}
 
-	export function left() {
-		controller.prev();
-	}
-
-	export function right() {
-		controller.next();
-	}
-
-	export function go(index) {
-		controller.goTo(index);
-	}
-
-	export function pause() {
-		clearInterval(timer);
-	}
-
-	export function resume() {
-		if (autoplay) {
-			timer = setInterval(right, autoplay);
-		}
-	}
-
-	function handleChange(event) {
-		resetInterval();
-		currentIndex = controller.currentSlide;
-		dispatch('change', {
-			currentSlide: controller.currentSlide,
-			slideCount: controller.innerElements.length,
-			data: objects[currentIndex].homepage
-		});
-	}
-
-	function resetInterval(node, condition) {
-		function handleReset(event) {
-			pause();
-			resume();
-		}
-
-		if (condition) {
-			node.addEventListener('click', handleReset);
-		}
-
-		return {
-			destroy() {
-				node.removeEventListener('click', handleReset);
-			}
-		};
-	}
+	const nextSlideIndex = () => (activeIndex + 1) % objects.length;
 </script>
 
 <div class="carousel">
-	<div class="slides" bind:this={siema}>
-		{#each objects as object}
-			<CarouselItem {object} />
+	{#each objects as object, i}
+		<div
+			class="carousel-slide {i === activeIndex ? 'active' : ''}"
+			on:pointerdown={handlePointerDown}
+			on:pointerup={handlePointerUp}
+		>
+			<div class="background-wrapper" style="background-image: url('{object.homepage.image}')" />
+			<div class="content">
+				<h1 style="color: {object.homepage.textColor}">
+					{object.homepage.text}<br />{object.homepage.description}
+				</h1>
+			</div>
+		</div>
+	{/each}
+	<div class="dots-wrapper" style="--available-color:{objects[activeIndex].homepage.textColor};">
+		{#each { length: objects.length } as _, i}
+			<button
+				on:click={() => go(i * currentPerPage)}
+				class="hoverable dot {isDotActive(activeIndex, i) ? 'active' : ''}"
+			></button>
 		{/each}
 	</div>
-	<div class="content">
-		<h1 style="color: {objects[currentIndex].homepage.textColor}">
-			{objects[currentIndex].homepage.text}<br />{objects[currentIndex].homepage.description}
-		</h1>
-	</div>
-	{#if controls}
-		<button class="left" on:click={left} use:resetInterval={autoplay} aria-label="left">
-			<slot name="left-control"></slot>
-		</button>
-		<button class="right" on:click={right} use:resetInterval={autoplay} aria-label="right">
-			<slot name="right-control"></slot>
-		</button>
-	{/if}
-	{#if dots}
-		<div class="dots-wrapper" style="--available-color:{objects[currentIndex].homepage.textColor};">
-			{#each { length: totalDots } as _, i}
-				<button
-					on:click={() => go(i * currentPerPage)}
-					class="hoverable dot {isDotActive(currentIndex, i) ? 'active' : ''}"
-				></button>
-			{/each}
-		</div>
-	{/if}
 </div>
 
 <style>
 	.carousel {
 		position: relative;
 		width: 100%;
+		height: 100vh;
 		justify-content: center;
 		align-items: center;
 	}
 
-	button {
+	.carousel-slide {
 		position: absolute;
-		width: 40px;
-		height: 40px;
-		top: 50%;
-		z-index: 50;
-		margin-top: -20px;
-		border: none;
-		background-color: transparent;
-	}
-	button:focus {
-		outline: none;
+		top: 0;
+		left: 0;
+		opacity: 0;
+		transition: opacity 0.5s ease;
 	}
 
-	.left {
-		left: 2vw;
+	.carousel-slide.active {
+		opacity: 1;
 	}
 
-	.right {
-		right: 2vw;
+	.background-wrapper {
+		position: relative;
+		width: 100vw;
+		height: 100vh;
+
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+
+		transition: all 0.35s;
 	}
 
 	.dots-wrapper {
 		position: absolute;
-		bottom: 0;
+		bottom: 3.5%;
 
 		width: 100%;
 
@@ -224,18 +185,19 @@
 		padding: 0 35px;
 
 		box-sizing: border-box;
+
+		width: 45%;
 	}
 
 	h1 {
-		font-weight: 400;
 		font-size: 40px;
-		line-height: 138%;
 		text-transform: uppercase;
 	}
 
 	@media screen and (max-width: 600px) {
 		.content {
-			bottom: 5%;
+			bottom: 7.5%;
+			width: 100%;
 		}
 	}
 </style>

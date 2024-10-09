@@ -1,18 +1,17 @@
 <script>
-	export let label;
+	export let label = null;
 </script>
 
-<div><h2>{label}</h2></div>
+<div>
+	{#if label}<h2>{label}</h2>{/if}
+</div>
 
 <style>
 	h2 {
-		font-weight: 500;
 		font-size: var(--text-20);
-		line-height: 138%;
-		letter-spacing: 0.5px;
 
 		text-transform: uppercase;
-		color: var(--thick-text);
+		color: var(--black);
 	}
 
 	div {

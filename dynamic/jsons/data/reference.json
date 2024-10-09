@@ -1,3 +1,16 @@
 {
-	"reference": []
+	"reference": [
+		{
+			"label": "test ref",
+			"image": "/dynamic/imgs/reference/fe6ce39468e88f88d11f669a047cbbc8.jpeg"
+		},
+		{
+			"label": "reference cislo dva",
+			"image": "/dynamic/imgs/reference/9dfe593429c3ab094a58baa9f8d32689.jpeg"
+		},
+		{
+			"label": "treti refka",
+			"image": "/dynamic/imgs/reference/fe6ce39468e88f88d11f669a047cbbc8.jpeg"
+		}
+	]
 }

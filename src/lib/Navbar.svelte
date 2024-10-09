@@ -1,16 +1,16 @@
 <script>
 	import { fade, slide } from 'svelte/transition';
 
-	export let textColor = '#000000';
+	export let textColor = '#1d1d1b';
 	export let transparent = false;
 
 	let menuShown = false;
-	const showMenu = () => (menuShown = !menuShown);
+	const showMenu = (newVal) => (menuShown = newVal);
 </script>
 
 <nav style="--nav-color: {textColor};" class:transparent>
 	<a class="home" href="/">upsala</a>
-	<button on:click={() => showMenu()}>
+	<button on:click={() => showMenu(!menuShown)}>
 		<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="black" viewBox="0 0 16 16">
 			{#if !menuShown}
 				<path
@@ -35,9 +35,9 @@
 {#if menuShown}
 	<div class="small-nav" transition:slide>
 		<div>
-			<a href="/reference">Reference</a>
-			<a href="/studio">Studio</a>
-			<a href="/contact">Kontakt</a>
+			<a on:click={() => showMenu(false)} href="/reference">Reference</a>
+			<a on:click={() => showMenu(false)} href="/studio">Studio</a>
+			<a on:click={() => showMenu(false)} href="/contact">Kontakt</a>
 		</div>
 	</div>
 {/if}
@@ -79,7 +79,6 @@
 
 	nav .wide-nav a {
 		font-size: var(--text-36);
-		line-height: 138%;
 	}
 
 	nav .wide-nav a:nth-of-type(2) {
@@ -88,8 +87,6 @@
 
 	.home {
 		font-size: var(--text-64);
-		line-height: 138%;
-		font-weight: normal;
 
 		padding-left: 35px;
 	}
@@ -127,9 +124,7 @@
 	}
 
 	.small-nav div a {
-		font-weight: 400;
 		font-size: var(--text-36);
-		line-height: 138%;
 	}
 
 	@media screen and (max-width: 600px) {

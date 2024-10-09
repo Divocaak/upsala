@@ -21,14 +21,18 @@
 		width: calc(100% - 2 * 38px);
 	}
 
+	footer p,
+	footer div a {
+		font-size: var(--text-36);
+	}
+
 	footer p span {
 		display: inline-block;
 		position: relative;
-		top: 2px;
 
 		height: 15px;
 		width: 15px;
-		background-color: black;
+		background-color: var(--black);
 		border-radius: 50%;
 
 		margin: 0 5px;
@@ -38,8 +42,8 @@
 		padding-right: 20px;
 	}
 
-	@media screen and (max-width: 600px){
-		footer{
+	@media screen and (max-width: 600px) {
+		footer {
 			flex-direction: column;
 		}
 	}
