@@ -16,11 +16,13 @@
 </svelte:head>
 
 <LeadContainer title={data.project.label} textSmall={data.project.description} bottomPadding={50}>
-	{#if data.project.filters}
-		{#each data.project.filters as filter}
-			<Filter label={filter} />
-		{/each}
-	{/if}
+	<div slot="r">
+		{#if data.project.filters}
+			{#each data.project.filters as filter}
+				<Filter label={filter} />
+			{/each}
+		{/if}
+	</div>
 </LeadContainer>
 
 <div class="images-container">

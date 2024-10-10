@@ -4,16 +4,9 @@
 	export let project = null;
 	export let arch = false;
 
-	export let heading = null;
-	export let text = null;
-	export let subPath = null;
-	export let subThumbnail = null;
-
-	const archCategory = heading && text && subPath && subThumbnail;
-
-	const headingText = archCategory ? heading : arch ? 'projekt arch' : project.label;
-	const path = archCategory ? `arch/${subPath}` : arch ? 'arch' : project.id;
-	const thumbnail = archCategory ? subThumbnail : arch ? '/arch_thumbnail.jpg' : project.thumbnail;
+	const headingText = arch ? 'Projekt ARCH' : project.label;
+	const path = arch ? 'arch' : project.id;
+	const thumbnail = arch ? '/arch_thumbnail.jpg' : project.thumbnail;
 </script>
 
 <a href="/reference/{path}" transition:fade>
@@ -22,9 +15,6 @@
 	</div>
 	<div class="texts-wrapper">
 		<p>{headingText}</p>
-		{#if text}
-			<p>{text}</p>
-		{/if}
 	</div>
 </a>
 
@@ -74,8 +64,6 @@
 		font-weight: 300;
 
 		transition: all 0.45s;
-
-		/* text-transform: uppercase; */
 	}
 
 	.texts-wrapper p:nth-of-type(2) {

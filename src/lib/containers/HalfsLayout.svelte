@@ -15,13 +15,13 @@
 
 		display: flex;
 		flex-direction: row;
-		align-items: flex-start;
+		align-items: flex-start;	
 	}
-
+	
 	.half:first-of-type {
 		width: 60%;
 	}
-
+	
 	.half:last-of-type {
 		width: 40%;
 	}

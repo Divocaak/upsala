@@ -4,7 +4,6 @@
 	export let title = null;
 	export let text = null;
 	export let textSmall = null;
-	export let contact = false;
 	export let paddedTitle = false;
 	export let imgPath = null;
 	export let bottomPadding = 200;
@@ -23,17 +22,7 @@
 					<h1>{title}</h1>
 				</div>
 			{/if}
-			{#if contact}
-				<p class="contact">
-					UPSALA, s.r.o. <br />
-					Jakubská 1, 602 00 Brno
-				</p>
-			{/if}
-			{#if imgPath}
-				<div class="media-wrapper">
-					<img src={imgPath} alt="container gpx" />
-				</div>
-			{/if}
+			<slot name="l"></slot>
 		</div>
 		<div slot="r" class="text">
 			{#if text != null}
@@ -42,7 +31,7 @@
 			{#if textSmall != null}
 				<p class="sec-text">{textSmall}</p>
 			{/if}
-			<slot></slot>
+			<slot name="r"></slot>
 		</div>
 	</HalfsLayout>
 </div>
@@ -71,29 +60,13 @@
 		margin-top: 0 !important;
 	}
 
-	.media-wrapper {
-		width: 60%;
-	}
-
-	.media-wrapper img {
-		position: relative;
-		width: 100%;
-		height: auto;
-	}
-
-	.contact {
-		padding-top: 100px;
-		font-size: var(--text-36);
-		width: 60%;
-	}
-
 	.text {
 		padding-right: 38px;
 
 		white-space: pre-line;
 	}
 
-	.text *:first-child{
+	.text *:first-child {
 		margin-top: 0 !important;
 	}
 
