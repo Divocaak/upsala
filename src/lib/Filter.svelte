@@ -1,9 +1,10 @@
 <script>
 	export let label;
 	export let clickable = false;
+	export let active = false;
 </script>
 
-<button on:click class:clickable>
+<button on:click class:clickable class:active >
 	{label}
 </button>
 
@@ -25,7 +26,7 @@
 		transition: all 0.35s;
 	}
 
-	button.clickable:hover {
+	button.clickable:hover, button.active {
 		color: var(--pink);
 		border: 1px solid var(--pink);
 	}
