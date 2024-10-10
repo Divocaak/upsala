@@ -15,12 +15,14 @@
 	<title>{data.project.label}</title>
 </svelte:head>
 
-<LeadContainer title={data.project.label} textSmall={data.project.description}>
-	{#if data.project.filters}
-		{#each data.project.filters as filter}
-			<Filter label={filter} />
-		{/each}
-	{/if}
+<LeadContainer title={data.project.label} textSmall={data.project.description} bottomPadding={50}>
+	<div slot="r">
+		{#if data.project.filters}
+			{#each data.project.filters as filter}
+				<Filter label={filter} />
+			{/each}
+		{/if}
+	</div>
 </LeadContainer>
 
 <div class="images-container">

@@ -8,8 +8,12 @@
 	<title>kontakt</title>
 </svelte:head>
 
-<LeadContainer title="Kontakt" contact={true} paddedTitle={true}>
-	<div class="contact-container">
+<LeadContainer title="Kontakt" paddedTitle={true}>
+	<p class="contact" slot="l">
+		UPSALA, s.r.o. <br />
+		Jakubská 1, 602 00 Brno
+	</p>
+	<div class="contact-container" slot="r">
 		<Contact name="Tomáš Zahradníček" tel="604 924 084" mail="upsala@upsala.cz" />
 		<Contact name="Vendula Evjáková" tel="734 570 385" mail="vendula@upsala.cz" />
 		<Contact name="Vít Veit" tel="606 515 651" mail="vit@upsala.cz" />
@@ -23,6 +27,12 @@
 />
 
 <style>
+	.contact {
+		padding-top: 100px;
+		font-size: var(--text-36);
+		width: 60%;
+	}
+
 	.contact-container {
 		display: flex;
 		flex-wrap: wrap;

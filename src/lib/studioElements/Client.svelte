@@ -57,7 +57,7 @@
 	}
 
 	p {
-		font-size: var(--text-24);
+		font-size: var(--text-32);
 		line-height: 150%;
 		letter-spacing: 0.02em;
 
@@ -71,10 +71,13 @@
 		color: var(--pink);
 	}
 
+	/* URGENT tst diff sizes */
 	.hover-image {
 		position: fixed;
-		width: 50%;
+		width: auto;
 		height: auto;
+		max-width: 450px;
+		max-height: 450px;
 
 		opacity: 0;
 		pointer-events: none;
