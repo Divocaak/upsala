@@ -15,7 +15,7 @@
 </svelte:head>
 
 <LeadContainer
-	title="Projekt arch"
+	title="Projekt ARCH"
 	text="Chcete, aby vaše práce zaujala na první pohled? Klíčem je profesionální prezentace, a my víme, jak na ni. V naší nabídce najdete osvědčená řešení z kvalitních materiálů, na které se můžete spolehnout. Stačí si vybrat typ přebalu, formát a odhad počtu kusů - o zbytek se postaráme."
 >
 	<div class="tabs-holder" slot="l">
@@ -37,7 +37,7 @@
 
 		display: flex;
 		flex-direction: row;
-		justify-content: space-around;
+		justify-content: space-between;
 	}
 
 	@media screen and (max-width: 1200px) {
@@ -45,7 +45,6 @@
 			width: 100%;
 			
 			flex-direction: column;
-
 			padding-bottom: 40px;
 		}
 	}

@@ -1,6 +1,7 @@
 export async function load({ params, fetch }) {
 	const { id } = params;
 
+	/* BUG cache */
 	const response = await fetch('/dynamic/jsons/data/projects.json');
 	const data = await response.json();
 
@@ -8,12 +9,14 @@ export async function load({ params, fetch }) {
 
 	const randomObjects = getRandomObjects(data.projects, 3);
 
+	console.log("triggered");
 	return {
 		project: object,
 		references: randomObjects
 	};
 }
 
+/* BUG zakazat current key */
 function getRandomObjects(data, numObjects) {
 	const keys = Object.keys(data);
 	const shuffledKeys = keys.sort(() => 0.5 - Math.random());

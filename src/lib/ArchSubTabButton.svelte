@@ -11,12 +11,10 @@
 	button {
 		all: unset;
 
-		margin: 5px 10px 5px 0px;
-		padding: 7.5px 15px;
-
 		font-family: 'SuisseIntl';
 		font-size: var(--text-36);
 		letter-spacing: 0.45px;
+		font-weight: 300;
 
 		transition: all 0.35s;
 	}

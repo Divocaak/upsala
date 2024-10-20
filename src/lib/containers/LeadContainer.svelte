@@ -5,7 +5,6 @@
 	export let text = null;
 	export let textSmall = null;
 	export let paddedTitle = false;
-	export let imgPath = null;
 	export let bottomPadding = 200;
 </script>
 
@@ -16,7 +15,7 @@
 		</div>
 	{/if}
 	<HalfsLayout>
-		<div slot="l">
+		<div slot="l" class="left">
 			{#if !paddedTitle}
 				<div class="title">
 					<h1>{title}</h1>
@@ -48,7 +47,6 @@
 	.title h1,
 	.padded-title h1 {
 		font-size: var(--text-96);
-		text-transform: uppercase;
 		font-weight: 600;
 		line-height: 93%;
 		letter-spacing: 1px;
@@ -79,4 +77,14 @@
 
 		padding-bottom: 30px;
 	}
+
+	.left{
+		position: relative;
+		height: 90%;
+		
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+
 </style>

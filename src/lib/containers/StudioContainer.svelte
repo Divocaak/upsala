@@ -48,10 +48,6 @@
 		border-top: 1px solid var(--black);
 	}
 
-	h2 {
-		text-transform: uppercase;
-	}
-
 	img{
 		width: 60%;
 		height: auto;

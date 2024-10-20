@@ -192,7 +192,6 @@
 
 	h1 {
 		font-size: 40px;
-		text-transform: uppercase;
 	}
 
 	@media screen and (max-width: 600px) {

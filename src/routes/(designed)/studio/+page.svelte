@@ -23,8 +23,7 @@
 </svelte:head>
 
 <LeadContainer
-	title="grafické
-	studio"
+	title="Grafické studio"
 	text="Studio Upsala jsme založili v roce 2003 a pracujeme pro českou i zahraniční klientelu. Zakládáme si na osobním vztahu s našimi zákazníky a věříme, že rovnocenný dialog je zárukou úspěšné spolupráce."
 	textSmall="Všechna zadání jsou pro nás výzvou a ke každému projektu přistupujeme individuálně. Úzce spolupracujeme s marketingovými specialisty, copywritery, fotografy, architekty, kodéry a další. Profesionálním přístupem pomáháme našim klientům vynakládat prostředky jen na to, co skutečně potřebují. Naší doménou je osobitý, funkční a nadčasový design."
 	paddedTitle={true}
@@ -34,7 +33,7 @@
 	</div>
 </LeadContainer>
 
-<StudioContainer title="naše služby" imgPath="/studio2.jpg">
+<StudioContainer title="Naše služby" imgPath="/studio2.jpg">
 	<HalfsLayout>
 		<div slot="l">
 			<p class="service">
@@ -58,7 +57,7 @@
 	</HalfsLayout>
 </StudioContainer>
 
-<StudioContainer title="postup" vidPath="/studioAnim.mp4">
+<StudioContainer title="Postup" vidPath="/studioAnim.mp4">
 	<div class="process-wrapper">
 		<Process
 			label="První rande"
@@ -75,7 +74,7 @@
 	</div>
 </StudioContainer>
 
-<StudioContainer title="klienti">
+<StudioContainer title="Klienti">
 	<HalfsLayout>
 		<div slot="l">
 			{#if clientColL}

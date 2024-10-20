@@ -84,6 +84,7 @@
 
 		font-family: 'SuisseIntl', sans-serif;
 		font-size: var(--text-32);
+		font-weight: 300;
 
 		color: grey;
 
@@ -113,6 +114,7 @@
 	textarea {
 		font-family: 'SuisseIntl', sans-serif;
 		font-size: var(--text-32);
+		font-weight: 300;
 		color: var(--black);
 
 		border: none;
