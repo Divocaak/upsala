@@ -1,7 +1,7 @@
 export async function load({ params, fetch }) {
 	const { id } = params;
 
-	const response = await fetch('/dynamic/jsons/data/projects.json');
+	const response = await fetch(`/dynamic/jsons/data/projects.json?${Date.now()}`);
 	const data = await response.json();
 
 	const object = data.projects.find((project) => project.id === parseInt(id));

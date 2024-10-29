@@ -1,6 +1,10 @@
 <div class="wrapper">
-	<div class="half"><slot name="l"></slot></div>
-	<div class="half"><slot name="r"></slot></div>
+	<div class="half">
+		<slot name="l"></slot>
+	</div>
+	<div class="half">
+		<slot name="r"></slot>
+	</div>
 </div>
 
 <style>

@@ -1,8 +1,13 @@
 <script>
 	import LeadContainer from '$lib/containers/LeadContainer.svelte';
 	import StyledForm from '$lib/StyledForm.svelte';
-	import WorkWrapper from '$lib/workTiles/WorkWrapper.svelte';
-	import WorkTile from '$lib/workTiles/WorkTile.svelte';
+	import ArchSub from '$lib/ArchSub.svelte';
+	import ArchSubTabButton from '$lib/ArchSubTabButton.svelte';
+
+	export let data;
+
+	let currentKey = 'archival';
+	const changeKey = (newKey) => (currentKey = newKey);
 </script>
 
 <svelte:head>
@@ -10,27 +15,49 @@
 </svelte:head>
 
 <LeadContainer
-	title="Projekt arch"
+	title="Projekt ARCH"
 	text="Chcete, aby vaše práce zaujala na první pohled? Klíčem je profesionální prezentace, a my víme, jak na ni. V naší nabídce najdete osvědčená řešení z kvalitních materiálů, na které se můžete spolehnout. Stačí si vybrat typ přebalu, formát a odhad počtu kusů - o zbytek se postaráme."
-/>
-<WorkWrapper>
-	<WorkTile
-		heading="Archivační"
-		text="Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat."
-		subThumbnail="/arch_thumbnail.jpg"
-		subPath="archival"
-	/>
-	<WorkTile
-		heading="Prezentační"
-		text="Navrhneme design, který bude ladit s vaší firemní identitou a konkrétními potřebami. Po schválení návrhu zahájíme výrobu a obaly na míru vám doručíme až ke dveřím."
-		subThumbnail="/arch_thumbnail.jpg"
-		subPath="presentational"
-	/>
-	<WorkTile
-		heading="Obaly a Boxy"
-		text="Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat."
-		subThumbnail="/arch_thumbnail.jpg"
-		subPath="boxes"
-	/>
-</WorkWrapper>
+>
+	<div class="tabs-holder" slot="l">
+		<ArchSubTabButton
+			on:click={() => changeKey('archival')}
+			active={currentKey === 'archival'}
+			label="Archivační"
+		/>
+		<ArchSubTabButton
+			on:click={() => changeKey('presentational')}
+			active={currentKey === 'presentational'}
+			label="Prezentační"
+		/>
+		<ArchSubTabButton
+			on:click={() => changeKey('boxes')}
+			active={currentKey === 'boxes'}
+			label="Obaly a Boxy"
+		/>
+	</div>
+</LeadContainer>
+
+{#each data.objects[currentKey] as object, i}
+	<ArchSub {object} topStrike={i !== 0} />
+{/each}
+
 <StyledForm />
+
+<style>
+	.tabs-holder {
+		width: 75%;
+
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+	}
+
+	@media screen and (max-width: 1200px) {
+		.tabs-holder {
+			width: 100%;
+
+			flex-direction: column;
+			padding-bottom: 40px;
+		}
+	}
+</style>

@@ -8,22 +8,24 @@
 
 	export let data;
 
-	const landing = data.project.landingMedia ?? data.project.thumbnail;
+	$: landing = data.project.landingMedia ?? data.project.thumbnail;
 </script>
 
 <svelte:head>
 	<title>{data.project.label}</title>
 </svelte:head>
 
-<LeadContainer title={data.project.label} textSmall={data.project.description}>
-	{#if data.project.filters}
-		{#each data.project.filters as filter}
-			<Filter label={filter} />
-		{/each}
-	{/if}
+<LeadContainer title={data.project.label} textSmall={data.project.description} bottomPadding={50}>
+	<div slot="r">
+		{#if data.project.filters}
+			{#each data.project.filters as filter}
+				<Filter label={filter} />
+			{/each}
+		{/if}
+	</div>
 </LeadContainer>
 
-<div class="images-container">
+<div class="images-container" key={data.project.id}>
 	{#if landing.endsWith('.mp4')}
 		<video
 			class="main-image"
@@ -39,7 +41,12 @@
 			Your browser does not support the video tag.
 		</video>
 	{:else}
-		<LazyImage path={landing} alt="landing graphics" additionalClasses="main-image " />
+		<LazyImage
+			path={landing}
+			alt="landing graphics"
+			additionalClasses="main-image "
+			key="{data.project.id} landing"
+		/>
 	{/if}
 	<div class="gallery">
 		{#each data.project.images as image}
@@ -47,12 +54,22 @@
 				<div class="image-group">
 					{#each image as actualImage}
 						<div class="image-group-image">
-							<LazyImage path={actualImage} alt="" additionalClasses="gallery-image" />
+							<LazyImage
+								path={actualImage}
+								alt=""
+								additionalClasses="gallery-image"
+								key="{data.project.id} img"
+							/>
 						</div>
 					{/each}
 				</div>
 			{:else}
-				<LazyImage path={image} alt="" additionalClasses="gallery-image" />
+				<LazyImage
+					path={image}
+					alt=""
+					additionalClasses="gallery-image"
+					key="{data.project.id} img"
+				/>
 			{/if}
 		{/each}
 	</div>

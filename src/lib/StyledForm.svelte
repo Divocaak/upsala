@@ -5,12 +5,11 @@
 	export let label = 'nezávazná kalkulace';
 	export let subject = 'Poptávka projekt ARCH';
 	export let descriptionLabel = 'Popište váš projekt';
-	export let removeFromSuccessPath = null;
 	export let isArch = true;
 
 	let href;
 	onMount(() => {
-		href = `${removeFromSuccessPath ? window.location.href.replace(removeFromSuccessPath, '') : window.location.href}/success`;
+		href = `${window.location.href}/success`;
 	});
 </script>
 
@@ -85,6 +84,7 @@
 
 		font-family: 'SuisseIntl', sans-serif;
 		font-size: var(--text-32);
+		font-weight: 300;
 
 		color: grey;
 
@@ -114,6 +114,7 @@
 	textarea {
 		font-family: 'SuisseIntl', sans-serif;
 		font-size: var(--text-32);
+		font-weight: 300;
 		color: var(--black);
 
 		border: none;

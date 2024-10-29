@@ -7,7 +7,7 @@
 	export let wrapperClasses = '';
 	export let additionalClasses = '';
 
-	const src = {
+	$: src = {
 		img: { src: path, w: 1920, h: 1080 },
 		sources: { webp: path, jpeg: path }
 	};

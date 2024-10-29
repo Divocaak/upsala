@@ -110,6 +110,7 @@
 		height: 100vh;
 		justify-content: center;
 		align-items: center;
+		background-color: black;
 	}
 
 	.carousel-slide {
@@ -191,7 +192,6 @@
 
 	h1 {
 		font-size: 40px;
-		text-transform: uppercase;
 	}
 
 	@media screen and (max-width: 600px) {

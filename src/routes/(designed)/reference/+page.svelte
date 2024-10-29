@@ -36,10 +36,20 @@
 	</button>
 	{#if showFilters}
 		<div transition:fade>
-			<Filter label="bez filtru" clickable={true} on:click={() => changeFilter()} />
+			<Filter
+				label="bez filtru"
+				clickable={true}
+				on:click={() => changeFilter()}
+				active={!currentFilter}
+			/>
 			{#if filters}
 				{#each filters as filter}
-					<Filter label={filter} clickable={true} on:click={() => changeFilter(filter)} />
+					<Filter
+						label={filter}
+						clickable={true}
+						on:click={() => changeFilter(filter)}
+						active={filter === currentFilter}
+					/>
 				{/each}
 			{/if}
 		</div>
@@ -49,7 +59,7 @@
 	{#if data.projects}
 		{#each data.projects as project, i}
 			{#if currentFilter === null || project.filters.includes(currentFilter)}
-				{#if i == 3}
+				{#if i === 3}
 					<WorkTile arch={true} />
 				{/if}
 				<WorkTile {project} />

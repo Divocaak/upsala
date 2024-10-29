@@ -209,7 +209,7 @@
 	:global(h1, h2, h3, h4, h5, h6, p, a, button) {
 		font-family: 'SuisseIntl', sans-serif;
 		font-style: normal;
-		font-weight: 400;
+		font-weight: 300;
 
 		letter-spacing: 0.5px;
 		line-height: 145%;

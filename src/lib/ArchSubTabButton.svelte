@@ -1,32 +1,32 @@
 <script>
-	import { page } from '$app/stores';
-
-	export let label, path;
-	$: isOnPath = $page.url.pathname.endsWith(path);
+	export let label;
+	export let active = false;
 </script>
 
-<a href="/reference/arch/{path}" class:active={isOnPath}>
-	{#if isOnPath}<span></span>{/if}{label}
-</a>
+<button on:click class:active>
+	{label}
+</button>
 
 <style>
-	a {
+	button {
+		all: unset;
+
+		font-family: 'SuisseIntl';
 		font-size: var(--text-36);
+		letter-spacing: 0.45px;
+		font-weight: 300;
+
+		transition: all 0.35s;
 	}
 
-	a.active {
+	button:hover,
+	button.active {
 		color: var(--pink);
 	}
 
-	span {
-		display: inline-block;
-		position: relative;
-
-		height: 15px;
-		width: 15px;
-		background-color: var(--pink);
-		border-radius: 50%;
-
-		margin: 0 5px;
+	@media screen and (max-width: 1200px) {
+		button {
+			padding: 0;
+		}
 	}
 </style>

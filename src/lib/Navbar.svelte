@@ -87,6 +87,7 @@
 
 	.home {
 		font-size: var(--text-64);
+		font-weight: 400;
 
 		padding-left: 35px;
 	}
