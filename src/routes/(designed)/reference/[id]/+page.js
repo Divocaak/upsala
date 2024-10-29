@@ -14,7 +14,6 @@ export async function load({ params, fetch }) {
 	};
 }
 
-/* BUG zakazat current key */
 function getRandomObjects(data, numObjects) {
 	const keys = Object.keys(data);
 	const shuffledKeys = keys.sort(() => 0.5 - Math.random());

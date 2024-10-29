@@ -48,7 +48,7 @@
 		border-top: 1px solid var(--black);
 	}
 
-	img{
+	img {
 		width: 60%;
 		height: auto;
 	}

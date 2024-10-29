@@ -78,13 +78,12 @@
 		padding-bottom: 30px;
 	}
 
-	.left{
+	.left {
 		position: relative;
 		height: 90%;
-		
+
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
 	}
-
 </style>

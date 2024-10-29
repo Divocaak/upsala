@@ -6,7 +6,6 @@
 	export let alt = '';
 	export let wrapperClasses = '';
 	export let additionalClasses = '';
-	export let key = '';
 
 	$: src = {
 		img: { src: path, w: 1920, h: 1080 },

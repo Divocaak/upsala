@@ -27,27 +27,27 @@
 
 <div class="images-container" key={data.project.id}>
 	{#if landing.endsWith('.mp4')}
-			<video
-				class="main-image"
-				autoplay
-				muted
-				loop
-				preload
-				playsinline
-				disablepictureinpicture
-				disableremoteplayback
-			>
-				<source src={landing} type="video/mp4" />
-				Your browser does not support the video tag.
-			</video>
-		{:else}
-			<LazyImage
-				path={landing}
-				alt="landing graphics"
-				additionalClasses="main-image "
-				key="{data.project.id} landing"
-			/>
-		{/if}
+		<video
+			class="main-image"
+			autoplay
+			muted
+			loop
+			preload
+			playsinline
+			disablepictureinpicture
+			disableremoteplayback
+		>
+			<source src={landing} type="video/mp4" />
+			Your browser does not support the video tag.
+		</video>
+	{:else}
+		<LazyImage
+			path={landing}
+			alt="landing graphics"
+			additionalClasses="main-image "
+			key="{data.project.id} landing"
+		/>
+	{/if}
 	<div class="gallery">
 		{#each data.project.images as image}
 			{#if Array.isArray(image)}

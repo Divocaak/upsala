@@ -36,10 +36,20 @@
 	</button>
 	{#if showFilters}
 		<div transition:fade>
-			<Filter label="bez filtru" clickable={true} on:click={() => changeFilter()}  active={!currentFilter}/>
+			<Filter
+				label="bez filtru"
+				clickable={true}
+				on:click={() => changeFilter()}
+				active={!currentFilter}
+			/>
 			{#if filters}
 				{#each filters as filter}
-					<Filter label={filter} clickable={true} on:click={() => changeFilter(filter)} active={filter === currentFilter}/>
+					<Filter
+						label={filter}
+						clickable={true}
+						on:click={() => changeFilter(filter)}
+						active={filter === currentFilter}
+					/>
 				{/each}
 			{/if}
 		</div>

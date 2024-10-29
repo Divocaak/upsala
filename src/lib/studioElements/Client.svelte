@@ -71,7 +71,6 @@
 		color: var(--pink);
 	}
 
-	/* URGENT tst diff sizes */
 	.hover-image {
 		position: fixed;
 		width: auto;
