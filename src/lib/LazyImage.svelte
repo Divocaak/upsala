@@ -6,13 +6,11 @@
 	export let alt = '';
 	export let wrapperClasses = '';
 	export let additionalClasses = '';
-	export let key = "";
+	export let key = '';
 
-	const uniquePath = `path?${new Date().getTime()}`;
-
-	const src = {
-		img: { src: uniquePath, w: 1920, h: 1080 },
-		sources: { webp: uniquePath, jpeg: uniquePath }
+	$: src = {
+		img: { src: path, w: 1920, h: 1080 },
+		sources: { webp: path, jpeg: path }
 	};
 
 	let ref, loaded;
@@ -22,7 +20,7 @@
 </script>
 
 <div class="wrap {wrapperClasses}">
-	<Img {src} class="my-img {additionalClasses}" {alt} bind:ref on:load={() => (loaded = true)} key={key}/>
+	<Img {src} class="my-img {additionalClasses}" {alt} bind:ref on:load={() => (loaded = true)} />
 	<div class="blur" class:loaded />
 </div>
 

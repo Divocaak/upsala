@@ -1,15 +1,13 @@
 export async function load({ params, fetch }) {
 	const { id } = params;
 
-	/* BUG cache */
-	const response = await fetch('/dynamic/jsons/data/projects.json');
+	const response = await fetch(`/dynamic/jsons/data/projects.json?${Date.now()}`);
 	const data = await response.json();
 
 	const object = data.projects.find((project) => project.id === parseInt(id));
 
 	const randomObjects = getRandomObjects(data.projects, 3);
 
-	console.log("triggered");
 	return {
 		project: object,
 		references: randomObjects

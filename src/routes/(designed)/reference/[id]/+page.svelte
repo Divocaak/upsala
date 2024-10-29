@@ -5,25 +5,14 @@
 	import WorkWrapper from '$lib/workTiles/WorkWrapper.svelte';
 	import LazyImage from '$lib/LazyImage.svelte';
 	import Filter from '$lib/Filter.svelte';
-	import { onMount } from 'svelte';
 
 	export let data;
 
-	/* $: project = data.project;
-	$: projectImages = data.project.images;
 	$: landing = data.project.landingMedia ?? data.project.thumbnail;
-	$: references = data.references;
-
-	onMount(() => {
-		project = data.project;
-		projectImages = project.images;
-		landing = project.landingMedia ?? project.thumbnail;
-		references = data.references;
-	}); */
 </script>
 
 <svelte:head>
-	<title>{project.label}</title>
+	<title>{data.project.label}</title>
 </svelte:head>
 
 <LeadContainer title={data.project.label} textSmall={data.project.description} bottomPadding={50}>
@@ -38,29 +27,29 @@
 
 <div class="images-container" key={data.project.id}>
 	{#if landing.endsWith('.mp4')}
-		<video
-			class="main-image"
-			autoplay
-			muted
-			loop
-			preload
-			playsinline
-			disablepictureinpicture
-			disableremoteplayback
-		>
-			<source src={landing} type="video/mp4" />
-			Your browser does not support the video tag.
-		</video>
-	{:else}
-		<LazyImage
-			path={landing}
-			alt="landing graphics"
-			additionalClasses="main-image "
-			key="{project.id} landing"
-		/>
-	{/if}
+			<video
+				class="main-image"
+				autoplay
+				muted
+				loop
+				preload
+				playsinline
+				disablepictureinpicture
+				disableremoteplayback
+			>
+				<source src={landing} type="video/mp4" />
+				Your browser does not support the video tag.
+			</video>
+		{:else}
+			<LazyImage
+				path={landing}
+				alt="landing graphics"
+				additionalClasses="main-image "
+				key="{data.project.id} landing"
+			/>
+		{/if}
 	<div class="gallery">
-		{#each projectImages as image}
+		{#each data.project.images as image}
 			{#if Array.isArray(image)}
 				<div class="image-group">
 					{#each image as actualImage}
@@ -69,13 +58,18 @@
 								path={actualImage}
 								alt=""
 								additionalClasses="gallery-image"
-								key="{project.id} img"
+								key="{data.project.id} img"
 							/>
 						</div>
 					{/each}
 				</div>
 			{:else}
-				<LazyImage path={image} alt="" additionalClasses="gallery-image" key="{project.id} img" />
+				<LazyImage
+					path={image}
+					alt=""
+					additionalClasses="gallery-image"
+					key="{data.project.id} img"
+				/>
 			{/if}
 		{/each}
 	</div>
@@ -83,7 +77,7 @@
 
 <StrikeThroughText label="reference" />
 <WorkWrapper>
-	{#each references as project}
+	{#each data.references as project}
 		<WorkTile {project} />
 	{/each}
 </WorkWrapper>

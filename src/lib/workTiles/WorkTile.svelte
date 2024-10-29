@@ -4,9 +4,9 @@
 	export let project = null;
 	export let arch = false;
 
-	const headingText = arch ? 'Projekt ARCH' : project.label;
-	const path = arch ? 'arch' : project.id;
-	const thumbnail = arch ? '/arch_thumbnail.jpg' : project.thumbnail;
+	$: headingText = arch ? 'Projekt ARCH' : project.label;
+	$: path = arch ? 'arch' : project.id;
+	$: thumbnail = arch ? '/arch_thumbnail.jpg' : project.thumbnail;
 </script>
 
 <a href="/reference/{path}" transition:fade>
