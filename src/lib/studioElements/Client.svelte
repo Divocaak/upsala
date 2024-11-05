@@ -53,9 +53,9 @@
 	<button on:click={toggleModal}>{label}</button>
 </div>
 {#if modalVisible}
-	<div class="modal-window" transition:blur on:click={toggleModal}>
+	<button class="modal-window" transition:blur on:click={toggleModal}>
 		<img src={image} alt="client gpx" />
-	</div>
+	</button>
 {/if}
 
 <style>
