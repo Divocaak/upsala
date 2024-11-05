@@ -16,6 +16,7 @@
 				"type": "object",
 				"description": "Nastavení projektu",
 				"title": "Projekt",
+				"headerTemplate": "{{self.label}}",
 				"options": {
 					"collapsed": true
 				},
