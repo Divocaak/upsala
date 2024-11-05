@@ -149,7 +149,7 @@
 		justify-content: center;
 
 		margin: 10px 0;
-		padding: 0 35px;
+		padding: 0 var(--general-px);
 
 		box-sizing: border-box;
 	}
@@ -183,7 +183,7 @@
 		position: absolute;
 		bottom: 0;
 
-		padding: 0 35px;
+		padding: 0 var(--general-px);
 
 		box-sizing: border-box;
 

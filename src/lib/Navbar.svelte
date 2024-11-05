@@ -1,5 +1,5 @@
 <script>
-	import { fade, slide } from 'svelte/transition';
+	import { blur, fade } from 'svelte/transition';
 
 	export let textColor = '#1d1d1b';
 	export let transparent = false;
@@ -11,7 +11,13 @@
 <nav style="--nav-color: {textColor};" class:transparent>
 	<a class="home" href="/">upsala</a>
 	<button on:click={() => showMenu(!menuShown)}>
-		<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="black" viewBox="0 0 16 16">
+		<svg
+			xmlns="http://www.w3.org/2000/svg"
+			width="32"
+			height="32"
+			fill={textColor}
+			viewBox="0 0 16 16"
+		>
 			{#if !menuShown}
 				<path
 					transition:fade
@@ -33,12 +39,10 @@
 	</div>
 </nav>
 {#if menuShown}
-	<div class="small-nav" transition:slide>
-		<div>
-			<a on:click={() => showMenu(false)} href="/reference">Reference</a>
-			<a on:click={() => showMenu(false)} href="/studio">Studio</a>
-			<a on:click={() => showMenu(false)} href="/contact">Kontakt</a>
-		</div>
+	<div class="small-nav" transition:blur>
+		<a on:click={() => showMenu(false)} href="/reference">Reference</a>
+		<a on:click={() => showMenu(false)} href="/studio">Studio</a>
+		<a on:click={() => showMenu(false)} href="/contact">Kontakt</a>
 	</div>
 {/if}
 
@@ -67,7 +71,7 @@
 		z-index: 100;
 
 		background-color: white;
-		
+
 		padding-bottom: 10px;
 	}
 
@@ -76,7 +80,7 @@
 	}
 
 	nav .wide-nav {
-		padding-right: 35px;
+		padding-right: var(--general-px);
 	}
 
 	nav .wide-nav a {
@@ -91,7 +95,7 @@
 		font-size: calc(var(--text-24) * 2);
 		font-weight: 400;
 
-		padding-left: 35px;
+		padding-left: var(--general-px);
 	}
 
 	nav button {
@@ -113,20 +117,15 @@
 		background-color: white;
 	}
 
-	.small-nav div {
-		position: relative;
-		width: 50%;
-		height: 20%;
-
-		padding-left: 50%;
-		top: 5%;
+	.small-nav {
+		padding-left: var(--general-px);
 
 		display: flex;
 		flex-direction: column;
-		justify-content: space-evenly;
+		justify-content: center;
 	}
 
-	.small-nav div a {
+	.small-nav a {
 		font-size: var(--text-36);
 	}
 

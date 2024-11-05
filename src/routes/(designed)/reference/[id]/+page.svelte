@@ -15,7 +15,7 @@
 	<title>{data.project.label}</title>
 </svelte:head>
 
-<LeadContainer title={data.project.label} textSmall={data.project.description} bottomPadding={50}>
+<LeadContainer title={data.project.label} textSmall={data.project.description}>
 	<div slot="r">
 		{#if data.project.filters}
 			{#each data.project.filters as filter}
@@ -41,12 +41,7 @@
 			Your browser does not support the video tag.
 		</video>
 	{:else}
-		<LazyImage
-			path={landing}
-			alt="landing graphics"
-			additionalClasses="main-image "
-			key="{data.project.id} landing"
-		/>
+		<LazyImage path={landing} alt="landing graphics" additionalClasses="main-image " />
 	{/if}
 	<div class="gallery">
 		{#each data.project.images as image}
@@ -54,22 +49,12 @@
 				<div class="image-group">
 					{#each image as actualImage}
 						<div class="image-group-image">
-							<LazyImage
-								path={actualImage}
-								alt=""
-								additionalClasses="gallery-image"
-								key="{data.project.id} img"
-							/>
+							<LazyImage path={actualImage} alt="" additionalClasses="gallery-image" />
 						</div>
 					{/each}
 				</div>
 			{:else}
-				<LazyImage
-					path={image}
-					alt=""
-					additionalClasses="gallery-image"
-					key="{data.project.id} img"
-				/>
+				<LazyImage path={image} alt="" additionalClasses="gallery-image" />
 			{/if}
 		{/each}
 	</div>
@@ -83,13 +68,17 @@
 </WorkWrapper>
 
 <style>
-	.images-container {
-		position: relative;
-		padding: 0 35px;
+	* {
+		box-sizing: border-box;
 	}
 
-	:global(.main-image, .gallery-image){
-		padding-bottom: 5.787vw;
+	.images-container {
+		position: relative;
+		padding: 0 var(--general-px);
+	}
+
+	:global(.main-image, .gallery-image) {
+		padding-bottom: var(--general-px);	
 	}
 
 	:global(.main-image) {
@@ -99,14 +88,9 @@
 		border-radius: var(--border-radius);
 	}
 
-	* {
-		box-sizing: border-box;
-	}
-
 	:global(.gallery-image) {
 		width: 100%;
 		height: auto;
-		margin-bottom: 30px;
 		border-radius: var(--border-radius);
 	}
 
@@ -117,26 +101,18 @@
 		flex-wrap: wrap;
 		align-items: center;
 		justify-content: center;
-		gap: 5.787vw;
+		gap: 0 var(--general-px);
 	}
 
 	.image-group-image {
 		flex: 50%;
-		max-width: calc(50% - 5.787vw/2);
+		max-width: calc(50% - var(--general-px) / 2);
 	}
 
 	@media screen and (max-width: 900px) {
 		.image-group-image {
 			flex: 100%;
 			max-width: 100%;
-		}
-
-		.image-group-image:first-of-type {
-			margin-right: 0;
-		}
-
-		.image-group-image:last-of-type {
-			margin-left: 0;
 		}
 	}
 </style>

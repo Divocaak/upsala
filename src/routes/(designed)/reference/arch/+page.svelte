@@ -36,6 +36,23 @@
 		/>
 	</div>
 </LeadContainer>
+<div class="tabs-holder-sm">
+	<ArchSubTabButton
+		on:click={() => changeKey('archival')}
+		active={currentKey === 'archival'}
+		label="Archivační"
+	/>
+	<ArchSubTabButton
+		on:click={() => changeKey('presentational')}
+		active={currentKey === 'presentational'}
+		label="Prezentační"
+	/>
+	<ArchSubTabButton
+		on:click={() => changeKey('boxes')}
+		active={currentKey === 'boxes'}
+		label="Obaly a Boxy"
+	/>
+</div>
 
 {#each data.objects[currentKey] as object, i}
 	<ArchSub {object} topStrike={i !== 0} />
@@ -52,12 +69,22 @@
 		justify-content: space-between;
 	}
 
+	.tabs-holder-sm{
+		padding-left: var(--general-px);
+		width: 100%;
+	
+		display: none;
+		flex-direction: column;
+		padding-bottom: 40px;
+	}
+
 	@media screen and (max-width: 1200px) {
 		.tabs-holder {
-			width: 100%;
+			display: none;
+		}
 
-			flex-direction: column;
-			padding-bottom: 40px;
+		.tabs-holder-sm{
+			display: flex;
 		}
 	}
 </style>

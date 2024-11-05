@@ -58,6 +58,8 @@
 		font-weight: 300;
 
 		transition: all 0.45s;
+
+		padding-bottom: var(--general-px);
 	}
 
 	a:hover p {

@@ -4,12 +4,12 @@
 
 <style>
 	.container {
-		padding: 35px;
+		padding: var(--general-px);
 
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
 		grid-auto-rows: minmax(300px, auto);
-		gap: 4vh 1vw;
+		gap: 0 1vh;
 	}
 
 	@media screen and (max-width: 900px) {

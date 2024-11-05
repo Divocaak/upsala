@@ -16,7 +16,7 @@
 
 	div {
 		position: relative;
-		border-bottom: 1px solid #000000;
-		margin: 0 38px;
+		border-bottom: 1px solid var(--black);
+		margin: 0 var(--general-px);
 	}
 </style>
