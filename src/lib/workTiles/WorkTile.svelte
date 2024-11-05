@@ -6,7 +6,7 @@
 
 	$: headingText = arch ? 'Projekt ARCH' : project.label;
 	$: path = arch ? 'arch' : project.id;
-	$: thumbnail = arch ? '/arch_thumbnail.jpg' : project.thumbnail;
+	$: thumbnail = arch ? '/dynamic/imgs/arch/worktile.jpeg' : project.thumbnail;
 </script>
 
 <a href="/reference/{path}" transition:fade>

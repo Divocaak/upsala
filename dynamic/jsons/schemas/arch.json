@@ -6,6 +6,14 @@
 		"collapsed": true
 	},
 	"properties": {
+		"thumbnail": {
+			"type": "string",
+			"title": "thumbnail na kartě v seznamu referencí",
+			"media": {
+				"binaryEncoding": "base64",
+				"type": "img/png"
+			}
+		},
 		"arch": {
 			"type": "object",
 			"options": {
@@ -181,4 +189,5 @@
 			}
 		}
 	}
+	
 }

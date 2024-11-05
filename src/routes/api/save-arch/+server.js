@@ -5,6 +5,8 @@ export async function POST({ request }) {
 	const data = await request.json();
 
 	let errs = [];
+	data.thumbnail = (await processImage(data.thumbnail, "arch", errs, "worktile")) ?? data.thumbnail;
+
 	for (const item of data.arch.archival) {
 		const path = `arch/archival/${item.id}`;
 		item.icon = (await processImage(item.icon, path, errs)) ?? item.icon;

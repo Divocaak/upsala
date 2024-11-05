@@ -2,12 +2,12 @@ import fs from 'fs';
 import path from 'path';
 import crypto from 'crypto';
 
-export async function processImage(image, path, errs) {
+export async function processImage(image, path, errs, filename = null) {
 	if (!image) return;
 
 	try {
 		if (checkForBase64(image)) {
-			const response = await saveImage(image, path);
+			const response = await saveImage(image, path, filename);
 
 			if (typeof response === 'object' && response.status === 500) {
 				errs.push(response);
@@ -43,7 +43,7 @@ export async function processImageArray(images, path, errs) {
 
 const checkForBase64 = (image) => image.match(/^data:(.*?);base64,(.*)$/);
 
-async function saveImage(base64Data, directory) {
+async function saveImage(base64Data, directory, desiredFilename = null) {
 	try {
 		const matches = checkForBase64(base64Data);
 		if (!matches) {
@@ -54,7 +54,7 @@ async function saveImage(base64Data, directory) {
 		const base64String = matches[2];
 		const buffer = Buffer.from(base64String, 'base64');
 
-		const filename = crypto.randomBytes(16).toString('hex') + `.${extension}`;
+		const filename = (desiredFilename ?? crypto.randomBytes(16).toString('hex')) + `.${extension}`;
 		const dir = path.join('./dynamic/imgs/', directory);
 
 		if (!fs.existsSync(dir)) {
