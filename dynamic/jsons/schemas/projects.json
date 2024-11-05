@@ -82,17 +82,9 @@
 							"type": "img/png"
 						}
 					},
-					"landingMedia": {
-						"type": ["string", "null"],
-						"title": "hlavní médium v detailu projektu, v případě 'null' se použije stejná fotka, jako na thumbnail",
-						"media": {
-							"binaryEncoding": "base64",
-							"type": "img/png"
-						}
-					},
 					"images": {
 						"type": "array",
-						"title": "galerie v datilu projektu, 'array' pro vybrání dvou obrázků na řádek",
+						"title": "galerie v datilu projektu, 'array' pro vybrání dvou/tří obrázků na řádek",
 						"options": {
 							"collapsed": true
 						},
@@ -105,8 +97,8 @@
 										"collapsed": true
 									},
 									"minItems": 2,
-									"maxItems": 2,
-									"description": "Dva obrázky na řádek",
+									"maxItems": 3,
+									"description": "dva nebo tři obrázky na řádek",
 									"items": {
 										"type": "string",
 										"title": "obrázek",

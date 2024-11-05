@@ -3,12 +3,10 @@
 	import StrikeThroughText from '$lib/StrikeThroughText.svelte';
 	import WorkTile from '$lib/workTiles/WorkTile.svelte';
 	import WorkWrapper from '$lib/workTiles/WorkWrapper.svelte';
-	import LazyImage from '$lib/LazyImage.svelte';
 	import Filter from '$lib/Filter.svelte';
+	import GalleryMedia from '$lib/GalleryMedia.svelte';
 
 	export let data;
-
-	$: landing = data.project.landingMedia ?? data.project.thumbnail;
 </script>
 
 <svelte:head>
@@ -25,39 +23,20 @@
 	</div>
 </LeadContainer>
 
-<div class="images-container" key={data.project.id}>
-	{#if landing.endsWith('.mp4')}
-		<video
-			class="main-image"
-			autoplay
-			muted
-			loop
-			preload
-			playsinline
-			disablepictureinpicture
-			disableremoteplayback
-		>
-			<source src={landing} type="video/mp4" />
-			Your browser does not support the video tag.
-		</video>
-	{:else}
-		<LazyImage path={landing} alt="landing graphics" additionalClasses="main-image " />
-	{/if}
-	<div class="gallery">
-		{#each data.project.images as image}
-			{#if Array.isArray(image)}
-				<div class="image-group">
-					{#each image as actualImage}
-						<div class="image-group-image">
-							<LazyImage path={actualImage} alt="" additionalClasses="gallery-image" />
-						</div>
-					{/each}
-				</div>
-			{:else}
-				<LazyImage path={image} alt="" additionalClasses="gallery-image" />
-			{/if}
-		{/each}
-	</div>
+<div class="images-container">
+	{#each data.project.images as image}
+		{#if Array.isArray(image)}
+			<div class="image-group">
+				{#each image as actualImage}
+					<div class="image-group-image">
+						<GalleryMedia media={actualImage} />
+					</div>
+				{/each}
+			</div>
+		{:else}
+			<GalleryMedia media={image} />
+		{/if}
+	{/each}
 </div>
 
 <StrikeThroughText label="reference" />
@@ -77,42 +56,24 @@
 		padding: 0 var(--general-px);
 	}
 
-	:global(.main-image, .gallery-image) {
-		padding-bottom: var(--general-px);	
-	}
-
-	:global(.main-image) {
-		position: relative;
-		width: 100%;
-		height: auto;
-		border-radius: var(--border-radius);
-	}
-
-	:global(.gallery-image) {
-		width: 100%;
-		height: auto;
-		border-radius: var(--border-radius);
-	}
-
 	.image-group {
 		width: 100%;
 
-		display: flex !important;
-		flex-wrap: wrap;
-		align-items: center;
+		display: grid;
 		justify-content: center;
+		align-items: center;
 		gap: 0 var(--general-px);
+		grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
 	}
 
 	.image-group-image {
-		flex: 50%;
-		max-width: calc(50% - var(--general-px) / 2);
+		width: 100%;
+		height: auto;
 	}
 
 	@media screen and (max-width: 900px) {
-		.image-group-image {
-			flex: 100%;
-			max-width: 100%;
+		.image-group {
+			grid-template-columns: 1fr;
 		}
 	}
 </style>
