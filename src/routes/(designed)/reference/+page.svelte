@@ -74,12 +74,10 @@
 <style>
 	.filters {
 		position: relative;
-		height: 23px;
-		width: 100%;
+		height: auto;
+		width: calc(100% - calc(2 * var(--general-px)));
 
-		padding-left: 35px;
-		padding-top: 35px;
-		padding-bottom: 10px;
+		margin: 0px var(--general-px);
 	}
 
 	.filters button {
@@ -89,7 +87,7 @@
 	.filters svg {
 		padding-right: 25px;
 
-		fill: #d9d9d9;
+		fill: var(--light-grey);
 
 		transition: 0.45s all;
 	}

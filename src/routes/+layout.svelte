@@ -168,34 +168,12 @@
 		font-style: normal;
 	}
 
-	.cursor {
-		position: absolute;
-
-		height: 15px;
-		width: 15px;
-
-		border-radius: 50%;
-
-		pointer-events: none;
-
-		background-color: var(--black);
-		z-index: 10000;
-
-		will-change: transform;
-	}
-
-	:global(html) {
-		cursor: none !important;
-	}
-
-	:global(body) {
-		margin: 0;
-	}
-
 	:global(:root) {
 		--pink: #ff67c2;
 		--black: #1d1d1b;
-		--border-radius: 5px;
+		--light-grey: #d9d9d9;
+		--border-radius: 0px;
+		--general-px: calc(1.823vw + 10px);
 		--link-transition: 0.35s;
 		--text-16: calc(8px + (0.926vw * 0.35));
 		--text-20: calc(10px + (1.157vw * 0.25));
@@ -225,5 +203,29 @@
 
 	:global(a:hover) {
 		color: var(--pink);
+	}
+
+	:global(html) {
+		cursor: none !important;
+	}
+
+	:global(body) {
+		margin: 0;
+	}
+
+	.cursor {
+		position: absolute;
+
+		height: 15px;
+		width: 15px;
+
+		border-radius: 50%;
+
+		pointer-events: none;
+
+		background-color: var(--black);
+		z-index: 10000;
+
+		will-change: transform;
 	}
 </style>

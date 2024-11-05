@@ -16,6 +16,7 @@
 			"items": {
 				"type": "object",
 				"title": "reference",
+				"headerTemplate": "{{self.label}}",
 				"options": {
 					"collapsed": true
 				},

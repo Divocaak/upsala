@@ -9,13 +9,12 @@
 <div class="wrapper">
 	<h2>{title}</h2>
 	<HalfsLayout>
-		<div slot="l" class="media">
+		<div slot="l">
 			{#if imgPath}
 				<img src={imgPath} alt="container gpx" />
 			{/if}
 			{#if vidPath}
 				<video
-					class="value-image"
 					autoplay
 					muted
 					loop
@@ -38,11 +37,11 @@
 <style>
 	.wrapper {
 		position: relative;
-		width: calc(100% - (38px * 2));
+		width: calc(100% - (var(--general-px) * 2));
 		min-height: 50vh;
 		height: auto;
 
-		margin: 0 38px;
+		margin: 0 var(--general-px);
 		padding-bottom: 100px;
 
 		border-top: 1px solid var(--black);
@@ -56,5 +55,13 @@
 	video {
 		width: 40%;
 		height: auto;
+	}
+
+	@media screen and (max-width: 900px) {
+		img, video {
+			width: 100%;
+			height: auto;
+			padding-bottom: var(--general-px);
+		}
 	}
 </style>

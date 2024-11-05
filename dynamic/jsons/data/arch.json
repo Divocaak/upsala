@@ -1,18 +1,29 @@
 {
-	"arch": {
-		"archival": [
-			{
-				"id": 0,
-				"label": "Šanony",
-				"text": "šanony A4 s kroužkovým zakladačem",
-				"icon": "/dynamic/imgs/arch/archival/0/702d7c61675c5cb589aff83cad5d3462.svg+xml",
-				"images": [
-					"/dynamic/imgs/arch/archival/0/bea9a0183a530ae04510d602e84ce10d.jpeg",
-					"/dynamic/imgs/arch/archival/0/b4532d4ea101c6da3aa992f6825c7379.jpeg"
-				]
-			}
-		],
-		"presentational": [],
-		"boxes": []
-	}
+  "thumbnail": "/dynamic/imgs/arch/worktile.jpeg",
+  "arch": {
+    "archival": [
+      {
+        "id": 0,
+        "label": "Šanony",
+        "text": "šanony A4 s kroužkovým zakladačem",
+        "icon": "/dynamic/imgs/arch/archival/0/702d7c61675c5cb589aff83cad5d3462.svg+xml",
+        "images": [
+          "/dynamic/imgs/arch/archival/0/bea9a0183a530ae04510d602e84ce10d.jpeg",
+          "/dynamic/imgs/arch/archival/0/b4532d4ea101c6da3aa992f6825c7379.jpeg"
+        ]
+      },
+      {
+        "id": 0,
+        "label": "Vazba",
+        "text": "ja nevim",
+        "icon": "/dynamic/imgs/arch/archival/0/702d7c61675c5cb589aff83cad5d3462.svg+xml",
+        "images": [
+          "/dynamic/imgs/arch/archival/0/b4532d4ea101c6da3aa992f6825c7379.jpeg",
+          "/dynamic/imgs/arch/archival/0/bea9a0183a530ae04510d602e84ce10d.jpeg"
+        ]
+      }
+    ],
+    "presentational": [],
+    "boxes": []
+  }
 }

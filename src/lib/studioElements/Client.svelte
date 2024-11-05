@@ -22,6 +22,10 @@
 		imageHeight = event.target.offsetHeight;
 		imageWidth = event.target.offsetWidth;
 	};
+
+	let modalVisible = false;
+
+	const toggleModal = () => (modalVisible = !modalVisible);
 </script>
 
 <div class="fx-text">
@@ -45,14 +49,20 @@
 	{/if}
 </div>
 
-<div class="col-text">
-	<p>{label}</p>
-	<img src={image} alt="client gpx" />
+<div class="modal-text">
+	<button on:click={toggleModal}>{label}</button>
 </div>
+{#if modalVisible}
+	<button class="modal-window" transition:blur on:click={toggleModal}>
+		<img src={image} alt="client gpx" />
+	</button>
+{/if}
 
 <style>
 	.fx-text,
-	.col-text {
+	.modal-text,
+	.modal-window,
+	.modal-text button {
 		all: unset;
 	}
 
@@ -90,22 +100,41 @@
 		opacity: 1;
 	}
 
-	.col-text {
+	.modal-text {
+		width: 100%;
+		height: auto;
+		display: inline-block;
 		display: none;
 	}
 
-	.col-text p {
-		width: 100%;
-
-		padding-left: 0;
-		margin-top: 50px;
-
-		text-align: center;
+	.modal-text button {
+		font-family: 'SuisseIntl';
+		font-size: var(--text-32);
+		line-height: 150%;
+		letter-spacing: 0.02em;
+		font-weight: 300;
 	}
 
-	.col-text img {
-		width: 100%;
+	.modal-window {
+		position: fixed;
+		top: 0;
+		left: 0;
+
+		width: 100vw;
+		height: 100vh;
+
+		background-color: rgba(0, 0, 0, 0.65);
+
+		z-index: 999;
+
+		display: flex;
+		align-items: center;
+	}
+
+	.modal-window img {
+		width: 70%;
 		height: auto;
+		margin: auto;
 	}
 
 	@media screen and (max-width: 600px) {
@@ -113,7 +142,7 @@
 			display: none;
 		}
 
-		.col-text {
+		.modal-text {
 			display: block;
 		}
 	}

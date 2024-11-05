@@ -6,16 +6,14 @@
 
 	$: headingText = arch ? 'Projekt ARCH' : project.label;
 	$: path = arch ? 'arch' : project.id;
-	$: thumbnail = arch ? '/arch_thumbnail.jpg' : project.thumbnail;
+	$: thumbnail = arch ? '/dynamic/imgs/arch/worktile.jpeg' : project.thumbnail;
 </script>
 
 <a href="/reference/{path}" transition:fade>
 	<div class="thumbnail-wrapper">
 		<div class="thumbnail" style="background-image: url('{thumbnail}');"></div>
 	</div>
-	<div class="texts-wrapper">
-		<p>{headingText}</p>
-	</div>
+	<p>{headingText}</p>
 </a>
 
 <style>
@@ -50,30 +48,21 @@
 		transform: scale(1.05);
 	}
 
-	.texts-wrapper {
-		position: relative;
-		width: 100%;
-	}
-
-	.texts-wrapper p:first-of-type {
+	p {
 		width: 100%;
 
-		padding-top: 5px;
+		padding-top: 10px;
+		margin: 0;
 
 		font-size: var(--text-32);
 		font-weight: 300;
 
 		transition: all 0.45s;
+
+		padding-bottom: var(--general-px);
 	}
 
-	.texts-wrapper p:nth-of-type(2) {
-		font-size: var(--text-20);
-
-		padding-top: 10%;
-		padding-right: 30%;
-	}
-
-	a:hover p:first-of-type {
+	a:hover p {
 		color: var(--pink);
 	}
 </style>

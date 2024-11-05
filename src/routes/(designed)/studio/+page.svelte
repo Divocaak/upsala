@@ -120,4 +120,11 @@
 	.service:first-of-type {
 		margin-top: 0 !important;
 	}
+
+	@media screen and (max-width: 900px) {
+		.media-wrapper {
+			width: 100%;
+			padding-bottom: var(--general-px);
+		}
+	}
 </style>

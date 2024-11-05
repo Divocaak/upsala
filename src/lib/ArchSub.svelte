@@ -100,7 +100,7 @@
 					<button
 						on:click={() => go(i * currentPerPage)}
 						class="hoverable dot {isDotActive(currentIndex, i) ? 'active' : ''}"
-					></button>
+					/>
 				{/each}
 			</div>
 		</div>
@@ -110,10 +110,10 @@
 <style>
 	.wrapper {
 		position: relative;
-		width: calc(100% - 70px);
+		width: calc(100% - var(--general-px) * 2);
 
-		padding: 100px 0px 50px 0px;
-		margin: 0 35px;
+		padding: 50px 0px 50px 0px;
+		margin: 0 var(--general-px);
 
 		display: flex;
 		flex-direction: row;
@@ -182,8 +182,7 @@
 
 	.carousel-wrapper .carousel-img {
 		position: relative;
-		width: 100%;
-		height: 482px;
+		aspect-ratio: 3/2;
 
 		background-position: center;
 		background-repeat: none;
@@ -212,7 +211,7 @@
 		flex-direction: row;
 		justify-content: end;
 
-		padding: 0 35px;
+		padding: 0 var(--general-px);
 
 		box-sizing: border-box;
 	}
@@ -224,7 +223,7 @@
 		height: 25px;
 		width: 25px;
 
-		background-color: #d9d9d9;
+		background-color: var(--light-grey);
 		opacity: 0.6;
 		border-radius: 50%;
 

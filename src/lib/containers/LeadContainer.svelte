@@ -5,10 +5,9 @@
 	export let text = null;
 	export let textSmall = null;
 	export let paddedTitle = false;
-	export let bottomPadding = 200;
 </script>
 
-<div class="container" style="padding-bottom: {bottomPadding}px">
+<div class="container">
 	{#if paddedTitle}
 		<div class="padded-title">
 			<h1>{title}</h1>
@@ -37,18 +36,22 @@
 
 <style>
 	.container {
-		width: calc(100% - (38px * 2));
-		margin: 0 38px;
+		width: calc(100% - (var(--general-px) * 2));
+		margin: 0 var(--general-px);
 
 		margin-top: 15vh;
-		padding-bottom: 200px;
+		padding-bottom: 100px;
+	}
+
+	.title {
+		width: 80%;
 	}
 
 	.title h1,
 	.padded-title h1 {
 		font-size: var(--text-96);
 		font-weight: 600;
-		line-height: 93%;
+		line-height: 110%;
 		letter-spacing: 1px;
 
 		color: var(--black);
@@ -59,7 +62,7 @@
 	}
 
 	.text {
-		padding-right: 38px;
+		padding-right: var(--general-px);
 
 		white-space: pre-line;
 	}
@@ -85,5 +88,11 @@
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
+	}
+
+	@media screen and (max-width: 1200px) {
+		.title {
+			width: 100%;
+		}
 	}
 </style>
