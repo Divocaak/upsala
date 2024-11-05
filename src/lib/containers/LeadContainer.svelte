@@ -48,7 +48,7 @@
 	.padded-title h1 {
 		font-size: var(--text-96);
 		font-weight: 600;
-		line-height: 93%;
+		line-height: 110%;
 		letter-spacing: 1px;
 
 		color: var(--black);
