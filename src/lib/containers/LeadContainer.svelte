@@ -44,6 +44,10 @@
 		padding-bottom: 200px;
 	}
 
+	.title {
+		width: 80%;
+	}
+
 	.title h1,
 	.padded-title h1 {
 		font-size: var(--text-96);
@@ -85,5 +89,11 @@
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
+	}
+
+	@media screen and (max-width: 1200px) {
+		.title {
+			width: 100%;
+		}
 	}
 </style>

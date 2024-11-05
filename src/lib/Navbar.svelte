@@ -67,6 +67,8 @@
 		z-index: 100;
 
 		background-color: white;
+		
+		padding-bottom: 10px;
 	}
 
 	.transparent {
@@ -86,7 +88,7 @@
 	}
 
 	.home {
-		font-size: var(--text-64);
+		font-size: calc(var(--text-24) * 2);
 		font-weight: 400;
 
 		padding-left: 35px;

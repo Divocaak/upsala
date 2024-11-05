@@ -195,7 +195,7 @@
 	:global(:root) {
 		--pink: #ff67c2;
 		--black: #1d1d1b;
-		--border-radius: 5px;
+		--border-radius: 0px;
 		--link-transition: 0.35s;
 		--text-16: calc(8px + (0.926vw * 0.35));
 		--text-20: calc(10px + (1.157vw * 0.25));

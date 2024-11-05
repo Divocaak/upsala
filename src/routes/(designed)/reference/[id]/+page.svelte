@@ -88,6 +88,10 @@
 		padding: 0 35px;
 	}
 
+	:global(.main-image, .gallery-image){
+		padding-bottom: 5.787vw;
+	}
+
 	:global(.main-image) {
 		position: relative;
 		width: 100%;
@@ -97,10 +101,6 @@
 
 	* {
 		box-sizing: border-box;
-	}
-
-	.gallery {
-		padding: 5.787vw 5.787vw;
 	}
 
 	:global(.gallery-image) {
@@ -117,19 +117,12 @@
 		flex-wrap: wrap;
 		align-items: center;
 		justify-content: center;
+		gap: 5.787vw;
 	}
 
 	.image-group-image {
 		flex: 50%;
-		max-width: calc(50% - 15px);
-	}
-
-	.image-group-image:first-of-type {
-		margin-right: 15px;
-	}
-
-	.image-group-image:last-of-type {
-		margin-left: 15px;
+		max-width: calc(50% - 5.787vw/2);
 	}
 
 	@media screen and (max-width: 900px) {

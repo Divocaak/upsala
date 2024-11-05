@@ -5,8 +5,7 @@ export async function load({ params, fetch }) {
 	const data = await response.json();
 
 	const object = data.projects.find((project) => project.id === parseInt(id));
-
-	const randomObjects = getRandomObjects(data.projects, 3);
+	const randomObjects = getRandomObjects(data.projects, 3, id);
 
 	return {
 		project: object,
@@ -14,11 +13,16 @@ export async function load({ params, fetch }) {
 	};
 }
 
-function getRandomObjects(data, numObjects) {
+function getRandomObjects(data, numObjects, selectedId) {
 	const keys = Object.keys(data);
 	const shuffledKeys = keys.sort(() => 0.5 - Math.random());
-	const selectedKeys = shuffledKeys.slice(0, numObjects);
+	let selectedKeys = shuffledKeys.slice(0, numObjects);
+
+	while (selectedKeys.includes(selectedId)) {
+		const index = selectedKeys.indexOf(selectedId);
+		selectedKeys[index] = shuffledKeys[numObjects];
+	}
+
 	const resultArray = selectedKeys.map((key) => ({ id: key, ...data[key] }));
-	const shuffledResult = resultArray.sort(() => 0.5 - Math.random());
-	return shuffledResult;
+	return resultArray;
 }
