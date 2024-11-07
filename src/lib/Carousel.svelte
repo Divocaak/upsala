@@ -137,7 +137,7 @@
 		transition: all 0.35s;
 	}
 
-	.dots-wrapper {
+	/* .dots-wrapper {
 		position: absolute;
 		bottom: 3.5%;
 
@@ -177,7 +177,7 @@
 
 	.dot:hover {
 		background-color: var(--pink);
-	}
+	} */
 
 	.content {
 		position: absolute;

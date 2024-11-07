@@ -80,7 +80,7 @@
 		margin: 0px var(--general-px);
 	}
 
-	.filters button {
+	/* .filters button {
 		all: unset;
 	}
 
@@ -100,5 +100,5 @@
 		all: unset;
 		position: relative;
 		top: -5px;
-	}
+	} */
 </style>
