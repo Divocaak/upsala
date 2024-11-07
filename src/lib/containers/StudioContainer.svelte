@@ -58,10 +58,18 @@
 	}
 
 	@media screen and (max-width: 900px) {
-		img, video {
+		img {
 			width: 100%;
 			height: auto;
 			padding-bottom: var(--general-px);
+		}
+
+		video {
+			width: 50%;
+			height: auto;
+			padding-bottom: var(--general-px);
+			display: block;
+			margin: 0 auto;
 		}
 	}
 </style>

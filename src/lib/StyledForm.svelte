@@ -16,51 +16,62 @@
 {#if isArch}
 	<StrikeThroughText />
 {/if}
-<p class="label" class:arch={isArch}>{label}</p>
-<form action="https://api.staticforms.xyz/submit" method="post">
-	<input type="hidden" name="accessKey" value="29c36e4e-7864-49e3-853e-8cca897dc0bf" />
-	<input type="hidden" name="subject" value={subject} />
-	<input type="hidden" name="redirectTo" value={href} />
-	{#if isArch}
-		<label for="type">
-			Typ archu
-			<select id="type" name="$type">
-				<option value="Archivační">Archivační</option>
-				<option value="Prezentační">Prezentační</option>
-				<option value="Obaly a Boxy">Obaly a boxy</option>
-			</select>
+<div class="bg" style="--bg-color: {!isArch ? '#f0f0f0' : 'white'};">
+	<p class="label" class:arch={isArch}>{label}</p>
+	<form action="https://api.staticforms.xyz/submit" method="post">
+		<input type="hidden" name="accessKey" value="29c36e4e-7864-49e3-853e-8cca897dc0bf" />
+		<input type="hidden" name="subject" value={subject} />
+		<input type="hidden" name="redirectTo" value={href} />
+		{#if isArch}
+			<label for="type">
+				Typ archu
+				<select id="type" name="$type">
+					<option value="Archivační">Archivační</option>
+					<option value="Prezentační">Prezentační</option>
+					<option value="Obaly a Boxy">Obaly a boxy</option>
+				</select>
+			</label>
+			<label for="format">
+				Formát <span>*</span>
+				<input id="format" name="$format" type="text" placeholder="A4" required />
+			</label>
+			<label for="ammount">
+				Přibližný počet kusů <span>*</span>
+				<input id="ammount" name="$ammount" type="number" placeholder="10" required />
+			</label>
+		{/if}
+		<label for="name">
+			Jméno / Příjmení <span>*</span>
+			<input id="name" name="$name" type="text" required />
 		</label>
-		<label for="format">
-			Formát <span>*</span>
-			<input id="format" name="$format" type="text" placeholder="A4" required />
+		<label for="mail">
+			Email <span>*</span>
+			<input id="mail" name="$mail" type="email" required />
 		</label>
-		<label for="ammount">
-			Přibližný počet kusů <span>*</span>
-			<input id="ammount" name="$ammount" type="number" placeholder="10" required />
+		<label for="phone">
+			Telefon
+			<input id="phone" name="$phone" type="tel" />
 		</label>
-	{/if}
-	<label for="name">
-		Jméno / Příjmení <span>*</span>
-		<input id="name" name="$name" type="text" required />
-	</label>
-	<label for="mail">
-		Email <span>*</span>
-		<input id="mail" name="$mail" type="email" required />
-	</label>
-	<label for="phone">
-		Telefon
-		<input id="phone" name="$phone" type="tel" />
-	</label>
-	<label for="description">
-		{descriptionLabel}
-		<textarea id="description" name="$description" rows="7"></textarea>
-	</label>
-	<div class="submit-container">
-		<input type="submit" value="odeslat" />
-	</div>
-</form>
+		<label for="description">
+			{descriptionLabel}
+			<textarea id="description" name="$description" rows="7"></textarea>
+		</label>
+		<div class="submit-container">
+			<input type="submit" value="odeslat" />
+		</div>
+	</form>
+</div>
 
 <style>
+	:root {
+		--bg-color: white;
+	}
+
+	.bg {
+		background-color: var(--bg-color);
+		padding: 25px 0;
+	}
+
 	.arch {
 		padding-top: 100px;
 	}
@@ -116,6 +127,7 @@
 		font-size: var(--text-32);
 		font-weight: 300;
 		color: var(--black);
+		background-color: var(--bg-color);
 
 		border: none;
 

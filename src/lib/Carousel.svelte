@@ -93,14 +93,14 @@
 			</div>
 		</div>
 	{/each}
-	<div class="dots-wrapper" style="--available-color:{objects[activeIndex].homepage.textColor};">
+	<!-- <div class="dots-wrapper" style="--available-color:{objects[activeIndex].homepage.textColor};">
 		{#each { length: objects.length } as _, i}
 			<button
 				on:click={() => go(i * currentPerPage)}
 				class="hoverable dot {isDotActive(activeIndex, i) ? 'active' : ''}"
 			></button>
 		{/each}
-	</div>
+	</div> -->
 </div>
 
 <style>
