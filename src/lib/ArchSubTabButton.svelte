@@ -17,6 +17,8 @@
 		font-weight: 300;
 
 		transition: all 0.35s;
+
+		cursor: pointer;
 	}
 
 	button:hover,

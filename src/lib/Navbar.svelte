@@ -6,16 +6,18 @@
 
 	let menuShown = false;
 	const showMenu = (newVal) => (menuShown = newVal);
+	
+	$: actualTextColor = menuShown? "var(--black)" : textColor;
 </script>
 
-<nav style="--nav-color: {textColor};" class:transparent>
+<nav style="--nav-color: {actualTextColor};" class:transparent>
 	<a class="home" href="/">upsala</a>
 	<button on:click={() => showMenu(!menuShown)}>
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
 			width="32"
 			height="32"
-			fill={textColor}
+			fill={actualTextColor}
 			viewBox="0 0 16 16"
 		>
 			{#if !menuShown}
@@ -39,11 +41,13 @@
 	</div>
 </nav>
 {#if menuShown}
-	<div class="small-nav" transition:blur>
+<div class="small-nav-bg"  transition:blur>
+	<div class="small-nav">
 		<a on:click={() => showMenu(false)} href="/reference">Reference</a>
 		<a on:click={() => showMenu(false)} href="/studio">Studio</a>
 		<a on:click={() => showMenu(false)} href="/contact">Kontakt</a>
 	</div>
+</div>
 {/if}
 
 <style>
@@ -72,7 +76,8 @@
 
 		background-color: white;
 
-		padding-bottom: 10px;
+		/* padding-bottom: 10px; */
+		padding: calc(var(--general-px) / 4) 0;
 	}
 
 	.transparent {
@@ -84,7 +89,8 @@
 	}
 
 	nav .wide-nav a {
-		font-size: var(--text-36);
+		font-size: var(--text-32);
+		font-weight: 400;
 	}
 
 	nav .wide-nav a:nth-of-type(2) {
@@ -92,8 +98,8 @@
 	}
 
 	.home {
-		font-size: calc(var(--text-24) * 2);
-		font-weight: 400;
+		font-size: calc(var(--text-24) * 1.6);
+		font-weight: 450;
 
 		padding-left: var(--general-px);
 	}
@@ -105,16 +111,17 @@
 		padding-right: 15px;
 	}
 
-	.small-nav {
+	.small-nav-bg{
 		position: fixed;
 		width: 100%;
 		height: 100%;
-
+	
 		top: 0;
 		left: 0;
-
+	
 		z-index: 90;
 		background-color: white;
+
 	}
 
 	.small-nav {
@@ -123,13 +130,20 @@
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
+
+		height: 50%;
 	}
 
 	.small-nav a {
+		padding-top: calc(var(--general-px) *2);
 		font-size: var(--text-36);
 	}
 
 	@media screen and (max-width: 600px) {
+		nav{
+			padding: calc(var(--general-px) / 2) 0;
+		}
+
 		nav .wide-nav {
 			display: none;
 		}

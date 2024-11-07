@@ -1,5 +1,5 @@
 <script>
-	import { onMount } from 'svelte';
+	/* import { onMount } from 'svelte';
 
 	let cursorX = 0;
 	let cursorY = 0;
@@ -22,13 +22,13 @@
 		return () => {
 			window.removeEventListener('mousemove', handleMouseMove);
 		};
-	});
+	}); */
 </script>
 
-<div
+<!-- <div
 	class="cursor"
 	style="transform: translate(calc(-50% + {cursorX}px), calc(-50% + {cursorY}px));"
-></div>
+></div> -->
 <slot />
 
 <style>
@@ -198,22 +198,22 @@
 	:global(a) {
 		text-decoration: none;
 		transition: all var(--link-transition);
-		cursor: none;
+		/* cursor: none; */
 	}
 
 	:global(a:hover) {
 		color: var(--pink);
 	}
 
-	:global(html) {
+	/* :global(html) {
 		cursor: none !important;
-	}
+	} */
 
 	:global(body) {
 		margin: 0;
 	}
 
-	.cursor {
+	/* .cursor {
 		position: absolute;
 
 		height: 15px;
@@ -227,5 +227,5 @@
 		z-index: 10000;
 
 		will-change: transform;
-	}
+	} */
 </style>

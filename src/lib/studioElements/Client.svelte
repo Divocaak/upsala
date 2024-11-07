@@ -113,6 +113,7 @@
 		line-height: 150%;
 		letter-spacing: 0.02em;
 		font-weight: 300;
+		color: var(--pink);
 	}
 
 	.modal-window {
@@ -137,7 +138,7 @@
 		margin: auto;
 	}
 
-	@media screen and (max-width: 600px) {
+	@media screen and (max-width: 1200px) {
 		.fx-text {
 			display: none;
 		}

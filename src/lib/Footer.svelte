@@ -1,10 +1,6 @@
 <footer>
-	<div class="links-mobile">
-		<a href="https://facebook.com/upsalagraphicdesign/" target="_blank">Facebook</a>
-		<a href="https://instagram.com/upsala.cz/" target="_blank">Instagram</a>
-	</div>
 	<p>studio<span></span>upsala 2024</p>
-	<div class="links-desktop">
+	<div class="links">
 		<a href="https://facebook.com/upsalagraphicdesign/" target="_blank">Facebook</a>
 		<a href="https://instagram.com/upsala.cz/" target="_blank">Instagram</a>
 	</div>
@@ -42,28 +38,21 @@
 		margin: 0 5px;
 	}
 
-	footer .links-desktop a:first-of-type {
+	footer .links a:first-of-type {
 		padding-right: 20px;
-	}
-
-	.links-mobile {
-		display: none;
 	}
 
 	@media screen and (max-width: 900px) {
 		footer {
-			flex-direction: column;
 			align-items: start;
+			align-items: baseline;
+
+			padding-bottom: var(--general-px);
 		}
 
-		.links-desktop {
-			display: none;
-		}
-
-		.links-mobile {
+		.links{
 			display: flex;
 			flex-direction: column;
-			padding-top: var(--general-px);
 		}
 	}
 </style>

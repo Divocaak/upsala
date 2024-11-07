@@ -8,9 +8,9 @@
 
 <style>
 	h2 {
-		font-size: var(--text-20);
+		/* font-size: var(--text-20);
 
-		text-transform: uppercase;
+		text-transform: uppercase; */
 		color: var(--black);
 	}
 

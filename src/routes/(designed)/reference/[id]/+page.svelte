@@ -39,7 +39,7 @@
 	{/each}
 </div>
 
-<StrikeThroughText label="reference" />
+<StrikeThroughText label="Reference" />
 <WorkWrapper>
 	{#each data.references as project}
 		<WorkTile {project} />

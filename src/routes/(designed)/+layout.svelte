@@ -17,6 +17,6 @@
 		margin-top: -89px;
 		bottom: 0;
 		padding-top: 90px;
-		padding-bottom: 180px;
+		padding-bottom: 90px;
 	}
 </style>

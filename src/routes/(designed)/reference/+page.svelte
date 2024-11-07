@@ -6,7 +6,7 @@
 	import { fade } from 'svelte/transition';
 
 	let data = {};
-	let filters = {};
+	let filters = null;
 	onMount(async () => {
 		const res = await fetch('/dynamic/jsons/data/projects.json');
 		data = await res.json();
@@ -15,8 +15,8 @@
 		filters = filtersData.definitions.filterEnums.items.enum;
 	});
 
-	let showFilters = false;
-	const switchFilters = () => (showFilters = !showFilters);
+	/* let showFilters = true;
+	const switchFilters = () => (showFilters = !showFilters); */
 
 	let currentFilter = null;
 	const changeFilter = (newFilter = null) => (currentFilter = newFilter);
@@ -27,15 +27,15 @@
 </svelte:head>
 
 <div class="filters">
-	<button on:click={() => switchFilters()}>
+	<!-- <button on:click={() => switchFilters()}>
 		<svg width="31" height="23" viewBox="0 0 31 23" fill="none" xmlns="http://www.w3.org/2000/svg">
 			<path d="M31 0H0V4.32428H31V0Z" />
 			<path d="M5.26429 8.6485H25.736V13.5905H5.26429V8.6485Z" />
 			<path d="M8.1888 17.9148H22.8114V22.2391H8.1888V17.9148Z" />
 		</svg>
 	</button>
-	{#if showFilters}
-		<div transition:fade>
+	{#if showFilters} -->
+		<!-- <div transition:fade> -->
 			<Filter
 				label="bez filtru"
 				clickable={true}
@@ -52,8 +52,8 @@
 					/>
 				{/each}
 			{/if}
-		</div>
-	{/if}
+		<!-- </div> -->
+	<!-- {/if} -->
 </div>
 <WorkWrapper>
 	{#if data.projects}
@@ -80,7 +80,7 @@
 		margin: 0px var(--general-px);
 	}
 
-	.filters button {
+	/* .filters button {
 		all: unset;
 	}
 
@@ -100,5 +100,5 @@
 		all: unset;
 		position: relative;
 		top: -5px;
-	}
+	} */
 </style>
