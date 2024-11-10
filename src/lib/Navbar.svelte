@@ -89,8 +89,7 @@
 	}
 
 	nav .wide-nav a {
-		font-size: var(--text-32);
-		font-weight: 400;
+		font-size: 40px;
 	}
 
 	nav .wide-nav a:nth-of-type(2) {
@@ -98,7 +97,7 @@
 	}
 
 	.home {
-		font-size: calc(var(--text-24) * 1.6);
+		font-size: 40px;
 		font-weight: 450;
 
 		padding-left: var(--general-px);
@@ -136,7 +135,7 @@
 
 	.small-nav a {
 		padding-top: calc(var(--general-px) *2);
-		font-size: var(--text-36);
+		font-size: 40px;
 	}
 
 	@media screen and (max-width: 600px) {
