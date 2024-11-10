@@ -120,7 +120,6 @@
 	
 		z-index: 90;
 		background-color: white;
-
 	}
 
 	.small-nav {
@@ -128,17 +127,17 @@
 
 		display: flex;
 		flex-direction: column;
-		justify-content: center;
 
-		height: 50%;
+		margin-top: 25%;
+		height: 100%;
 	}
 
 	.small-nav a {
-		padding-top: calc(var(--general-px) *2);
+		padding-top: calc(var(--general-px) * 2);
 		font-size: 40px;
 	}
 
-	@media screen and (max-width: 600px) {
+	@media screen and (max-width: 900px) {
 		nav{
 			padding: calc(var(--general-px) / 2) 0;
 		}
