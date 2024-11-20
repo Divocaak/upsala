@@ -38,6 +38,10 @@
 		position: relative;
 	}
 
+	a:hover{
+		cursor: pointer;
+	}
+
 	.thumbnail-wrapper {
 		position: relative;
 		aspect-ratio: 3/2;

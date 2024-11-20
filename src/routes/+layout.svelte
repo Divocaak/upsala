@@ -172,6 +172,7 @@
 		--pink: #ff67c2;
 		--black: #1d1d1b;
 		--light-grey: #d9d9d9;
+		--form-bg:#f0f0f0;
 		--border-radius: 0px;
 		--general-px: calc(1.823vw + 10px);
 		--link-transition: 0.35s;

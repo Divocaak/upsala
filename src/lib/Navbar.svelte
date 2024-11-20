@@ -1,5 +1,6 @@
 <script>
 	import { blur, fade } from 'svelte/transition';
+	import { page } from '$app/stores';  
 
 	export let textColor = '#1d1d1b';
 	export let transparent = false;
@@ -35,9 +36,9 @@
 		</svg>
 	</button>
 	<div class="wide-nav">
-		<a href="/reference">Reference</a>
-		<a href="/studio">Studio</a>
-		<a href="/contact">Kontakt</a>
+		<a class:active={$page.url.pathname==='/reference'} href="/reference">Reference</a>
+		<a class:active={$page.url.pathname==='/studio'} href="/studio">Studio</a>
+		<a class:active={$page.url.pathname==='/contact'} href="/contact">Kontakt</a>
 	</div>
 </nav>
 {#if menuShown}
@@ -90,6 +91,10 @@
 
 	nav .wide-nav a {
 		font-size: 40px;
+	}
+
+	nav .wide-nav a.active{
+		color: var(--pink);
 	}
 
 	nav .wide-nav a:nth-of-type(2) {

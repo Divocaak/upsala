@@ -76,6 +76,7 @@
 		display: none;
 		flex-direction: column;
 		padding-bottom: 40px;
+		gap: 5px;
 	}
 
 	@media screen and (max-width: 1200px) {

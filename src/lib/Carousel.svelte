@@ -32,11 +32,9 @@
 
 	function handlePointerUp(event) {
 		if (
-			Math.abs(event.clientX - startX) < dragThreshold &&
-			Math.abs(event.clientY - startY) < dragThreshold
+			Math.abs(event.clientX - startX) >= dragThreshold ||
+			Math.abs(event.clientY - startY) >= dragThreshold
 		) {
-			goto(`/reference/${objects[activeIndex].id}`);
-		} else {
 			const nextIndex =
 				event.clientX < startX
 					? nextSlideIndex()
@@ -104,6 +102,7 @@
 </div>
 
 <style>
+
 	.carousel {
 		position: relative;
 		width: 100%;
@@ -119,10 +118,12 @@
 		left: 0;
 		opacity: 0;
 		transition: opacity 0.5s ease;
+		pointer-events: none;
 	}
 
 	.carousel-slide.active {
 		opacity: 1;
+		pointer-events: all;
 	}
 
 	.background-wrapper {
@@ -190,8 +191,15 @@
 		width: 45%;
 	}
 
-	h1 {
+	.content h1 {
 		font-size: 40px;
+		transition: all 0.35s;
+	}
+
+	.content h1:hover{
+		color: var(--pink) !important;
+		cursor: pointer;
+
 	}
 
 	@media screen and (max-width: 600px) {
