@@ -16,7 +16,7 @@
 {#if isArch}
 	<StrikeThroughText />
 {/if}
-<div class="bg" style="--bg-color: {!isArch ? '#f0f0f0' : 'white'};">
+<div class="bg">
 	<p class="label" class:arch={isArch}>{label}</p>
 	<form action="https://api.staticforms.xyz/submit" method="post">
 		<input type="hidden" name="accessKey" value="29c36e4e-7864-49e3-853e-8cca897dc0bf" />
@@ -63,12 +63,8 @@
 </div>
 
 <style>
-	:root {
-		--bg-color: white;
-	}
-
 	.bg {
-		background-color: var(--bg-color);
+		background-color: var(--form-bg);
 		padding: 25px 0;
 	}
 
@@ -127,7 +123,7 @@
 		font-size: var(--text-32);
 		font-weight: 300;
 		color: var(--black);
-		background-color: var(--bg-color);
+		background-color: var(--form-bg);
 
 		border: none;
 

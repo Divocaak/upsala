@@ -3,20 +3,21 @@
 	import WorkWrapper from '$lib/workTiles/WorkWrapper.svelte';
 	import Filter from '$lib/Filter.svelte';
 	import { onMount } from 'svelte';
-	import { fade } from 'svelte/transition';
 
 	let data = {};
+	let archData = null;
 	let filters = null;
 	onMount(async () => {
 		const res = await fetch('/dynamic/jsons/data/projects.json');
 		data = await res.json();
+
+		const archRes = await fetch('/dynamic/jsons/data/arch.json');
+		archData = await archRes.json();
+
 		const responseFilters = await fetch('/dynamic/jsons/data/filters.json');
 		const filtersData = await responseFilters.json();
 		filters = filtersData.definitions.filterEnums.items.enum;
 	});
-
-	/* let showFilters = true;
-	const switchFilters = () => (showFilters = !showFilters); */
 
 	let currentFilter = null;
 	const changeFilter = (newFilter = null) => (currentFilter = newFilter);
@@ -27,46 +28,35 @@
 </svelte:head>
 
 <div class="filters">
-	<!-- <button on:click={() => switchFilters()}>
-		<svg width="31" height="23" viewBox="0 0 31 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-			<path d="M31 0H0V4.32428H31V0Z" />
-			<path d="M5.26429 8.6485H25.736V13.5905H5.26429V8.6485Z" />
-			<path d="M8.1888 17.9148H22.8114V22.2391H8.1888V17.9148Z" />
-		</svg>
-	</button>
-	{#if showFilters} -->
-		<!-- <div transition:fade> -->
+	<Filter
+		label="bez filtru"
+		clickable={true}
+		on:click={() => changeFilter()}
+		active={!currentFilter}
+	/>
+	{#if filters}
+		{#each filters as filter}
 			<Filter
-				label="bez filtru"
+				label={filter}
 				clickable={true}
-				on:click={() => changeFilter()}
-				active={!currentFilter}
+				on:click={() => changeFilter(filter)}
+				active={filter === currentFilter}
 			/>
-			{#if filters}
-				{#each filters as filter}
-					<Filter
-						label={filter}
-						clickable={true}
-						on:click={() => changeFilter(filter)}
-						active={filter === currentFilter}
-					/>
-				{/each}
-			{/if}
-		<!-- </div> -->
-	<!-- {/if} -->
+		{/each}
+	{/if}
 </div>
 <WorkWrapper>
 	{#if data.projects}
 		{#each data.projects as project, i}
 			{#if currentFilter === null || project.filters.includes(currentFilter)}
-				{#if i === 3}
-					<WorkTile arch={true} />
+				{#if i === 3 && archData}
+					<WorkTile arch={true} archThumbnail={archData.thumbnail} />
 				{/if}
 				<WorkTile {project} />
 			{/if}
 		{/each}
-		{#if data.projects.length < 4}
-			<WorkTile arch={true} />
+		{#if data.projects.length < 4 && archData}
+			<WorkTile arch={true} archThumbnail={archData.thumbnail} />
 		{/if}
 	{/if}
 </WorkWrapper>
@@ -79,26 +69,4 @@
 
 		margin: 0px var(--general-px);
 	}
-
-	/* .filters button {
-		all: unset;
-	}
-
-	.filters svg {
-		padding-right: 25px;
-
-		fill: var(--light-grey);
-
-		transition: 0.45s all;
-	}
-
-	.filters svg:hover {
-		fill: var(--pink);
-	}
-
-	.filters div {
-		all: unset;
-		position: relative;
-		top: -5px;
-	} */
 </style>

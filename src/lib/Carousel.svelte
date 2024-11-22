@@ -32,11 +32,9 @@
 
 	function handlePointerUp(event) {
 		if (
-			Math.abs(event.clientX - startX) < dragThreshold &&
-			Math.abs(event.clientY - startY) < dragThreshold
+			Math.abs(event.clientX - startX) >= dragThreshold ||
+			Math.abs(event.clientY - startY) >= dragThreshold
 		) {
-			goto(`/reference/${objects[activeIndex].id}`);
-		} else {
 			const nextIndex =
 				event.clientX < startX
 					? nextSlideIndex()
@@ -87,9 +85,9 @@
 		>
 			<div class="background-wrapper" style="background-image: url('{object.homepage.image}')" />
 			<div class="content">
-				<h1 style="color: {object.homepage.textColor}">
+				<a style="color: {object.homepage.textColor}" href="/reference/{object.id}">
 					{object.homepage.text}<br />{object.homepage.description}
-				</h1>
+				</a>
 			</div>
 		</div>
 	{/each}
@@ -119,10 +117,12 @@
 		left: 0;
 		opacity: 0;
 		transition: opacity 0.5s ease;
+		pointer-events: none;
 	}
 
 	.carousel-slide.active {
 		opacity: 1;
+		pointer-events: all;
 	}
 
 	.background-wrapper {
@@ -190,8 +190,17 @@
 		width: 45%;
 	}
 
-	h1 {
+	.content a {
 		font-size: 40px;
+		transition: all 0.35s;
+
+		margin: 0.67em 0;
+		display: block;
+	}
+
+	.content a:hover {
+		color: var(--pink) !important;
+		cursor: pointer;
 	}
 
 	@media screen and (max-width: 600px) {

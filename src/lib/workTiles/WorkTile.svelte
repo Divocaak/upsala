@@ -3,10 +3,11 @@
 
 	export let project = null;
 	export let arch = false;
+	export let archThumbnail = null;
 
 	$: headingText = arch ? 'Projekt ARCH' : project.label;
 	$: path = arch ? 'arch' : project.id;
-	$: thumbnail = arch ? '/dynamic/imgs/arch/worktile.jpeg' : project.thumbnail;
+	$: thumbnail = arch ? archThumbnail : project.thumbnail;
 </script>
 
 <a href="/reference/{path}" transition:fade>
@@ -36,6 +37,10 @@
 	a {
 		all: unset;
 		position: relative;
+	}
+
+	a:hover {
+		cursor: pointer;
 	}
 
 	.thumbnail-wrapper {

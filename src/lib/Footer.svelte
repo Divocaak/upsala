@@ -1,4 +1,9 @@
-<footer>
+<script>
+	import { page } from '$app/stores';
+</script>
+
+<div class="spacer" class:colorBg={$page.data.colorFooter}/>
+<footer class:colorBg={$page.data.colorFooter}>
 	<p>studio<span></span>upsala 2024</p>
 	<div class="links">
 		<a href="https://facebook.com/upsalagraphicdesign/" target="_blank">Facebook</a>
@@ -7,6 +12,17 @@
 </footer>
 
 <style>
+	.spacer {
+		width: 100%;
+		height: 90px;
+		margin: 0;
+		padding: 0;
+	}
+
+	.colorBg {
+		background-color: var(--form-bg);
+	}
+
 	footer {
 		align-items: center;
 		display: flex;
@@ -14,7 +30,7 @@
 		justify-content: space-between;
 
 		border-top: 1px solid #000000;
-		margin: 0 var(--general-px);
+		padding: 0 var(--general-px);
 
 		position: relative;
 		bottom: 0;
@@ -50,7 +66,7 @@
 			padding-bottom: var(--general-px);
 		}
 
-		.links{
+		.links {
 			display: flex;
 			flex-direction: column;
 		}

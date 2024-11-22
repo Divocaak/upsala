@@ -54,6 +54,7 @@
 	.images-container {
 		position: relative;
 		padding: 0 var(--general-px);
+		padding-bottom: calc(2 * var(--general-px));
 	}
 
 	.image-group {

@@ -12,7 +12,7 @@
 		all: unset;
 
 		font-family: 'SuisseIntl';
-		font-size: var(--text-36);
+		font-size: var(--text-32);
 		letter-spacing: 0.45px;
 		font-weight: 300;
 
