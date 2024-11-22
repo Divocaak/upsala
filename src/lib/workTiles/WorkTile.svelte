@@ -3,10 +3,11 @@
 
 	export let project = null;
 	export let arch = false;
+	export let archThumbnail = null;
 
 	$: headingText = arch ? 'Projekt ARCH' : project.label;
 	$: path = arch ? 'arch' : project.id;
-	$: thumbnail = arch ? '/dynamic/imgs/arch/worktile.jpeg' : project.thumbnail;
+	$: thumbnail = arch ? archThumbnail : project.thumbnail;
 </script>
 
 <a href="/reference/{path}" transition:fade>
@@ -38,7 +39,7 @@
 		position: relative;
 	}
 
-	a:hover{
+	a:hover {
 		cursor: pointer;
 	}
 

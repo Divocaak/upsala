@@ -85,9 +85,9 @@
 		>
 			<div class="background-wrapper" style="background-image: url('{object.homepage.image}')" />
 			<div class="content">
-				<h1 style="color: {object.homepage.textColor}">
+				<a style="color: {object.homepage.textColor}" href="/reference/{object.id}">
 					{object.homepage.text}<br />{object.homepage.description}
-				</h1>
+				</a>
 			</div>
 		</div>
 	{/each}
@@ -102,7 +102,6 @@
 </div>
 
 <style>
-
 	.carousel {
 		position: relative;
 		width: 100%;
@@ -191,15 +190,17 @@
 		width: 45%;
 	}
 
-	.content h1 {
+	.content a {
 		font-size: 40px;
 		transition: all 0.35s;
+
+		margin: 0.67em 0;
+		display: block;
 	}
 
-	.content h1:hover{
+	.content a:hover {
 		color: var(--pink) !important;
 		cursor: pointer;
-
 	}
 
 	@media screen and (max-width: 600px) {
