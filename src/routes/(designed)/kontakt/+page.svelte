@@ -15,7 +15,7 @@
 	</p>
 	<div class="contact-container" slot="r">
 		<Contact name="Tomáš Zahradníček" tel="604 924 084" mail="upsala@upsala.cz" />
-		<Contact name="Vendula Evjáková" tel="734 570 385" mail="vendula@upsala.cz" />
+		<!-- <Contact name="Vendula Evjáková" tel="734 570 385" mail="vendula@upsala.cz" /> -->
 		<Contact name="Vít Veit" tel="606 515 651" mail="vit@upsala.cz" />
 	</div>
 </LeadContainer>
