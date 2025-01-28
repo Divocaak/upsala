@@ -12,6 +12,11 @@
 
 <svelte:head>
 	<title>upsala</title>
+	<style>
+		body{
+			overflow:hidden;
+		}
+	</style>
 </svelte:head>
 
 <div class="carousel-wrapper">
