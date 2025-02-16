@@ -69,7 +69,7 @@
 		/>
 		<Process
 			label="Mise splněna"
-			text="Po dokončení návrhu naše práce nekončí. Rádi vám ulehčíme od starostí a postaráme se o vaše realizace. Ať už potřebujete publikaci, etikety, světelný sign, banner, nebo grafiku na budovu, máme roky zkušeností a víme, jaké řešení bude pro vás to pravé. S námi jste v dobrých rukou.t"
+			text="Po dokončení návrhu naše práce nekončí. Rádi vám ulehčíme od starostí a postaráme se o vaše realizace. Ať už potřebujete publikaci, etikety, světelný sign, banner, nebo grafiku na budovu, máme roky zkušeností a víme, jaké řešení bude pro vás to pravé. S námi jste v dobrých rukou."
 		/>
 	</div>
 </StudioContainer>

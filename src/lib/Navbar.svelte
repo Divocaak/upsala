@@ -37,16 +37,16 @@
 	</button>
 	<div class="wide-nav">
 		<a class:active={$page.url.pathname==='/reference'} href="/reference">Reference</a>
-		<a class:active={$page.url.pathname==='/studio'} href="/studio">Studio</a>
-		<a class:active={$page.url.pathname==='/contact'} href="/contact">Kontakt</a>
+		<a class:active={$page.url.pathname==='/graficke-studio-brno'} href="/graficke-studio-brno">Studio</a>
+		<a class:active={$page.url.pathname==='/kontakt'} href="/kontakt">Kontakt</a>
 	</div>
 </nav>
 {#if menuShown}
 <div class="small-nav-bg"  transition:blur>
 	<div class="small-nav">
 		<a on:click={() => showMenu(false)} href="/reference">Reference</a>
-		<a on:click={() => showMenu(false)} href="/studio">Studio</a>
-		<a on:click={() => showMenu(false)} href="/contact">Kontakt</a>
+		<a on:click={() => showMenu(false)} href="/graficke-studio-brno">Studio</a>
+		<a on:click={() => showMenu(false)} href="/kontakt">Kontakt</a>
 	</div>
 </div>
 {/if}
