@@ -1,7 +1,7 @@
 {
 	"name": "upsala",
 	"version": "0.0.1",
-	"private": true,
+	"type": "module",
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",
@@ -13,25 +13,22 @@
 	},
 	"devDependencies": {
 		"@playwright/test": "^1.28.1",
-		"@sveltejs/adapter-node": "^5.2.11",
-		"@sveltejs/kit": "^2.15.2",
-		"@sveltejs/vite-plugin-svelte": "^3.1.2",
+		"@sveltejs/adapter-node": "^5.2.12",
+		"@sveltejs/kit": "^2.9.0",
+		"@sveltejs/vite-plugin-svelte": "^5.0.0",
 		"@types/eslint": "^9.6.0",
 		"@zerodevx/svelte-img": "^2.1.1",
-		"eslint": "^9.0.0",
-		"eslint-config-prettier": "^9.1.0",
+		"eslint": "^9.7.0",
+		"eslint-config-prettier": "^10.0.1",
 		"eslint-plugin-svelte": "^2.36.0",
 		"globals": "^15.0.0",
-		"prettier": "^3.1.1",
-		"prettier-plugin-svelte": "^3.1.2",
-		"svelte": "^4.2.7",
-		"vite": "^5.0.3"
+		"prettier": "^3.2.2",
+		"prettier-plugin-svelte": "^3.2.6",
+		"svelte": "^5.0.0",
+		"vite": "^6.0.0"
 	},
-	"type": "module",
 	"dependencies": {
 		"@json-editor/json-editor": "^2.15.1",
-		"darwin": "^0.0.1",
-		"siema": "^1.5.1",
-		"x64": "^1.0.0"
+		"siema": "^1.5.1"
 	}
 }
