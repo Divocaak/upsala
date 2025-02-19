@@ -1,24 +1,76 @@
 <script>
 	import { onMount } from 'svelte';
 	import StrikeThroughText from '$lib/StrikeThroughText.svelte';
+	import { Recaptcha, recaptcha, observer } from 'svelte-recaptcha-v2';
 
 	export let label = 'nezávazná kalkulace';
 	export let subject = 'Poptávka projekt ARCH';
 	export let descriptionLabel = 'Popište váš projekt';
 	export let isArch = true;
 
+	const googleRecaptchaSiteKey = '6LeoidsqAAAAAEk5ZTnaBWpPN8H1u4cxuEfDNzK7';
+
 	let href;
 	onMount(() => {
 		href = `${window.location.href}/success`;
 	});
+
+	const onCaptchaReady = (event) => {
+		console.log('recaptcha init has completed.');
+		/* You can enable your form button here. */
+	};
+
+	const onCaptchaSuccess = (event) => {
+		// userTracker.resolve(event);
+		console.log('token received: ' + event.detail.token);
+		/* If using checkbox method, you can attach your form logic here, or dispatch your custom event. */
+	};
+
+	const onCaptchaError = (event) => {
+		console.log('recaptcha init has failed.');
+		/* Usually due to incorrect siteKey. Make sure you have the correct siteKey..
+     */
+	};
+
+	const onCaptchaExpire = (event) => {
+		console.log('recaptcha api has expired');
+		/* Normally, you wouldn't need to do anything. Recaptcha should reinit itself automatically.
+     */
+	};
+
+	const onCaptchaClose = (event) => {
+		console.log('google decided to challange the user');
+		/* This fires when the puzzle frame closes. Usually happens when the user clicks outside the modal frame. */
+	};
+
+	const submitHandler = async () => {
+		console.log('launching recaptcha');
+		recaptcha.execute();
+
+		console.log('pending for google response');
+		const event = await Promise.resolve(observer);
+
+		const recaptchaToken = event.detail?.token ? event.detail.token : false;
+
+		if (!recaptchaToken) {
+			console.log('recaptcha is NOT OK');
+			return false;
+		}
+
+		console.log('token retrieved', recaptchaToken);
+	};
 </script>
+
+<svelte:head>
+	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</svelte:head>
 
 {#if isArch}
 	<StrikeThroughText />
 {/if}
 <div class="bg">
 	<p class="label" class:arch={isArch}>{label}</p>
-	<form action="https://api.staticforms.xyz/submit" method="post">
+	<form action="https://api.staticforms.xyz/submit" method="post" on:submit|preventDefault={submitHandler}>
 		<input type="hidden" name="accessKey" value="29c36e4e-7864-49e3-853e-8cca897dc0bf" />
 		<input type="hidden" name="subject" value={subject} />
 		<input type="hidden" name="redirectTo" value={href} />
@@ -56,6 +108,16 @@
 			{descriptionLabel}
 			<textarea id="description" name="$description" rows="7"></textarea>
 		</label>
+		<Recaptcha
+			sitekey={googleRecaptchaSiteKey}
+			badge={'top'}
+			size={'invisible'}
+			on:success={onCaptchaSuccess}
+			on:error={onCaptchaError}
+			on:expired={onCaptchaExpire}
+			on:close={onCaptchaClose}
+			on:ready={onCaptchaReady}
+		/>
 		<div class="submit-container">
 			<input type="submit" value="odeslat" />
 		</div>
