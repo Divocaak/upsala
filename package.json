@@ -25,10 +25,19 @@
 		"prettier": "^3.2.2",
 		"prettier-plugin-svelte": "^3.2.6",
 		"svelte": "^5.0.0",
+		"svelte-recaptcha-v2": "^0.0.2",
 		"vite": "^6.0.0"
 	},
 	"dependencies": {
 		"@json-editor/json-editor": "^2.15.1",
+		"altcha": "^1.1.1",
 		"siema": "^1.5.1"
+	},
+	"optionalDependencies": {
+		"@rollup/rollup-darwin-arm64": "^4.34.8",
+		"@rollup/rollup-linux-x64-gnu": "4.6.1"
+	},
+	"resolutions": {
+		"rollup": "npm:@rollup/wasm-node"
 	}
 }
