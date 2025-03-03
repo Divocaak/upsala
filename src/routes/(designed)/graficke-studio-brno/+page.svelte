@@ -6,9 +6,20 @@
 	import { onMount } from 'svelte';
 	import Process from '$lib/studioElements/Process.svelte';
 
+	let textData = {};
+	let servicesColL = [];
+	let servicesColR = [];
+
 	let clientColL = [];
 	let clientColR = [];
 	onMount(async () => {
+		const textResponse = await fetch('/dynamic/jsons/data/studio.json');
+		textData = await textResponse.json();
+		
+		const servicesMid = Math.ceil(textData.services.length / 2);
+		servicesColL = textData.services.slice(0, servicesMid);
+		servicesColR = textData.services.slice(servicesMid);
+		
 		const res = await fetch('/dynamic/jsons/data/reference.json');
 		const data = await res.json();
 
@@ -24,8 +35,8 @@
 
 <LeadContainer
 	title="Grafické studio"
-	text="Studio Upsala jsme založili v roce 2003 a pracujeme pro českou i zahraniční klientelu. Zakládáme si na osobním vztahu s našimi zákazníky a věříme, že rovnocenný dialog je zárukou úspěšné spolupráce."
-	textSmall="Všechna zadání jsou pro nás výzvou a ke každému projektu přistupujeme individuálně. Úzce spolupracujeme s marketingovými specialisty, copywritery, fotografy, architekty, kodéry a další. Profesionálním přístupem pomáháme našim klientům vynakládat prostředky jen na to, co skutečně potřebují. Naší doménou je osobitý, funkční a nadčasový design."
+	text={textData.leading}
+	textSmall={textData.leadingSub}
 	paddedTitle={true}
 >
 	<div class="media-wrapper" slot="l">
@@ -37,21 +48,20 @@
 	<HalfsLayout>
 		<div slot="l">
 			<p class="service">
-				Logo design<br />
-				Vizuální identita<br />
-				Branding a rebranding<br />
-				Tvorba tiskovin<br />
-				Merchandise<br />
-				Interiérový design
+				{#if servicesColL}
+					{#each servicesColL as service}
+						{service}<br />
+					{/each}
+				{/if}
 			</p>
 		</div>
 		<div slot="r">
 			<p class="service">
-				Web design<br />
-				SoMe grafika<br />
-				Obalový design<br />
-				DTP práce<br />
-				Grafické konzultace<br />
+				{#if servicesColR}
+					{#each servicesColR as service}
+						{service}<br />
+					{/each}
+				{/if}
 			</p>
 		</div>
 	</HalfsLayout>
@@ -59,18 +69,9 @@
 
 <StudioContainer title="Postup" vidPath="/studioAnim.mp4">
 	<div class="process-wrapper">
-		<Process
-			label="První rande"
-			text="Společné seznámení u nás není jen prázdná fráze. Aby vám vizuál sedl jako ulitý, musíme vás nejdřív pořádně poznat. Kdo jste, jak fungujete, jaké máte cíle a sny. Jen tak najdeme podstatu vaší značky a vytvoříme autentický vizuál přímo pro vás."
-		/>
-		<Process
-			label="Volím si tebe!"
-			text="Na dalších schůzkách projdeme všechny návrhy a možnosti. Společně vybereme identitu, která vám nejlíp sedne a bude odrážet vaše hodnoty. Cílem je, abyste cítili, že vaše značka působí přesně tak, jak sami chcete."
-		/>
-		<Process
-			label="Mise splněna"
-			text="Po dokončení návrhu naše práce nekončí. Rádi vám ulehčíme od starostí a postaráme se o vaše realizace. Ať už potřebujete publikaci, etikety, světelný sign, banner, nebo grafiku na budovu, máme roky zkušeností a víme, jaké řešení bude pro vás to pravé. S námi jste v dobrých rukou."
-		/>
+		{#each textData.workflow as panel}
+			<Process label={panel.heading} text={panel.content} />
+		{/each}
 	</div>
 </StudioContainer>
 

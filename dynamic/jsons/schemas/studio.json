@@ -1,0 +1,73 @@
+{
+	"type": "object",
+	"title": "Studio",
+	"description": "Obsah na stránce Studio",
+	"options": {
+		"collapsed": true
+	},
+	"properties": {
+		"leading": {
+			"type": "string",
+			"format": "textarea",
+			"description": "úvodní text",
+			"options": {
+				"expand_height": true
+			}
+		},
+		"leadingSub": {
+			"type": "string",
+			"format": "textarea",
+			"description": "druhý odstavec úvodního textu",
+			"options": {
+				"expand_height": true
+			}
+		},
+		"services": {
+			"type": "array",
+			"title": "Naše služby",
+			"options": {
+				"collapsed": true
+			},
+			"items": {
+				"type": "string",
+				"description": "služba",
+				"title": "Služba"
+			}
+		},
+		"workflow": {
+			"type": "array",
+			"title": "Postup",
+			"items": {
+				"type": "object",
+				"title": "panel",
+				"options": {
+					"collapsed": true
+				},
+				"properties": {
+					"heading": {
+						"type": "string",
+						"title": "Nadpis"
+					},
+					"content": {
+						"type": "string",
+						"title": "text",
+						"format": "textarea",
+						"options": {
+							"expand_height": true
+						}
+					}
+				},
+				"required": [
+					"heading",
+					"content"
+				]
+			}
+		}
+	},
+	"required": [
+		"leading",
+		"leadingSub",
+		"services",
+		"workflow"
+	]
+}

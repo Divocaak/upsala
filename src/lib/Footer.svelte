@@ -6,7 +6,7 @@
 
 <div class="spacer" class:colorBg={$page.data.colorFooter}/>
 <footer class:colorBg={$page.data.colorFooter}>
-	<p>studio<span></span>upsala {year}</p>
+	<p>studio<span></span>upsala {year	}</p>
 	<div class="links">
 		<a href="https://facebook.com/upsalagraphicdesign/" target="_blank">Facebook</a>
 		<a href="https://instagram.com/upsala.cz/" target="_blank">Instagram</a>

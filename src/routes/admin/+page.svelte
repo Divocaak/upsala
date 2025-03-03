@@ -27,3 +27,9 @@
 	apiPath="/api/save-arch"
 	saveButton="arch"
 />
+<AdminForm
+	schemaPath="/dynamic/jsons/schemas/studio.json"
+	dataPath="/dynamic/jsons/data/studio.json"
+	apiPath="/api/save-studio"
+	saveButton="studio"
+/>
