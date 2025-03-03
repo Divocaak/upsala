@@ -2,6 +2,13 @@
 	import Contact from '$lib/Contact.svelte';
 	import LeadContainer from '$lib/containers/LeadContainer.svelte';
 	import StyledForm from '$lib/StyledForm.svelte';
+	import { onMount } from 'svelte';
+
+	let data = {};
+	onMount(async () => {
+		const res = await fetch('/dynamic/jsons/data/contacts.json');
+		data = await res.json();
+	});
 </script>
 
 <svelte:head>
@@ -14,9 +21,9 @@
 		Jakubská 1, 602 00 Brno
 	</p>
 	<div class="contact-container" slot="r">
-		<Contact name="Tomáš Zahradníček" tel="604 924 084" mail="upsala@upsala.cz" />
-		<!-- <Contact name="Vendula Evjáková" tel="734 570 385" mail="vendula@upsala.cz" /> -->
-		<Contact name="Vít Veit" tel="606 515 651" mail="vit@upsala.cz" />
+		{#each data as contact}
+			<Contact name={contact.name} tel={contact.tel} mail={contact.mail} />
+		{/each}
 	</div>
 </LeadContainer>
 <StyledForm

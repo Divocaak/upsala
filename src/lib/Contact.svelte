@@ -4,7 +4,7 @@
 
 <div>
 	<p>{name}</p>
-	<a href="tel:{tel}">{tel}</a><br />
+	<a href="tel:{tel}">{tel.replace(/\d{3}(?=\d)/g, '$& ')}</a><br />
 	<a href="mailto:{mail}">{mail}</a>
 </div>
 
