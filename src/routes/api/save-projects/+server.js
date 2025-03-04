@@ -6,6 +6,13 @@ export async function POST({ request }) {
 
 	let errs = [];
 	for (const item of data.projects) {
+		item.id = item.id.toLowerCase()
+			.normalize("NFD")
+			.replace(/[\u0300-\u036f]/g, "")
+			.replace(/[\u0300-\u036f]/g, "")    // Remove diacritic marks
+			.replace(/[\d\W_]+/g, "-")          // Remove numbers and special characters, replace with "-"
+			.replace(/^-+|-+$/g, "");			// Trim leading/trailing dashes
+
 		const path = `work/${item.id}`;
 		if (item.homepage) {
 			item.homepage.image =

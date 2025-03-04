@@ -27,3 +27,15 @@
 	apiPath="/api/save-arch"
 	saveButton="arch"
 />
+<AdminForm
+	schemaPath="/dynamic/jsons/schemas/studio.json"
+	dataPath="/dynamic/jsons/data/studio.json"
+	apiPath="/api/save-studio"
+	saveButton="studio"
+/>
+<AdminForm
+	schemaPath="/dynamic/jsons/schemas/contacts.json"
+	dataPath="/dynamic/jsons/data/contacts.json"
+	apiPath="/api/save-contacts"
+	saveButton="kontakty"
+/>

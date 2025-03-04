@@ -57,10 +57,9 @@
 						"required": ["index", "image", "text", "textColor"]
 					},
 					"id": {
-						"type": "integer",
-						"format": "number",
-						"description": "ID projektu, unikátní",
-						"readonly": true
+						"type": "string",
+						"format": "text",
+						"description": "ID projektu, unikátní, bez diakritiky, mezer a velkých písmen"
 					},
 					"label": {
 						"type": "string",

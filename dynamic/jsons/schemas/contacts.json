@@ -1,0 +1,36 @@
+{
+	"type": "array",
+	"title": "Kontakty",
+	"options": {
+		"collapsed": false
+	},
+	"items": {
+		"type": "object",
+		"title": "Kontakt",
+		"options": {
+			"collapsed": false
+		},
+		"properties": {
+			"name": {
+				"type": "string",
+				"title": "Jméno"
+			},
+			"tel": {
+				"type": "string",
+				"title": "Telefon",
+				"description": "zadávat bez mezer",
+				"format": "tel"
+			},
+			"mail": {
+				"type": "string",
+				"title": "Email",
+				"format": "email"
+			}
+		},
+		"required": [
+			"name",
+			"tel",
+			"mail"
+		]
+	}
+}
