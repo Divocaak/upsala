@@ -4,7 +4,7 @@ export async function load({ params, fetch }) {
 	const response = await fetch(`/dynamic/jsons/data/projects.json?${Date.now()}`);
 	const data = await response.json();
 
-	const object = data.projects.find((project) => project.id === parseInt(id));
+	const object = data.projects.find((project) => project.id === id);
 	const randomObjects = getRandomObjects(data.projects, 3, data.projects.indexOf(object));
 
 	return {
