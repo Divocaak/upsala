@@ -7,6 +7,8 @@
 	import GalleryMedia from '$lib/GalleryMedia.svelte';
 
 	export let data;
+
+	console.log(data);
 </script>
 
 <svelte:head>
