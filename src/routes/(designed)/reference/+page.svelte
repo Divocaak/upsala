@@ -52,7 +52,9 @@
 				{#if i === 3 && archData}
 					<WorkTile arch={true} archThumbnail={archData.thumbnail} />
 				{/if}
-				<WorkTile {project} />
+				{#if project.visible}
+					<WorkTile {project} />
+				{/if}
 			{/if}
 		{/each}
 		{#if data.projects.length < 4 && archData}

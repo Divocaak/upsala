@@ -25,7 +25,10 @@
 						"options": {
 							"collapsed": true
 						},
-						"type": ["object", "null"],
+						"type": [
+							"object",
+							"null"
+						],
 						"description": "Nastavení zobrazení na domovské stránce. Vyberte 'Object' pro zobrazení na domovské stránce",
 						"properties": {
 							"index": {
@@ -54,7 +57,12 @@
 								"description": "Barva textů na domovské stránce při tomto projektu"
 							}
 						},
-						"required": ["index", "image", "text", "textColor"]
+						"required": [
+							"index",
+							"image",
+							"text",
+							"textColor"
+						]
 					},
 					"id": {
 						"type": "string",
@@ -125,9 +133,23 @@
 						"items": {
 							"$ref": "./dynamic/jsons/data/filters.json#/definitions/filterEnums/items"
 						}
+					},
+					"visible": {
+						"type": "boolean",
+						"format": "checkbox",
+						"default": true,
+						"title": "viditelná",
+						"description": "zobrazuje se na seznamu referencí"
 					}
 				},
-				"required": ["id", "label", "description", "thumbnail", "filters"]
+				"required": [
+					"id",
+					"label",
+					"description",
+					"thumbnail",
+					"filters",
+					"visible"
+				]
 			}
 		}
 	}

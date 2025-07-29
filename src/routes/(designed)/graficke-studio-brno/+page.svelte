@@ -15,11 +15,11 @@
 	onMount(async () => {
 		const textResponse = await fetch('/dynamic/jsons/data/studio.json');
 		textData = await textResponse.json();
-		
+
 		const servicesMid = Math.ceil(textData.services.length / 2);
 		servicesColL = textData.services.slice(0, servicesMid);
 		servicesColR = textData.services.slice(servicesMid);
-		
+
 		const res = await fetch('/dynamic/jsons/data/reference.json');
 		const data = await res.json();
 
@@ -80,14 +80,18 @@
 		<div slot="l">
 			{#if clientColL}
 				{#each clientColL as ref}
-					<Client label={ref.label} image={ref.image} />
+					{#if ref.visible}
+						<Client label={ref.label} image={ref.image} />
+					{/if}
 				{/each}
 			{/if}
 		</div>
 		<div slot="r">
 			{#if clientColR}
 				{#each clientColR as ref}
-					<Client label={ref.label} image={ref.image} />
+					{#if ref.visible}
+						<Client label={ref.label} image={ref.image} />
+					{/if}
 				{/each}
 			{/if}
 		</div>
