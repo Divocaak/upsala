@@ -1,6 +1,5 @@
 {
   "projects": [
-    
     {
       "homepage": null,
       "id": "ateh-lighting",
@@ -12,6 +11,7 @@
         "/dynamic/imgs/work/1726602381766/f95dd669f2ea5981bd46047c0f84cdb1.jpeg"
       ],
       "filters": [],
+      "visible": true,
       "category": "logo",
       "year": "2022"
     },
@@ -37,6 +37,7 @@
         "/dynamic/imgs/work/1726603827881/5ab5e19f177c8adc2a7d175a8dfbf1c6.jpeg"
       ],
       "filters": [],
+      "visible": true,
       "category": "logo",
       "year": "2023"
     },
@@ -54,6 +55,7 @@
         ]
       ],
       "filters": [],
+      "visible": true,
       "category": "logo / vizuální identita / tiskoviny / orientační systém",
       "year": "2022"
     }

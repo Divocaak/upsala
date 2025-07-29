@@ -32,11 +32,24 @@
 							"binaryEncoding": "base64",
 							"type": "img/png"
 						}
+					},
+					"visible": {
+						"type": "boolean",
+						"format": "checkbox",
+						"default": true,
+						"title": "viditelná",
+						"description": "zobrazuje se na seznamu referencí"
 					}
 				},
-				"required": ["label", "image"]
+				"required": [
+					"label",
+					"image",
+					"visible"
+				]
 			}
 		}
 	},
-	"required": ["reference"]
+	"required": [
+		"reference"
+	]
 }

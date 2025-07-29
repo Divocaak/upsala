@@ -14,7 +14,6 @@
 	"devDependencies": {
 		"@types/eslint": "^9.6.0",
 		"@zerodevx/svelte-img": "^2.1.1",
-		"svelte-recaptcha-v2": "^0.0.2",
 		"@eslint/compat": "^1.2.5",
 		"@eslint/js": "^9.18.0",
 		"@playwright/test": "^1.49.1",
