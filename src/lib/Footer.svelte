@@ -4,10 +4,13 @@
 	const year = new Date().getFullYear();
 </script>
 
-<div class="spacer" class:colorBg={$page.data.colorFooter}/>
+<div class="spacer" class:colorBg={$page.data.colorFooter} />
 <footer class:colorBg={$page.data.colorFooter}>
-	<p>studio<span></span>upsala {year	}</p>
+	<p>studio<span></span>upsala {year}</p>
 	<div class="links">
+		{#if $page.url.pathname == '/kontakt'}
+			<a href="/cookies">Cookies</a>
+		{/if}
 		<a href="https://facebook.com/upsalagraphicdesign/" target="_blank">Facebook</a>
 		<a href="https://instagram.com/upsala.cz/" target="_blank">Instagram</a>
 	</div>
@@ -56,8 +59,8 @@
 		margin: 0 5px;
 	}
 
-	footer .links a:first-of-type {
-		padding-right: 20px;
+	footer .links a {
+		padding: 0 10px;
 	}
 
 	@media screen and (max-width: 900px) {
