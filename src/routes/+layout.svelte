@@ -1,4 +1,7 @@
 <script>
+	import Analytics from '../lib/Analytics.svelte';
+	import CookieConsent from '../lib/CookieConsent.svelte';
+
 	/* import { onMount } from 'svelte';
 
 	let cursorX = 0;
@@ -29,6 +32,9 @@
 	class="cursor"
 	style="transform: translate(calc(-50% + {cursorX}px), calc(-50% + {cursorY}px));"
 ></div> -->
+
+<CookieConsent />
+<Analytics />
 <slot />
 
 <style>
@@ -172,7 +178,7 @@
 		--pink: #ff67c2;
 		--black: #1d1d1b;
 		--light-grey: #d9d9d9;
-		--form-bg:#f0f0f0;
+		--form-bg: #f0f0f0;
 		--border-radius: 0px;
 		--general-px: calc(1.823vw + 10px);
 		--link-transition: 0.35s;
@@ -185,7 +191,7 @@
 		--text-96: calc(48px + (5.556vw * 0.15));
 	}
 
-	:global(h1, h2, h3, h4, h5, h6, p, a, button) {
+	:global(h1, h2, h3, h4, h5, h6, p, a, button, li) {
 		font-family: 'SuisseIntl', sans-serif;
 		font-style: normal;
 		font-weight: 300;
