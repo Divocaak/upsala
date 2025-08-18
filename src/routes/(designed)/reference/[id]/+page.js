@@ -13,10 +13,9 @@ export async function load({ params, fetch }) {
 	};
 }
 
-function getRandomObjects(data, numObjects, selectedId) {
-	return Object.keys(data)
-		.filter(e => parseInt(e) !== parseInt(selectedId))
+function getRandomObjects(data, numObjects, selectedIndex) {
+	return data
+		.filter((_, i) => i !== selectedIndex && _.visible !== false)
 		.sort(() => 0.5 - Math.random())
-		.slice(0, numObjects)
-		.map((key) => ({ id: key, ...data[key] }));
+		.slice(0, numObjects);
 }
