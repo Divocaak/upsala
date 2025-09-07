@@ -26,12 +26,12 @@
 		{/each}
 	</div>
 </LeadContainer>
-<StyledForm
+<!-- <StyledForm
 	label="Kontaktujte nás"
 	subject="Kontaktujte nás"
 	descriptionLabel="Zpráva"
 	isArch={false}
-/>
+/> -->
 
 <style>
 	.contact {

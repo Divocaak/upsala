@@ -1,6 +1,6 @@
 <script>
 	import LeadContainer from '$lib/containers/LeadContainer.svelte';
-	import StyledForm from '$lib/StyledForm.svelte';
+	/* import StyledForm from '$lib/StyledForm.svelte'; */
 	import ArchSub from '$lib/ArchSub.svelte';
 	import ArchSubTabButton from '$lib/ArchSubTabButton.svelte';
 
@@ -58,7 +58,7 @@
 	<ArchSub {object} topStrike={i !== 0} />
 {/each}
 
-<StyledForm />
+<!-- <StyledForm /> -->
 
 <style>
 	.tabs-holder {
