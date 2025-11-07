@@ -5,10 +5,19 @@
 		const form = event.target;
 		const formData = new FormData(form);
 		const data = Object.fromEntries(formData.entries());
-		/* <!-- TODO api endpoint --> */
+
+		const res = await fetch('/api/send', {
+			method: 'POST',
+			headers: { 'Content-Type': 'application/json' },
+			body: JSON.stringify(data)
+		});
+
+		const result = await res.json();
+		console.log(result);
 	};
 </script>
 
+<!-- TODO recaptcha -->
 <form on:submit={handleSubmit}>
 	<slot></slot>
 </form>

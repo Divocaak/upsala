@@ -12,14 +12,14 @@
 		"start": "HOST=127.0.0.1 PORT=3010 BODY_SIZE_LIMIT=Infinity node build"
 	},
 	"devDependencies": {
-		"@types/eslint": "^9.6.0",
-		"@zerodevx/svelte-img": "^2.1.1",
 		"@eslint/compat": "^1.2.5",
 		"@eslint/js": "^9.18.0",
 		"@playwright/test": "^1.49.1",
 		"@sveltejs/adapter-node": "^5.2.12",
 		"@sveltejs/kit": "^2.16.0",
 		"@sveltejs/vite-plugin-svelte": "^5.0.0",
+		"@types/eslint": "^9.6.0",
+		"@zerodevx/svelte-img": "^2.1.1",
 		"eslint": "^9.18.0",
 		"eslint-config-prettier": "^10.0.1",
 		"eslint-plugin-svelte": "^2.46.1",
@@ -32,6 +32,7 @@
 	"dependencies": {
 		"@json-editor/json-editor": "^2.15.1",
 		"altcha": "^1.1.1",
+		"nodemailer": "^7.0.10",
 		"siema": "^1.5.1"
 	},
 	"optionalDependencies": {
