@@ -2,7 +2,7 @@
 	export let text = 'lorem ipsum';
 </script>
 
-<p>{text}</p>
+<p>{@html text}</p>
 
 <style>
 	p {

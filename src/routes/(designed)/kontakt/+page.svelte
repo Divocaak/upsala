@@ -2,8 +2,9 @@
 	import { onMount } from 'svelte';
 	import LeadContainer from '$lib/containers/LeadContainer.svelte';
 	import LandingText from '$lib/containers/LandingText.svelte';
-	import NewForm from '$lib/NewForm.svelte';
-	import RunningText from '../../../lib/RunningText.svelte';
+	import NewForm from '$lib/forms/NewForm.svelte';
+	import RunningText from '$lib/RunningText.svelte';
+	import AddSubscription from '$lib/forms/AddSubscription.svelte';
 
 	let data = {};
 	onMount(async () => {
@@ -39,7 +40,13 @@
 	</div>
 	<div>
 		<p class="name">Máte dotaz?</p>
-		<NewForm />
+		<NewForm>
+			<input id="name" name="$name" type="text" placeholder="Jméno Příjmení*" required />
+			<input id="mail" name="$mail" type="email" placeholder="Email*" required />
+			<textarea id="message" name="$message" placeholder="Zpráva*" rows="7" required></textarea>
+			<input type="submit" value="Odeslat zprávu" />
+			<AddSubscription />
+		</NewForm>
 	</div>
 </div>
 <!-- TODO from json -->

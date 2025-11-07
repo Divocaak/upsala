@@ -5,6 +5,7 @@
 	import StudioContainer from '$lib/containers/StudioContainer.svelte';
 	import { onMount } from 'svelte';
 	import Process from '$lib/studioElements/Process.svelte';
+	import NewsletterForm from '$lib/forms/NewsletterForm.svelte';
 
 	let textData = {};
 	let servicesColL = [];
@@ -97,6 +98,7 @@
 		</div>
 	</HalfsLayout>
 </StudioContainer>
+<NewsletterForm />
 
 <style>
 	.media-wrapper {
