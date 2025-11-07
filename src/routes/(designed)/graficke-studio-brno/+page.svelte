@@ -6,6 +6,7 @@
 	import { onMount } from 'svelte';
 	import Process from '$lib/studioElements/Process.svelte';
 	import NewsletterForm from '$lib/forms/NewsletterForm.svelte';
+	import RunningText from '$lib/RunningText.svelte';
 
 	let textData = {};
 	let servicesColL = [];
@@ -99,6 +100,8 @@
 	</HalfsLayout>
 </StudioContainer>
 <NewsletterForm />
+<!-- TODO from json -->
+<RunningText text="# studio # kreativita # zkušenosti " />
 
 <style>
 	.media-wrapper {
