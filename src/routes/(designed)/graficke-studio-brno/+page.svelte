@@ -29,6 +29,13 @@
 		clientColL = data.reference.slice(0, mid);
 		clientColR = data.reference.slice(mid);
 	});
+
+	const txt1 =
+		'Jsme grafické studio založené v roce 2003.<br>Ovládá nás kreativita, usměrňuje praxe a zkušenosti<br>a motivuje touha dostat ze zadání maximum.';
+	const txt2 =
+		'Naše práce nás stále baví stejně jako na&nbsp;začátku, ať už jde o&nbsp;menší projekty<br>nebo spolupráci s&nbsp;velkými značkami, z&nbsp;Česka nebo zahraničí. Ke&nbsp;každému úkolu přistupujeme s&nbsp;nadšením a&nbsp;snažíme se&nbsp;najít řešení, které nejen dobře vypadá, <br>ale hlavně dlouhodobě funguje.';
+	const txt3 =
+		'Sázíme na&nbsp;osobní přístup a&nbsp;otevřenou komunikaci.<br>Jen tak můžeme s&nbsp;klienty najít řešení, které nejlépe vystihne jejich značku.<br>Při spolupráci nehledáme složitosti tam, kde nejsou&nbsp;-&nbsp;navrhujeme jen to, co má skutečný přínos. Spolupracujeme se&nbsp;specialisty z&nbsp;různých oborů&nbsp;-&nbsp;od&nbsp;marketérů přes textaře až po&nbsp;programátory&nbsp;-&nbsp;a&nbsp;pomáháme klientům efektivně investovat zdroje přesně tam, kde jsou potřeba.';
 </script>
 
 <svelte:head>
@@ -36,13 +43,18 @@
 </svelte:head>
 
 <LeadContainer
-	title="Grafické studio"
-	text={textData.leading}
-	textSmall={textData.leadingSub}
+	title="Grafické<br>Studio Upsala"
+	text={txt1}
+	textSmall="{txt2}<br><br>{txt3}"
 	paddedTitle={true}
+	leftHalfWidth="50"
+	rigthHalfWidth="50"
+	gap="2"
 >
 	<div class="media-wrapper" slot="l">
-		<img src="/studio.jpg" alt="lead container gpx" />
+		<!-- TODO from json -->
+		<img src="/zahradnicek.jpg" alt="lead container gpx" />
+		<p>Tomáš Zahradníček, zakladatel studia</p>
 	</div>
 </LeadContainer>
 
@@ -105,13 +117,20 @@
 
 <style>
 	.media-wrapper {
-		width: 60%;
+		/* width: 50%; */
 	}
 
 	.media-wrapper img {
 		position: relative;
 		width: 100%;
 		height: auto;
+	}
+
+	.media-wrapper p {
+		font-weight: 400;
+		font-size: var(--text-20);
+		line-height: 93%;
+		letter-spacing: 1px;
 	}
 
 	.process-wrapper {

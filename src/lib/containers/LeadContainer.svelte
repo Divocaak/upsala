@@ -5,29 +5,32 @@
 	export let text = null;
 	export let textSmall = null;
 	export let paddedTitle = false;
+	export let leftHalfWidth = 60;
+	export let rigthHalfWidth = 40;
+	export let gap = 0;
 </script>
 
 <div class="container">
 	{#if paddedTitle}
 		<div class="padded-title">
-			<h1>{title}</h1>
+			<h1>{@html title}</h1>
 		</div>
 	{/if}
-	<HalfsLayout>
+	<HalfsLayout leftWidth={leftHalfWidth} rightWidth={rigthHalfWidth} {gap}>
 		<div slot="l" class="left">
 			{#if !paddedTitle}
 				<div class="title">
-					<h1>{title}</h1>
+					<h1>{@html title}</h1>
 				</div>
 			{/if}
 			<slot name="l"></slot>
 		</div>
 		<div slot="r" class="text">
 			{#if text != null}
-				<p class="prim-text">{text}</p>
+				<p class="prim-text">{@html text}</p>
 			{/if}
 			{#if textSmall != null}
-				<p class="sec-text">{textSmall}</p>
+				<p class="sec-text">{@html textSmall}</p>
 			{/if}
 			<slot name="r"></slot>
 		</div>
@@ -72,7 +75,8 @@
 	}
 
 	.prim-text {
-		font-size: var(--text-32);
+		font-size: var(--text-48);
+		font-weight: 400;
 	}
 
 	.sec-text {
