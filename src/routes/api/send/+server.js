@@ -1,5 +1,5 @@
 import nodemailer from 'nodemailer';
-import { GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET, GOOGLE_REFRESH_TOKEN } from '$env/static/private';
+import { GOOGLE_EMAIL, GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET, GOOGLE_REFRESH_TOKEN } from '$env/static/private';
 
 export async function POST({ request }) {
     const data = await request.json();
@@ -9,7 +9,7 @@ export async function POST({ request }) {
         service: "gmail",
         auth: {
             type: "OAuth2",
-            user: "me@gmail.com",
+            user: GOOGLE_EMAIL,
             clientId: GOOGLE_CLIENT_ID,
             clientSecret: GOOGLE_CLIENT_SECRET,
             refreshToken: GOOGLE_REFRESH_TOKEN,
@@ -18,7 +18,7 @@ export async function POST({ request }) {
 
     /* TODO from */
     const mailOptions = {
-        from: '"Upsala Web" <maddison53@ethereal.email>',
+        from: `"Noreply Upsala" <${GOOGLE_EMAIL}>`,
         to: 'recipient@example.com',
         subject: 'Form Submission',
         text: JSON.stringify(data, null, 2),
