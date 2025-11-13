@@ -49,17 +49,17 @@
 	{#if data.projects}
 		{#each data.projects as project, i}
 			{#if currentFilter === null || project.filters.includes(currentFilter)}
-				{#if i === 3 && archData}
+				<!-- {#if i === 3 && archData}
 					<WorkTile arch={true} archThumbnail={archData.thumbnail} />
-				{/if}
+				{/if} -->
 				{#if project.visible}
 					<WorkTile {project} />
 				{/if}
 			{/if}
 		{/each}
-		{#if data.projects.length < 4 && archData}
+		<!-- {#if data.projects.length < 4 && archData}
 			<WorkTile arch={true} archThumbnail={archData.thumbnail} />
-		{/if}
+		{/if} -->
 	{/if}
 </WorkWrapper>
 
