@@ -32,6 +32,7 @@
 	"dependencies": {
 		"@json-editor/json-editor": "^2.15.1",
 		"altcha": "^1.1.1",
+		"googleapis": "^166.0.0",
 		"nodemailer": "^7.0.10",
 		"siema": "^1.5.1"
 	},
