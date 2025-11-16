@@ -182,11 +182,14 @@
 		--border-radius: 0px;
 		--general-px: calc(1.823vw + 10px);
 		--link-transition: 0.35s;
+		/* vw = px value / 19.2 */
+		/* rem = px value / 16 */
 		--text-16: calc(8px + (0.926vw * 0.35));
 		--text-20: calc(10px + (1.157vw * 0.25));
 		--text-24: calc(12px + (1.389vw * 0.15));
 		--text-32: calc(16px + (1.852vw * 0.15));
 		--text-36: calc(18px + (2.083vw * 0.15));
+		--text-48: calc(24px + (2.083vw * 0.15));
 		--text-64: calc(32px + (3.704vw * 0.15));
 		--text-96: calc(48px + (5.556vw * 0.15));
 	}
