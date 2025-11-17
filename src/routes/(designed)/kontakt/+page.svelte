@@ -5,7 +5,7 @@
 	import NewForm from '$lib/forms/NewForm.svelte';
 	import RunningText from '$lib/runningElements/RunningText.svelte';
 	import AddSubscription from '$lib/forms/AddSubscription.svelte';
-	import HalfsLayout from '../../../lib/containers/HalfsLayout.svelte';
+	import HalfsLayout from '$lib/containers/HalfsLayout.svelte';
 
 	let data = {};
 	onMount(async () => {
@@ -19,10 +19,7 @@
 </svelte:head>
 
 <LeadContainer title="Kontakt" paddedTitle={true} />
-<!-- TODO from json -->
-<LandingText
-	text="Vždy jsme připraveni vzít váš telefon, odpovědět na váš e-mail nebo vás přivítat u našich dveří."
-/>
+<LandingText text={data.leading} />
 <div class="wrapper">
 	<HalfsLayout leftWidth="50" rightWidth="50">
 		<div slot="l">
@@ -52,8 +49,7 @@
 		</div>
 	</HalfsLayout>
 </div>
-<!-- TODO from json -->
-<RunningText text="# studio # kreativita # zkušenosti " />
+<RunningText text={data.runningText} />
 
 <style>
 	.wrapper {
