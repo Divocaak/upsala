@@ -6,9 +6,10 @@
 	import { onMount } from 'svelte';
 	import Process from '$lib/studioElements/Process.svelte';
 	import NewsletterForm from '$lib/forms/NewsletterForm.svelte';
-	import RunningText from '$lib/RunningText.svelte';
+	import RunningText from '$lib/runningElements/RunningText.svelte';
 	import Service from '../../../lib/studioElements/Service.svelte';
 	import FlowPanel from '../../../lib/studioElements/FlowPanel.svelte';
+	import RunningBoxes from '../../../lib/runningElements/RunningBoxes.svelte';
 
 	let textData = {};
 	let servicesColL = [];
@@ -97,6 +98,12 @@
 	const split = Array.from({ length: columns }, (_, i) =>
 		sorted.slice(i * perCol, i * perCol + perCol)
 	);
+
+	const referenceBoxes = [
+		{ name: 'knesl kynčl architekti', text: '„Upsala nás přesvědčila už  v soutěži – nejlépe vystihla naše představy.“ „Upsala nás přesvědčila už v soutěži  – nejlépe vystihla naše představy.“' },
+		{ name: 'knesl kynčl architekti', text: '„Upsala nás přesvědčila už  v soutěži – nejlépe vystihla naše představy.“' },
+		{ name: 'Charlie', text: 'Marquee boxes!' },
+		{ name: 'a', text: 'a' }]
 </script>
 
 <svelte:head>
@@ -157,8 +164,8 @@
 		</ul>
 	{/each}
 </div>
-<!-- TODO marquee boxes -->
-<RunningText text="tady budou boxy s referencema" />
+<!-- TODO from json -->
+<RunningBoxes items={referenceBoxes}/>
 <NewsletterForm />
 <!-- TODO from json -->
 <RunningText text="# studio # kreativita # zkušenosti " />

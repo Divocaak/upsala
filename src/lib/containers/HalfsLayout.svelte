@@ -4,7 +4,6 @@
 	export let gap = 0;
 </script>
 
-<!-- TODO use with variable widths in /kontakt -->
 <div class="wrapper" style="--left-w: {leftWidth}%; --right-w: {rightWidth}%; --gap: {gap}rem;">
 	<div class="half">
 		<slot name="l"></slot>
