@@ -40,7 +40,7 @@
 	</div>
 	<div>
 		<p class="name">Máte dotaz?</p>
-		<NewForm>
+		<NewForm subject="Nový dotaz" text="<h1>Ze stránky kontakt přišel nový dotaz:</h1>">
 			<input id="name" name="$name" type="text" placeholder="Jméno Příjmení*" required />
 			<input id="mail" name="$mail" type="email" placeholder="Email*" required />
 			<textarea id="message" name="$message" placeholder="Zpráva*" rows="7" required></textarea>

@@ -6,7 +6,7 @@
 <LandingText
 	text="Připojte se k našemu newsletteru,<br>novinky, inspirace a tipy přímo do vaší schránky."
 />
-<NewForm>
+<NewForm subject="Newsletter - nový odběratel" text="<h1>Následující email začal odebírat newsletter.</h1>">
 	<div class="wrapper">
 		<input id="mail" name="$mail" type="email" placeholder="Email*" required />
 		<input type="submit" value="Odeslat zprávu" />
