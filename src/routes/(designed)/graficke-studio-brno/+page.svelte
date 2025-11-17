@@ -1,48 +1,20 @@
 <script>
-	import Client from '$lib/studioElements/Client.svelte';
-	import LeadContainer from '$lib/containers/LeadContainer.svelte';
-	import HalfsLayout from '$lib/containers/HalfsLayout.svelte';
-	import StudioContainer from '$lib/containers/StudioContainer.svelte';
 	import { onMount } from 'svelte';
-	import Process from '$lib/studioElements/Process.svelte';
+	import LeadContainer from '$lib/containers/LeadContainer.svelte';
 	import NewsletterForm from '$lib/forms/NewsletterForm.svelte';
 	import RunningText from '$lib/runningElements/RunningText.svelte';
-	import Service from '../../../lib/studioElements/Service.svelte';
-	import FlowPanel from '../../../lib/studioElements/FlowPanel.svelte';
-	import RunningBoxes from '../../../lib/runningElements/RunningBoxes.svelte';
+	import Service from '$lib/studioElements/Service.svelte';
+	import FlowPanel from '$lib/studioElements/FlowPanel.svelte';
+	import RunningBoxes from '$lib/runningElements/RunningBoxes.svelte';
 
 	let textData = {};
-	let servicesColL = [];
-	let servicesColR = [];
-
-	let clientColL = [];
-	let clientColR = [];
 	onMount(async () => {
 		const textResponse = await fetch('/dynamic/jsons/data/studio.json');
 		textData = await textResponse.json();
 
-		const servicesMid = Math.ceil(textData.services.length / 2);
-		servicesColL = textData.services.slice(0, servicesMid);
-		servicesColR = textData.services.slice(servicesMid);
-
 		const res = await fetch('/dynamic/jsons/data/reference.json');
 		const data = await res.json();
-
-		const mid = Math.ceil(data.reference.length / 2);
-		clientColL = data.reference.slice(0, mid);
-		clientColR = data.reference.slice(mid);
 	});
-
-	const txt1 =
-		'Jsme grafické studio založené v roce 2003.<br>Ovládá nás kreativita, usměrňuje praxe a zkušenosti<br>a motivuje touha dostat ze zadání maximum.';
-	const txt2 =
-		'Naše práce nás stále baví stejně jako na&nbsp;začátku, ať už jde o&nbsp;menší projekty<br>nebo spolupráci s&nbsp;velkými značkami, z&nbsp;Česka nebo zahraničí. Ke&nbsp;každému úkolu přistupujeme s&nbsp;nadšením a&nbsp;snažíme se&nbsp;najít řešení, které nejen dobře vypadá, <br>ale hlavně dlouhodobě funguje.';
-	const txt3 =
-		'Sázíme na&nbsp;osobní přístup a&nbsp;otevřenou komunikaci.<br>Jen tak můžeme s&nbsp;klienty najít řešení, které nejlépe vystihne jejich značku.<br>Při spolupráci nehledáme složitosti tam, kde nejsou&nbsp;-&nbsp;navrhujeme jen to, co má skutečný přínos. Spolupracujeme se&nbsp;specialisty z&nbsp;různých oborů&nbsp;-&nbsp;od&nbsp;marketérů přes textaře až po&nbsp;programátory&nbsp;-&nbsp;a&nbsp;pomáháme klientům efektivně investovat zdroje přesně tam, kde jsou potřeba.';
-
-	const service1 = ['asd', 'dsa', 'qwe', 'eqwe', 'cyby', 'hhsdhsh'];
-	const service2 = ['asd', 'eqwe', 'cyby', 'hhsdhsh'];
-	const service3 = ['asd', 'dsa', 'qwe', 'eqwe', 'cyby', 'hhsdhsh', 'asd', 'dsa', 'qwe'];
 
 	const clients = [
 		'H.A.N.S architekti',
@@ -100,10 +72,17 @@
 	);
 
 	const referenceBoxes = [
-		{ name: 'knesl kynčl architekti', text: '„Upsala nás přesvědčila už  v soutěži – nejlépe vystihla naše představy.“ „Upsala nás přesvědčila už v soutěži  – nejlépe vystihla naše představy.“' },
-		{ name: 'knesl kynčl architekti', text: '„Upsala nás přesvědčila už  v soutěži – nejlépe vystihla naše představy.“' },
+		{
+			name: 'knesl kynčl architekti',
+			text: '„Upsala nás přesvědčila už  v soutěži – nejlépe vystihla naše představy.“ „Upsala nás přesvědčila už v soutěži  – nejlépe vystihla naše představy.“'
+		},
+		{
+			name: 'knesl kynčl architekti',
+			text: '„Upsala nás přesvědčila už  v soutěži – nejlépe vystihla naše představy.“'
+		},
 		{ name: 'Charlie', text: 'Marquee boxes!' },
-		{ name: 'a', text: 'a' }]
+		{ name: 'a', text: 'a' }
+	];
 </script>
 
 <svelte:head>
@@ -112,46 +91,48 @@
 
 <LeadContainer
 	title="Grafické<br>Studio Upsala"
-	text={txt1}
-	textSmall="{txt2}<br><br>{txt3}"
+	text={textData.leading}
+	textSmall={textData.leadingSub}
 	paddedTitle={true}
 	leftHalfWidth="50"
 	rigthHalfWidth="50"
 	gap="2"
 >
 	<div class="media-wrapper" slot="l">
-		<!-- TODO from json -->
-		<img src="/zahradnicek.jpg" alt="lead container gpx" />
-		<p>Tomáš Zahradníček, zakladatel studia</p>
+		<img src="{textData.landingImage}" alt="lead container gpx" />
+		<p>{textData.photoLabel}Tomáš Zahradníček, zakladatel studia</p>
 	</div>
 </LeadContainer>
 
 <LeadContainer title="Naše služby" />
 <div class="services-wrapper">
-	<Service mediaPath="/studioAnim.mp4" label="Grafika" services={service1} />
+	{#each textData.services as service}
+	<Service mediaPath="{service.media}" label="{service.label}" services={service.actualServices} />
+	{/each}
+	<!-- <Service mediaPath="/studioAnim.mp4" label="Grafika" services={service1} />
 	<Service mediaPath="/studioAnim.mp4" label="Web" services={service2} />
-	<Service mediaPath="/studioAnim.mp4" label="Interier&nbsp;/&nbsp;Exterier" services={service3} />
+	<Service mediaPath="/studioAnim.mp4" label="Interier&nbsp;/&nbsp;Exterier" services={service3} /> -->
 </div>
 
 <LeadContainer title="Postup" />
 <FlowPanel
 	imgSrc="/flow0.jpg"
 	number="01"
-	lead="Společné seznámení u nás není jen prázdná fráze."
-	text="Aby vám vizuál sedl jako ulitý, musíme vás nejdřív pořádně poznat. Kdo jste, jak fungujete, jaké máte cíle a sny. Jen tak najdeme podstatu vaší značky a vytvoříme autentický vizuál přímo pro vás."
+	lead={textData.workflow?.[0]?.heading}
+	text={textData.workflow?.[0]?.content}
 />
 <FlowPanel
 	imgSrc="/flow1.jpg"
 	number="02"
-	lead="Na dalších schůzkách projdeme všechny návrhy a možnosti."
-	text="Společně vybereme identitu, která vám nejlíp sedne a bude odrážet vaše hodnoty. Cílem je, abyste cítili, že vaše značka působí přesně tak, jak sami chcete."
+	lead="{textData.workflow?.[1]?.heading}"
+	text="{textData.workflow?.[1]?.content}"
 	isMiddle={true}
 />
 <FlowPanel
 	imgSrc="/flow2.jpg"
 	number="03"
-	lead="Po dokončení návrhu naše práce nekončí."
-	text="Rádi vám ulehčíme od starostí a postaráme se o vaše realizace. Ať už potřebujete publikaci, etikety, světelný sign, banner, nebo grafiku na budovu, máme roky zkušeností a víme, jaké řešení bude pro vás to pravé. S námi jste v dobrých rukou.t"
+	lead="{textData.workflow?.[2]?.heading}"
+	text="{textData.workflow?.[2]?.content}"
 />
 
 <LeadContainer title="Klienti" />
@@ -165,7 +146,7 @@
 	{/each}
 </div>
 <!-- TODO from json -->
-<RunningBoxes items={referenceBoxes}/>
+<RunningBoxes items={referenceBoxes} />
 <NewsletterForm />
 <!-- TODO from json -->
 <RunningText text="# studio # kreativita # zkušenosti " />

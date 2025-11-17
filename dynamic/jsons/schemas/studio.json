@@ -6,6 +6,18 @@
 		"collapsed": true
 	},
 	"properties": {
+		"landingImage": {
+			"type": "string",
+			"title": "úvodní fotka",
+			"media": {
+				"binaryEncoding": "base64",
+				"type": "img/png"
+			}
+		},
+		"photoLabel": {
+			"type": "string",
+			"description": "popisek fotky"
+		},
 		"leading": {
 			"type": "string",
 			"format": "textarea",
@@ -25,18 +37,80 @@
 		"services": {
 			"type": "array",
 			"title": "Naše služby",
+			"minItems": 3,
+			"maxItems": 3,
 			"options": {
 				"collapsed": true
 			},
+			"default": [
+				{
+					"landingImage": "",
+					"label": "služba 1",
+					"actualServices": [
+						"konkrétní služba"
+					]
+				},
+				{
+					"landingImage": "",
+					"label": "služba 1",
+					"actualServices": [
+						"konkrétní služba"
+					]
+				},
+				{
+					"landingImage": "",
+					"label": "služba 2",
+					"actualServices": [
+						"konkrétní služba"
+					]
+				}
+			],
 			"items": {
-				"type": "string",
-				"description": "služba",
-				"title": "Služba"
+				"type": "object",
+				"title": "služba",
+				"headerTemplate": "{{self.label}}",
+				"options": {
+					"collapsed": true
+				},
+				"properties": {
+					"media": {
+						"type": "string",
+						"title": "media",
+						"media": {
+							"binaryEncoding": "base64",
+							"type": "img/png"
+						}
+					},
+					"label": {
+						"type": "string",
+						"description": "služba",
+						"title": "Služba"
+					},
+					"actualServices": {
+						"type": "array",
+						"title": "konkrétní služby",
+						"properties": {
+							"options": {
+								"titleHidden": true,
+								"disable_collapse": true
+							},
+							"type": "array",
+							"items": {
+								"type": "string",
+								"description": "Název filtru",
+								"title": "Filtr"
+							}
+						}
+					}
+				}
 			}
 		},
 		"workflow": {
 			"type": "array",
 			"title": "Postup",
+			"options": {
+				"collapsed": true
+			},
 			"items": {
 				"type": "object",
 				"title": "panel",
@@ -44,6 +118,14 @@
 					"collapsed": true
 				},
 				"properties": {
+					"media": {
+						"type": "string",
+						"title": "media",
+						"media": {
+							"binaryEncoding": "base64",
+							"type": "img/png"
+						}
+					},
 					"heading": {
 						"type": "string",
 						"title": "Nadpis"
