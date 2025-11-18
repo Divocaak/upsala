@@ -53,8 +53,13 @@
 	{#each splitReference as col}
 		<ul>
 			{#each col as client}
-				<!-- BUG when no link -->
-				{#if client.visible}<li><a href={client.link} target="_blank">{client.label}</a></li>{/if}
+				{#if client.visible}
+					<li>
+						{#if client.link}<a href={client.link} target="_blank">{client.label}</a>
+						{:else}<p>{client.label}</p>
+						{/if}
+					</li>
+				{/if}
 			{/each}
 		</ul>
 	{/each}
@@ -100,11 +105,12 @@
 		padding: 0;
 	}
 
-	li {
+	li p, li a {
 		font-weight: 300;
 		font-size: 1rem;
 		line-height: 1.6;
 		white-space: nowrap;
+		margin: 0;
 	}
 
 	@media (max-width: 500px) {

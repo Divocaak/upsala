@@ -5,7 +5,7 @@
 	export let paddingBottom = true;
 </script>
 
-{#if media.endsWith('.mp4')}
+{#if media.endsWith('.mp4') || media.startsWith('data:video/mp4')}
 	<video
 		class="gallery-image"
 		autoplay
