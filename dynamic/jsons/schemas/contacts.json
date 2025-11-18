@@ -3,7 +3,7 @@
 	"title": "Kontakt",
 	"description": "Obsah na stránce Kontakt",
 	"options": {
-		"collapsed": false
+		"collapsed": true
 	},
 	"properties": {
 		"leading": {

@@ -1,55 +1,36 @@
 {
-	"type": "object",
-	"title": "Reference",
 	"description": "na stránce Studio",
+	"collapsed": true,
+	"type": "array",
+	"title": "Klienti",
 	"options": {
 		"collapsed": true
 	},
-	"properties": {
-		"reference": {
-			"type": "array",
-			"description": "Jednotlivé reference",
-			"options": {
-				"titleHidden": true,
-				"disable_collapse": true
+	"items": {
+		"options": {
+			"collapsed": true
+		},
+		"headerTemplate": "{{self.label}}",
+		"properties": {
+			"label": {
+				"type": "string",
+				"title": "název"
 			},
-			"items": {
-				"type": "object",
-				"title": "reference",
-				"headerTemplate": "{{self.label}}",
-				"options": {
-					"collapsed": true
-				},
-				"properties": {
-					"label": {
-						"type": "string",
-						"description": "Název reference"
-					},
-					"image": {
-						"type": "string",
-						"title": "obrázek",
-						"media": {
-							"binaryEncoding": "base64",
-							"type": "img/png"
-						}
-					},
-					"visible": {
-						"type": "boolean",
-						"format": "checkbox",
-						"default": true,
-						"title": "viditelná",
-						"description": "zobrazuje se na seznamu referencí"
-					}
-				},
-				"required": [
-					"label",
-					"image",
-					"visible"
-				]
+			"link": {
+				"type": "string",
+				"title": "odkaz"
+			},
+			"visible": {
+				"type": "boolean",
+				"format": "checkbox",
+				"default": true,
+				"title": "viditelná",
+				"description": "zobrazuje se na seznamu referencí"
 			}
-		}
-	},
-	"required": [
-		"reference"
-	]
+		},
+		"required": [
+			"label",
+			"visible"
+		]
+	}
 }

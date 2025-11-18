@@ -23,8 +23,8 @@
 				</svg>
 
 				<div class="texts-wrapper">
-					<p>{item.text}</p>
-					<p>{item.name}</p>
+					<p>{item.content}</p>
+					<p>{item.label}</p>
 				</div>
 			</div>
 		{/each}

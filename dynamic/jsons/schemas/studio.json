@@ -44,21 +44,21 @@
 			},
 			"default": [
 				{
-					"landingImage": "",
+					"media": "",
 					"label": "služba 1",
 					"actualServices": [
 						"konkrétní služba"
 					]
 				},
 				{
-					"landingImage": "",
+					"media": "",
 					"label": "služba 1",
 					"actualServices": [
 						"konkrétní služba"
 					]
 				},
 				{
-					"landingImage": "",
+					"media": "",
 					"label": "služba 2",
 					"actualServices": [
 						"konkrétní služba"
@@ -102,7 +102,12 @@
 							}
 						}
 					}
-				}
+				},
+				"required": [
+					"media",
+					"label",
+					"actualServices"
+				]
 			}
 		},
 		"workflow": {
@@ -140,16 +145,54 @@
 					}
 				},
 				"required": [
+					"media",
 					"heading",
 					"content"
 				]
 			}
+		},
+		"reference": {
+			"type": "array",
+			"title": "Reference",
+			"description": "reference v boxech",
+			"options": {
+				"collapsed": true
+			},
+			"items": {
+				"type": "object",
+				"title": "reference",
+				"options": {
+					"collapsed": true
+				},
+				"properties": {
+					"label": {
+						"type": "string",
+						"title": "název"
+					},
+					"content": {
+						"type": "string",
+						"title": "content"
+					}
+				},
+				"required": [
+					"label",
+					"content"
+				]
+			}
+		},
+		"runningText": {
+			"type": "string",
+			"description": "marquee text"
 		}
 	},
 	"required": [
+		"landingImage",
+		"photoLabel",
 		"leading",
 		"leadingSub",
 		"services",
-		"workflow"
+		"workflow",
+		"reference",
+		"runningText"
 	]
 }
