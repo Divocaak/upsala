@@ -99,8 +99,8 @@
 				{#each { length: totalDots } as _, i}
 					<button
 						on:click={() => go(i * currentPerPage)}
-						class="hoverable dot {isDotActive(currentIndex, i) ? 'active' : ''}"
-					/>
+						class="hoverable dot {isDotActive(currentIndex, i) ? 'active' : ''}">
+					</button>
 				{/each}
 			</div>
 		</div>

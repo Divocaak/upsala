@@ -20,7 +20,7 @@
 
 <div class="wrap {wrapperClasses}">
 	<Img {src} class="my-img {additionalClasses}" {alt} bind:ref on:load={() => (loaded = true)} />
-	<div class="blur" class:loaded />
+	<div class="blur" class:loaded></div>
 </div>
 
 <style>

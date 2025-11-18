@@ -83,7 +83,7 @@
 			on:pointerdown={handlePointerDown}
 			on:pointerup={handlePointerUp}
 		>
-			<div class="background-wrapper" style="background-image: url('{object.homepage.image}')" />
+			<div class="background-wrapper" style="background-image: url('{object.homepage.image}')"></div>
 			<div class="content">
 				<a style="color: {object.homepage.textColor}" href="/reference/{object.id}">
 					{object.homepage.text}<br />{object.homepage.description}
