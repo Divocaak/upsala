@@ -1,24 +1,232 @@
-{
-  "reference": [
-    {
-      "label": "test ref",
-      "image": "/dynamic/imgs/reference/fe6ce39468e88f88d11f669a047cbbc8.jpeg",
-      "visible": true
-    },
-    {
-      "label": "reference cislo dva",
-      "image": "/dynamic/imgs/reference/9dfe593429c3ab094a58baa9f8d32689.jpeg",
-      "visible": true
-    },
-    {
-      "label": "treti refka",
-      "image": "/dynamic/imgs/reference/fe6ce39468e88f88d11f669a047cbbc8.jpeg",
-      "visible": true
-    },
-    {
-      "label": "test visibility",
-      "image": "/dynamic/imgs/reference/43fbc71ba26ce0ce60b20d517a8ece30.jpeg",
-      "visible": true
-    }
-  ]
-}
+[
+  {
+    "label": "H.A.N.S architekti",
+    "link": "asd",
+    "visible": true
+  },
+  {
+    "label": "znamení čtyř-architekti",
+    "link": "asd",
+    "visible": true
+  },
+  {
+    "label": "DOTEGG ARCHITEKTI",
+    "link": "",
+    "visible": true
+  },
+  {
+    "label": "CAPEXUS ",
+    "link": "asd",
+    "visible": true
+  },
+  {
+    "label": "DOMYJINAK ",
+    "link": "",
+    "visible": true
+  },
+  {
+    "label": "Adam Rujbr Architects",
+    "link": "",
+    "visible": true
+  },
+  {
+    "label": "BEK architekti ",
+    "link": "",
+    "visible": true
+  },
+  {
+    "label": "norman rourke pryme",
+    "link": "",
+    "visible": true
+  },
+  {
+    "label": "KNESL KYNČL architekti ",
+    "link": "",
+    "visible": true
+  },
+  {
+    "label": "Burian Křivinka architekti",
+    "link": "",
+    "visible": true
+  },
+  {
+    "label": "EA architekti ",
+    "link": "",
+    "visible": true
+  },
+  {
+    "label": "FTV Prima",
+    "link": "",
+    "visible": true
+  },
+  {
+    "label": "JSK Investments",
+    "link": "",
+    "visible": true
+  },
+  {
+    "label": "Nadace Simony Kijonkové",
+    "link": "",
+    "visible": true
+  },
+  {
+    "label": "ALCA PLAST ",
+    "link": "",
+    "visible": true
+  },
+  {
+    "label": "H.A.N.S. stavby",
+    "link": "",
+    "visible": true
+  },
+  {
+    "label": "H.A.N.S. Prefa",
+    "link": "",
+    "visible": true
+  },
+  {
+    "label": "Kalina Gallery",
+    "link": "",
+    "visible": true
+  },
+  {
+    "label": "Nejvyšší správní soud",
+    "link": "",
+    "visible": true
+  },
+  {
+    "label": "MP Capital Investments",
+    "link": "",
+    "visible": true
+  },
+  {
+    "label": "MP Holding",
+    "link": "",
+    "visible": true
+  },
+  {
+    "label": "ČSOB",
+    "link": "",
+    "visible": true
+  },
+  {
+    "label": "E.ON",
+    "link": "",
+    "visible": true
+  },
+  {
+    "label": "EUC (CANADIAN MEDICAL)",
+    "link": "",
+    "visible": true
+  },
+  {
+    "label": "Komerční banka (Société Générale)",
+    "link": "",
+    "visible": true
+  },
+  {
+    "label": "Česká spořitelna",
+    "link": "",
+    "visible": true
+  },
+  {
+    "label": "Vermont (Gant)",
+    "link": "",
+    "visible": true
+  },
+  {
+    "label": "ITW Pronovia",
+    "link": "",
+    "visible": true
+  },
+  {
+    "label": "WineWords",
+    "link": "",
+    "visible": true
+  },
+  {
+    "label": "Euroagentur (EA hotel Melantrich)",
+    "link": "",
+    "visible": true
+  },
+  {
+    "label": "Městská divadla pražská",
+    "link": "",
+    "visible": true
+  },
+  {
+    "label": "Hotel Clarion",
+    "link": "",
+    "visible": true
+  },
+  {
+    "label": "Cesta Talentu",
+    "link": "",
+    "visible": true
+  },
+  {
+    "label": "Refinery Gallery",
+    "link": "",
+    "visible": true
+  },
+  {
+    "label": "Knihovna Velká Bíteš",
+    "link": "",
+    "visible": true
+  },
+  {
+    "label": "Knihovna Velké Meziříčí",
+    "link": "",
+    "visible": true
+  },
+  {
+    "label": "Univerzita Palackého v Olomouci ",
+    "link": "",
+    "visible": true
+  },
+  {
+    "label": "Vysoké učení technické",
+    "link": "",
+    "visible": true
+  },
+  {
+    "label": "Choklid",
+    "link": "",
+    "visible": true
+  },
+  {
+    "label": "Mitte kavárna a hostel",
+    "link": "",
+    "visible": true
+  },
+  {
+    "label": "Dopoodpo kavárna",
+    "link": "",
+    "visible": true
+  },
+  {
+    "label": "U bílého beránka",
+    "link": "",
+    "visible": true
+  },
+  {
+    "label": "Fair hotel",
+    "link": "",
+    "visible": true
+  },
+  {
+    "label": "Cattani pasta",
+    "link": "",
+    "visible": true
+  },
+  {
+    "label": "Beefbar",
+    "link": "",
+    "visible": true
+  },
+  {
+    "label": "BAR mandarin",
+    "link": "",
+    "visible": true
+  }
+]

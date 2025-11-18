@@ -25,11 +25,11 @@
 
 		transition: all 0.35s;
 
-		cursor: pointer;
 	}
-
+	
 	button.clickable:hover,
 	button.active {
+		cursor: pointer;
 		color: var(--pink);
 		border: 1px solid var(--pink);
 	}

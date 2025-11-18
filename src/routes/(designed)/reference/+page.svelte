@@ -3,6 +3,7 @@
 	import WorkWrapper from '$lib/workTiles/WorkWrapper.svelte';
 	import Filter from '$lib/Filter.svelte';
 	import { onMount } from 'svelte';
+	import NewsletterForm from '$lib/forms/NewsletterForm.svelte';
 
 	let data = {};
 	let archData = null;
@@ -62,6 +63,7 @@
 		{/if} -->
 	{/if}
 </WorkWrapper>
+<NewsletterForm />
 
 <style>
 	.filters {

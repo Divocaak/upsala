@@ -6,6 +6,18 @@
 		"collapsed": true
 	},
 	"properties": {
+		"landingImage": {
+			"type": "string",
+			"title": "úvodní fotka",
+			"media": {
+				"binaryEncoding": "base64",
+				"type": "img/png"
+			}
+		},
+		"photoLabel": {
+			"type": "string",
+			"description": "popisek fotky"
+		},
 		"leading": {
 			"type": "string",
 			"format": "textarea",
@@ -25,18 +37,85 @@
 		"services": {
 			"type": "array",
 			"title": "Naše služby",
+			"minItems": 3,
+			"maxItems": 3,
 			"options": {
 				"collapsed": true
 			},
+			"default": [
+				{
+					"media": "",
+					"label": "služba 1",
+					"actualServices": [
+						"konkrétní služba"
+					]
+				},
+				{
+					"media": "",
+					"label": "služba 1",
+					"actualServices": [
+						"konkrétní služba"
+					]
+				},
+				{
+					"media": "",
+					"label": "služba 2",
+					"actualServices": [
+						"konkrétní služba"
+					]
+				}
+			],
 			"items": {
-				"type": "string",
-				"description": "služba",
-				"title": "Služba"
+				"type": "object",
+				"title": "služba",
+				"headerTemplate": "{{self.label}}",
+				"options": {
+					"collapsed": true
+				},
+				"properties": {
+					"media": {
+						"type": "string",
+						"title": "media",
+						"media": {
+							"binaryEncoding": "base64",
+							"type": "img/png"
+						}
+					},
+					"label": {
+						"type": "string",
+						"description": "služba",
+						"title": "Služba"
+					},
+					"actualServices": {
+						"type": "array",
+						"title": "konkrétní služby",
+						"properties": {
+							"options": {
+								"titleHidden": true,
+								"disable_collapse": true
+							},
+							"type": "array",
+							"items": {
+								"type": "string",
+								"description": "Název filtru",
+								"title": "Filtr"
+							}
+						}
+					}
+				},
+				"required": [
+					"media",
+					"label",
+					"actualServices"
+				]
 			}
 		},
 		"workflow": {
 			"type": "array",
 			"title": "Postup",
+			"options": {
+				"collapsed": true
+			},
 			"items": {
 				"type": "object",
 				"title": "panel",
@@ -44,6 +123,14 @@
 					"collapsed": true
 				},
 				"properties": {
+					"media": {
+						"type": "string",
+						"title": "media",
+						"media": {
+							"binaryEncoding": "base64",
+							"type": "img/png"
+						}
+					},
 					"heading": {
 						"type": "string",
 						"title": "Nadpis"
@@ -58,16 +145,54 @@
 					}
 				},
 				"required": [
+					"media",
 					"heading",
 					"content"
 				]
 			}
+		},
+		"reference": {
+			"type": "array",
+			"title": "Reference",
+			"description": "reference v boxech",
+			"options": {
+				"collapsed": true
+			},
+			"items": {
+				"type": "object",
+				"title": "reference",
+				"options": {
+					"collapsed": true
+				},
+				"properties": {
+					"label": {
+						"type": "string",
+						"title": "název"
+					},
+					"content": {
+						"type": "string",
+						"title": "content"
+					}
+				},
+				"required": [
+					"label",
+					"content"
+				]
+			}
+		},
+		"runningText": {
+			"type": "string",
+			"description": "marquee text"
 		}
 	},
 	"required": [
+		"landingImage",
+		"photoLabel",
 		"leading",
 		"leadingSub",
 		"services",
-		"workflow"
+		"workflow",
+		"reference",
+		"runningText"
 	]
 }

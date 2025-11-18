@@ -37,5 +37,5 @@
 	schemaPath="/dynamic/jsons/schemas/contacts.json"
 	dataPath="/dynamic/jsons/data/contacts.json"
 	apiPath="/api/save-contacts"
-	saveButton="kontakty"
+	saveButton="kontakt"
 />

@@ -1,36 +1,26 @@
 {
-	"type": "array",
-	"title": "Kontakty",
+	"type": "object",
+	"title": "Kontakt",
+	"description": "Obsah na stránce Kontakt",
 	"options": {
-		"collapsed": false
+		"collapsed": true
 	},
-	"items": {
-		"type": "object",
-		"title": "Kontakt",
-		"options": {
-			"collapsed": false
-		},
-		"properties": {
-			"name": {
-				"type": "string",
-				"title": "Jméno"
-			},
-			"tel": {
-				"type": "string",
-				"title": "Telefon",
-				"description": "zadávat bez mezer",
-				"format": "tel"
-			},
-			"mail": {
-				"type": "string",
-				"title": "Email",
-				"format": "email"
+	"properties": {
+		"leading": {
+			"type": "string",
+			"format": "textarea",
+			"description": "úvodní text",
+			"options": {
+				"expand_height": true
 			}
 		},
-		"required": [
-			"name",
-			"tel",
-			"mail"
-		]
-	}
+		"runningText": {
+			"type": "string",
+			"description": "marquee text"
+		}
+	},
+	"required": [
+		"leading",
+		"runningText"
+	]
 }

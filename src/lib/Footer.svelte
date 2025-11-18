@@ -4,7 +4,7 @@
 	const year = new Date().getFullYear();
 </script>
 
-<div class="spacer" class:colorBg={$page.data.colorFooter} />
+<div class="spacer" class:colorBg={$page.data.colorFooter}></div>
 <footer class:colorBg={$page.data.colorFooter}>
 	<p>studio<span></span>upsala {year}</p>
 	<div class="links">
@@ -35,7 +35,7 @@
 		justify-content: space-between;
 
 		border-top: 1px solid #000000;
-		padding: 0 var(--general-px);
+		margin: 0 var(--general-px);
 
 		position: relative;
 		bottom: 0;
