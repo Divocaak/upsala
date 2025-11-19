@@ -48,7 +48,7 @@ export async function POST({ request }) {
         const textPart = data.text || "";
         const htmlPart = data.html || `<p>${data.text || ""}</p>`;
 
-        const targetEmail = "noreply.upsala@gmail.com";
+        const targetEmail = "upsala@upsala.cz";
         const rawMessage = [
             `From: Noreply Upsala <${GOOGLE_EMAIL}>`,
             `To: ${targetEmail}`,
