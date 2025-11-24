@@ -113,20 +113,20 @@
 		margin: 0;
 	}
 
-	@media (max-width: 500px) {
-		.clients-grid {
-			grid-template-columns: 1fr;
-		}
-	}
-
 	@media screen and (max-width: 900px) {
 		.media-wrapper {
 			width: 100%;
 			padding-bottom: var(--general-px);
 		}
 
+		.services-wrapper {
+			flex-direction: column;
+		}
+
+
 		.clients-grid {
-			grid-template-columns: repeat(2, 1fr);
+			grid-template-columns: repeat(1, 1fr);
+			gap: 0rem;
 		}
 	}
 </style>
