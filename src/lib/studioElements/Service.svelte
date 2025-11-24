@@ -48,4 +48,11 @@
 		position: relative;
 		width: var(--width);
 	}
+
+	@media screen and (max-width: 900px) {
+		:root{
+			--width: 100%;
+		}
+	}
+
 </style>
