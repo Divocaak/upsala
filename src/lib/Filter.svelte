@@ -24,7 +24,6 @@
 		display: inline-block;
 
 		transition: all 0.35s;
-
 	}
 	
 	button.clickable:hover,

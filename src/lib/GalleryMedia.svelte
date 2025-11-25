@@ -24,7 +24,7 @@
 	<LazyImage
 		path={media}
 		alt="graphics"
-		additionalClasses="gallery-image {paddingBottom ? '.gallery-image-pb' : ''}"
+		additionalClasses="gallery-image {paddingBottom ? 'gallery-image-pb' : ''}"
 	/>
 {/if}
 
