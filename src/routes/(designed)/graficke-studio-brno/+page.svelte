@@ -55,7 +55,7 @@
 			{#each col as client}
 				{#if client.visible}
 					<li>
-						{#if client.link}<a href={client.link} target="_blank">{client.label}</a>
+						{#if client.link}<a href={client.link} class="flipped" target="_blank">{client.label}</a>
 						{:else}<p>{client.label}</p>
 						{/if}
 					</li>

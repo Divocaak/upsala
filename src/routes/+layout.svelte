@@ -215,6 +215,14 @@
 		color: var(--pink);
 	}
 
+	:global(a.flipped){
+		color: var(--pink);
+	}
+
+	:global(a.flipped:hover){
+		color: var(--black);
+	}
+
 	/* :global(html) {
 		cursor: none !important;
 	} */
