@@ -1,7 +1,13 @@
 {
   "projects": [
     {
-      "homepage": null,
+      "homepage": {
+        "index": 0,
+        "image": "/dynamic/imgs/work/ateh-lighting/68d5b3c3b52fc1ce2052931c0bafe9d3.jpeg",
+        "text": "ateh",
+        "description": "ateh liagsa",
+        "textColor": "#ff0000"
+      },
       "id": "ateh-lighting",
       "label": "ATEH LIGHTING",
       "description": "ahhhh",

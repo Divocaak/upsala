@@ -6,6 +6,14 @@
 		"collapsed": true
 	},
 	"properties": {
+		"landingImage": {
+			"type": "string",
+			"title": "úvodní fotka",
+			"media": {
+				"binaryEncoding": "base64",
+				"type": "img/png"
+			}
+		},
 		"leading": {
 			"type": "string",
 			"format": "textarea",
@@ -20,6 +28,7 @@
 		}
 	},
 	"required": [
+		"landingImage",
 		"leading",
 		"runningText"
 	]

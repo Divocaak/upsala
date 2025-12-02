@@ -1,7 +1,6 @@
 <script>
 	import { onMount } from 'svelte';
 	import LeadContainer from '$lib/containers/LeadContainer.svelte';
-	import LandingText from '$lib/containers/LandingText.svelte';
 	import NewForm from '$lib/forms/NewForm.svelte';
 	import RunningText from '$lib/runningElements/RunningText.svelte';
 	import AddSubscription from '$lib/forms/AddSubscription.svelte';
@@ -19,11 +18,16 @@
 </svelte:head>
 
 <LeadContainer title="Kontakt" paddedTitle={true} />
-<LandingText text={data.leading} />
 <div class="wrapper">
 	<HalfsLayout leftWidth="50" rightWidth="50">
 		<div slot="l">
-			<p class="name">Tomáš Zahradníček</p>
+			<div class="image-wrapper">
+				<img src={data.landingImage} alt="cover" />
+			</div>
+		</div>
+		<div slot="r">
+			<p class="lead">{data.leading}</p>
+			<p class="name padded-top">Tomáš Zahradníček</p>
 			<a href="mailto:upsala@upsala.cz">upsala@upsala.cz</a><br />
 			<a href="tel:+420604924084">+420&nbsp;604&nbsp;924&nbsp;084</a>
 			<div class="invoice">
@@ -36,9 +40,7 @@
 					DIČ:&nbsp;CZ29301441
 				</p>
 			</div>
-		</div>
-		<div slot="r">
-			<p class="name">Máte dotaz?</p>
+			<p class="name padded-top">Máte dotaz?</p>
 			<NewForm subject="Nový dotaz" text="<h1>Ze stránky kontakt přišel nový dotaz:</h1>">
 				<input id="name" name="$name" type="text" placeholder="Jméno Příjmení*" required />
 				<input id="mail" name="$mail" type="email" placeholder="Email*" required />
@@ -55,7 +57,29 @@
 	.wrapper {
 		padding: 0 var(--general-px);
 		width: calc(100% - 2 * var(--general-px));
-		margin-top: 10rem;
+	}
+
+	.image-wrapper {
+		position: relative;
+		aspect-ratio: 1/1;
+		width: 80%;
+	}
+
+	.image-wrapper img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		display: block;
+	}
+
+	.lead {
+		font-size: var(--text-48);
+		line-height: 130%;
+		letter-spacing: 0%;
+	}
+
+	.padded-top {
+		padding-top: calc(3 * var(--general-px));
 	}
 
 	.invoice {
@@ -65,6 +89,8 @@
 
 		display: flex;
 		flex-direction: row;
+
+		padding-top: calc(2 * var(--general-px));
 	}
 
 	.invoice p {
