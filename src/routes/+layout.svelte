@@ -208,42 +208,24 @@
 	:global(a) {
 		text-decoration: none;
 		transition: all var(--link-transition);
-		/* cursor: none; */
 	}
 
 	:global(a:hover) {
 		color: var(--pink);
 	}
 
-	:global(a.flipped){
+	:global(a.flipped) {
 		color: var(--pink);
 	}
 
-	:global(a.flipped:hover){
+	:global(a.flipped:hover) {
 		color: var(--black);
 	}
 
-	/* :global(html) {
-		cursor: none !important;
-	} */
-
 	:global(body) {
 		margin: 0;
+		padding: 0;
+		height: 100dvh;
+		min-height: 100dvh;
 	}
-
-	/* .cursor {
-		position: absolute;
-
-		height: 15px;
-		width: 15px;
-
-		border-radius: 50%;
-
-		pointer-events: none;
-
-		background-color: var(--black);
-		z-index: 10000;
-
-		will-change: transform;
-	} */
 </style>

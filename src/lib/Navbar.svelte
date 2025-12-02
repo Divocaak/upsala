@@ -1,14 +1,14 @@
 <script>
 	import { blur, fade } from 'svelte/transition';
-	import { page } from '$app/stores';  
+	import { page } from '$app/stores';
 
 	export let textColor = '#1d1d1b';
 	export let transparent = false;
 
 	let menuShown = false;
 	const showMenu = (newVal) => (menuShown = newVal);
-	
-	$: actualTextColor = menuShown? "var(--black)" : textColor;
+
+	$: actualTextColor = menuShown ? 'var(--black)' : textColor;
 </script>
 
 <nav style="--nav-color: {actualTextColor};" class:transparent>
@@ -36,19 +36,21 @@
 		</svg>
 	</button>
 	<div class="wide-nav">
-		<a class:active={$page.url.pathname==='/reference'} href="/reference">Reference</a>
-		<a class:active={$page.url.pathname==='/graficke-studio-brno'} href="/graficke-studio-brno">Studio</a>
-		<a class:active={$page.url.pathname==='/kontakt'} href="/kontakt">Kontakt</a>
+		<a class:active={$page.url.pathname === '/reference'} href="/reference">Reference</a>
+		<a class:active={$page.url.pathname === '/graficke-studio-brno'} href="/graficke-studio-brno"
+			>Studio</a
+		>
+		<a class:active={$page.url.pathname === '/kontakt'} href="/kontakt">Kontakt</a>
 	</div>
 </nav>
 {#if menuShown}
-<div class="small-nav-bg"  transition:blur>
-	<div class="small-nav">
-		<a on:click={() => showMenu(false)} href="/reference">Reference</a>
-		<a on:click={() => showMenu(false)} href="/graficke-studio-brno">Studio</a>
-		<a on:click={() => showMenu(false)} href="/kontakt">Kontakt</a>
+	<div class="small-nav-bg" transition:blur>
+		<div class="small-nav">
+			<a on:click={() => showMenu(false)} href="/reference">Reference</a>
+			<a on:click={() => showMenu(false)} href="/graficke-studio-brno">Studio</a>
+			<a on:click={() => showMenu(false)} href="/kontakt">Kontakt</a>
+		</div>
 	</div>
-</div>
 {/if}
 
 <style>
@@ -93,7 +95,7 @@
 		font-size: 40px;
 	}
 
-	nav .wide-nav a.active{
+	nav .wide-nav a.active {
 		color: var(--pink);
 	}
 
@@ -115,14 +117,15 @@
 		padding-right: 15px;
 	}
 
-	.small-nav-bg{
+	.small-nav-bg {
 		position: fixed;
 		width: 100%;
-		height: 100%;
-	
+		height: 100dvh;
+		height: -webkit-fill-available;
+
 		top: 0;
 		left: 0;
-	
+
 		z-index: 90;
 		background-color: white;
 	}
@@ -143,7 +146,7 @@
 	}
 
 	@media screen and (max-width: 900px) {
-		nav{
+		nav {
 			padding: calc(var(--general-px) / 2) 0;
 		}
 

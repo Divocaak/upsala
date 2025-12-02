@@ -12,9 +12,10 @@
 
 <svelte:head>
 	<title>upsala</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
 	<style>
-		body{
-			overflow:hidden;
+		body {
+			overflow: hidden;
 		}
 	</style>
 </svelte:head>
@@ -43,6 +44,7 @@
 		position: absolute;
 		top: 0;
 		width: 100%;
+		height: 100%;
 		margin: 0;
 		padding: 0;
 	}

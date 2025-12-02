@@ -1,6 +1,5 @@
 <script>
 	import { onMount, createEventDispatcher } from 'svelte';
-	import { goto } from '$app/navigation';
 
 	export let objects;
 
@@ -65,14 +64,6 @@
 		startAutoplay();
 	};
 
-	function isDotActive(activeIndex, dotIndex) {
-		if (activeIndex < 0) activeIndex = objects.length + activeIndex;
-		return (
-			activeIndex >= dotIndex * currentPerPage &&
-			activeIndex < dotIndex * currentPerPage + currentPerPage
-		);
-	}
-
 	const nextSlideIndex = () => (activeIndex + 1) % objects.length;
 </script>
 
@@ -83,7 +74,7 @@
 			on:pointerdown={handlePointerDown}
 			on:pointerup={handlePointerUp}
 		>
-			<div class="background-wrapper" style="background-image: url('{object.homepage.image}')"></div>
+			<div class="background-wrapper" style="background-image: url({object.homepage.image})"></div>
 			<div class="content">
 				<a style="color: {object.homepage.textColor}" href="/reference/{object.id}">
 					{object.homepage.text}<br />{object.homepage.description}
@@ -91,21 +82,13 @@
 			</div>
 		</div>
 	{/each}
-	<!-- <div class="dots-wrapper" style="--available-color:{objects[activeIndex].homepage.textColor};">
-		{#each { length: objects.length } as _, i}
-			<button
-				on:click={() => go(i * currentPerPage)}
-				class="hoverable dot {isDotActive(activeIndex, i) ? 'active' : ''}"
-			></button>
-		{/each}
-	</div> -->
 </div>
 
 <style>
 	.carousel {
 		position: relative;
 		width: 100%;
-		height: 100vh;
+		height: 100%;
 		justify-content: center;
 		align-items: center;
 		background-color: black;
@@ -137,47 +120,11 @@
 		transition: all 0.35s;
 	}
 
-	/* .dots-wrapper {
-		position: absolute;
-		bottom: 3.5%;
-
-		width: 100%;
-
-		display: flex;
-		align-items: center;
-		flex-direction: row;
-		justify-content: center;
-
-		margin: 10px 0;
-		padding: 0 var(--general-px);
-
-		box-sizing: border-box;
+	.carousel-slide,
+	.background-wrapper {
+		height: -webkit-fill-available;
+		min-height: -webkit-fill-available;
 	}
-
-	.dot {
-		all: unset;
-
-		display: inline-block;
-		height: 25px;
-		width: 25px;
-
-		margin: 0 5px;
-
-		background-color: var(--available-color);
-		opacity: 0.6;
-		border-radius: 50%;
-
-		transition: all 0.35s;
-	}
-
-	.dot.active {
-		background-color: #ffffff;
-		opacity: 1;
-	}
-
-	.dot:hover {
-		background-color: var(--pink);
-	} */
 
 	.content {
 		position: absolute;

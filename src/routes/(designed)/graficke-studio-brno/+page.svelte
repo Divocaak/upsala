@@ -41,7 +41,7 @@
 {#each textData.workflow as flow, i}
 	<FlowPanel
 		imgSrc={flow.media}
-		number="0{i + 1}"
+		number="{i + 1}"
 		lead={flow.heading}
 		text={flow.content}
 		isMiddle={i == 1}
