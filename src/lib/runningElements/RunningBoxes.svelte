@@ -6,7 +6,7 @@
 </script>
 
 <div class="wrapper">
-	<RunningElement {speed} {pauseOnHover} approximateItemWidth={250}>
+	<RunningElement {speed} {pauseOnHover} approximateItemWidth={300} draggable={true}>
 		{#each items as item}
 			<div class="running-box">
 				<svg
@@ -51,10 +51,9 @@
 
 		white-space: normal;
 
-		max-width: 300px;
-		width: auto;
-
-		flex: 0 0 auto;
+		width: 300px;
+		flex: 0 0 300px;
+		height: auto;
 
 		transition: all 0.25s ease-in-out;
 	}
@@ -83,8 +82,14 @@
 		font-weight: 400;
 		font-size: var(--text-24);
 		line-height: 130%;
-		letter-spacing: 0%;
 		margin: 0;
+		letter-spacing: 0%;
+
+		display: -webkit-box;
+		-webkit-line-clamp: 3;
+		line-clamp: 3;
+		-webkit-box-orient: vertical;
+		overflow: hidden;
 	}
 
 	.running-box .texts-wrapper p:last-of-type {
@@ -95,6 +100,12 @@
 		text-transform: uppercase;
 
 		margin-bottom: 0;
+
+		display: -webkit-box;
+		-webkit-line-clamp: 1;
+		line-clamp: 1;
+		-webkit-box-orient: vertical;
+		overflow: hidden;
 	}
 
 	/* .running-box:hover {
