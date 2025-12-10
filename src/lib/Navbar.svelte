@@ -1,6 +1,7 @@
 <script>
 	import { blur, fade } from 'svelte/transition';
 	import { page } from '$app/stores';
+	import { onMount } from 'svelte';
 
 	export let textColor = '#1d1d1b';
 	export let transparent = false;
@@ -9,9 +10,23 @@
 	const showMenu = (newVal) => (menuShown = newVal);
 
 	$: actualTextColor = menuShown ? 'var(--black)' : textColor;
+
+	let previousY = 0;
+	let navVisible = true;
+
+	onMount(() => {
+		const handleScroll = () => {
+			const currentY = window.scrollY;
+			navVisible = currentY < previousY || currentY < 10;
+			previousY = currentY;
+		};
+
+		window.addEventListener('scroll', handleScroll, { passive: true });
+		return () => window.removeEventListener('scroll', handleScroll);
+	});
 </script>
 
-<nav style="--nav-color: {actualTextColor};" class:transparent>
+<nav class:hidden={!navVisible} style="--nav-color: {actualTextColor};" class:transparent>
 	<a class="home" href="/">upsala</a>
 	<button on:click={() => showMenu(!menuShown)}>
 		<svg
@@ -63,9 +78,12 @@
 	}
 
 	nav {
-		position: sticky;
+		position: fixed;
 		top: 0;
 		left: 0;
+		right: 0;
+		transform: translateY(0);
+		transition: transform 0.25s ease;
 
 		display: flex;
 		justify-content: space-between;
@@ -81,6 +99,10 @@
 
 		/* padding-bottom: 10px; */
 		padding: calc(var(--general-px) / 4) 0;
+	}
+
+	nav.hidden {
+		transform: translateY(-100%);
 	}
 
 	.transparent {
