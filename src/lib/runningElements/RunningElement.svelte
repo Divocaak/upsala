@@ -17,22 +17,20 @@
 	function calculateRepeatedCount() {
 		if (!content || !container) return;
 		const containerWidth = container.offsetWidth || 1;
-		// width of one copy (the inner contains repeatedCount copies, so / repeatedCount)
-		const oneCopyWidth = content.scrollWidth / Math.max(1, repeatedCount);
+		const oneCopyWidth = Math.max(1, content.scrollWidth / Math.max(1, repeatedCount));
 		// ensure we fill at least twice the container so loop is smooth
-		repeatedCount = Math.max(1, Math.ceil((containerWidth * 2) / Math.max(1, oneCopyWidth)));
+		repeatedCount = Math.max(1, Math.ceil((containerWidth * 2) / oneCopyWidth));
 	}
 
 	function calculateContentWidth() {
 		if (!content) return;
 		// content.scrollWidth is the total width of repeatedCount copies
 		contentWidth = content.scrollWidth / Math.max(1, repeatedCount);
-		// safety
 		if (!isFinite(contentWidth) || contentWidth <= 0) contentWidth = 1;
 		container?.style.setProperty('--marquee-distance', `${contentWidth}px`);
 	}
 
-	/* --- JS animation loop (we control position explicitly) --- */
+	/* --- JS animation loop --- */
 	let rafId = null;
 	let lastTs = null;
 	let baseOffset = 0; // how far we've advanced along the marquee (pixels)
@@ -41,22 +39,19 @@
 
 	function animate(ts) {
 		if (lastTs == null) lastTs = ts;
-		const dt = (ts - lastTs) / 1000; // seconds
+		const dt = (ts - lastTs) / 1000;
 		lastTs = ts;
 
 		if (!isDragging && running) {
-			// advance baseOffset by speed * dt
 			baseOffset += speed * dt;
-			// ensure baseOffset stays bounded
 			if (baseOffset > contentWidth) baseOffset = baseOffset % contentWidth;
 		}
 
-		// final offset is baseOffset + dragOffset
+		// final offset (positive means moved to the right, we want leftward translation)
 		let offset = (baseOffset + dragOffset) % contentWidth;
-		// we want to move left as baseOffset grows, so subtract
-		const translateX = -offset;
+		if (offset < 0) offset += contentWidth;
 
-		// apply transform to content
+		const translateX = -offset;
 		if (content) content.style.transform = `translateX(${translateX}px)`;
 
 		rafId = requestAnimationFrame(animate);
@@ -75,60 +70,108 @@
 		lastTs = null;
 	}
 
-	/* --- Dragging handlers on the whole track --- */
+	/* --- Dragging --- */
 	let pointerId = null;
 	let startX = 0;
 	let startDragOffset = 0;
 
+	// unified helpers to read a clientX from pointer or touch events
+	function clientXFromEvent(e) {
+		// pointer event
+		if ('clientX' in e && typeof e.clientX === 'number') return e.clientX;
+		// touch event with touches or changedTouches
+		if (e.touches && e.touches.length) return e.touches[0].clientX;
+		if (e.changedTouches && e.changedTouches.length) return e.changedTouches[0].clientX;
+		return 0;
+	}
+
+	// pointer handlers (preferred)
 	function onPointerDown(e) {
 		if (!draggable) return;
-		// only left button
+		// only left mouse or touch
 		if (e.pointerType === 'mouse' && e.button !== 0) return;
 
 		isDragging = true;
-		pointerId = e.pointerId;
-		startX = e.clientX;
+		pointerId = e.pointerId ?? null;
+		startX = clientXFromEvent(e);
 		startDragOffset = dragOffset;
 
-		// capture the pointer to keep receiving moves outside element
-		e.currentTarget.setPointerCapture(pointerId);
+		// try capture if available
+		try {
+			e.currentTarget.setPointerCapture?.(pointerId);
+		} catch (err) {}
 
-		// stop selection / scrolling
+		// prevent native behavior that may cancel moves
 		e.preventDefault();
-
-		// pause automatic movement while dragging
-		// (we keep the loop running so apply transform consistently)
-		// but ensure we don't advance baseOffset while dragging (handled in animate)
 	}
 
 	function onPointerMove(e) {
-		if (!isDragging || e.pointerId !== pointerId) return;
-		const dx = e.clientX - startX;
+		// if pointer events are used: require matching pointerId when available
+		if (!isDragging) return;
+		if (pointerId != null && 'pointerId' in e && e.pointerId !== pointerId) return;
+
+		const cx = clientXFromEvent(e);
+		const dx = cx - startX;
 		dragOffset = startDragOffset - dx;
-		// keep dragOffset bounded so numbers don't blow up (mod contentWidth)
+
+		// fold large dragOffset into baseOffset
 		if (Math.abs(dragOffset) > contentWidth) {
-			// fold into baseOffset so dragOffset keeps small magnitude
 			baseOffset = (baseOffset - dragOffset) % contentWidth;
 			dragOffset = dragOffset % contentWidth;
 		}
 	}
 
 	function onPointerUp(e) {
-		if (!isDragging || e.pointerId !== pointerId) return;
-		isDragging = false;
+		if (!isDragging) return;
+		if (pointerId != null && 'pointerId' in e && e.pointerId !== pointerId) return;
 
-		// release pointer capture
+		isDragging = false;
 		try {
-			e.currentTarget.releasePointerCapture(pointerId);
+			e.currentTarget.releasePointerCapture?.(pointerId);
 		} catch (err) {}
 
-		// merge dragOffset into baseOffset so movement continues smoothly
 		baseOffset = (baseOffset + dragOffset) % contentWidth;
+		if (baseOffset < 0) baseOffset += contentWidth;
 		dragOffset = 0;
 		pointerId = null;
 	}
 
-	/* --- pause on hover support (optional) --- */
+	/* --- Touch-only fallbacks (covers older Android webviews) --- */
+	function onTouchStart(e) {
+		if (!draggable) return;
+		isDragging = true;
+		pointerId = null; // touch fallback
+		startX = clientXFromEvent(e);
+		startDragOffset = dragOffset;
+
+		// prevent page scroll while horizontally dragging
+		e.preventDefault();
+	}
+
+	function onTouchMove(e) {
+		if (!isDragging) return;
+		const cx = clientXFromEvent(e);
+		const dx = cx - startX;
+		dragOffset = startDragOffset - dx;
+
+		if (Math.abs(dragOffset) > contentWidth) {
+			baseOffset = (baseOffset - dragOffset) % contentWidth;
+			dragOffset = dragOffset % contentWidth;
+		}
+		// prevent native scroll so drag is uninterrupted
+		e.preventDefault();
+	}
+
+	function onTouchEnd(e) {
+		if (!isDragging) return;
+		isDragging = false;
+		baseOffset = (baseOffset + dragOffset) % contentWidth;
+		if (baseOffset < 0) baseOffset += contentWidth;
+		dragOffset = 0;
+		pointerId = null;
+	}
+
+	/* --- pause on hover --- */
 	function onMouseEnter() {
 		if (pauseOnHover) running = false;
 	}
@@ -138,53 +181,101 @@
 
 	/* --- lifecycle: mount / resize --- */
 	let ro;
+	let mo;
 	onMount(() => {
 		// initial repeat calc AFTER DOM paints
 		requestAnimationFrame(() => {
-			// first naive repeatedCount based on approximate item width
 			if (container && content) {
 				const containerWidth = container.offsetWidth || 1;
 				const roughItemWidth = approximateItemWidth || 250;
-				// baseline: at least enough items to fill container twice
 				const itemsNeeded = Math.ceil((containerWidth * 2) / roughItemWidth);
 				repeatedCount = Math.max(1, itemsNeeded);
 			}
-			// now recalc more accurately (content must be laid out)
 			calculateRepeatedCount();
 			calculateContentWidth();
-			// start animation
 			startLoop();
 		});
 
-		// watch for resizes
+		// Resize observer
 		ro = new ResizeObserver(() => {
-			// recalc repeatedCount and contentWidth after a paint
 			calculateRepeatedCount();
-			// let Svelte re-render duplicates synchronously, then update width
-			requestAnimationFrame(() => {
-				calculateContentWidth();
-			});
+			requestAnimationFrame(() => calculateContentWidth());
 		});
 		if (container) ro.observe(container);
 
-		// watch for content changes (images, fonts)
-		const mo = new MutationObserver(() => {
-			// recalc when children change
+		// MutationObserver for content changes (images, fonts)
+		mo = new MutationObserver(() => {
 			calculateRepeatedCount();
 			requestAnimationFrame(() => calculateContentWidth());
 		});
 		if (content) mo.observe(content, { childList: true, subtree: true });
 
+		// pointer events attached via markup will work in many cases, but some Android environments
+		// need explicit touch listeners with passive:false so we can preventDefault and stop scrolling.
+		// Add touch listeners on the container (passive:false) and mirror them on window for move/end.
+		if (container) {
+			try {
+				container.addEventListener('touchstart', onTouchStart, { passive: false });
+				container.addEventListener('touchmove', onTouchMove, { passive: false });
+			} catch (err) {
+				// older browsers may throw on options object - fall back:
+				container.addEventListener('touchstart', onTouchStart);
+				container.addEventListener('touchmove', onTouchMove);
+			}
+
+			// window-level touchend to ensure we catch finger up even outside the element
+			try {
+				window.addEventListener('touchend', onTouchEnd, { passive: false });
+				window.addEventListener('touchcancel', onTouchEnd, { passive: false });
+			} catch (err) {
+				window.addEventListener('touchend', onTouchEnd);
+				window.addEventListener('touchcancel', onTouchEnd);
+			}
+		}
+
+		// also add pointer listeners to container (Svelte markup has handlers too but explicit listeners are more reliable cross-webview)
+		if (container) {
+			container.addEventListener('pointerdown', onPointerDown);
+			// move/up attached to window to ensure we get them even if pointer leaves element
+			window.addEventListener('pointermove', onPointerMove);
+			window.addEventListener('pointerup', onPointerUp);
+			window.addEventListener('pointercancel', onPointerUp);
+		}
+
 		return () => {
 			stopLoop();
 			ro?.disconnect();
 			mo?.disconnect();
+
+			if (container) {
+				try {
+					container.removeEventListener('touchstart', onTouchStart, { passive: false });
+					container.removeEventListener('touchmove', onTouchMove, { passive: false });
+				} catch (err) {
+					container.removeEventListener('touchstart', onTouchStart);
+					container.removeEventListener('touchmove', onTouchMove);
+				}
+
+				try {
+					window.removeEventListener('touchend', onTouchEnd, { passive: false });
+					window.removeEventListener('touchcancel', onTouchEnd, { passive: false });
+				} catch (err) {
+					window.removeEventListener('touchend', onTouchEnd);
+					window.removeEventListener('touchcancel', onTouchEnd);
+				}
+
+				container.removeEventListener('pointerdown', onPointerDown);
+				window.removeEventListener('pointermove', onPointerMove);
+				window.removeEventListener('pointerup', onPointerUp);
+				window.removeEventListener('pointercancel', onPointerUp);
+			}
 		};
 	});
 
 	onDestroy(() => {
 		stopLoop();
 		ro?.disconnect();
+		mo?.disconnect();
 	});
 </script>
 
@@ -221,25 +312,31 @@
 
 	.marquee.draggable .track:active {
 		cursor: grabbing;
-		user-select: none; /* prevent selection while dragging */
+		user-select: none;
+		-webkit-user-select: none;
+		-ms-user-select: none;
 	}
 
 	.track {
 		display: flex;
 		align-items: center;
 		position: relative;
-		/* --marquee-distance is updated from JS when we know sizes */
+
+		/* prevent horizontal browser scrolling while allowing vertical scrolling */
+		touch-action: pan-y;
+
+		/* ensure touch area doesn't allow native image dragging */
+		-webkit-user-drag: none;
 	}
 
 	.inner {
 		display: flex;
 		white-space: nowrap;
 		will-change: transform;
-		align-items: stretch; /* important: equal heights for children */
-		/* transform is fully controlled by JS */
+		align-items: stretch;
+		transform: translateX(0);
 	}
 
-	/* style slotted children inside .inner */
 	.inner > * {
 		white-space: normal !important;
 		display: inline-flex;

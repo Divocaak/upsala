@@ -25,19 +25,21 @@
 
 	function handlePointerDown(event) {
 		stopAutoplay();
-		startX = event.clientX;
-		startY = event.clientY;
+		const e = event.touches?.[0] || event;
+		startX = e.clientX;
+		startY = e.clientY;
 	}
 
 	function handlePointerUp(event) {
+		const e = event.changedTouches?.[0] || event;
+
 		if (
-			Math.abs(event.clientX - startX) >= dragThreshold ||
-			Math.abs(event.clientY - startY) >= dragThreshold
+			Math.abs(e.clientX - startX) >= dragThreshold ||
+			Math.abs(e.clientY - startY) >= dragThreshold
 		) {
 			const nextIndex =
-				event.clientX < startX
-					? nextSlideIndex()
-					: (activeIndex - 1 + objects.length) % objects.length;
+				e.clientX < startX ? nextSlideIndex() : (activeIndex - 1 + objects.length) % objects.length;
+
 			go(nextIndex);
 		}
 	}
@@ -101,6 +103,7 @@
 		opacity: 0;
 		transition: opacity 0.5s ease;
 		pointer-events: none;
+		touch-action: pan-y;
 	}
 
 	.carousel-slide.active {
