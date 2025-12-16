@@ -17,13 +17,29 @@
 	function recalc() {
 		if (!container || !content) return;
 
+		const oldWidth = contentWidth || 1;
+
 		const containerWidth = container.offsetWidth || 1;
 		const oneCopyWidth = content.scrollWidth / Math.max(1, repeatedCount) || 1;
 
-		repeatedCount = Math.max(1, Math.ceil((containerWidth * 2) / oneCopyWidth));
+		repeatedCount = Math.max(3, Math.ceil((containerWidth * 3) / oneCopyWidth));
 
 		contentWidth = content.scrollWidth / repeatedCount || 1;
+
+		// remap offset so animation stays continuous
+		baseOffset = (baseOffset / oldWidth) * contentWidth || 0;
+
 		container.style.setProperty('--marquee-distance', `${contentWidth}px`);
+	}
+
+	let recalcRaf = null;
+	function scheduleRecalc() {
+		if (recalcRaf) return; // already scheduled
+
+		recalcRaf = requestAnimationFrame(() => {
+			recalcRaf = null;
+			recalc();
+		});
 	}
 
 	/* ---------- animation ---------- */
@@ -152,8 +168,8 @@
 			start();
 		});
 
-		ro = new ResizeObserver(recalc);
-		mo = new MutationObserver(recalc);
+		ro = new ResizeObserver(scheduleRecalc);
+		mo = new MutationObserver(scheduleRecalc);
 
 		ro.observe(container);
 		mo.observe(content, { childList: true, subtree: true });
