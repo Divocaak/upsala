@@ -225,7 +225,6 @@
 	:global(body) {
 		margin: 0;
 		padding: 0;
-		height: 100dvh;
 		min-height: 100dvh;
 	}
 </style>

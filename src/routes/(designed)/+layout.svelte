@@ -12,10 +12,11 @@
 <style>
 	.content-wrapper {
 		position: relative;
-		min-height: 100vh;
+		min-height: 100dvh;
 
-		margin-top: -89px;
 		bottom: 0;
-		padding-top: 90px;
+		/* margin-top: -89px; */
+		/* padding-top: 90px; */
+		padding-top: calc(90px + env(safe-area-inset-top));
 	}
 </style>
