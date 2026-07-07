@@ -1,5 +1,6 @@
 <script>
 	import { fade } from 'svelte/transition';
+	import LottiePlayer from '../LottiePlayer.svelte';
 
 	export let project = null;
 	export let arch = false;
@@ -8,6 +9,8 @@
 	$: headingText = arch ? 'Projekt ARCH' : project.label;
 	$: path = arch ? 'arch' : project.id;
 	$: thumbnail = arch ? archThumbnail : project.thumbnail;
+
+	console.log(project.thumbnail);
 </script>
 
 <a href="/reference/{path}" transition:fade>
@@ -18,14 +21,17 @@
 				autoplay
 				muted
 				loop
-				preload
+				preload="metadata"
 				playsinline
 				disablepictureinpicture
 				disableremoteplayback
+				controlslist="nodownload nofullscreen noremoteplayback"
 			>
 				<source src={thumbnail} type="video/mp4" />
 				Your browser does not support the video tag.
 			</video>
+		{:else if thumbnail.endsWith('.json') || thumbnail.startsWith('data:application/json')}
+			<LottiePlayer path={thumbnail} />
 		{:else}
 			<div class="thumbnail" style="background-image: url('{thumbnail}');"></div>
 		{/if}

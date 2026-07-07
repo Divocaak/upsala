@@ -39,7 +39,6 @@ export class Base64ImageEditor extends JSONEditor.AbstractEditor {
 			const fileType = file.type;
 
 			// Check if the file is an image or a video
-			/* TODO json preview */
 			if (fileType.startsWith('image/')) {
 				// If it's an image, read it as base64 and display as an image
 				reader.onload = () => {

@@ -1,5 +1,6 @@
 <script>
 	import LazyImage from '$lib/LazyImage.svelte';
+	import LottiePlayer from './LottiePlayer.svelte';
 
 	export let media;
 </script>
@@ -10,25 +11,17 @@
 		autoplay
 		muted
 		loop
-		preload
+		preload="metadata"
 		playsinline
 		disablepictureinpicture
 		disableremoteplayback
+		controlslist="nodownload nofullscreen noremoteplayback"
 	>
 		<source src={media} type="video/mp4" />
 		Your browser does not support the video tag.
 	</video>
 {:else if media.endsWith('.json') || media.startsWith('data:application/json')}
-	<!-- NOTE https://github.com/dealfonso/simplelottieplayer -->
-	<simplelottie
-		class="gallery-image"
-		url={media}
-		autosize="false"
-		loop="true"
-		repeat-count="0"
-		autoplay="true"
-	>
-	</simplelottie>
+	 <LottiePlayer path={media} additionalClasses="gallery-image"/>
 {:else}
 	<LazyImage path={media} alt="graphics" additionalClasses="gallery-image" />
 {/if}
