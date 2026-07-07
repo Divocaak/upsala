@@ -18,7 +18,8 @@
 					schema.media.type === 'img/jpeg' ||
 					schema.media.type === 'img/svg' ||
 					schema.media.type === 'video/mp4' ||
-					schema.media.type === 'video/quicktime'
+					schema.media.type === 'video/quicktime' ||
+					schema.media.type === 'application/json'
 				) {
 					return 'base64image';
 				}

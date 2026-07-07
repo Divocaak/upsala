@@ -27,17 +27,19 @@
 
 <div class="images-container">
 	{#each data.project.images as image}
-		{#if Array.isArray(image)}
-			<div class="image-group">
-				{#each image as actualImage}
-					<div class="image-group-image">
-						<GalleryMedia media={actualImage} />
-					</div>
-				{/each}
-			</div>
-		{:else}
-			<GalleryMedia media={image} />
-		{/if}
+		<div class="image-row">
+			{#if Array.isArray(image)}
+				<div class="image-group">
+					{#each image as actualImage}
+						<div class="image-group-image">
+							<GalleryMedia media={actualImage} />
+						</div>
+					{/each}
+				</div>
+			{:else}
+				<GalleryMedia media={image} />
+			{/if}
+		</div>
 	{/each}
 </div>
 
@@ -57,6 +59,10 @@
 		position: relative;
 		padding: 0 var(--general-px);
 		padding-bottom: calc(2 * var(--general-px));
+	}
+
+	.image-row{
+		padding-bottom: var(--general-px);
 	}
 
 	.image-group {
