@@ -67,9 +67,8 @@ export class Base64ImageEditor extends JSONEditor.AbstractEditor {
 					this.value = reader.result; // base64 data URL
 
 					// Optional: show the JSON text
-					const json = atob(this.value.split(',')[1]);
-
-					this.preview.innerHTML = `<pre style="max-width:400px;overflow:auto">${json}</pre>`;
+					/* const json = atob(this.value.split(',')[1]); */
+					this.preview.innerHTML = `<dotlottie-wc src=${this.value} style="max-width: 200px" speed="1" mode="forward" loop autoplay></dotlottie-wc>`;
 					this.preview.style.display = 'block';
 
 					this.onChange(true);
@@ -101,6 +100,12 @@ export class Base64ImageEditor extends JSONEditor.AbstractEditor {
                     <source src="${this.value}" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>`;
+			} else if (
+				this.value.endsWith('.json') ||
+				this.value.startsWith('data:application/json/')
+			) {
+				this.preview.innerHTML = `
+				<dotlottie-wc src="${this.value}" style="max-width: 200px" speed="1" mode="forward" loop autoplay></dotlottie-wc>`;
 			} else if (this.value.endsWith('.svg+xml')) {
 				this.preview.innerHTML = `<object data="${this.value}" width="800" height="800"></object>`;
 			}
