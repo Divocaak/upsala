@@ -9,7 +9,7 @@
 
 <div class="wrapper">
 	<div class="media-wrapper">
-		<GalleryMedia media={mediaPath} paddingBottom={false} />
+		<GalleryMedia media={mediaPath} />
 	</div>
 	<div class="texts-wrapper">
 		<h1>{@html label}</h1>
