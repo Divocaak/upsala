@@ -11,7 +11,7 @@ export class Base64ImageEditor extends JSONEditor.AbstractEditor {
 		this.input = this.theme.getFormInputField('file');
 		this.input.setAttribute(
 			'accept',
-			'image/png, image/jpeg, video/mp4, video/quicktime, image/svg+xml'
+			'image/png, image/jpeg, video/mp4, video/quicktime, image/svg+xml, application/json, .json'
 		);
 
 		// Preview element (for image/video preview)
@@ -39,6 +39,7 @@ export class Base64ImageEditor extends JSONEditor.AbstractEditor {
 			const fileType = file.type;
 
 			// Check if the file is an image or a video
+			/* TODO json preview */
 			if (fileType.startsWith('image/')) {
 				// If it's an image, read it as base64 and display as an image
 				reader.onload = () => {
@@ -61,6 +62,20 @@ export class Base64ImageEditor extends JSONEditor.AbstractEditor {
 					this.onChange(true); // Notify json-editor about the change
 				};
 				reader.readAsDataURL(file); // Read the file as base64
+			} else if (fileType === 'application/json' || file.name.endsWith('.json')) {
+				reader.onload = () => {
+					this.value = reader.result; // base64 data URL
+
+					// Optional: show the JSON text
+					const json = atob(this.value.split(',')[1]);
+
+					this.preview.innerHTML = `<pre style="max-width:400px;overflow:auto">${json}</pre>`;
+					this.preview.style.display = 'block';
+
+					this.onChange(true);
+				};
+
+				reader.readAsDataURL(file);
 			}
 		}
 	}
@@ -109,7 +124,8 @@ export class Base64ImageEditor extends JSONEditor.AbstractEditor {
 		if (
 			this.value &&
 			!this.value.startsWith('data:image/') &&
-			!this.value.startsWith('data:video/')
+			!this.value.startsWith('data:video/') &&
+			!this.value.startsWith('data:application/json')
 		) {
 			errors.push({
 				path: this.path,

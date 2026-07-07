@@ -20,6 +20,8 @@
 		<source src={media} type="video/mp4" />
 		Your browser does not support the video tag.
 	</video>
+{:else if media.endsWith('.json') || media.startsWith('data:application/json')}
+	<dotlottie-wc src={media} speed="1" mode="forward" loop autoplay></dotlottie-wc>
 {:else}
 	<LazyImage
 		path={media}
@@ -38,5 +40,12 @@
 
 	:global(.gallery-image-pb) {
 		padding-bottom: var(--general-px);
+	}
+
+	dotlottie-wc {
+		width: 100%;
+		height: 100%;
+		margin: 0 auto;
+		display: block;
 	}
 </style>
