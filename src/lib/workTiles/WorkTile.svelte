@@ -9,8 +9,6 @@
 	$: headingText = arch ? 'Projekt ARCH' : project.label;
 	$: path = arch ? 'arch' : project.id;
 	$: thumbnail = arch ? archThumbnail : project.thumbnail;
-
-	console.log(project.thumbnail);
 </script>
 
 <a href="/reference/{path}" transition:fade>

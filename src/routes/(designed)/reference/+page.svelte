@@ -1,13 +1,18 @@
 <script>
+	import { onMount } from 'svelte';
+	import { page } from '$app/state';
+	import { goto } from '$app/navigation';
 	import WorkTile from '$lib/workTiles/WorkTile.svelte';
 	import WorkWrapper from '$lib/workTiles/WorkWrapper.svelte';
 	import Filter from '$lib/Filter.svelte';
-	import { onMount } from 'svelte';
 	import NewsletterForm from '$lib/forms/NewsletterForm.svelte';
 
 	let data = {};
 	let archData = null;
+
 	let filters = null;
+	let currentFilter = null;
+
 	onMount(async () => {
 		const res = await fetch('/dynamic/jsons/data/projects.json');
 		data = await res.json();
@@ -18,10 +23,36 @@
 		const responseFilters = await fetch('/dynamic/jsons/data/filters.json');
 		const filtersData = await responseFilters.json();
 		filters = filtersData.definitions.filterEnums.items.enum;
+		currentFilter = page.url.searchParams.get('filter');
 	});
 
-	let currentFilter = null;
-	const changeFilter = (newFilter = null) => (currentFilter = newFilter);
+	/* const changeFilter = (newFilter = null) => (currentFilter = newFilter); */
+	async function changeFilter(newFilter = null) {
+		currentFilter = newFilter;
+
+		const url = new URL(page.url);
+
+		if (newFilter) {
+			url.searchParams.set(
+				'filter',
+				newFilter
+					.toLowerCase()
+					.normalize('NFD')
+					.replace(/[\u0300-\u036f]/g, '')
+					.replace(/[\u0300-\u036f]/g, '') // Remove diacritic marks
+					.replace(/[\d\W_]+/g, '-') // Remove numbers and special characters, replace with "-"
+					.replace(/^-+|-+$/g, '')
+			);
+		} else {
+			url.searchParams.delete('filter');
+		}
+
+		await goto(url, {
+			replaceState: true,
+			noScroll: true,
+			keepFocus: true
+		});
+	}
 </script>
 
 <svelte:head>

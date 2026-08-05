@@ -16,7 +16,9 @@
         "/dynamic/imgs/work/1726602381766/48cf51ffe8fc235b860e279d2bc75c4a.jpeg",
         "/dynamic/imgs/work/1726602381766/f95dd669f2ea5981bd46047c0f84cdb1.jpeg"
       ],
-      "filters": [],
+      "filters": [
+        "vizuální identita"
+      ],
       "visible": true,
       "category": "logo",
       "year": "2022"
@@ -42,7 +44,9 @@
         ],
         "/dynamic/imgs/work/1726603827881/5ab5e19f177c8adc2a7d175a8dfbf1c6.jpeg"
       ],
-      "filters": [],
+      "filters": [
+        "orientační systém"
+      ],
       "visible": true,
       "category": "logo",
       "year": "2023"
@@ -60,7 +64,9 @@
           "/dynamic/imgs/work/1727035527666/c26a3f900a768fdf3f2a055264216b44.jpeg"
         ]
       ],
-      "filters": [],
+      "filters": [
+        "vizuální identita"
+      ],
       "visible": true,
       "category": "logo / vizuální identita / tiskoviny / orientační systém",
       "year": "2022"
