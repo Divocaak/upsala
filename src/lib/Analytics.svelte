@@ -83,7 +83,7 @@
 			if (typeof gtag !== 'undefined') {
 				// @ts-ignore
 				gtag(type, event, data);
-				console.log('event created with data', next);
+				console.log('Event created with data', next);
 			} else {
 				if (retries > 0) {
 					retries--;
